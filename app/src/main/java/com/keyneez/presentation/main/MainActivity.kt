@@ -1,4 +1,4 @@
-package com.keyneez
+package com.keyneez.presentation.main
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
