@@ -1,4 +1,19 @@
-# 청소년들의 생활을 더욱 더 편리하게, 키니즈 ❤️
+# ❤️ Keyneez-AOS ❤️
+
+## PROJECT
+
+### 키니즈 (Keyneez)
+```
+청소년들의 생활을 더욱 더 편리하게, 키니즈
+```
+<br>
+
+## CONTRIBUTORS
+| 김지은🐭([@0zlrlo](https://github.com/0zlrlo)) | 서동주🦦([@DongjooSEO](https://github.com/DongjooSEO)) | 전채연🐸([@b1urrrr](https://github.com/b1urrrr)) |
+| :---: | :---: | :---: |
+| <img width="540" src=""/> | <img width="540" src=""/> | <img width="540" src=""/> |
+| `저장 탭`, `마이 페이지` | `인포 탭`, `랜딩 페이지` | `온라인 인증서 발급 페이지`, `로그인/회원가입 페이지` |
+<br>
 
 ### COMMIT CONVENTION
 - ✨ **[FEAT]** : 새로운 기능 구현
