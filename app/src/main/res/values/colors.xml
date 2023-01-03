@@ -5,6 +5,46 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+
+    <!-- keyneez colors -->
+    <color name="mint600">#00A5CB</color>
+    <color name="mint500">#2CC9ED</color>
+    <color name="mint400">#69D6EF</color>
+    <color name="mint300">#AEEDFC</color>
+    <color name="mint200">#CEF6FF</color>
+
+    <color name="red600">#D03607</color>
+    <color name="red500">#FE5C2B</color>
+    <color name="red400">#FF825C</color>
+    <color name="red300">#FFBDA9</color>
+    <color name="red200">#FFDCD2</color>
+
+    <color name="green600">#90B400</color>
+    <color name="green500">#CBEC00</color>
+    <color name="green400">#E0F657</color>
+    <color name="green300">#F0FF96</color>
+    <color name="green200">#F9FFCD</color>
+
+    <color name="purple600">#3A1FAD</color>
+    <color name="purple500">#6948F7</color>
+    <color name="purple400">#7F63FA</color>
+    <color name="purple300">#C6B9FF</color>
+    <color name="purple200">#E6E0FF</color>
+
+    <color name="pink600">#D23C69</color>
+    <color name="pink500">#FD6D90</color>
+    <color name="pink400">#FE8BAE</color>
+    <color name="pink300">#FEC4D6</color>
+    <color name="pink200">#FFE1E9</color>
+
+    <color name="gray900">#000000</color>
+    <color name="gray800">#1F1F1F</color>
+    <color name="gray700">#333333</color>
+    <color name="gary600">#474747</color>
+    <color name="gray500">#5C5C5C</color>
+    <color name="gray400">#ADADAD</color>
+    <color name="gray300">#D6D6D6</color>
+    <color name="gray200">#EDEDED</color>
+    <color name="gray100">#F7F7F7</color>
+    <color name="gray050">#FFFFFF</color>
 </resources>
