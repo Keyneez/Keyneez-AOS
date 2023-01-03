@@ -4,7 +4,17 @@
     // common
     <string name="binding_error">Binding not initialized to reference the view.</string>
 
+    // main
+    <string name="main_home">홈</string>
+    <string name="main_like">좋아요</string>
+    <string name="main_card">Card</string>
+    <string name="main_character">캐릭터</string>
+    <string name="main_setting">설정</string>
+
     // ocr
     <string name="ocr_guide_top">신분증 앞면을\n사각형 안에 맞춰주세요.</string>
     <string name="ocr_guide_bottom">학생증/청소년증을\n평평하고 그늘진 곳에 놓아두세요</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
