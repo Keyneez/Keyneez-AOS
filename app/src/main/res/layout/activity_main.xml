@@ -38,6 +38,8 @@
                 app:labelVisibilityMode="labeled"
                 app:itemIconTint="@drawable/sel_main_bottomnavi"
                 app:itemTextColor="@drawable/sel_main_bottomnavi"
+                app:itemTextAppearanceActive="@style/PretendardBold10"
+                app:itemTextAppearanceInactive="@style/PretendardBold10"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:menu="@menu/main_menu" />
         </androidx.constraintlayout.widget.ConstraintLayout>
