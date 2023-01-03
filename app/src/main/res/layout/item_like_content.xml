@@ -41,24 +41,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="49dp"
-            android:textColor="@color/gray050"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_like_date"
-            tools:text="@string/like_content1" />
-
-        <TextView
-            android:id="@+id/tv_like_title2"
-            style="@style/PretendardBold24"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:layout_marginBottom="97dp"
             android:textColor="@color/gray050"
+            android:gravity="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_like_title1"
-            tools:text="@string/like_content2" />
+            app:layout_constraintTop_toBottomOf="@id/tv_like_date"
+            tools:text="@string/like_content" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
