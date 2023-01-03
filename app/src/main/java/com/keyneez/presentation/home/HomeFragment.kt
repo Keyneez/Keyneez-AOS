@@ -10,12 +10,6 @@ import com.lab.keyneez.R
 
 class HomeFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = HomeFragment()
-    }
-
-    private lateinit var viewModel: HomeViewModel
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -29,4 +23,10 @@ class HomeFragment : Fragment() {
         viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
         // TODO: Use the ViewModel
     }
+
+    companion object {
+        fun newInstance() = HomeFragment()
+    }
+
+    private lateinit var viewModel: HomeViewModel
 }
