@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_home"
+        android:title="@string/main_home"
+        android:icon="@drawable/ic_main_home" />
+    <item
+        android:id="@+id/menu_like"
+        android:title="@string/main_like"
+        android:icon="@drawable/ic_main_like" />
+    <item
+        android:id="@+id/menu_card"
+        android:title=""
+        android:enabled="false"
+        android:checkable="false"/>
+    <item
+        android:id="@+id/menu_character"
+        android:title="@string/main_character"
+        android:icon="@drawable/ic_main_character" />
+    <item
+        android:id="@+id/menu_setting"
+        android:title="@string/main_setting"
+        android:icon="@drawable/ic_main_setting" />
+</menu>
