@@ -1,12 +1,12 @@
 # ❤️ Keyneez-AOS ❤️
 ## 키니즈 (Keyneez)
 ```
-청소년들의 생활을 더욱 더 편리하게, 키니즈
+청소년들의 편리한 생활을 위한 인증서비스와 풍부한 활동을 위한 다양한 혜택정보를 제공하는 서비스
 ```
 <br>
 
 ## CONTRIBUTORS
-| 김지은🐭([@0zlrlo](https://github.com/0zlrlo)) | 서동주🦦([@DongjooSEO](https://github.com/DongjooSEO)) | 전채연🐸([@b1urrrr](https://github.com/b1urrrr)) |
+| 김지은🐭<br/>([@0zlrlo](https://github.com/0zlrlo)) | 서동주🦦<br/>([@DongjooSEO](https://github.com/DongjooSEO)) | 전채연🐸<br/>([@b1urrrr](https://github.com/b1urrrr)) |
 | :---: | :---: | :---: |
 | <img width="540" src="https://user-images.githubusercontent.com/70993562/210304447-6d74e759-5baf-4d08-866f-57bf10bddc3a.jpg"/> | <img width="540" src="https://user-images.githubusercontent.com/70993562/210304332-6bcf7c78-5612-4821-8447-48f1ba2f045c.jpg"/> | <img width="540" src="https://user-images.githubusercontent.com/70993562/210304413-00952aa3-4faa-46a8-bacf-b94df2cc0499.jpg"/> |
 | `저장 탭`<br/>`마이 페이지` | `인포 탭`<br/>`랜딩 페이지` | `온라인 인증서 발급 페이지`<br/>`로그인/회원가입 페이지` |
