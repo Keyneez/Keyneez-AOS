@@ -5,36 +5,42 @@
         <item name="android:fontFamily">@font/pretendard_bold</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">28sp</item>
+        <item name="android:lineSpacingExtra">5.41sp</item>
     </style>
 
     <style name="PretendardBold24">
         <item name="android:fontFamily">@font/pretendard_bold</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">24sp</item>
+        <item name="android:lineSpacingExtra">4.64sp</item>
     </style>
 
     <style name="PretendardMedium24">
         <item name="android:fontFamily">@font/pretendard_medium</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">24sp</item>
+        <item name="android:lineSpacingExtra">4.64sp</item>
     </style>
 
     <style name="PretendardBold20">
         <item name="android:fontFamily">@font/pretendard_bold</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">20sp</item>
+        <item name="android:lineSpacingExtra">3.87sp</item>
     </style>
 
     <style name="PretendardSemibold20">
         <item name="android:fontFamily">@font/pretendard_semibold</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">20sp</item>
+        <item name="android:lineSpacingExtra">3.87sp</item>
     </style>
 
     <style name="PretendardMedium20">
         <item name="android:fontFamily">@font/pretendard_medium</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">20sp</item>
+        <item name="android:lineSpacingExtra">3.87sp</item>
     </style>
 
     <!-- Subtitle -->
@@ -42,18 +48,21 @@
         <item name="android:fontFamily">@font/pretendard_bold</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">18sp</item>
+        <item name="android:lineSpacingExtra">3.48sp</item>
     </style>
 
     <style name="PretendardSemibold18">
         <item name="android:fontFamily">@font/pretendard_semibold</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">18sp</item>
+        <item name="android:lineSpacingExtra">3.48sp</item>
     </style>
 
     <style name="PretendardMedium18">
         <item name="android:fontFamily">@font/pretendard_medium</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">18sp</item>
+        <item name="android:lineSpacingExtra">3.48sp</item>
     </style>
 
     <!-- Body -->
@@ -61,36 +70,43 @@
         <item name="android:fontFamily">@font/pretendard_bold</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">16sp</item>
+        <item name="android:lineSpacingExtra">3.09sp</item>
     </style>
 
     <style name="PretendardSemibold16">
         <item name="android:fontFamily">@font/pretendard_semibold</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">16sp</item>
+        <item name="android:lineSpacingExtra">3.09sp</item>
     </style>
 
     <style name="PretendardMedium16">
         <item name="android:fontFamily">@font/pretendard_medium</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">16sp</item>
+        <item name="android:lineSpacingExtra">3.09sp</item>
     </style>
 
     <style name="PretendardBold14">
         <item name="android:fontFamily">@font/pretendard_bold</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingExtra">2.71sp</item>
     </style>
 
     <style name="PretendardSemibold14">
         <item name="android:fontFamily">@font/pretendard_semibold</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingExtra">2.71sp</item>
     </style>
 
     <style name="PretendardMedium14">
         <item name="android:fontFamily">@font/pretendard_medium</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingExtra">2.71sp</item>
+        <item name="android:letterSpacing">-0.045</item>
     </style>
 
     <!-- Caption -->
@@ -98,23 +114,27 @@
         <item name="android:fontFamily">@font/pretendard_semibold</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">12sp</item>
+        <item name="android:lineSpacingExtra">2.32sp</item>
     </style>
 
     <style name="PretendardMedium12">
         <item name="android:fontFamily">@font/pretendard_medium</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">12sp</item>
+        <item name="android:lineSpacingExtra">2.32sp</item>
     </style>
 
     <style name="PretendardBold10">
         <item name="android:fontFamily">@font/pretendard_bold</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">10sp</item>
+        <item name="android:lineSpacingExtra">1.93sp</item>
     </style>
 
     <style name="PretendardMedium10">
         <item name="android:fontFamily">@font/pretendard_medium</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">10sp</item>
+        <item name="android:lineSpacingExtra">1.93sp</item>
     </style>
 </resources>
