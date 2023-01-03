@@ -1,4 +1,4 @@
-package com.keyneez.presentation.home
+package com.keyneez.presentation.main.home
 
 import androidx.lifecycle.ViewModel
 

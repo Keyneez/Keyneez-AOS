@@ -10,18 +10,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="4dp"
-        android:layout_marginTop="8dp">
+        android:layout_marginTop="8dp" >
 
         <ImageView
             android:id="@+id/iv_like_background"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="0dp"
             android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@drawable/img_like_background" />
+            android:background="@drawable/shape_4_rect"/>
 
         <TextView
             android:id="@+id/tv_like_date"
@@ -42,8 +42,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="49dp"
             android:layout_marginBottom="97dp"
-            android:textColor="@color/gray050"
             android:gravity="center"
+            android:textColor="@color/gray050"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
