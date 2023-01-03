@@ -58,9 +58,7 @@
             android:paddingTop="26dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@id/iv_like_baseline"
-            app:layout_constraintVertical_bias="0.0"
             tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-            tools:layout_editor_absoluteX="0dp"
             tools:listitem="@layout/item_like_content"
             tools:spanCount="2" />
 
