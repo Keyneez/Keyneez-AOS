@@ -13,7 +13,9 @@
 
     // ocr
     <string name="ocr_guide_top">신분증 앞면을\n사각형 안에 맞춰주세요.</string>
-    <string name="ocr_guide_bottom">학생증/청소년증을\n평평하고 그늘진 곳에 놓아두세요</string>
+    <string name="ocr_guide_bottom_auto">학생증/청소년증을\n평평하고 그늘진 곳에 놓아두세요</string>
+    <string name="ocr_guide_bottom_passive">준비가 끝나면 촬영 버튼을 눌러주세요</string>
+    <string name="ocr_passive_ocr">신분증 인식이 안 되나요?</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

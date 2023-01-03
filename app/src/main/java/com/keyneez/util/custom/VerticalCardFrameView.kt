@@ -7,7 +7,7 @@ import android.view.View
 import androidx.core.content.ContextCompat
 import com.lab.keyneez.R
 
-class HorizontalCardFrameView @JvmOverloads constructor(
+class VerticalCardFrameView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
@@ -64,8 +64,8 @@ class HorizontalCardFrameView @JvmOverloads constructor(
     }
 
     private fun setRect(offset: Float = 4f) {
-        val holeWidth = 327 * (width / 360f)
-        val holeHeight = 200 * (width / 360f)
+        val holeWidth = 200 * (width / 360f)
+        val holeHeight = 327 * (width / 360f)
 
         rect.set(
             ((width - holeWidth) / 2) - offset,
