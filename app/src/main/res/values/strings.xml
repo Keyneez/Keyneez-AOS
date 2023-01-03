@@ -3,4 +3,9 @@
 
     // common
     <string name="binding_error">Binding not initialized to reference the view.</string>
+
+    //like
+    <string name="like_save">저장</string>
+    <string name="like_data">11.24-12.31</string>
+    <string name="like_content">청소년 영화관 할인</string>
 </resources>
