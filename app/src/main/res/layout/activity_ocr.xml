@@ -13,36 +13,53 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.keyneez.util.custom.CardFrameView
-            android:id="@+id/cfv_ocr"
-            android:background="#CC000000"
+        <View
+            android:id="@+id/view_ocr_frame_space"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="0dp"
+            android:background="@color/gray050_80"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/cfv_ocr"/>
+
+        <com.keyneez.util.custom.HorizontalCardFrameView
+            android:id="@+id/cfv_ocr"
+            android:background="@color/gray050_80"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="28dp"/>
+
+        <View
+            android:id="@+id/view_ocr_center_dot"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            android:visibility="invisible"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
             android:id="@+id/tv_ocr_guide_top"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginBottom="126dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/view_ocr_center_dot"
             android:gravity="center"
             style="@style/PretendardBold24"
             android:textColor="@color/gray050"
-            android:layout_marginBottom="334dp"
             android:text="@string/ocr_guide_top"/>
 
         <TextView
             android:id="@+id/tv_ocr_guide_bottom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view_ocr_center_dot"
             app:layout_constraintStart_toStartOf="parent"
             android:gravity="center"
-            android:textColor="@color/gray050"
-            android:layout_marginTop="334dp"
+            android:textColor="@color/gray050_50"
+            android:layout_marginTop="154dp"
             android:text="@string/ocr_guide_bottom"
             app:layout_constraintEnd_toEndOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>

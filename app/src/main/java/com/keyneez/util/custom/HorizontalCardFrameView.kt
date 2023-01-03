@@ -6,9 +6,8 @@ import android.util.AttributeSet
 import android.view.View
 import androidx.core.content.ContextCompat
 import com.lab.keyneez.R
-import timber.log.Timber
 
-class CardFrameView @JvmOverloads constructor(
+class HorizontalCardFrameView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
