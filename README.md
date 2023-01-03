@@ -57,13 +57,13 @@
  ┣ 📂data
  ┃ ┣ 📂source
  ┃ ┣ 📂repository
- ┣ 📂 model
- ┃ ┣ 📂 response
- ┃ ┣ 📂 request
- ┣ 📂 entity
- ┣ 📂 service
- ┣ 📁 di
- ┣ 📁 util
+ ┃ ┣ 📂model
+ ┃ ┃ ┣ 📂response
+ ┃ ┃ ┣ 📂request
+ ┣ ┣ 📂entity
+ ┣ ┣ 📂service
+ ┣ 📁di
+ ┣ 📁util
    ┣ 📂binding
    ┣ 📂extension
 ```
