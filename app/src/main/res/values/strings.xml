@@ -3,4 +3,13 @@
 
     // common
     <string name="binding_error">Binding not initialized to reference the view.</string>
+
+    // main
+    <string name="main_home">홈</string>
+    <string name="main_like">좋아요</string>
+    <string name="main_card">Card</string>
+    <string name="main_character">캐릭터</string>
+    <string name="main_setting">설정</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
