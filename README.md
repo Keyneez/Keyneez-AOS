@@ -1,8 +1,5 @@
 # ❤️ Keyneez-AOS ❤️
-
-## PROJECT
-
-### 키니즈 (Keyneez)
+## 키니즈 (Keyneez)
 ```
 청소년들의 생활을 더욱 더 편리하게, 키니즈
 ```
@@ -11,11 +8,11 @@
 ## CONTRIBUTORS
 | 김지은🐭([@0zlrlo](https://github.com/0zlrlo)) | 서동주🦦([@DongjooSEO](https://github.com/DongjooSEO)) | 전채연🐸([@b1urrrr](https://github.com/b1urrrr)) |
 | :---: | :---: | :---: |
-| <img width="540" src=""/> | <img width="540" src=""/> | <img width="540" src=""/> |
-| `저장 탭`, `마이 페이지` | `인포 탭`, `랜딩 페이지` | `온라인 인증서 발급 페이지`, `로그인/회원가입 페이지` |
+| <img width="540" src="https://user-images.githubusercontent.com/70993562/210304447-6d74e759-5baf-4d08-866f-57bf10bddc3a.jpg"/> | <img width="540" src="https://user-images.githubusercontent.com/70993562/210304332-6bcf7c78-5612-4821-8447-48f1ba2f045c.jpg"/> | <img width="540" src="https://user-images.githubusercontent.com/70993562/210304413-00952aa3-4faa-46a8-bacf-b94df2cc0499.jpg"/> |
+| `저장 탭`<br/>`마이 페이지` | `인포 탭`<br/>`랜딩 페이지` | `온라인 인증서 발급 페이지`<br/>`로그인/회원가입 페이지` |
 <br>
 
-### COMMIT CONVENTION
+## COMMIT CONVENTION
 - ✨ **[FEAT]** : 새로운 기능 구현
 - ✅ **[MOD]** : 코드 수정 및 내부 파일 수정
 - ➕ **[ADD]** : 부수적인 코드 추가 및 라이브러리 추가, 새로운 파일 생성
@@ -31,19 +28,42 @@
 - 📝 **[DOCS]** : README나 WIKI 등의 문서 개정
 <br>
 
-### BRANCH CONVENTION
+## [BRANCH CONVENTION](https://www.notion.so/Branch-Convention-adc2b87bf2be49c992454b49039f449f)
 ```
-feature/#이슈번호-작업내용
+브랜치유형/#이슈번호-작업내용
 ```
 <br>
 
-### ISSUE CONVENTION
+## ISSUE CONVENTION
 ```
 [작업유형] 뷰이름 / 작업내용
 ```
 <br>
 
-### PR CONVENTION
+## PR CONVENTION
 ```
 [작업유형/#이슈번호] 뷰이름 / 작업내용
+```
+<br>
+
+## [CODING CONVENTION](https://trite-squirrel-6ef.notion.site/7c8e55041b0e437cb96827632e2d2217?v=9ff52f8daead49a9a5f1bc880c40aa01)
+- 기본적으로 ktlint의 문법 준수
+<br>
+
+## PACKAGE CONVENTION
+```
+📦java.com.keyneez 
+ ┣ 📂presentation
+ ┣ 📂data
+ ┃ ┣ 📂source
+ ┃ ┣ 📂repository
+ ┣ 📂 model
+ ┃ ┣ 📂 response
+ ┃ ┣ 📂 request
+ ┣ 📂 entity
+ ┣ 📂 service
+ ┣ 📁 di
+ ┣ 📁 util
+   ┣ 📂binding
+   ┣ 📂extension
 ```
