@@ -1,22 +1,30 @@
 package com.keyneez.presentation.ocr.guide.complete
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import com.keyneez.presentation.ocr.guide.OcrGuideActivity
 import com.keyneez.util.binding.BindingFragment
+import com.keyneez.util.extension.setOnSingleClickListener
 import com.lab.keyneez.R
 import com.lab.keyneez.databinding.FragmentOcrCompleteBinding
 
 class OcrCompleteFragment :
     BindingFragment<FragmentOcrCompleteBinding>(R.layout.fragment_ocr_complete) {
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_ocr_complete, container, false)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        initBackBtnClickListener()
+        initConfirmBtnClickListener()
+    }
+
+    private fun initBackBtnClickListener() {
+        binding.btnOcrCompleteBack.setOnSingleClickListener {
+            (activity as OcrGuideActivity).selectIndex(0)
+        }
+    }
+
+    private fun initConfirmBtnClickListener() {
+        binding.btnOcrCompleteConfirm.setOnSingleClickListener { activity?.finish() }
     }
 
     companion object {
