@@ -7,16 +7,11 @@ import com.keyneez.data.entity.LikeData
 import com.lab.keyneez.R
 
 class LikeViewModel : ViewModel() {
-    // binding하는 방식으로 선언해 주기!
     private val _likeList = MutableLiveData<List<LikeData>>()
     val likeList: LiveData<List<LikeData>>
         get() = _likeList
 
     init {
-        // viewModel을 실행할 때 getLikeList를 제일 먼저 가져와 주세요
-        // init 함수는 매개변수가 없고 반환되는 값이 없는 특별한 함수이다.
-        // 생성자를 통해 인스턴스를 만들어 질 때 생성되는 함수이다.
-        // 생성자를 초기화할 수 있다.
         getLikeList()
     }
 
