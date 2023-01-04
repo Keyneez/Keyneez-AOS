@@ -4,13 +4,14 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
+import androidx.lifecycle.LiveData
 import timber.log.Timber
 
 object BindingAdapter {
     @JvmStatic
     @BindingAdapter("isSelected")
-    fun ImageButton.isSelected(selected: Boolean) {
-        this.isSelected = selected
+    fun ImageButton.isSelected(selected: LiveData<Boolean>) {
+        this.isSelected = requireNotNull(selected.value)
         Timber.d("is selected : ${this.isSelected}")
     }
 

@@ -18,6 +18,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <androidx.camera.view.PreviewView
+            android:id="@+id/preview_ocr"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
         <View
             android:id="@+id/view_ocr_frame_space"
             android:layout_width="match_parent"
@@ -62,8 +67,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="48dp"
             android:layout_marginEnd="12dp"
-            android:background="@drawable/sel_ocr_switch"
+            android:background="@null"
             android:onClick="@{()->vm.updateCameraFrameOrientation()}"
+            android:padding="12dp"
+            android:src="@drawable/sel_ocr_switch"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -114,7 +121,7 @@
             android:layout_marginBottom="57dp"
             android:onClick="@{()->vm.updateRecognitionType()}"
             android:padding="12dp"
-            android:text="@string/ocr_passive_ocr"
+            android:text="@string/ocr_passive_recognition"
             android:textColor="@color/gray050"
             android:visibility="@{vm.isPassive() ? View.GONE : View.VISIBLE}"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -142,7 +149,7 @@
             android:layout_marginBottom="32dp"
             android:onClick="@{()->vm.updateRecognitionType()}"
             android:padding="12dp"
-            android:text="자동인식"
+            android:text="@string/ocr_auto_recognition"
             android:textColor="@color/gray050"
             android:visibility="@{vm.isPassive() ? View.VISIBLE : View.GONE}"
             app:layout_constraintBottom_toBottomOf="parent"
