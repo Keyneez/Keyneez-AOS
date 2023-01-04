@@ -1,4 +1,4 @@
-package com.keyneez.presentation.setting
+package com.keyneez.presentation.main.setting
 
 import android.os.Bundle
 import android.view.LayoutInflater
