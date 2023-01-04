@@ -48,7 +48,7 @@
     <color name="gray100">#F7F7F7</color>
     <color name="gray050">#FFFFFF</color>
 
-    <!-- custom font -->
+    <!-- custom color -->
     <color name="gray050_80">#CC000000</color>
     <color name="gray050_50">#88FFFFFF</color>
 </resources>
