@@ -43,11 +43,9 @@ class OcrActivity : BindingActivity<ActivityOcrBinding>(R.layout.activity_ocr) {
             // bind camera lifecycle
             val cameraProvider: ProcessCameraProvider = cameraProviderFuture.get()
 
-            val preview = Preview.Builder()
-                .build()
-                .also {
-                    it.setSurfaceProvider(binding.previewOcr.surfaceProvider)
-                }
+            val preview = Preview.Builder().build().also {
+                it.setSurfaceProvider(binding.previewOcr.surfaceProvider)
+            }
 
             // select default back camera
             val cameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
