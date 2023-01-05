@@ -20,6 +20,7 @@
     <string name="ocr_guide_description">학생증 또는 청소년증을\n준비해주세요.</string>
     <string name="ocr_guide_sub_description">청소년 인증을 위해 학생증/청소년증\n촬영이 필요해요.</string>
     <string name="ocr_guide_start_camera">촬영 시작하기</string>
+    <string name="ocr_guide_permission_denied_msg">카메라 권한을 허용한 뒤에 OCR 인증이 가능합니다.</string>
 
     // ocr
     <string name="ocr_guide_top">신분증 앞면을\n사각형 안에 맞춰주세요.</string>

@@ -38,9 +38,9 @@ class OcrActivity : BindingActivity<ActivityOcrBinding>(R.layout.activity_ocr) {
         binding.tvOcrAutoOcr.paintFlags = Paint.UNDERLINE_TEXT_FLAG
     }
 
-    /** 뷰 연결을 위한 임시 버튼 설정 */
     private fun initCameraBtnClickListener() {
         binding.btnOcrCamera.setOnSingleClickListener {
+            // 뷰 연결을 위한 임시 설정 (서버 연결 시 보완)
             val intent = Intent(this, OcrGuideActivity::class.java).apply {
                 setResult(RESULT_OK, intent)
             }
