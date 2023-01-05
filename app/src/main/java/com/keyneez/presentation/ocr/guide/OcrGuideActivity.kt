@@ -1,11 +1,8 @@
 package com.keyneez.presentation.ocr.guide
 
-import android.Manifest
 import android.os.Bundle
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.viewpager2.widget.ViewPager2
 import com.keyneez.util.binding.BindingActivity
-import com.keyneez.util.extension.showToast
 import com.lab.keyneez.R
 import com.lab.keyneez.databinding.ActivityOcrGuideBinding
 
