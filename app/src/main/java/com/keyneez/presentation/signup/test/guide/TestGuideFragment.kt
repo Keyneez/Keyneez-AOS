@@ -1,8 +1,16 @@
 package com.keyneez.presentation.signup.test.guide
 
-import androidx.fragment.app.Fragment
+import android.os.Bundle
+import android.view.View
+import com.keyneez.util.binding.BindingFragment
+import com.lab.keyneez.R
+import com.lab.keyneez.databinding.FragmentTestGuideBinding
 
-class TestGuideFragment : Fragment() {
+class TestGuideFragment : BindingFragment<FragmentTestGuideBinding>(R.layout.fragment_test_guide) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+    }
+
     companion object {
         fun newInstance() = TestGuideFragment()
     }

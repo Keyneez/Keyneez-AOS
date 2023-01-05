@@ -6,7 +6,8 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.keyneez.presentation.signup.danal.complete.DanalCompleteFragment
 import com.keyneez.presentation.signup.danal.guide.DanalGuideFragment
 import com.keyneez.presentation.signup.interest.InterestFragment
-import com.keyneez.presentation.signup.otp.OtpFragment
+import com.keyneez.presentation.signup.otp.SignupOtpFragment
+import com.keyneez.presentation.signup.otp.confirm.SignupOtpConfirmFragment
 import com.keyneez.presentation.signup.tendency.TendencyFragment
 import com.keyneez.presentation.signup.test.complete.TestCompleteFragment
 import com.keyneez.presentation.signup.test.guide.TestGuideFragment
@@ -19,7 +20,8 @@ class SignupAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapter(f
         TendencyFragment(),
         InterestFragment(),
         TestCompleteFragment(),
-        OtpFragment()
+        SignupOtpFragment(),
+        SignupOtpConfirmFragment()
     )
 
     override fun getItemCount(): Int = fragmentList.size

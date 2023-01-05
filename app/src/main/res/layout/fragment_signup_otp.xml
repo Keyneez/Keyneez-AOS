@@ -1,0 +1,245 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.keyneez.presentation.signup.otp.SignupOtpFragment">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_signup_otp"
+        android:layout_width="match_parent"
+        android:paddingBottom="36dp"
+        android:layout_height="match_parent">
+
+        <ImageButton
+            android:id="@+id/btn_signup_otp_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:padding="12dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginStart="12dp"
+            android:src="@drawable/ic_signup_back" />
+
+        <TextView
+            android:id="@+id/tv_signup_otp_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            style="@style/PretendardBold24"
+            android:textColor="@color/gray900"
+            app:layout_constraintTop_toBottomOf="@id/btn_signup_otp_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="12dp"
+            android:text="@string/signup_otp_description"/>
+
+        <View
+            android:id="@+id/view_signup_otp_pwd0"
+            android:layout_width="20dp"
+            android:layout_height="0dp"
+            android:background="@drawable/sel_otp_circle"
+            app:layout_constraintDimensionRatio="1:1"/>
+
+        <View
+            android:id="@+id/view_signup_otp_pwd1"
+            android:layout_width="20dp"
+            android:layout_height="0dp"
+            android:background="@drawable/sel_otp_circle"
+            app:layout_constraintDimensionRatio="1:1"/>
+
+        <View
+            android:id="@+id/view_signup_otp_pwd2"
+            android:layout_width="20dp"
+            android:layout_height="0dp"
+            android:background="@drawable/sel_otp_circle"
+            app:layout_constraintDimensionRatio="1:1"/>
+
+        <View
+            android:id="@+id/view_signup_otp_pwd3"
+            android:layout_width="20dp"
+            android:layout_height="0dp"
+            android:background="@drawable/sel_otp_circle"
+            app:layout_constraintDimensionRatio="1:1"/>
+
+        <View
+            android:id="@+id/view_signup_otp_pwd4"
+            android:layout_width="20dp"
+            android:layout_height="0dp"
+            android:background="@drawable/sel_otp_circle"
+            app:layout_constraintDimensionRatio="1:1"/>
+
+        <View
+            android:id="@+id/view_signup_otp_pwd5"
+            android:layout_width="20dp"
+            android:layout_height="0dp"
+            android:background="@drawable/sel_otp_circle"
+            app:layout_constraintDimensionRatio="1:1"/>
+
+        <androidx.constraintlayout.helper.widget.Flow
+            android:id="@+id/flow_signup_otp_pwd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="41dp"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:flow_horizontalGap="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_signup_otp_description"
+            app:constraint_referenced_ids="view_signup_otp_pwd0,view_signup_otp_pwd1,view_signup_otp_pwd2,view_signup_otp_pwd3,view_signup_otp_pwd4,view_signup_otp_pwd5"/>
+
+        <TextView
+            android:id="@+id/btn_signup_otp_keypad0"
+            style="@style/PretendardBold24"
+            android:layout_width="0dp"
+            android:layout_height="90dp"
+            android:layout_marginStart="9dp"
+            android:gravity="center"
+            android:textColor="@color/gray900"
+            app:layout_constraintBottom_toTopOf="@id/btn_signup_otp_keypad3"
+            app:layout_constraintEnd_toStartOf="@id/btn_signup_otp_keypad1"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="0" />
+
+        <TextView
+            android:id="@+id/btn_signup_otp_keypad1"
+            style="@style/PretendardBold24"
+            android:layout_width="0dp"
+            android:layout_height="90dp"
+            android:gravity="center"
+            android:textColor="@color/gray900"
+            app:layout_constraintBottom_toTopOf="@id/btn_signup_otp_keypad4"
+            app:layout_constraintEnd_toStartOf="@id/btn_signup_otp_keypad2"
+            app:layout_constraintStart_toEndOf="@id/btn_signup_otp_keypad0"
+            tools:text="1" />
+
+        <TextView
+            android:id="@+id/btn_signup_otp_keypad2"
+            style="@style/PretendardBold24"
+            android:layout_width="0dp"
+            android:layout_height="90dp"
+            android:layout_marginEnd="9dp"
+            android:gravity="center"
+            android:textColor="@color/gray900"
+            app:layout_constraintBottom_toTopOf="@id/btn_signup_otp_keypad5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btn_signup_otp_keypad1"
+            tools:text="2" />
+
+        <TextView
+            android:id="@+id/btn_signup_otp_keypad3"
+            style="@style/PretendardBold24"
+            android:layout_width="0dp"
+            android:layout_height="90dp"
+            android:layout_marginStart="9dp"
+            android:gravity="center"
+            android:textColor="@color/gray900"
+            app:layout_constraintBottom_toTopOf="@id/btn_signup_otp_keypad6"
+            app:layout_constraintEnd_toStartOf="@id/btn_signup_otp_keypad4"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="3" />
+
+        <TextView
+            android:id="@+id/btn_signup_otp_keypad4"
+            style="@style/PretendardBold24"
+            android:layout_width="0dp"
+            android:layout_height="90dp"
+            android:gravity="center"
+            android:textColor="@color/gray900"
+            app:layout_constraintBottom_toTopOf="@id/btn_signup_otp_keypad7"
+            app:layout_constraintEnd_toStartOf="@id/btn_signup_otp_keypad5"
+            app:layout_constraintStart_toEndOf="@id/btn_signup_otp_keypad3"
+            tools:text="4" />
+
+        <TextView
+            android:id="@+id/btn_signup_otp_keypad5"
+            style="@style/PretendardBold24"
+            android:layout_width="0dp"
+            android:layout_height="90dp"
+            android:layout_marginEnd="9dp"
+            android:gravity="center"
+            android:textColor="@color/gray900"
+            app:layout_constraintBottom_toTopOf="@id/btn_signup_otp_keypad8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btn_signup_otp_keypad4"
+            tools:text="5" />
+
+        <TextView
+            android:id="@+id/btn_signup_otp_keypad6"
+            style="@style/PretendardBold24"
+            android:layout_width="0dp"
+            android:layout_height="90dp"
+            android:layout_marginStart="9dp"
+            android:gravity="center"
+            android:textColor="@color/gray900"
+            app:layout_constraintBottom_toTopOf="@id/btn_signup_otp_keypad_rearrange"
+            app:layout_constraintEnd_toStartOf="@id/btn_signup_otp_keypad7"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="6" />
+
+        <TextView
+            android:id="@+id/btn_signup_otp_keypad7"
+            style="@style/PretendardBold24"
+            android:layout_width="0dp"
+            android:layout_height="90dp"
+            android:gravity="center"
+            android:textColor="@color/gray900"
+            app:layout_constraintBottom_toTopOf="@id/btn_signup_otp_keypad9"
+            app:layout_constraintEnd_toStartOf="@id/btn_signup_otp_keypad8"
+            app:layout_constraintStart_toEndOf="@id/btn_signup_otp_keypad6"
+            tools:text="7" />
+
+        <TextView
+            android:id="@+id/btn_signup_otp_keypad8"
+            style="@style/PretendardBold24"
+            android:layout_width="0dp"
+            android:layout_height="90dp"
+            android:layout_marginEnd="9dp"
+            android:gravity="center"
+            android:textColor="@color/gray900"
+            app:layout_constraintBottom_toTopOf="@id/btn_signup_otp_erase"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btn_signup_otp_keypad7"
+            tools:text="8" />
+
+        <TextView
+            android:id="@+id/btn_signup_otp_keypad_rearrange"
+            style="@style/PretendardBold16"
+            android:layout_width="0dp"
+            android:layout_height="90dp"
+            android:layout_marginStart="9dp"
+            android:gravity="center"
+            android:text="@string/signup_otp_rearrange"
+            android:textColor="@color/gray500"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btn_signup_otp_keypad9"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/btn_signup_otp_keypad9"
+            style="@style/PretendardBold24"
+            android:layout_width="0dp"
+            android:layout_height="90dp"
+            android:gravity="center"
+            android:textColor="@color/gray900"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btn_signup_otp_erase"
+            app:layout_constraintStart_toEndOf="@id/btn_signup_otp_keypad_rearrange"
+            tools:text="9" />
+
+        <ImageButton
+            android:id="@+id/btn_signup_otp_erase"
+            android:layout_width="0dp"
+            android:layout_height="90dp"
+            android:layout_marginEnd="9dp"
+            android:background="@null"
+            android:src="@drawable/ic_signup_otp_erase"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btn_signup_otp_keypad9" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

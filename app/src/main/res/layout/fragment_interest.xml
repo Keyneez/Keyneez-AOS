@@ -1,13 +1,69 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     tools:context="com.keyneez.presentation.signup.interest.InterestFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <data>
 
-</FrameLayout>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_interest"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageButton
+            android:id="@+id/btn_interest_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="48dp"
+            android:background="@null"
+            android:padding="12dp"
+            android:src="@drawable/ic_signup_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_interest_description"
+            style="@style/PretendardBold24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/interest_description"
+            android:textColor="@color/gray900"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_interest_back" />
+
+        <TextView
+            android:id="@+id/btn_interest_next"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/sel_tendency_next_btn"
+            android:gravity="center"
+            style="@style/PretendardBold16"
+            android:textColor="@color/gray050"
+            android:paddingVertical="15dp"
+            android:text="@string/signup_next"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <!-- flow spread inside + match_constraint(0dp) 활용 -->
+
+        <TextView
+            android:id="@+id/tv_interest_task"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/btn_interest_next"
+            app:layout_constraintBottom_toBottomOf="@id/btn_interest_next"
+            android:layout_marginEnd="20dp"
+            style="@style/PretendardBold16"
+            android:textColor="@color/gray050"
+            app:layout_constraintEnd_toEndOf="@id/btn_interest_next"
+            android:text="@string/interest_selected_num"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

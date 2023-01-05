@@ -1,13 +1,65 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     tools:context="com.keyneez.presentation.signup.test.complete.TestCompleteFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <data>
 
-</FrameLayout>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_test_complete"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_test_complete_description"
+            style="@style/PretendardSemibold20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="108dp"
+            android:text="@string/test_complete_description"
+            android:textColor="@color/gray500"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_test_complete_jelly_type"
+            style="@style/PretendardBold28"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/gray900"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_test_complete_description"
+            tools:text="호기심 가득 문화인" />
+
+        <ImageButton
+            android:id="@+id/btn_test_complete_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-12dp"
+            android:background="@null"
+            android:padding="12dp"
+            android:src="@drawable/ic_test_complete_detail"
+            app:layout_constraintBottom_toBottomOf="@id/tv_test_complete_jelly_type"
+            app:layout_constraintStart_toEndOf="@id/tv_test_complete_jelly_type"
+            app:layout_constraintTop_toTopOf="@id/tv_test_complete_jelly_type" />
+
+        <TextView
+            android:id="@+id/tv_test_complete_start_keyneez"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="32dp"
+            android:layout_marginHorizontal="16dp"
+            android:paddingVertical="15dp"
+            android:gravity="center"
+            style="@style/PretendardBold16"
+            android:textColor="@color/gray050"
+            android:background="@drawable/shape_gray900_fill_4_rect"
+            android:text="@string/test_complete_start_keyneez" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
