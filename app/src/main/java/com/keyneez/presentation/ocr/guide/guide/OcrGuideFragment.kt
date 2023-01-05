@@ -1,12 +1,15 @@
 package com.keyneez.presentation.ocr.guide.guide
 
+import android.Manifest
 import android.app.Activity
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.View
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.content.ContextCompat
 import com.keyneez.presentation.ocr.OcrActivity
 import com.keyneez.presentation.ocr.guide.OcrGuideActivity
 import com.keyneez.util.binding.BindingFragment
@@ -52,14 +55,23 @@ class OcrGuideFragment : BindingFragment<FragmentOcrGuideBinding>(R.layout.fragm
             }
 
         binding.btnOcrGuideStartCamera.setOnSingleClickListener {
-            // 권한 요청 시 바로 denied 처리 돼서 일단 주석 처리
-//            permissionLauncher.launch(Manifest.permission.CAMERA)
-            val toOcr = Intent(context, OcrActivity::class.java)
-            resultLauncher.launch(toOcr)
+            if (permissionGranted()) permissionLauncher.launch(Manifest.permission.CAMERA)
+            else requireContext().showToast(getString(R.string.ocr_guide_camera_permission_ungranted_msg))
         }
+    }
+
+    private fun permissionGranted() = REQUIRED_PERMISSIONS.all {
+        ContextCompat.checkSelfPermission(
+            requireContext(),
+            it
+        ) == PackageManager.PERMISSION_GRANTED
     }
 
     companion object {
         fun newInstance() = OcrGuideFragment()
+
+        private val REQUIRED_PERMISSIONS = mutableListOf(
+            Manifest.permission.CAMERA
+        ).toTypedArray()
     }
 }
