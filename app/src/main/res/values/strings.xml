@@ -10,6 +10,14 @@
     <string name="main_card">Card</string>
     <string name="main_character">캐릭터</string>
     <string name="main_setting">설정</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    //onboarding
+    <string name="onboarding_login">로그인</string>
+    <string name="onboarding_signup">회원가입</string>
+    <string name="onboarding_first">우리의 일상을 다채롭고\n풍부하게! 키니즈</string>
+    <string name="onboarding_second">나에게 꼭 맞는\n활동을 추천받고,</string>
+    <string name="onboarding_third">다양한 정보와\n혜택을 경험하고</string>
+    <string name="onboarding_fourth">나만의 개성이 담긴\nID를 만들 수 있도록!</string>
+
+
 </resources>
