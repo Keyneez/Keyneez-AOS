@@ -4,11 +4,11 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
-import com.keyneez.presentation.card.CardFragment
-import com.keyneez.presentation.character.CharacterFragment
-import com.keyneez.presentation.home.HomeFragment
-import com.keyneez.presentation.like.LikeFragment
-import com.keyneez.presentation.setting.SettingFragment
+import com.keyneez.presentation.main.character.CharacterFragment
+import com.keyneez.presentation.main.home.HomeFragment
+import com.keyneez.presentation.main.id.IdFragment
+import com.keyneez.presentation.main.like.LikeFragment
+import com.keyneez.presentation.main.setting.SettingFragment
 import com.keyneez.util.binding.BindingActivity
 import com.lab.keyneez.R
 import com.lab.keyneez.databinding.ActivityMainBinding
@@ -28,7 +28,7 @@ class MainActivity : BindingActivity<ActivityMainBinding>(R.layout.activity_main
         if (currentFragment == null) navigateTo<HomeFragment>()
 
         binding.btnMainCard.setOnClickListener() {
-            navigateTo<CardFragment>()
+            navigateTo<IdFragment>()
         }
 
         // 메뉴 클릭 시 프래그먼트 전환
