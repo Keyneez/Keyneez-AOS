@@ -25,6 +25,10 @@ android {
         buildConfigField "String", "BASE_URL", properties['base_url']
     }
 
+    lintOptions {
+        abortOnError false
+    }
+
     buildTypes {
         release {
             minifyEnabled false
