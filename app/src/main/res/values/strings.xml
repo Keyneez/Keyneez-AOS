@@ -24,5 +24,8 @@
     <string name="onboarding_third">다양한 정보와\n혜택을 경험하고</string>
     <string name="onboarding_fourth">나만의 개성이 담긴\nID를 만들 수 있도록!</string>
 
-
+    //home
+    <string name="home_recommend">추천</string>
+    <string name="home_popular">인기</string>
+    <string name="home_new">최신</string>
 </resources>
