@@ -39,24 +39,27 @@ class OcrActivity : BindingActivity<ActivityOcrBinding>(R.layout.activity_ocr) {
 
         val cameraProviderFuture = ProcessCameraProvider.getInstance(this)
 
-        cameraProviderFuture.addListener({
-            // bind camera lifecycle
-            val cameraProvider: ProcessCameraProvider = cameraProviderFuture.get()
+        cameraProviderFuture.addListener(
+            {
+                // bind camera lifecycle
+                val cameraProvider: ProcessCameraProvider = cameraProviderFuture.get()
 
-            val preview = Preview.Builder().build().also {
-                it.setSurfaceProvider(binding.previewOcr.surfaceProvider)
-            }
+                val preview = Preview.Builder().build().also {
+                    it.setSurfaceProvider(binding.previewOcr.surfaceProvider)
+                }
 
-            // select default back camera
-            val cameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
+                // select default back camera
+                val cameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
 
-            try {
-                cameraProvider.unbindAll()
-                cameraProvider.bindToLifecycle(this, cameraSelector, preview)
-            } catch (e: Exception) {
-                Timber.e("$e : Use case binding failed")
-            }
-        }, ContextCompat.getMainExecutor(this))
+                try {
+                    cameraProvider.unbindAll()
+                    cameraProvider.bindToLifecycle(this, cameraSelector, preview)
+                } catch (e: Exception) {
+                    Timber.e("$e : Use case binding failed")
+                }
+            },
+            ContextCompat.getMainExecutor(this)
+        )
     }
 
     private fun initCloseBtnClickListener() {
