@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.keyneez.presentation.ocr.OcrActivity">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.keyneez.presentation.ocr.OcrViewModel" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_ocr"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.camera.view.PreviewView
+            android:id="@+id/preview_ocr"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <View
+            android:id="@+id/view_ocr_frame_space"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/gray050_80"
+            app:layout_constraintBottom_toTopOf="@id/cfv_ocr_horizontal"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.keyneez.util.custom.HorizontalCardFrameView
+            android:id="@+id/cfv_ocr_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="28dp"
+            android:background="@color/gray050_80"
+            android:visibility="@{vm.isVertical() ? View.INVISIBLE : View.VISIBLE}" />
+
+        <com.keyneez.util.custom.VerticalCardFrameView
+            android:id="@+id/cfv_ocr_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="28dp"
+            android:background="@color/gray050_80"
+            android:visibility="@{vm.isVertical() ? View.VISIBLE : View.INVISIBLE}"
+            tools:visibility="invisible" />
+
+        <ImageButton
+            android:id="@+id/btn_ocr_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="48dp"
+            android:background="@null"
+            android:padding="12dp"
+            android:src="@drawable/ic_ocr_close"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/btn_ocr_switch"
+            isSelected="@{vm.isVertical()}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="12dp"
+            android:background="@null"
+            android:onClick="@{()->vm.updateCameraFrameOrientation()}"
+            android:padding="12dp"
+            android:src="@drawable/sel_ocr_switch"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/view_ocr_center_dot"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_ocr_guide_top"
+            style="@style/PretendardBold24"
+            layoutMarginBottom="@{vm.isVertical() ? @dimen/ocr_guide_top_vertical_margin : @dimen/ocr_guide_top_horizontal_margin}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/ocr_guide_top"
+            android:textColor="@color/gray050"
+            app:layout_constraintBottom_toTopOf="@id/view_ocr_center_dot"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_marginBottom="126dp" />
+
+        <TextView
+            android:id="@+id/tv_ocr_guide_bottom"
+            layoutMarginTop="@{vm.isVertical() ? @dimen/ocr_guide_bottom_vertical_margin : @dimen/ocr_guide_bottom_horizontal_margin}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="154dp"
+            android:gravity="center"
+            android:text="@{vm.isPassive() ? @string/ocr_guide_bottom_passive : @string/ocr_guide_bottom_auto}"
+            android:textColor="@color/gray050_50"
+            android:visibility="@{vm.isVertical() &amp;&amp; vm.isPassive() ? View.GONE : View.VISIBLE}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view_ocr_center_dot"
+            tools:text="@string/ocr_guide_bottom_auto" />
+
+        <TextView
+            android:id="@+id/tv_ocr_passive_ocr"
+            style="@style/PretendardMedium18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="57dp"
+            android:onClick="@{()->vm.updateRecognitionType()}"
+            android:padding="12dp"
+            android:text="@string/ocr_passive_recognition"
+            android:textColor="@color/gray050"
+            android:visibility="@{vm.isPassive() ? View.GONE : View.VISIBLE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageButton
+            android:id="@+id/btn_ocr_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:padding="12dp"
+            android:src="@drawable/ic_ocr_camera_btn"
+            android:visibility="@{vm.isPassive() ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toTopOf="@id/tv_ocr_auto_ocr"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/tv_ocr_auto_ocr"
+            style="@style/PretendardMedium18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:onClick="@{()->vm.updateRecognitionType()}"
+            android:padding="12dp"
+            android:text="@string/ocr_auto_recognition"
+            android:textColor="@color/gray050"
+            android:visibility="@{vm.isPassive() ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:visibility="invisible" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
