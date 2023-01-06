@@ -28,4 +28,11 @@
     <string name="home_recommend">추천</string>
     <string name="home_popular">인기</string>
     <string name="home_new">최신</string>
+    <string name="home_keyword">문화</string>
+    <string name="home_sub">유적 탐방부터 미술품까지!</string>
+    <string name="home_title">청소년 미술관 할인</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>
