@@ -1,6 +1,79 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+<?xml version="1.0" encoding="utf-8"?><?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".presentation.main.id.IdFragment">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bot_sheet_benefit"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:behavior_peekHeight="672dp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <TextView
+            android:id="@+id/tv_id_benefit_title"
+            style="@style/PretendardBold24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/id_benefit_title"
+            android:textColor="@color/gray900"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_id_benefit_museum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="9dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/shape_gray100_fill_12_rect"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_id_benefit_title"
+            app:layout_constraintEnd_toStartOf="@id/layout_id_benefit_museum">
+        <TextView
+            android:id="@+id/tv_id_benefit_museum"
+            style="@style/PretendardBold16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/id_museum"
+            android:textColor="@color/gray900"
+            app:layout_constraintTop_toTopOf="@id/layout_id_benefit_museum"/>
+        <ImageView
+            android:id="@+id/iv_id_benefit_museum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="18dp"
+            android:paddingBottom="15dp"
+            android:src="@drawable/img_id_benefit_museum"
+            app:layout_constraintBottom_toBottomOf="@id/tv_id_benefit_museum"
+            app:layout_constraintEnd_toEndOf="@id/tv_id_benefit_museum" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_id_benefit_crown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="4dp"
+            android:background="@drawable/shape_gray100_fill_12_rect"
+            android:paddingStart="14dp"
+            android:paddingTop="14dp"
+            android:paddingBottom="97dp"
+            android:text="@string/id_crown"
+            android:textColor="@color/gray900"
+            app:layout_constraintEnd_toStartof="@id/layout_id_benefit_museum"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
