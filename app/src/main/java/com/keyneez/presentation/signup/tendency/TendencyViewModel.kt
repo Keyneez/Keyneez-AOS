@@ -9,7 +9,7 @@ import javax.inject.Inject
 @HiltViewModel
 class TendencyViewModel @Inject constructor() : ViewModel() {
     private val _selectedTendency = MutableLiveData<String>()
-    val selectedItem: LiveData<String>
+    val selectedTendency: LiveData<String>
         get() = _selectedTendency
 
     /** 사용자 성향 선택 */

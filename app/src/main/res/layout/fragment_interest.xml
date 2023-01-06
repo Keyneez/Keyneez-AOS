@@ -39,34 +39,499 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn_interest_back" />
 
+        <ScrollView
+            android:id="@+id/sv_interest"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginVertical="6dp"
+            app:layout_constraintBottom_toTopOf="@id/btn_interest_next"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_interest_description">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_interest_scroll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="26dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_interest_amusement_park"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/sel_interest_type"
+                    app:layout_constraintEnd_toStartOf="@id/layout_interest_extracurricular"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/tv_interest_amusement_park_emoji"
+                        style="@style/PretendardMedium40"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginBottom="19dp"
+                        android:text="@string/interest_amusement_park_emoji"
+                        android:textColor="@color/gray900"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_interest_amusement_park"
+                        style="@style/PretendardMedium16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/interest_amusement_park"
+                        android:textColor="@color/gray900"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_interest_extracurricular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="7dp"
+                    android:background="@drawable/sel_interest_type"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/layout_interest_amusement_park"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/tv_interest_extracurricular_emoji"
+                        style="@style/PretendardMedium40"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginBottom="19dp"
+                        android:text="@string/interest_extracurricular_emoji"
+                        android:textColor="@color/gray900"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_interest_extracurricular"
+                        style="@style/PretendardMedium16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/interest_extracurricular"
+                        android:textColor="@color/gray900"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_interest_public_transport"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/sel_interest_type"
+                    app:layout_constraintEnd_toStartOf="@id/layout_interest_theater"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layout_interest_amusement_park">
+
+                    <TextView
+                        android:id="@+id/tv_interest_public_transport_emoji"
+                        style="@style/PretendardMedium40"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginBottom="19dp"
+                        android:text="@string/interest_public_transport_emoji"
+                        android:textColor="@color/gray900"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_interest_public_transport"
+                        style="@style/PretendardMedium16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/interest_public_transport"
+                        android:textColor="@color/gray900"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_interest_theater"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/sel_interest_type"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/layout_interest_public_transport"
+                    app:layout_constraintTop_toBottomOf="@id/layout_interest_extracurricular">
+
+                    <TextView
+                        android:id="@+id/tv_interest_theater_emoji"
+                        style="@style/PretendardMedium40"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginBottom="19dp"
+                        android:text="@string/interest_theater_emoji"
+                        android:textColor="@color/gray900"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_interest_theater"
+                        style="@style/PretendardMedium16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/interest_theater"
+                        android:textColor="@color/gray900"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_interest_benefit"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/sel_interest_type"
+                    app:layout_constraintEnd_toStartOf="@id/layout_interest_travel"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layout_interest_public_transport">
+
+                    <TextView
+                        android:id="@+id/tv_interest_benefit_emoji"
+                        style="@style/PretendardMedium40"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginBottom="19dp"
+                        android:text="@string/interest_benefit_emoji"
+                        android:textColor="@color/gray900"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_interest_benefit"
+                        style="@style/PretendardMedium16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/interest_benefit"
+                        android:textColor="@color/gray900"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_interest_travel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/sel_interest_type"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/layout_interest_benefit"
+                    app:layout_constraintTop_toBottomOf="@id/layout_interest_theater">
+
+                    <TextView
+                        android:id="@+id/tv_interest_travel_emoji"
+                        style="@style/PretendardMedium40"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginBottom="19dp"
+                        android:text="@string/interest_travel_emoji"
+                        android:textColor="@color/gray900"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_interest_travel"
+                        style="@style/PretendardMedium16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/interest_travel"
+                        android:textColor="@color/gray900"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_interest_supervision"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/sel_interest_type"
+                    app:layout_constraintEnd_toStartOf="@id/layout_interest_gallery"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layout_interest_benefit">
+
+                    <TextView
+                        android:id="@+id/tv_interest_supervision_emoji"
+                        style="@style/PretendardMedium40"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginBottom="19dp"
+                        android:text="@string/interest_supervision_emoji"
+                        android:textColor="@color/gray900"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_interest_supervision"
+                        style="@style/PretendardMedium16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/interest_supervision"
+                        android:textColor="@color/gray900"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_interest_gallery"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/sel_interest_type"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/layout_interest_supervision"
+                    app:layout_constraintTop_toBottomOf="@id/layout_interest_travel">
+
+                    <TextView
+                        android:id="@+id/tv_interest_gallery_emoji"
+                        style="@style/PretendardMedium40"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginBottom="19dp"
+                        android:text="@string/interest_gallery_emoji"
+                        android:textColor="@color/gray900"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_interest_gallery"
+                        style="@style/PretendardMedium16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/interest_gallery"
+                        android:textColor="@color/gray900"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_interest_check_card"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/sel_interest_type"
+                    app:layout_constraintEnd_toStartOf="@id/layout_interest_volunteer"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layout_interest_supervision">
+
+                    <TextView
+                        android:id="@+id/tv_interest_check_card_emoji"
+                        style="@style/PretendardMedium40"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginBottom="19dp"
+                        android:text="@string/interest_check_card_emoji"
+                        android:textColor="@color/gray900"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_interest_check_card"
+                        style="@style/PretendardMedium16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/interest_check_card"
+                        android:textColor="@color/gray900"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_interest_volunteer"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/sel_interest_type"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/layout_interest_check_card"
+                    app:layout_constraintTop_toBottomOf="@id/layout_interest_gallery">
+
+                    <TextView
+                        android:id="@+id/tv_interest_volunteer_emoji"
+                        style="@style/PretendardMedium40"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginBottom="19dp"
+                        android:text="@string/interest_volunteer_emoji"
+                        android:textColor="@color/gray900"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_interest_volunteer"
+                        style="@style/PretendardMedium16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/interest_volunteer"
+                        android:textColor="@color/gray900"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_interest_museum"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/sel_interest_type"
+                    app:layout_constraintEnd_toStartOf="@id/layout_interest_vision"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layout_interest_check_card">
+
+                    <TextView
+                        android:id="@+id/tv_interest_museum_emoji"
+                        style="@style/PretendardMedium40"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginBottom="19dp"
+                        android:text="@string/interest_museum_emoji"
+                        android:textColor="@color/gray900"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_interest_museum"
+                        style="@style/PretendardMedium16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/interest_museum"
+                        android:textColor="@color/gray900"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_interest_vision"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/sel_interest_type"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/layout_interest_museum"
+                    app:layout_constraintTop_toBottomOf="@id/layout_interest_volunteer">
+
+                    <TextView
+                        android:id="@+id/tv_interest_vision_emoji"
+                        style="@style/PretendardMedium40"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginBottom="19dp"
+                        android:text="@string/interest_vision_emoji"
+                        android:textColor="@color/gray900"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_interest_vision"
+                        style="@style/PretendardMedium16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/interest_vision"
+                        android:textColor="@color/gray900"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
         <TextView
             android:id="@+id/btn_interest_next"
+            style="@style/PretendardBold16"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
             android:layout_marginBottom="32dp"
             android:background="@drawable/sel_tendency_next_btn"
             android:gravity="center"
-            style="@style/PretendardBold16"
-            android:textColor="@color/gray050"
             android:paddingVertical="15dp"
             android:text="@string/signup_next"
+            android:textColor="@color/gray050"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <!-- flow spread inside + match_constraint(0dp) 활용 -->
-
         <TextView
             android:id="@+id/tv_interest_task"
+            style="@style/PretendardBold16"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="@id/btn_interest_next"
-            app:layout_constraintBottom_toBottomOf="@id/btn_interest_next"
             android:layout_marginEnd="20dp"
-            style="@style/PretendardBold16"
+            android:text="@string/interest_selected_num"
             android:textColor="@color/gray050"
+            app:layout_constraintBottom_toBottomOf="@id/btn_interest_next"
             app:layout_constraintEnd_toEndOf="@id/btn_interest_next"
-            android:text="@string/interest_selected_num"/>
+            app:layout_constraintTop_toTopOf="@id/btn_interest_next" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

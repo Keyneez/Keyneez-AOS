@@ -137,4 +137,12 @@
         <item name="android:textSize">10sp</item>
         <item name="android:lineSpacingExtra">1.93sp</item>
     </style>
+    
+    <!-- Emoji -->
+    <style name="PretendardMedium40">
+        <item name="fontFamily">@font/pretendard_medium</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">40sp</item>
+        <item name="android:lineSpacingExtra">8.01sp</item>
+    </style>
 </resources>

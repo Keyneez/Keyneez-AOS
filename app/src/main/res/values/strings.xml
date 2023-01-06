@@ -41,17 +41,29 @@
     <string name="interest_description">관심 있는 해시태그에\n체크해주세요</string>
     <string name="interest_selected_num">%d/3</string>
     <string name="interest_tag_amusement_park">#놀이공원</string>
-    <string name="interest_tag_extracurricular_activity">#대외활동</string>
-    <string name="interest_tag_public_transport">#대중교통</string>
-    <string name="interest_tag_theature">#영화관</string>
-    <string name="interest_tag_benefits">#혜택</string>
-    <string name="interest_tag_travel">#여행</string>
-    <string name="interest_tag_supervision">#장학</string>
-    <string name="interest_tag_art_gallery">#미술관</string>
-    <string name="interest_tag_check_card">#체크카드</string>
-    <string name="interest_tag_volunteer">#봉사</string>
-    <string name="interest_tag_museum">#박물관</string>
-    <string name="interest_tag_career">#진로</string>
+    <string name="interest_extracurricular">#대외활동</string>
+    <string name="interest_public_transport">#대중교통</string>
+    <string name="interest_theater">#영화관</string>
+    <string name="interest_benefit">#혜택</string>
+    <string name="interest_travel">#여행</string>
+    <string name="interest_supervision">#장학</string>
+    <string name="interest_gallery">#미술관</string>
+    <string name="interest_check_card">#체크카드</string>
+    <string name="interest_volunteer">#봉사</string>
+    <string name="interest_museum">#박물관</string>
+    <string name="interest_vision">#진로</string>
+    <string name="interest_amusement_park_emoji">🎡</string>
+    <string name="interest_extracurricular_emoji">🎖️</string>
+    <string name="interest_public_transport_emoji">🚍</string>
+    <string name="interest_theater_emoji">🍿</string>
+    <string name="interest_benefit_emoji">➕</string>
+    <string name="interest_travel_emoji">✈️</string>
+    <string name="interest_supervision_emoji">🎓</string>
+    <string name="interest_gallery_emoji">🎨</string>
+    <string name="interest_check_card_emoji">💳</string>
+    <string name="interest_volunteer_emoji">🌷</string>
+    <string name="interest_museum_emoji">🏛</string>
+    <string name="interest_vision_emoji">💭</string>
 
     // test complete
     <string name="test_complete_description">%d님의 젤리는</string>
@@ -63,6 +75,8 @@
 
     // signup otp confirm
     <string name="signup_otp_confirm_description">설정한 비밀번호를\n한번 더 입력해주세요</string>
+
+    <string name="interest_amusement_park">#놀이공원</string>
 
     // ocr guide
     <string name="ocr_guide_description">학생증 또는 청소년증을\n준비해주세요.</string>
