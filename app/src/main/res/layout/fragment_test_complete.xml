@@ -49,7 +49,7 @@
             app:layout_constraintTop_toTopOf="@id/tv_test_complete_jelly_type" />
 
         <TextView
-            android:id="@+id/tv_test_complete_start_keyneez"
+            android:id="@+id/btn_test_complete_start_keyneez"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"

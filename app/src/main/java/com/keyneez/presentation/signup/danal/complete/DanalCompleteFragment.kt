@@ -20,7 +20,7 @@ class DanalCompleteFragment :
 
     private fun intentToNextPage() {
         viewLifecycleOwner.lifecycleScope.launch {
-            delay(2000)
+            delay(3000)
             (activity as SignupActivity).intentToNextPage()
         }
     }

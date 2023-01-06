@@ -43,45 +43,56 @@
         <TextView
             android:id="@+id/btn_tendency_active"
             style="@style/PretendardMedium24"
-
+            isSelected="@{vm.selectedItem == @string/tendency_active}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="86dp"
             android:background="@drawable/sel_tendency_type"
+            android:onClick="@{()->vm.selectTendency(@string/tendency_active)}"
             android:padding="16dp"
-            android:text="@string/tendency_active"
-            android:textColor="@color/gray400"
+            android:text="@{vm.selectedItem == @string/tendency_active ? @string/tendency_active_selected : @string/tendency_active}"
+            android:textColor="@{vm.selectedItem == @string/tendency_active ? @color/gray050 : @color/gray400}"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_tendency_description" />
+            app:layout_constraintTop_toBottomOf="@id/tv_tendency_description"
+            tools:text="@string/tendency_active"
+            tools:textColor="@color/gray400" />
 
         <TextView
             android:id="@+id/btn_tendency_curious"
             style="@style/PretendardMedium24"
+            isSelected="@{vm.selectedItem == @string/tendency_curious}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="32dp"
             android:background="@drawable/sel_tendency_type"
+            android:onClick="@{()->vm.selectTendency(@string/tendency_curious)}"
             android:padding="16dp"
-            android:text="@string/tendency_curious"
-            android:textColor="@color/gray400"
+            android:text="@{vm.selectedItem == @string/tendency_curious ? @string/tendency_curious_selected : @string/tendency_curious}"
+            android:textColor="@{vm.selectedItem == @string/tendency_curious ? @color/gray050 : @color/gray400}"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn_tendency_active" />
+            app:layout_constraintTop_toBottomOf="@id/btn_tendency_active"
+            tools:text="@string/tendency_curious"
+            tools:textColor="@color/gray400" />
 
         <TextView
             android:id="@+id/btn_tendency_cozy"
             style="@style/PretendardMedium24"
+            isSelected="@{vm.selectedItem == @string/tendency_cozy}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="32dp"
             android:background="@drawable/sel_tendency_type"
+            android:onClick="@{()->vm.selectTendency(@string/tendency_cozy)}"
             android:padding="16dp"
-            android:text="@string/tendency_cozy"
-            android:textColor="@color/gray400"
+            android:text="@{vm.selectedItem == @string/tendency_cozy ? @string/tendency_cozy_selected : @string/tendency_cozy}"
+            android:textColor="@{vm.selectedItem == @string/tendency_cozy ? @color/gray050 : @color/gray400}"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn_tendency_curious" />
+            app:layout_constraintTop_toBottomOf="@id/btn_tendency_curious"
+            tools:text="@string/tendency_cozy"
+            tools:textColor="@color/gray400" />
 
         <TextView
             android:id="@+id/btn_tendency_next"
@@ -91,6 +102,7 @@
             android:layout_marginHorizontal="16dp"
             android:layout_marginBottom="32dp"
             android:background="@drawable/sel_tendency_next_btn"
+            android:enabled="@{vm.selectedItem != null}"
             android:gravity="center"
             android:paddingVertical="15dp"
             android:text="@string/signup_next"

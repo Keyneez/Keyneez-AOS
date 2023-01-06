@@ -29,6 +29,5 @@ class SignupActivity : BindingActivity<ActivitySignupBinding>(R.layout.activity_
     /** 다음 페이지의 프래그먼트로 ViewPager 전환 */
     fun intentToNextPage() {
         binding.vpSignup.currentItem++
-        // 초기화 로직
     }
 }

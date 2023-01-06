@@ -12,7 +12,8 @@ class TendencyViewModel @Inject constructor() : ViewModel() {
     val selectedItem: LiveData<String>
         get() = _selectedTendency
 
-    private fun selectTendency(tendency: String) {
+    /** 사용자 성향 선택 */
+    fun selectTendency(tendency: String) {
         _selectedTendency.value = tendency
     }
 }
