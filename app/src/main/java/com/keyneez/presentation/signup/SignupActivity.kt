@@ -18,11 +18,17 @@ class SignupActivity : BindingActivity<ActivitySignupBinding>(R.layout.activity_
     private fun initSignupViewPager() {
         viewPager = binding.vpSignup
         binding.vpSignup.adapter = SignupAdapter(this)
-        // binding.vpSignup.isUserInputEnabled = false // disable swipe
+        binding.vpSignup.isUserInputEnabled = false // disable swipe
     }
 
-    /** 해당 인덱스의 프래그먼트로 ViewPager 전환 */
-    fun selectIndex(newIndex: Int) {
-        binding.vpSignup.currentItem = newIndex
+    /** 이전 페이지의 프래그먼트로 ViewPager 전환 */
+    fun intentToPreviousPage() {
+        binding.vpSignup.currentItem--
+    }
+
+    /** 다음 페이지의 프래그먼트로 ViewPager 전환 */
+    fun intentToNextPage() {
+        binding.vpSignup.currentItem++
+        // 초기화 로직
     }
 }

@@ -5,6 +5,10 @@
 
     <data>
 
+        <variable
+            name="vm"
+            type="com.keyneez.presentation.signup.tendency.TendencyViewModel" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -39,6 +43,7 @@
         <TextView
             android:id="@+id/btn_tendency_active"
             style="@style/PretendardMedium24"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -79,7 +84,7 @@
             app:layout_constraintTop_toBottomOf="@id/btn_tendency_curious" />
 
         <TextView
-            android:id="@+id/tv_tendency_next"
+            android:id="@+id/btn_tendency_next"
             style="@style/PretendardBold16"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
