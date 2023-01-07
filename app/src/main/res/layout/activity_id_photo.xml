@@ -5,6 +5,11 @@
 
     <data>
 
+        <variable
+            name="vm"
+            type="com.keyneez.presentation.main.id.IdPhotoActivity" />
+
+        <import type="android.view.View" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -44,6 +49,20 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <com.keyneez.util.custom.HorizontalCardFrameView
+            android:id="@+id/cfv_id_photo_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="103dp"
+            android:background="@color/gray050_80" />
+
+        <com.keyneez.util.custom.VerticalCardFrameView
+            android:id="@+id/cfv_id_photo_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="103dp"
+            android:background="@color/gray050_80" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

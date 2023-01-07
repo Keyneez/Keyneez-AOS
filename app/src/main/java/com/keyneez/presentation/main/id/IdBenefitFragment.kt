@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import com.lab.keyneez.R
 import com.lab.keyneez.databinding.BottomsheetIdBenefitBinding
 
 class IdBenefitFragment : BottomSheetDialogFragment() {
@@ -25,6 +26,9 @@ class IdBenefitFragment : BottomSheetDialogFragment() {
         super.onDestroyView()
         _binding = null
     }
+
+    override fun getTheme(): Int = R.style.AppBottomSheetDialogTheme
+
     companion object {
         fun newInstance(): IdBenefitFragment {
             return IdBenefitFragment()

@@ -13,7 +13,7 @@ class IdFragment : BindingFragment<FragmentIdBinding>(R.layout.fragment_id) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        if (true) {
+        if (false) {
             // 발급하기 화면이 뜨게
             binding.layoutIdContent.visibility = View.VISIBLE
             binding.layoutIdMain.visibility = View.GONE
@@ -46,7 +46,7 @@ class IdFragment : BindingFragment<FragmentIdBinding>(R.layout.fragment_id) {
         }
         binding.btnIdMainPhoto.setOnSingleClickListener {
             // 실물 인증 화면
-            val intent = Intent(getActivity(), IdPhotoActivity::class.java)
+            val intent = Intent(activity, IdPhotoActivity::class.java)
             startActivity(intent)
         }
     }

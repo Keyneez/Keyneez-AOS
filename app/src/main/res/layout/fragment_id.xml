@@ -123,7 +123,7 @@
                 android:textColor="@color/gray050"
                 app:layout_constraintStart_toStartOf="@id/iv_id_main_background"
                 app:layout_constraintTop_toTopOf="@id/iv_id_main_background"
-                tools:text="@string/id_semi_title" />
+                android:text="@string/id_semi_title" />
 
             <TextView
                 android:id="@+id/tv_id_main_name"
@@ -135,7 +135,7 @@
                 android:textColor="@color/gray050"
                 app:layout_constraintStart_toStartOf="@id/iv_id_main_background"
                 app:layout_constraintTop_toBottomOf="@id/tv_id_main_semititle"
-                tools:text="@string/id_name" />
+                android:text="@string/id_name" />
 
             <ImageButton
                 android:id="@+id/btn_id_main_arrow"
@@ -169,7 +169,7 @@
                 android:textColor="@color/gray050"
                 app:layout_constraintStart_toStartOf="@id/iv_id_main_background"
                 app:layout_constraintTop_toBottomOf="@id/iv_id_main_baseline"
-                tools:text="@string/id_birth" />
+                android:text="@string/id_birth" />
 
             <ImageView
                 android:id="@+id/iv_id_main_logo"
