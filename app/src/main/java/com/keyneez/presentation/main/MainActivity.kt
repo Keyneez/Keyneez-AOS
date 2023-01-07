@@ -5,12 +5,12 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
-import com.keyneez.presentation.ocr.guide.OcrGuideActivity
 import com.keyneez.presentation.main.character.CharacterFragment
 import com.keyneez.presentation.main.home.HomeFragment
 import com.keyneez.presentation.main.id.IdFragment
 import com.keyneez.presentation.main.like.LikeFragment
 import com.keyneez.presentation.main.setting.SettingFragment
+import com.keyneez.presentation.ocr.guide.OcrGuideActivity
 import com.keyneez.util.binding.BindingActivity
 import com.keyneez.util.extension.setOnSingleClickListener
 import com.lab.keyneez.R

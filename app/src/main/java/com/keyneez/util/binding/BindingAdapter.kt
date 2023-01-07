@@ -3,20 +3,12 @@ package com.keyneez.util.binding
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.databinding.BindingAdapter
-import androidx.lifecycle.LiveData
 
 object BindingAdapter {
     @JvmStatic
     @BindingAdapter("isSelected")
     fun ImageButton.isSelected(selected: Boolean) {
-        this.isSelected = selected
-    }
-
-    @JvmStatic
-    @BindingAdapter("isSelected")
-    fun ConstraintLayout.isSelected(selected: Boolean) {
         this.isSelected = selected
     }
 
