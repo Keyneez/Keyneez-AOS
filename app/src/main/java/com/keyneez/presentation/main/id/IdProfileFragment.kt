@@ -5,11 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import com.lab.keyneez.databinding.BottomsheetIdBenefitBinding
+import com.lab.keyneez.databinding.BottomsheetIdProfileBinding
 
-class IdBenefitFragment : BottomSheetDialogFragment() {
-    private var _binding: BottomsheetIdBenefitBinding? = null
-    private val binding: BottomsheetIdBenefitBinding
+class IdProfileFragment : BottomSheetDialogFragment() {
+    private var _binding: BottomsheetIdProfileBinding? = null
+    private val binding: BottomsheetIdProfileBinding
         get() = _binding!!
 
     override fun onCreateView(
@@ -17,7 +17,7 @@ class IdBenefitFragment : BottomSheetDialogFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = BottomsheetIdBenefitBinding.inflate(inflater, container, false)
+        _binding = BottomsheetIdProfileBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -26,8 +26,8 @@ class IdBenefitFragment : BottomSheetDialogFragment() {
         _binding = null
     }
     companion object {
-        fun newInstance(): IdBenefitFragment {
-            return IdBenefitFragment()
+        fun newInstance(): IdProfileFragment {
+            return IdProfileFragment()
         }
     }
 }

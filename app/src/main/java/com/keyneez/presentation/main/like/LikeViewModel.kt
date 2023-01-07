@@ -20,7 +20,7 @@ class LikeViewModel : ViewModel() {
         val LikeDatas = listOf(
             LikeData(
                 background = R.drawable.img_like_background,
-                date = "12.4.12-10",
+                date = "12.4-12-10",
                 title = "청소년 \n영화관 할인"
             ),
             LikeData(
