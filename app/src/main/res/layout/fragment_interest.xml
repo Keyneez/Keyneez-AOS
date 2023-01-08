@@ -750,12 +750,12 @@
         <TextView
             android:id="@+id/btn_interest_next"
             style="@style/PretendardBold16"
-            android:enabled="@{vm.selectedInterests.size() >= 3}"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
             android:layout_marginBottom="32dp"
             android:background="@drawable/sel_tendency_next_btn"
+            android:enabled="@{vm.selectedInterests.size() >= 3}"
             android:gravity="center"
             android:paddingVertical="15dp"
             android:text="@string/signup_next"
