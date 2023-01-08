@@ -22,7 +22,7 @@ class SignupOtpFragment : BindingFragment<FragmentSignupOtpBinding>(R.layout.fra
 
     private fun initBackBtnClickListener() {
         binding.btnSignupOtpBack.setOnSingleClickListener {
-            viewModel.initPassword()
+            viewModel.rearrangeKeypad()
             (activity as SignupActivity).intentToPreviousPage()
         }
     }
@@ -31,7 +31,7 @@ class SignupOtpFragment : BindingFragment<FragmentSignupOtpBinding>(R.layout.fra
         viewModel.passwordText.observe(viewLifecycleOwner) { pwd ->
             if (pwd.length == 6) {
                 // 비밀번호 저장 로직 필요
-                viewModel.initPassword()
+                viewModel.rearrangeKeypad()
                 (activity as SignupActivity).intentToNextPage()
             }
         }

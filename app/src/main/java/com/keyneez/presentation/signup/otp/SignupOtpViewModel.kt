@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
-import java.util.*
 import javax.inject.Inject
 
 @HiltViewModel
@@ -32,6 +31,7 @@ class SignupOtpViewModel @Inject constructor() : ViewModel() {
             numbers.remove(randomNum)
         }
 
+        resetPassword()
         _keypadList.value = tempKeypadList
     }
 
@@ -48,8 +48,7 @@ class SignupOtpViewModel @Inject constructor() : ViewModel() {
     }
 
     /** 비밀번호 초기화 */
-    fun initPassword() {
+    fun resetPassword() {
         _passwordText.value = ""
-        rearrangeKeypad()
     }
 }
