@@ -146,13 +146,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@null"
-                android:layout_marginTop="4dp"
                 android:layout_marginStart="-8dp"
                 android:padding="12dp"
                 android:src="@drawable/ic_id_main_arrow"
-                app:layout_constraintBottom_toBottomOf="@id/tv_id_main_name"
                 app:layout_constraintStart_toEndOf="@id/tv_id_main_name"
-                app:layout_constraintTop_toBottomOf="@id/tv_id_main_semi_title" />
+                app:layout_constraintTop_toTopOf="@id/tv_id_main_name"
+                app:layout_constraintBottom_toBottomOf="@id/tv_id_main_name" />
 
             <View
                 android:id="@+id/iv_id_main_baseline"

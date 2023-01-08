@@ -33,6 +33,15 @@
     <string name="id_train">철도 요금 10~30% 할인</string>
     <string name="id_train_img">🚆</string>
 
+    // setting
+    <string name="setting_name">김민지</string>
+    <string name="setting_phone">휴대폰 번호 설정</string>
+    <string name="setting_password">비밀번호 설정</string>
+    <string name="setting_id">ID 관리</string>
+    <string name="setting_alert">알림 설정</string>
+    <string name="setting_log_out">로그아웃</string>
+    <string name="setting_withdrawl">회원탈퇴</string>
+
     // main
     <string name="main_home">홈</string>
     <string name="main_like">좋아요</string>
