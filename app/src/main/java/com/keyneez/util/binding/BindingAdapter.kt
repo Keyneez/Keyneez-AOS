@@ -1,18 +1,22 @@
 package com.keyneez.util.binding
 
+import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import androidx.lifecycle.LiveData
-import timber.log.Timber
 
 object BindingAdapter {
     @JvmStatic
     @BindingAdapter("isSelected")
-    fun ImageButton.isSelected(selected: LiveData<Boolean>) {
-        this.isSelected = requireNotNull(selected.value)
-        Timber.d("is selected : ${this.isSelected}")
+    fun View.isSelected(selected: Boolean) {
+        this.isSelected = selected
+    }
+
+    @JvmStatic
+    @BindingAdapter("selectedInterestSet", "interestHashTag")
+    fun TextView.setInterestIndex(set: LiveData<LinkedHashSet<String>>, interest: String) {
+        this.text = set.value?.indexOf(interest)?.plus(1).toString()
     }
 
     @JvmStatic
