@@ -26,7 +26,7 @@ class SignupOtpConfirmFragment :
 
     private fun initBackBtnClickListener() {
         binding.btnSignupOtpConfirmBack.setOnSingleClickListener {
-            viewModel.rearrangeKeypad()
+            viewModel.resetPassword()
             (activity as SignupActivity).intentToPreviousPage()
         }
     }

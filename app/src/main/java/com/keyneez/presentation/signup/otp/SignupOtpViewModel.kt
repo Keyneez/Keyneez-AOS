@@ -31,7 +31,6 @@ class SignupOtpViewModel @Inject constructor() : ViewModel() {
             numbers.remove(randomNum)
         }
 
-        resetPassword()
         _keypadList.value = tempKeypadList
     }
 
@@ -49,6 +48,7 @@ class SignupOtpViewModel @Inject constructor() : ViewModel() {
 
     /** 비밀번호 초기화 */
     fun resetPassword() {
+        rearrangeKeypad()
         _passwordText.value = ""
     }
 }

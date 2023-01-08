@@ -5,6 +5,7 @@ import android.view.View
 import androidx.fragment.app.viewModels
 import com.keyneez.presentation.login.LoginActivity
 import com.keyneez.util.binding.BindingFragment
+import com.keyneez.util.extension.hideKeyboard
 import com.keyneez.util.extension.setOnSingleClickListener
 import com.lab.keyneez.R
 import com.lab.keyneez.databinding.FragmentPhoneBinding
@@ -16,8 +17,13 @@ class PhoneFragment : BindingFragment<FragmentPhoneBinding>(R.layout.fragment_ph
         super.onViewCreated(view, savedInstanceState)
         binding.vm = viewModel
 
+        initHideKeyboard()
         initBackBtnClickListener()
         initNextBtnClickListener()
+    }
+
+    private fun initHideKeyboard() {
+        binding.layoutPhone.setOnClickListener { requireContext().hideKeyboard(requireView()) }
     }
 
     private fun initBackBtnClickListener() {

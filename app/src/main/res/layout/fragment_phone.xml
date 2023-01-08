@@ -41,10 +41,10 @@
         <EditText
             android:id="@+id/et_phone_number"
             android:layout_width="match_parent"
-            android:inputType="phone"
             android:text="@={vm.phoneNumber}"
             android:background="@drawable/shape_gray400_bottomline_rect"
             android:layout_height="wrap_content"
+            android:inputType="phone"
             app:layout_constraintTop_toBottomOf="@id/tv_phone_description"
             android:layout_marginHorizontal="24dp"
             android:layout_marginTop="91dp"
