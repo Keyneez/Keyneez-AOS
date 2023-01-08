@@ -21,7 +21,7 @@
             android:name="com.keyneez.presentation.onboarding.OnboardingActivity"
             android:exported="false"></activity>
         <activity
-            android:name="com.keyneez.presentation.main.detail.HomeDetailActivity"
+            android:name="com.keyneez.presentation.main.detail.DetailActivity"
             android:exported="false">
 
         </activity>
