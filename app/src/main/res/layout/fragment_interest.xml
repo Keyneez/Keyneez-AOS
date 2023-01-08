@@ -1,0 +1,779 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.keyneez.presentation.signup.interest.InterestFragment">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.keyneez.presentation.signup.interest.InterestViewModel" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_interest"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageButton
+            android:id="@+id/btn_interest_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="48dp"
+            android:background="@null"
+            android:padding="12dp"
+            android:src="@drawable/ic_signup_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_interest_description"
+            style="@style/PretendardBold24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/interest_description"
+            android:textColor="@color/gray900"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_interest_back" />
+
+        <ScrollView
+            android:id="@+id/sv_interest"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginVertical="12dp"
+            app:layout_constraintBottom_toTopOf="@id/btn_interest_next"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_interest_description">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_interest_scroll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="20dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_interest_amusement_park"
+                    isSelected="@{vm.selectedInterests.contains(@string/interest_amusement_park)}"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/sel_interest_type"
+                    android:onClick="@{()->vm.selectInterest(@string/interest_amusement_park)}"
+                    app:layout_constraintEnd_toStartOf="@id/layout_interest_extracurricular"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/tv_interest_amusement_park_index"
+                        style="@style/PretendardBold10"
+                        interestHashTag="@{@string/interest_amusement_park}"
+                        selectedInterestSet="@{vm.selectedInterests}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/shape_gray050_fill_oval"
+                        android:paddingHorizontal="6dp"
+                        android:paddingVertical="3dp"
+                        android:textColor="@color/gray900"
+                        android:visibility="@{vm.selectedInterests.contains(@string/interest_amusement_park) ? View.VISIBLE : View.INVISIBLE}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_interest_amusement_park_emoji"
+                        style="@style/PretendardMedium40"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginBottom="19dp"
+                        android:text="@string/interest_amusement_park_emoji"
+                        android:textColor="@color/gray900"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_interest_amusement_park"
+                        style="@style/PretendardMedium16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/interest_amusement_park"
+                        android:textColor="@{vm.selectedInterests.contains(@string/interest_amusement_park) ? @color/gray050 : @color/gray900}"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_interest_extracurricular"
+                    isSelected="@{vm.selectedInterests.contains(@string/interest_extracurricular)}"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="7dp"
+                    android:background="@drawable/sel_interest_type"
+                    android:onClick="@{()->vm.selectInterest(@string/interest_extracurricular)}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/layout_interest_amusement_park"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/tv_interest_extracurricular_index"
+                        style="@style/PretendardBold10"
+                        interestHashTag="@{@string/interest_extracurricular}"
+                        selectedInterestSet="@{vm.selectedInterests}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/shape_gray050_fill_oval"
+                        android:paddingHorizontal="6dp"
+                        android:paddingVertical="3dp"
+                        android:textColor="@color/gray900"
+                        android:visibility="@{vm.selectedInterests.contains(@string/interest_extracurricular) ? View.VISIBLE : View.INVISIBLE}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="1" />
+
+                    <TextView
+                        android:id="@+id/tv_interest_extracurricular_emoji"
+                        style="@style/PretendardMedium40"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginBottom="19dp"
+                        android:text="@string/interest_extracurricular_emoji"
+                        android:textColor="@color/gray900"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_interest_extracurricular"
+                        style="@style/PretendardMedium16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/interest_extracurricular"
+                        android:textColor="@{vm.selectedInterests.contains(@string/interest_extracurricular) ? @color/gray050 : @color/gray900}"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_interest_public_transport"
+                    isSelected="@{vm.selectedInterests.contains(@string/interest_transport)}"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/sel_interest_type"
+                    android:onClick="@{()->vm.selectInterest(@string/interest_transport)}"
+                    app:layout_constraintEnd_toStartOf="@id/layout_interest_theater"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layout_interest_amusement_park">
+
+                    <TextView
+                        android:id="@+id/tv_interest_public_transport_index"
+                        style="@style/PretendardBold10"
+                        interestHashTag="@{@string/interest_transport}"
+                        selectedInterestSet="@{vm.selectedInterests}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/shape_gray050_fill_oval"
+                        android:paddingHorizontal="6dp"
+                        android:paddingVertical="3dp"
+                        android:textColor="@color/gray900"
+                        android:visibility="@{vm.selectedInterests.contains(@string/interest_transport) ? View.VISIBLE : View.INVISIBLE}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="1" />
+
+                    <TextView
+                        android:id="@+id/tv_interest_public_transport_emoji"
+                        style="@style/PretendardMedium40"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginBottom="19dp"
+                        android:text="@string/interest_transport_emoji"
+                        android:textColor="@color/gray900"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_interest_public_transport"
+                        style="@style/PretendardMedium16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/interest_transport"
+                        android:textColor="@{vm.selectedInterests.contains(@string/interest_transport) ? @color/gray050 : @color/gray900}"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_interest_theater"
+                    isSelected="@{vm.selectedInterests.contains(@string/interest_theater)}"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/sel_interest_type"
+                    android:onClick="@{()->vm.selectInterest(@string/interest_theater)}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/layout_interest_public_transport"
+                    app:layout_constraintTop_toBottomOf="@id/layout_interest_extracurricular">
+
+                    <TextView
+                        android:id="@+id/tv_interest_theater_index"
+                        style="@style/PretendardBold10"
+                        interestHashTag="@{@string/interest_theater}"
+                        selectedInterestSet="@{vm.selectedInterests}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/shape_gray050_fill_oval"
+                        android:paddingHorizontal="6dp"
+                        android:paddingVertical="3dp"
+                        android:textColor="@color/gray900"
+                        android:visibility="@{vm.selectedInterests.contains(@string/interest_theater) ? View.VISIBLE : View.INVISIBLE}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="1" />
+
+                    <TextView
+                        android:id="@+id/tv_interest_theater_emoji"
+                        style="@style/PretendardMedium40"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginBottom="19dp"
+                        android:text="@string/interest_theater_emoji"
+                        android:textColor="@color/gray900"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_interest_theater"
+                        style="@style/PretendardMedium16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/interest_theater"
+                        android:textColor="@{vm.selectedInterests.contains(@string/interest_theater) ? @color/gray050 : @color/gray900}"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_interest_benefit"
+                    isSelected="@{vm.selectedInterests.contains(@string/interest_benefit)}"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/sel_interest_type"
+                    android:onClick="@{()->vm.selectInterest(@string/interest_benefit)}"
+                    app:layout_constraintEnd_toStartOf="@id/layout_interest_travel"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layout_interest_public_transport">
+
+                    <TextView
+                        android:id="@+id/tv_interest_benefit_index"
+                        style="@style/PretendardBold10"
+                        interestHashTag="@{@string/interest_benefit}"
+                        selectedInterestSet="@{vm.selectedInterests}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/shape_gray050_fill_oval"
+                        android:paddingHorizontal="6dp"
+                        android:paddingVertical="3dp"
+                        android:textColor="@color/gray900"
+                        android:visibility="@{vm.selectedInterests.contains(@string/interest_benefit) ? View.VISIBLE : View.INVISIBLE}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="1" />
+
+                    <TextView
+                        android:id="@+id/tv_interest_benefit_emoji"
+                        style="@style/PretendardMedium40"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginBottom="19dp"
+                        android:text="@string/interest_benefit_emoji"
+                        android:textColor="@color/gray900"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_interest_benefit"
+                        style="@style/PretendardMedium16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/interest_benefit"
+                        android:textColor="@{vm.selectedInterests.contains(@string/interest_benefit) ? @color/gray050 : @color/gray900}"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_interest_travel"
+                    isSelected="@{vm.selectedInterests.contains(@string/interest_travel)}"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/sel_interest_type"
+                    android:onClick="@{()->vm.selectInterest(@string/interest_travel)}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/layout_interest_benefit"
+                    app:layout_constraintTop_toBottomOf="@id/layout_interest_theater">
+
+                    <TextView
+                        android:id="@+id/tv_interest_travel_index"
+                        style="@style/PretendardBold10"
+                        interestHashTag="@{@string/interest_travel}"
+                        selectedInterestSet="@{vm.selectedInterests}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/shape_gray050_fill_oval"
+                        android:paddingHorizontal="6dp"
+                        android:paddingVertical="3dp"
+                        android:textColor="@color/gray900"
+                        android:visibility="@{vm.selectedInterests.contains(@string/interest_travel) ? View.VISIBLE : View.INVISIBLE}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="1" />
+
+                    <TextView
+                        android:id="@+id/tv_interest_travel_emoji"
+                        style="@style/PretendardMedium40"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginBottom="19dp"
+                        android:text="@string/interest_travel_emoji"
+                        android:textColor="@color/gray900"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_interest_travel"
+                        style="@style/PretendardMedium16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/interest_travel"
+                        android:textColor="@{vm.selectedInterests.contains(@string/interest_travel) ? @color/gray050 : @color/gray900}"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_interest_supervision"
+                    isSelected="@{vm.selectedInterests.contains(@string/interest_supervision)}"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/sel_interest_type"
+                    android:onClick="@{()->vm.selectInterest(@string/interest_supervision)}"
+                    app:layout_constraintEnd_toStartOf="@id/layout_interest_gallery"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layout_interest_benefit">
+
+                    <TextView
+                        android:id="@+id/tv_interest_supervision_index"
+                        style="@style/PretendardBold10"
+                        interestHashTag="@{@string/interest_supervision}"
+                        selectedInterestSet="@{vm.selectedInterests}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/shape_gray050_fill_oval"
+                        android:paddingHorizontal="6dp"
+                        android:paddingVertical="3dp"
+                        android:textColor="@color/gray900"
+                        android:visibility="@{vm.selectedInterests.contains(@string/interest_supervision) ? View.VISIBLE : View.INVISIBLE}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="1" />
+
+                    <TextView
+                        android:id="@+id/tv_interest_supervision_emoji"
+                        style="@style/PretendardMedium40"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginBottom="19dp"
+                        android:text="@string/interest_supervision_emoji"
+                        android:textColor="@color/gray900"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_interest_supervision"
+                        style="@style/PretendardMedium16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/interest_supervision"
+                        android:textColor="@{vm.selectedInterests.contains(@string/interest_supervision) ? @color/gray050 : @color/gray900}"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_interest_gallery"
+                    isSelected="@{vm.selectedInterests.contains(@string/interest_gallery)}"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/sel_interest_type"
+                    android:onClick="@{()->vm.selectInterest(@string/interest_gallery)}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/layout_interest_supervision"
+                    app:layout_constraintTop_toBottomOf="@id/layout_interest_travel">
+
+                    <TextView
+                        android:id="@+id/tv_interest_gallery_index"
+                        style="@style/PretendardBold10"
+                        interestHashTag="@{@string/interest_gallery}"
+                        selectedInterestSet="@{vm.selectedInterests}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/shape_gray050_fill_oval"
+                        android:paddingHorizontal="6dp"
+                        android:paddingVertical="3dp"
+                        android:textColor="@color/gray900"
+                        android:visibility="@{vm.selectedInterests.contains(@string/interest_gallery) ? View.VISIBLE : View.INVISIBLE}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="1" />
+
+                    <TextView
+                        android:id="@+id/tv_interest_gallery_emoji"
+                        style="@style/PretendardMedium40"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginBottom="19dp"
+                        android:text="@string/interest_gallery_emoji"
+                        android:textColor="@color/gray900"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_interest_gallery"
+                        style="@style/PretendardMedium16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/interest_gallery"
+                        android:textColor="@{vm.selectedInterests.contains(@string/interest_gallery) ? @color/gray050 : @color/gray900}"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_interest_check_card"
+                    isSelected="@{vm.selectedInterests.contains(@string/interest_check_card)}"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/sel_interest_type"
+                    android:onClick="@{()->vm.selectInterest(@string/interest_check_card)}"
+                    app:layout_constraintEnd_toStartOf="@id/layout_interest_volunteer"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layout_interest_supervision">
+
+                    <TextView
+                        android:id="@+id/tv_interest_check_card_index"
+                        style="@style/PretendardBold10"
+                        interestHashTag="@{@string/interest_check_card}"
+                        selectedInterestSet="@{vm.selectedInterests}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/shape_gray050_fill_oval"
+                        android:paddingHorizontal="6dp"
+                        android:paddingVertical="3dp"
+                        android:textColor="@color/gray900"
+                        android:visibility="@{vm.selectedInterests.contains(@string/interest_check_card) ? View.VISIBLE : View.INVISIBLE}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="1" />
+
+                    <TextView
+                        android:id="@+id/tv_interest_check_card_emoji"
+                        style="@style/PretendardMedium40"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginBottom="19dp"
+                        android:text="@string/interest_check_card_emoji"
+                        android:textColor="@color/gray900"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_interest_check_card"
+                        style="@style/PretendardMedium16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/interest_check_card"
+                        android:textColor="@{vm.selectedInterests.contains(@string/interest_check_card) ? @color/gray050 : @color/gray900}"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_interest_volunteer"
+                    isSelected="@{vm.selectedInterests.contains(@string/interest_volunteer)}"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/sel_interest_type"
+                    android:onClick="@{()->vm.selectInterest(@string/interest_volunteer)}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/layout_interest_check_card"
+                    app:layout_constraintTop_toBottomOf="@id/layout_interest_gallery">
+
+                    <TextView
+                        android:id="@+id/tv_interest_volunteer_index"
+                        style="@style/PretendardBold10"
+                        interestHashTag="@{@string/interest_volunteer}"
+                        selectedInterestSet="@{vm.selectedInterests}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/shape_gray050_fill_oval"
+                        android:paddingHorizontal="6dp"
+                        android:paddingVertical="3dp"
+                        android:textColor="@color/gray900"
+                        android:visibility="@{vm.selectedInterests.contains(@string/interest_volunteer) ? View.VISIBLE : View.INVISIBLE}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="1" />
+
+                    <TextView
+                        android:id="@+id/tv_interest_volunteer_emoji"
+                        style="@style/PretendardMedium40"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginBottom="19dp"
+                        android:text="@string/interest_volunteer_emoji"
+                        android:textColor="@color/gray900"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_interest_volunteer"
+                        style="@style/PretendardMedium16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/interest_volunteer"
+                        android:textColor="@{vm.selectedInterests.contains(@string/interest_volunteer) ? @color/gray050 : @color/gray900}"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_interest_museum"
+                    isSelected="@{vm.selectedInterests.contains(@string/interest_museum)}"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/sel_interest_type"
+                    android:onClick="@{()->vm.selectInterest(@string/interest_museum)}"
+                    app:layout_constraintEnd_toStartOf="@id/layout_interest_vision"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layout_interest_check_card">
+
+                    <TextView
+                        android:id="@+id/tv_interest_museum_index"
+                        style="@style/PretendardBold10"
+                        interestHashTag="@{@string/interest_museum}"
+                        selectedInterestSet="@{vm.selectedInterests}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/shape_gray050_fill_oval"
+                        android:paddingHorizontal="6dp"
+                        android:paddingVertical="3dp"
+                        android:textColor="@color/gray900"
+                        android:visibility="@{vm.selectedInterests.contains(@string/interest_museum) ? View.VISIBLE : View.INVISIBLE}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="1" />
+
+                    <TextView
+                        android:id="@+id/tv_interest_museum_emoji"
+                        style="@style/PretendardMedium40"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginBottom="19dp"
+                        android:text="@string/interest_museum_emoji"
+                        android:textColor="@color/gray900"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_interest_museum"
+                        style="@style/PretendardMedium16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/interest_museum"
+                        android:textColor="@{vm.selectedInterests.contains(@string/interest_museum) ? @color/gray050 : @color/gray900}"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_interest_vision"
+                    isSelected="@{vm.selectedInterests.contains(@string/interest_vision)}"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/sel_interest_type"
+                    android:onClick="@{()->vm.selectInterest(@string/interest_vision)}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/layout_interest_museum"
+                    app:layout_constraintTop_toBottomOf="@id/layout_interest_volunteer">
+
+                    <TextView
+                        android:id="@+id/tv_interest_vision_index"
+                        style="@style/PretendardBold10"
+                        interestHashTag="@{@string/interest_vision}"
+                        selectedInterestSet="@{vm.selectedInterests}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/shape_gray050_fill_oval"
+                        android:paddingHorizontal="6dp"
+                        android:paddingVertical="3dp"
+                        android:textColor="@color/gray900"
+                        android:visibility="@{vm.selectedInterests.contains(@string/interest_vision) ? View.VISIBLE : View.INVISIBLE}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="1" />
+
+                    <TextView
+                        android:id="@+id/tv_interest_vision_emoji"
+                        style="@style/PretendardMedium40"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginBottom="19dp"
+                        android:text="@string/interest_vision_emoji"
+                        android:textColor="@color/gray900"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_interest_vision"
+                        style="@style/PretendardMedium16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/interest_vision"
+                        android:textColor="@{vm.selectedInterests.contains(@string/interest_vision) ? @color/gray050 : @color/gray900}"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <TextView
+            android:id="@+id/btn_interest_next"
+            style="@style/PretendardBold16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/sel_tendency_next_btn"
+            android:enabled="@{vm.selectedInterests.size() >= 3}"
+            android:gravity="center"
+            android:paddingVertical="15dp"
+            android:text="@string/signup_next"
+            android:textColor="@color/gray050"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_interest_task"
+            style="@style/PretendardBold16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:text="@{@string/interest_selected_num(vm.selectedInterests.size())}"
+            android:textColor="@{vm.selectedInterests.size() >= 3 ? @color/mint500 : @color/gray050}"
+            app:layout_constraintBottom_toBottomOf="@id/btn_interest_next"
+            app:layout_constraintEnd_toEndOf="@id/btn_interest_next"
+            app:layout_constraintTop_toTopOf="@id/btn_interest_next" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,65 +1,54 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.keyneez.presentation.ocr.guide.guide.OcrGuideFragment">
+    tools:context="com.keyneez.presentation.signup.danal.guide.DanalGuideFragment">
 
     <data>
 
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/layout_ocr_guide_fragment"
+        android:id="@+id/layout_danal_guide"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <ImageButton
-            android:id="@+id/btn_ocr_guide_back"
+            android:id="@+id/btn_danal_guide_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
             android:layout_marginTop="48dp"
             android:background="@null"
             android:padding="12dp"
-            android:src="@drawable/ic_ocr_guide_back"
+            android:src="@drawable/ic_signup_back"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tv_ocr_guide_description"
+            android:id="@+id/tv_danal_guide_description"
             style="@style/PretendardBold24"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
-            android:text="@string/ocr_guide_description"
+            android:text="@string/danal_guide_description"
             android:textColor="@color/gray900"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn_ocr_guide_back" />
-
-        <TextView
-            android:id="@+id/tv_ocr_guide_sub_description"
-            style="@style/PretendardMedium18"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="16dp"
-            android:text="@string/ocr_guide_sub_description"
-            android:textColor="@color/gray500"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_ocr_guide_description" />
+            app:layout_constraintTop_toBottomOf="@id/btn_danal_guide_back" />
 
         <ImageView
-            android:id="@+id/iv_ocr_guide_card"
+            android:id="@+id/iv_danal_guide_phone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="72dp"
-            android:src="@drawable/img_ocr_guide_card"
+            android:src="@drawable/img_danal_guide_phone"
+            app:layout_constraintBottom_toTopOf="@id/btn_danal_guide_verify"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_ocr_guide_sub_description" />
+            app:layout_constraintTop_toBottomOf="@id/tv_danal_guide_description"
+            app:layout_goneMarginBottom="41dp" />
 
         <TextView
-            android:id="@+id/btn_ocr_guide_start_camera"
+            android:id="@+id/btn_danal_guide_verify"
             style="@style/PretendardBold16"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -68,8 +57,10 @@
             android:background="@drawable/shape_gray900_fill_4_rect"
             android:gravity="center"
             android:paddingVertical="15dp"
-            android:text="@string/ocr_guide_start_camera"
+            android:text="@string/danal_guide_verify"
             android:textColor="@color/gray050"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

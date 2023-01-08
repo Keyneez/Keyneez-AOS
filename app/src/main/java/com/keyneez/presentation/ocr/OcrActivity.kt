@@ -29,7 +29,7 @@ class OcrActivity : BindingActivity<ActivityOcrBinding>(R.layout.activity_ocr) {
 
         initCameraPreview()
         initCloseBtnClickListener()
-        initHorizontalCameraFrameView()
+        initCameraFrameView()
         initOcrTypeChangeBtn()
         initCameraBtnClickListener()
     }
@@ -66,7 +66,7 @@ class OcrActivity : BindingActivity<ActivityOcrBinding>(R.layout.activity_ocr) {
         binding.btnOcrClose.setOnSingleClickListener { finish() }
     }
 
-    private fun initHorizontalCameraFrameView() {
+    private fun initCameraFrameView() {
         binding.cfvOcrVertical.setLayerType(View.LAYER_TYPE_SOFTWARE, null)
         binding.cfvOcrHorizontal.setLayerType(View.LAYER_TYPE_SOFTWARE, null)
     }
