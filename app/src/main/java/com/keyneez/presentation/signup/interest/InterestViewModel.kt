@@ -3,6 +3,7 @@ package com.keyneez.presentation.signup.interest
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.keyneez.util.extension.notifyObserver
 import dagger.hilt.android.lifecycle.HiltViewModel
 import timber.log.Timber
 import javax.inject.Inject
@@ -18,14 +19,14 @@ class InterestViewModel @Inject constructor() : ViewModel() {
     }
 
     /** 관심사 선택 */
-    fun selectInterest(hashTag: String) {
-        val interest = hashTag.substring(1, hashTag.length)
-        Timber.d("Interest 선택 $hashTag -> $interest")
+    fun selectInterest(interest: String) {
+        Timber.d("Interest 선택 $interest")
         Timber.d("Interest Hash Set : ${_selectedInterests.value}")
 
         // 관심사 제거
         if (_selectedInterests.value!!.contains(interest)) {
             _selectedInterests.value!!.remove(interest)
+            _selectedInterests.notifyObserver()
             return
         }
 
@@ -34,6 +35,7 @@ class InterestViewModel @Inject constructor() : ViewModel() {
 
         // 관심사 추가
         _selectedInterests.value!!.add(interest)
+        _selectedInterests.notifyObserver()
     }
 
     companion object {
