@@ -25,9 +25,11 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/layout_id_content"
+            android:id="@+id/layout_id_issue"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="259dp"
+            android:layout_marginBottom="152dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -75,7 +77,7 @@
                 android:layout_marginStart="-7dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="-7dp"
-                android:background="@drawable/shape_white_fill_9_rect"
+                android:background="@drawable/shape_gray050_fill_9_rect"
                 android:gravity="center"
                 android:paddingVertical="12dp"
                 android:text="@string/id_issue"
@@ -89,6 +91,8 @@
             android:id="@+id/layout_id_main"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="64dp"
+            android:layout_marginTop="159dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -114,7 +118,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/tv_id_main_semititle"
+                android:id="@+id/tv_id_main_semi_title"
                 style="@style/PretendardSemibold12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -134,7 +138,7 @@
                 android:layout_marginTop="4dp"
                 android:textColor="@color/gray050"
                 app:layout_constraintStart_toStartOf="@id/iv_id_main_background"
-                app:layout_constraintTop_toBottomOf="@id/tv_id_main_semititle"
+                app:layout_constraintTop_toBottomOf="@id/tv_id_main_semi_title"
                 android:text="@string/id_name" />
 
             <ImageButton
@@ -142,20 +146,23 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@null"
-                android:paddingVertical="4dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="-8dp"
+                android:padding="12dp"
                 android:src="@drawable/ic_id_main_arrow"
+                app:layout_constraintBottom_toBottomOf="@id/tv_id_main_name"
                 app:layout_constraintStart_toEndOf="@id/tv_id_main_name"
-                app:layout_constraintTop_toBottomOf="@id/tv_id_main_semititle" />
+                app:layout_constraintTop_toBottomOf="@id/tv_id_main_semi_title" />
 
             <View
                 android:id="@+id/iv_id_main_baseline"
                 android:layout_width="0dp"
                 android:layout_height="1dp"
                 android:layout_marginHorizontal="33dp"
-                android:layout_marginBottom="94dp"
+                android:layout_marginTop="234dp"
                 android:background="@color/gray050"
                 android:paddingHorizontal="12dp"
-                app:layout_constraintBottom_toBottomOf="@id/iv_id_main_background"
+                app:layout_constraintTop_toTopOf="@id/iv_id_main_background"
                 app:layout_constraintEnd_toEndOf="@id/iv_id_main_background"
                 app:layout_constraintStart_toStartOf="@id/iv_id_main_background" />
 
@@ -189,7 +196,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/shape_white_fill_left9_rect"
+                android:background="@drawable/shape_gray050_fill_left9_rect"
                 android:gravity="center"
                 android:paddingVertical="12dp"
                 android:text="@string/id_benefit"
@@ -216,7 +223,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="10dp"
-                android:background="@drawable/shape_white_fill_right9_rect"
+                android:background="@drawable/shape_gray050_fill_right9_rect"
                 android:gravity="center"
                 android:paddingVertical="12dp"
                 android:text="@string/id_photo"

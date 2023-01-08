@@ -21,32 +21,32 @@ class LikeViewModel : ViewModel() {
             LikeData(
                 background = R.drawable.img_like_background,
                 date = "12.4-12-10",
-                title = "청소년 \n영화관 할인"
+                title = "청소년\n영화관 할인"
             ),
             LikeData(
                 background = R.drawable.img_like_background,
                 date = "12.11-12.17",
-                title = "청소년 \n미술관 할인"
+                title = "청소년\n미술관 할인"
             ),
             LikeData(
                 background = R.drawable.img_like_background,
                 date = "12.18-12.24",
-                title = "청소년 \n공연장 할인"
+                title = "청소년\n공연장 할인"
             ),
             LikeData(
                 background = R.drawable.img_like_background,
                 date = "12.25-12.31",
-                title = "청소년 \n박물관 할인"
+                title = "청소년\n박물관 할인"
             ),
             LikeData(
                 background = R.drawable.img_like_background,
                 date = "1.1-1.7",
-                title = "청소년 \n서점 할인"
+                title = "청소년\n서점 할인"
             ),
             LikeData(
                 background = R.drawable.img_like_background,
                 date = "1.8-1.14",
-                title = "청소년 \n강의 할인"
+                title = "청소년\n강의 할인"
             )
         )
         _likeList.value = LikeDatas

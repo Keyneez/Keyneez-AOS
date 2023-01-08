@@ -7,9 +7,10 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/bot_sheet_benefit"
+        android:id="@+id/layout_id_benefit"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:paddingBottom="53dp"
         app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
         <TextView
@@ -51,7 +52,7 @@
                 app:layout_constraintTop_toTopOf="@id/layout_id_benefit_museum" />
 
             <TextView
-                android:id="@+id/iv_id_benefit_museum"
+                android:id="@+id/tv_id_benefit_museum_img"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="98dp"
@@ -88,7 +89,7 @@
                 app:layout_constraintTop_toTopOf="@id/layout_id_benefit_crown" />
 
             <TextView
-                android:id="@+id/iv_id_benefit_crown"
+                android:id="@+id/tv_id_benefit_crown_img"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="98dp"
@@ -127,7 +128,7 @@
                 app:layout_constraintTop_toTopOf="@id/layout_id_benefit_amusementpark" />
 
             <TextView
-                android:id="@+id/iv_id_benefit_amusementpark"
+                android:id="@+id/tv_id_benefit_amusementpark_img"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="98dp"
@@ -164,7 +165,7 @@
                 app:layout_constraintTop_toTopOf="@id/layout_id_benefit_leaf" />
 
             <TextView
-                android:id="@+id/iv_id_benefit_leaf"
+                android:id="@+id/iv_id_benefit_leaf_img"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="98dp"
@@ -186,10 +187,8 @@
             android:background="@drawable/shape_gray100_fill_12_rect"
             android:paddingEnd="18dp"
             android:paddingBottom="15dp"
-            android:layout_marginBottom="53dp"
             app:layout_constraintEnd_toStartOf="@id/layout_id_benefit_train"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@id/layout_id_benefit_amusementpark">
 
             <TextView
@@ -205,7 +204,7 @@
                 app:layout_constraintTop_toTopOf="@id/layout_id_benefit_bus" />
 
             <TextView
-                android:id="@+id/iv_id_benefit_bus"
+                android:id="@+id/tv_id_benefit_bus_img"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="98dp"
@@ -225,10 +224,8 @@
             android:background="@drawable/shape_gray100_fill_12_rect"
             android:paddingEnd="18dp"
             android:paddingBottom="15dp"
-            android:layout_marginBottom="53dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/layout_id_benefit_bus"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@id/layout_id_benefit_leaf">
 
             <TextView
@@ -244,7 +241,7 @@
                 app:layout_constraintTop_toTopOf="@id/layout_id_benefit_train" />
 
             <TextView
-                android:id="@+id/iv_id_benefit_train"
+                android:id="@+id/tv_id_benefit_train_img"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="98dp"

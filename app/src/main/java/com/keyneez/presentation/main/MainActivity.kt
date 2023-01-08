@@ -36,7 +36,6 @@ class MainActivity : BindingActivity<ActivityMainBinding>(R.layout.activity_main
                 R.id.menu_like -> navigateTo<LikeFragment>()
                 R.id.menu_character -> navigateTo<CharacterFragment>()
                 R.id.menu_setting -> navigateTo<SettingFragment>()
-                R.id.menu_card -> navigateTo<IdFragment>()
             }
             true
         }

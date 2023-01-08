@@ -2,20 +2,48 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".presentation.main.id.IdPhotoActivity">
-
     <data>
-
         <variable
             name="vm"
             type="com.keyneez.presentation.main.id.IdPhotoActivity" />
-
         <import type="android.view.View" />
     </data>
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout_id_photo"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_id_photo_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.keyneez.util.custom.HorizontalCardFrameView
+            android:id="@+id/cfv_id_photo_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="28dp"
+            android:background="@color/gray050_80" />
+
+        <com.keyneez.util.custom.VerticalCardFrameView
+            android:id="@+id/cfv_id_photo_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="28dp"
+            android:background="@color/gray050_80" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_id_photo_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/gray050"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" >
 
         <ImageButton
             android:id="@+id/btn_id_photo_back"
@@ -26,8 +54,8 @@
             android:background="@null"
             android:padding="12dp"
             android:src="@drawable/ic_ocr_guide_back"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toStartOf="@id/layout_id_photo_title"
+            app:layout_constraintTop_toTopOf="@id/layout_id_photo_title" />
 
         <TextView
             android:id="@+id/tv_id_photo_title"
@@ -38,32 +66,11 @@
             android:gravity="center"
             android:text="@string/id_photo"
             android:textColor="@color/gray900"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <com.keyneez.util.custom.HorizontalCardFrameView
-            android:id="@+id/cfv_id_photo_horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="103dp"
-            android:background="@color/gray050_80" />
-
-        <com.keyneez.util.custom.VerticalCardFrameView
-            android:id="@+id/cfv_id_photo_vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="103dp"
-            android:background="@color/gray050_80" />
-
+            app:layout_constraintEnd_toEndOf="@id/layout_id_photo_title"
+            app:layout_constraintStart_toStartOf="@id/layout_id_photo_title"
+            app:layout_constraintTop_toTopOf="@id/layout_id_photo_title" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

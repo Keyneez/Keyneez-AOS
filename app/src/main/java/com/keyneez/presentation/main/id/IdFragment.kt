@@ -3,6 +3,8 @@ package com.keyneez.presentation.main.id
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import com.keyneez.presentation.main.id.dialog.IdBenefitFragment
+import com.keyneez.presentation.main.id.dialog.IdProfileFragment
 import com.keyneez.presentation.ocr.guide.OcrGuideActivity
 import com.keyneez.util.binding.BindingFragment
 import com.keyneez.util.extension.setOnSingleClickListener
@@ -13,27 +15,31 @@ class IdFragment : BindingFragment<FragmentIdBinding>(R.layout.fragment_id) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        getIds()
+    }
+
+    private fun getIds() {
         if (false) {
             // 발급하기 화면이 뜨게
-            binding.layoutIdContent.visibility = View.VISIBLE
+            binding.layoutIdIssue.visibility = View.VISIBLE
             binding.layoutIdMain.visibility = View.GONE
-            initIdContentClickListener()
+            initIdIssueBtnClickListener()
         } else {
             // 메인 아이디 화면이 뜨게
-            binding.layoutIdContent.visibility = View.GONE
+            binding.layoutIdIssue.visibility = View.GONE
             binding.layoutIdMain.visibility = View.VISIBLE
-            initIdMainClickListener()
+            initIdMainBtnClickListener()
         }
     }
 
-    private fun initIdContentClickListener() {
+    private fun initIdIssueBtnClickListener() {
         binding.btnIdIssue.setOnSingleClickListener {
             val intent = Intent(activity, OcrGuideActivity::class.java)
             startActivity(intent)
         }
     }
 
-    private fun initIdMainClickListener() {
+    private fun initIdMainBtnClickListener() {
         binding.btnIdMainArrow.setOnSingleClickListener {
             // 프로필
             val idProfileFragment = IdProfileFragment()

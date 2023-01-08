@@ -5,9 +5,10 @@
     <data></data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/bot_sheet_profile"
+        android:id="@+id/layout_id_profile"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:paddingBottom="28dp"
         app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
         <TextView
@@ -49,11 +50,11 @@
             android:layout_width="0dp"
             android:layout_height="1dp"
             android:layout_marginHorizontal="29dp"
-            android:layout_marginTop="114dp"
+            android:layout_marginTop="16dp"
             android:background="@color/gray300"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/iv_id_profile_logo" />
 
         <TextView
             android:id="@+id/tv_id_profile_school"
@@ -85,16 +86,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="17dp"
-            android:layout_marginTop="260dp"
-            android:background="@drawable/shape_black_fill_4_rect"
+            android:layout_marginTop="83dp"
+            android:background="@drawable/shape_gray900_fill_4_rect"
             android:gravity="center"
-            android:layout_marginBottom="28dp"
             android:padding="15dp"
             android:text="@string/id_photo"
             android:textColor="@color/gray050"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
+            app:layout_constraintTop_toTopOf="@id/tv_id_profile_birth" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
