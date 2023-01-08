@@ -52,7 +52,7 @@
             android:textColorHint="@color/gray400"
             android:textColor="@color/gray900"
             android:paddingVertical="18dp"
-            android:hint="휴대폰 번호"/>
+            android:hint="@string/phone_number_hint"/>
 
         <TextView
             android:id="@+id/btn_phone_next"
@@ -61,7 +61,7 @@
             android:layout_marginHorizontal="16dp"
             android:layout_marginBottom="40dp"
             isSelected="@{!vm.phoneNumber.isEmpty()}"
-            android:text="다음으로"
+            android:text="@string/phone_next"
             android:gravity="center"
             android:background="@drawable/sel_phone_next_btn"
             android:paddingVertical="15dp"
