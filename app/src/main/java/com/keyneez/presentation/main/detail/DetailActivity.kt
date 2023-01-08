@@ -2,6 +2,7 @@ package com.keyneez.presentation.main.detail
 
 import android.os.Bundle
 import com.keyneez.util.binding.BindingActivity
+import com.keyneez.util.extension.setOnSingleClickListener
 import com.lab.keyneez.R
 import com.lab.keyneez.databinding.ActivityHomeDetailBinding
 
@@ -12,11 +13,17 @@ class DetailActivity :
     }
 
     // 뒤로가기 버튼
-    private fun initBackClickListener(){
-
+    private fun initBackClickListener() {
+        binding.btnDetailBack.setOnSingleClickListener { }
     }
-    // 공유 버튼
-    private fun
-    // 좋아요 버튼
 
+    // 공유 버튼
+    private fun initShareClickListener() {
+        binding.btnDetailShare.setOnSingleClickListener { }
+    }
+
+    // 좋아요 버튼
+    private fun initHeartClickListener() {
+        binding.btnDetailHeart.setOnSingleClickListener { }
+    }
 }
