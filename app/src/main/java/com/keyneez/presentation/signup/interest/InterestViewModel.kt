@@ -5,7 +5,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.keyneez.util.extension.notifyObserver
 import dagger.hilt.android.lifecycle.HiltViewModel
-import timber.log.Timber
 import javax.inject.Inject
 
 @HiltViewModel
@@ -20,17 +19,14 @@ class InterestViewModel @Inject constructor() : ViewModel() {
 
     /** 관심사 선택 */
     fun selectInterest(interest: String) {
-        Timber.d("Interest 선택 $interest")
-        Timber.d("Interest Hash Set : ${_selectedInterests.value}")
-
-        // 관심사 제거
+        // 이미 선택된 경우 관심사 제거
         if (_selectedInterests.value!!.contains(interest)) {
             _selectedInterests.value!!.remove(interest)
             _selectedInterests.notifyObserver()
             return
         }
 
-        // 이미 3개의 관심사를 선택한 경우
+        // 이미 3개의 관심사를 선택한 경우 무시
         if (_selectedInterests.value!!.size >= INTEREST_SELECTION_MAX) return
 
         // 관심사 추가
