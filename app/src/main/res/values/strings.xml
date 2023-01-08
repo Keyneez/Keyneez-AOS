@@ -4,7 +4,7 @@
     // common
     <string name="binding_error">Binding not initialized to reference the view.</string>
 
-    //like
+    // like
     <string name="like_save">저장</string>
     <string name="like_data">11.24-12.31</string>
     <string name="like_content">청소년 \n영화관 할인</string>
@@ -15,6 +15,86 @@
     <string name="main_card">Card</string>
     <string name="main_character">캐릭터</string>
     <string name="main_setting">설정</string>
+
+    // signup (common)
+    <string name="signup_next">다음으로</string>
+
+    // danal guide
+    <string name="danal_guide_description">휴대폰 인증을\n진행해주세요.</string>
+    <string name="danal_guide_verify">휴대폰 인증하기</string>
+
+    // test guide
+    <string name="test_guide_description">나의 젤리 만들기</string>
+    <string name="test_guide_sub_description">나의 마음에서 태어날 젤리와\n더욱 다채로운 일상을 함께해요!</string>
+    <string name="test_guide_start">시작하기</string>
+
+    // tendency
+    <string name="tendency_description">젤리에게 나를 소개해 주세요!\n자유시간에 나는..</string>
+    <string name="tendency_active">활발하게 놀러다녀요!</string>
+    <string name="tendency_active_selected">🎾 활발하게 놀러다녀요!</string>
+    <string name="tendency_curious">호기심 가득 정보를 탐색 중</string>
+    <string name="tendency_curious_selected">🔍 호기심 가득 정보를 탐색 중</string>
+    <string name="tendency_cozy">포근한 집이 최고</string>
+    <string name="tendency_cozy_selected">🧸 포근한 집이 최고</string>
+
+    // interest
+    <string name="interest_description">관심 있는 해시태그에\n체크해주세요</string>
+    <string name="interest_selected_num">%d/3</string>
+    <string name="interest_amusement_park">#놀이공원</string>
+    <string name="interest_extracurricular">#대외활동</string>
+    <string name="interest_transport">#대중교통</string>
+    <string name="interest_theater">#영화관</string>
+    <string name="interest_benefit">#혜택</string>
+    <string name="interest_travel">#여행</string>
+    <string name="interest_supervision">#장학</string>
+    <string name="interest_gallery">#미술관</string>
+    <string name="interest_check_card">#체크카드</string>
+    <string name="interest_volunteer">#봉사</string>
+    <string name="interest_museum">#박물관</string>
+    <string name="interest_vision">#진로</string>
+    <string name="interest_amusement_park_emoji">🎡</string>
+    <string name="interest_extracurricular_emoji">🎖️</string>
+    <string name="interest_transport_emoji">🚍</string>
+    <string name="interest_theater_emoji">🍿</string>
+    <string name="interest_benefit_emoji">➕</string>
+    <string name="interest_travel_emoji">✈️</string>
+    <string name="interest_supervision_emoji">🎓</string>
+    <string name="interest_gallery_emoji">🎨</string>
+    <string name="interest_check_card_emoji">💳</string>
+    <string name="interest_volunteer_emoji">🌷</string>
+    <string name="interest_museum_emoji">🏛</string>
+    <string name="interest_vision_emoji">💭</string>
+
+    // test complete
+    <string name="test_complete_description">%d님의 젤리는</string>
+    <string name="test_complete_start_keyneez">키니즈 시작하기</string>
+
+    // signup otp
+    <string name="signup_otp_description">간편 비밀번호를\n설정해주세요</string>
+    <string name="signup_otp_rearrange">재배열</string>
+
+    // signup otp confirm
+    <string name="signup_otp_confirm_description">설정한 비밀번호를\n한번 더 입력해주세요</string>
+
+
+    // ocr guide
+    <string name="ocr_guide_description">학생증 또는 청소년증을\n준비해주세요.</string>
+    <string name="ocr_guide_sub_description">청소년 인증을 위해 학생증/청소년증\n촬영이 필요해요.</string>
+    <string name="ocr_guide_start_camera">촬영 시작하기</string>
+    <string name="ocr_guide_permission_denied_msg">카메라 권한을 허용한 뒤에 OCR 인증이 가능합니다.</string>
+    <string name="ocr_guide_camera_permission_ungranted_msg">설정에서 카메라 권한을 허용해주세요.</string>
+
+    // ocr
+    <string name="ocr_guide_top">신분증 앞면을\n사각형 안에 맞춰주세요.</string>
+    <string name="ocr_guide_bottom_auto">학생증/청소년증을\n평평하고 그늘진 곳에 놓아두세요</string>
+    <string name="ocr_guide_bottom_passive">준비가 끝나면 촬영 버튼을 눌러주세요</string>
+    <string name="ocr_passive_recognition">신분증 인식이 안 되나요?</string>
+    <string name="ocr_auto_recognition">자동인식</string>
+
+    // ocr complete
+    <string name="ocr_complete_description">%s님의\nID를 발급했어요!</string>
+    <string name="ocr_complete_confirm">확인</string>
+
 
     //onboarding
     <string name="onboarding_login">로그인</string>
@@ -34,5 +114,5 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-
+    <string name="test_complete_my_item">나의 아이템</string>
 </resources>

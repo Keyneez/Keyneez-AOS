@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    // card frame
+    <dimen name="card_frame_view_long">327dp</dimen>
+    <dimen name="card_frame_view_short">200dp</dimen>
+    <dimen name="card_frame_view_radius">12dp</dimen>
+
+    // ocr
+    <dimen name="ocr_guide_top_vertical_margin">187dp</dimen>
+    <dimen name="ocr_guide_top_horizontal_margin">126dp</dimen>
+    <dimen name="ocr_guide_bottom_vertical_margin">210dp</dimen>
+    <dimen name="ocr_guide_bottom_horizontal_margin">154dp</dimen>
+</resources>

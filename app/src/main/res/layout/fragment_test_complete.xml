@@ -1,0 +1,119 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.keyneez.presentation.signup.test.complete.TestCompleteFragment">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_test_complete"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_test_complete_description"
+            style="@style/PretendardSemibold20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="108dp"
+            android:text="@string/test_complete_description"
+            android:textColor="@color/gray500"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_test_complete_jelly_type"
+            style="@style/PretendardBold28"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:text="호기심 가득 문화인"
+            android:textColor="@color/gray900"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_test_complete_description" />
+
+        <ImageButton
+            android:id="@+id/btn_test_complete_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-12dp"
+            android:background="@null"
+            android:padding="12dp"
+            android:src="@drawable/ic_test_complete_detail"
+            app:layout_constraintBottom_toBottomOf="@id/tv_test_complete_jelly_type"
+            app:layout_constraintStart_toEndOf="@id/tv_test_complete_jelly_type"
+            app:layout_constraintTop_toTopOf="@id/tv_test_complete_jelly_type" />
+
+        <!-- 젤리 배경 이미지 넣을 곳 (디자인분들께 요청 완료) -->
+        <ImageView
+            android:id="@+id/iv_test_complete_background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="50dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_test_complete_jelly_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/iv_test_complete_jelly"
+            android:src="@drawable/img_ocr_complete_jelly_dummy"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="64dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_test_complete_jelly_type"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_test_complete_my_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="64dp"
+            android:layout_marginStart="16dp"
+            style="@style/PretendardBold14"
+            android:textColor="@color/gray900"
+            app:layout_constraintTop_toBottomOf="@id/iv_test_complete_jelly"
+            android:text="@string/test_complete_my_item"/>
+
+        <TextView
+            android:id="@+id/tv_test_complete_my_item_count"
+            app:layout_constraintTop_toTopOf="@id/tv_test_complete_my_item"
+            app:layout_constraintBottom_toBottomOf="@id/tv_test_complete_my_item"
+            app:layout_constraintStart_toEndOf="@id/tv_test_complete_my_item"
+            android:layout_width="wrap_content"
+            style="@style/PretendardBold14"
+            android:textColor="@color/mint500"
+            android:layout_height="wrap_content"
+            tools:text=" 6" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_test_complete_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="horizontal"
+            tools:listitem="@layout/item_test_complete_item"
+            android:paddingHorizontal="10dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_test_complete_my_item"/>
+
+        <TextView
+            android:id="@+id/btn_test_complete_start_keyneez"
+            style="@style/PretendardBold16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/shape_gray900_fill_4_rect"
+            android:gravity="center"
+            android:paddingVertical="15dp"
+            android:text="@string/test_complete_start_keyneez"
+            android:textColor="@color/gray050"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
