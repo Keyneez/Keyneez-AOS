@@ -24,12 +24,11 @@
             android:name="com.keyneez.presentation.signup.SignupActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
-        <activity
-            android:name="com.keyneez.presentation.onboarding.OnboardingActivity"
-            android:exported="false"></activity>
+
         <activity
             android:name="com.keyneez.presentation.main.detail.DetailActivity"
-            android:exported="false">
+            android:exported="false"
+            android:screenOrientation="portrait">
 
         </activity>
         <activity
@@ -42,7 +41,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.keyneez.presentation.ocr.guide.OcrGuideActivity"
+        <activity
+            android:name="com.keyneez.presentation.ocr.guide.OcrGuideActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
