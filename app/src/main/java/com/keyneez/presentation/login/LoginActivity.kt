@@ -7,7 +7,7 @@ import com.lab.keyneez.R
 import com.lab.keyneez.databinding.ActivityLoginBinding
 
 class LoginActivity : BindingActivity<ActivityLoginBinding>(R.layout.activity_login) {
-    lateinit var viewPager: ViewPager2
+    private lateinit var viewPager: ViewPager2
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

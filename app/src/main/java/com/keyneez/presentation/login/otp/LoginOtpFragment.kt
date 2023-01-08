@@ -4,10 +4,12 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
+import com.keyneez.presentation.login.LoginActivity
 import com.keyneez.presentation.main.MainActivity
 import com.keyneez.presentation.signup.otp.SignupOtpViewModel
 import com.keyneez.util.binding.BindingFragment
 import com.keyneez.util.extension.hideKeyboard
+import com.keyneez.util.extension.setOnSingleClickListener
 import com.lab.keyneez.R
 import com.lab.keyneez.databinding.FragmentLoginOtpBinding
 
@@ -19,11 +21,18 @@ class LoginOtpFragment : BindingFragment<FragmentLoginOtpBinding>(R.layout.fragm
         binding.vm = viewModel
 
         initHideKeyboard()
+        initBackBtnClickListener()
         setupPasswordText()
     }
 
     private fun initHideKeyboard() {
         binding.layoutLoginOtp.setOnClickListener { requireContext().hideKeyboard(requireView()) }
+    }
+
+    private fun initBackBtnClickListener() {
+        binding.btnLoginOtpBack.setOnSingleClickListener {
+            (activity as LoginActivity).intentToPreviousPage()
+        }
     }
 
     private fun setupPasswordText() {
