@@ -1,7 +1,6 @@
 package com.keyneez.presentation.onboarding
 
 import android.os.Bundle
-import android.view.View
 import com.keyneez.presentation.onboarding.adapter.OnboardingAdapter
 import com.keyneez.util.binding.BindingActivity
 import com.lab.keyneez.R
