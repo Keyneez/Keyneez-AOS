@@ -7,8 +7,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout_passive_ocr_result"
         android:layout_width="match_parent"
-        android:paddingBottom="38dp"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:paddingBottom="38dp">
 
         <TextView
             android:id="@+id/tv_passive_ocr_result_description"
@@ -66,77 +66,79 @@
 
         <TextView
             android:id="@+id/tv_passive_ocr_result_name"
-            android:layout_width="wrap_content"
-            android:layout_marginTop="32dp"
-            android:textColor="@color/gray900"
             style="@style/PretendardMedium14"
-            android:text="@string/auto_ocr_result_name"
-            app:layout_constraintTop_toBottomOf="@id/layout_passive_ocr_result_toggle"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
-            android:layout_height="wrap_content" />
+            android:layout_marginTop="32dp"
+            android:text="@string/ocr_result_name"
+            android:textColor="@color/gray900"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_passive_ocr_result_toggle" />
 
         <EditText
             android:id="@+id/et_passive_ocr_result_name"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginHorizontal="24dp"
-            android:hint="@string/auto_ocr_result_name_hint"
+            android:background="@drawable/shape_gray400_bottomline_rect"
+            android:hint="@string/ocr_result_name_hint"
             android:paddingVertical="17dp"
-            app:layout_constraintTop_toBottomOf="@id/tv_passive_ocr_result_name"
-            android:layout_height="wrap_content" />
+            app:layout_constraintTop_toBottomOf="@id/tv_passive_ocr_result_name" />
 
         <TextView
             android:id="@+id/tv_passive_ocr_result_sub_entry"
-            android:layout_width="wrap_content"
-            android:text="@string/auto_ocr_result_school"
-            app:layout_constraintTop_toBottomOf="@id/et_passive_ocr_result_name"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="24dp"
-            android:layout_marginStart="24dp"
             style="@style/PretendardMedium14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/ocr_result_school"
             android:textColor="@color/gray900"
-            android:layout_height="wrap_content" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_passive_ocr_result_name" />
 
         <EditText
             android:id="@+id/et_passive_ocr_result_sub_entry"
             android:layout_width="match_parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_passive_ocr_result_sub_entry"
-            android:paddingVertical="17dp"
-            android:hint="@string/auto_ocr_result_school_hint"
+            android:layout_height="wrap_content"
             android:layout_marginHorizontal="24dp"
-            android:layout_height="wrap_content" />
+            android:background="@drawable/shape_gray400_bottomline_rect"
+            android:hint="@string/ocr_result_school_hint"
+            android:paddingVertical="17dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_passive_ocr_result_sub_entry" />
 
         <TextView
             android:id="@+id/btn_passive_ocr_result_reshoot"
+            style="@style/PretendardBold16"
             android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="111dp"
+            android:background="@drawable/shape_gray050_fill_gray900_line_5_rect"
+            android:gravity="center"
+            android:paddingVertical="15dp"
             android:text="다시 촬영"
             android:textColor="@color/gray900"
-            android:paddingVertical="15dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/et_passive_ocr_result_sub_entry"
-            android:layout_marginTop="111dp"
-            android:layout_marginStart="24dp"
-            android:background="@drawable/shape_gray050_fill_gray900_line_5_rect"
             app:layout_constraintEnd_toStartOf="@id/btn_passive_ocr_result_confirm"
-            android:gravity="center"
-            style="@style/PretendardBold16"
-            android:layout_height="wrap_content" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_passive_ocr_result_sub_entry" />
 
         <TextView
             android:id="@+id/btn_passive_ocr_result_confirm"
-            android:layout_width="0dp"
-            android:text="다 적었어요!"
-            app:layout_constraintStart_toEndOf="@id/btn_passive_ocr_result_reshoot"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/et_passive_ocr_result_sub_entry"
-            android:layout_marginTop="111dp"
-            android:paddingVertical="15dp"
-            android:layout_marginEnd="24dp"
-            android:layout_marginStart="8dp"
-            android:gravity="center"
-            android:background="@drawable/sel_passive_ocr_result_confirm_btn"
             style="@style/PretendardBold16"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="111dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/sel_passive_ocr_result_confirm_btn"
+            android:gravity="center"
+            android:paddingVertical="15dp"
+            android:text="다 적었어요!"
             android:textColor="@color/gray050"
-            android:layout_height="wrap_content" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btn_passive_ocr_result_reshoot"
+            app:layout_constraintTop_toBottomOf="@id/et_passive_ocr_result_sub_entry" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

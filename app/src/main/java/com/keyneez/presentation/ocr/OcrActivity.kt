@@ -9,17 +9,25 @@ import androidx.camera.core.CameraSelector
 import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.keyneez.presentation.ocr.guide.OcrGuideActivity
 import com.keyneez.util.binding.BindingActivity
 import com.keyneez.util.extension.setOnSingleClickListener
 import com.lab.keyneez.R
 import com.lab.keyneez.databinding.ActivityOcrBinding
+import com.lab.keyneez.databinding.BotSheetAutoOcrResultBinding
+import com.lab.keyneez.databinding.BotSheetPassiveOcrResultBinding
 import timber.log.Timber
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 
 class OcrActivity : BindingActivity<ActivityOcrBinding>(R.layout.activity_ocr) {
     private val viewModel by viewModels<OcrViewModel>()
+
+    private lateinit var autoResultBinding: BotSheetAutoOcrResultBinding
+    private lateinit var autoResultDialog: BottomSheetDialog
+    private lateinit var passiveResultBinding: BotSheetPassiveOcrResultBinding
+    private lateinit var passiveResultDialog: BottomSheetDialog
 
     private lateinit var cameraExecutor: ExecutorService
 
@@ -32,6 +40,8 @@ class OcrActivity : BindingActivity<ActivityOcrBinding>(R.layout.activity_ocr) {
         initCameraFrameView()
         initOcrTypeChangeBtn()
         initCameraBtnClickListener()
+        initBottomSheet()
+        initAutoOcrResultBtnClickListeners()
     }
 
     private fun initCameraPreview() {
@@ -84,6 +94,20 @@ class OcrActivity : BindingActivity<ActivityOcrBinding>(R.layout.activity_ocr) {
             }
             finish()
         }
+    }
+
+    private fun initBottomSheet() {
+        passiveResultBinding = BotSheetPassiveOcrResultBinding.inflate(layoutInflater)
+        passiveResultDialog = BottomSheetDialog(this)
+        passiveResultDialog.setContentView(passiveResultBinding.root)
+
+        autoResultBinding = BotSheetAutoOcrResultBinding.inflate(layoutInflater)
+        autoResultDialog = BottomSheetDialog(this)
+        autoResultDialog.setContentView(autoResultBinding.root)
+    }
+
+    private fun initAutoOcrResultBtnClickListeners() {
+        autoResultBinding.
     }
 
     override fun onDestroy() {

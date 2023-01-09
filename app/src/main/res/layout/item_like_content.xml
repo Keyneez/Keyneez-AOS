@@ -41,7 +41,6 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="6dp"
             android:gravity="center"
-            android:maxWidth="110dp"
             android:textColor="@color/gray050"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
