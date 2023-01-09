@@ -1,4 +1,4 @@
-package com.keyneez.presentation.main.home.recommend
+package com.keyneez.presentation.main.home.popular
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,7 +8,7 @@ import com.keyneez.data.entity.HomeData
 import com.keyneez.util.extension.setOnSingleClickListener
 import com.lab.keyneez.databinding.ItemHomeBinding
 
-class RecommendAdapter : RecyclerView.Adapter<RecommendAdapter.InfoViewHolder>() {
+class PopularAdapter : RecyclerView.Adapter<PopularAdapter.InfoViewHolder>() {
     var data = listOf<HomeData>()
 
     class InfoViewHolder(private val binding: ItemHomeBinding) :
