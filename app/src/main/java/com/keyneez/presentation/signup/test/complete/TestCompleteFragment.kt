@@ -19,8 +19,8 @@ class TestCompleteFragment :
         super.onViewCreated(view, savedInstanceState)
 
         initNextBtnClickListener()
-        initJellyDescriptionBottomSheet()
         initDetailBtnClickListener()
+        initJellyDescriptionBottomSheet()
     }
 
     private fun initNextBtnClickListener() {
@@ -29,16 +29,16 @@ class TestCompleteFragment :
         }
     }
 
-    private fun initJellyDescriptionBottomSheet() {
-        bottomSheetBinding = BotSheetJellyDescriptionBinding.inflate(layoutInflater)
-        bottomSheetDialog = BottomSheetDialog(requireContext())
-        bottomSheetDialog.setContentView(bottomSheetBinding.root)
-    }
-
     private fun initDetailBtnClickListener() {
         binding.btnTestCompleteDetail.setOnSingleClickListener {
             bottomSheetDialog.show()
         }
+    }
+
+    private fun initJellyDescriptionBottomSheet() {
+        bottomSheetBinding = BotSheetJellyDescriptionBinding.inflate(layoutInflater)
+        bottomSheetDialog = BottomSheetDialog(requireContext())
+        bottomSheetDialog.setContentView(bottomSheetBinding.root)
     }
 
     companion object {

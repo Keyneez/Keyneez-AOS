@@ -41,7 +41,7 @@ class OcrActivity : BindingActivity<ActivityOcrBinding>(R.layout.activity_ocr) {
         initOcrTypeChangeBtn()
         initCameraBtnClickListener()
         initBottomSheet()
-        initAutoOcrResultBtnClickListeners()
+        initPassiveOcrResultBtnClickListeners()
     }
 
     private fun initCameraPreview() {
@@ -88,11 +88,7 @@ class OcrActivity : BindingActivity<ActivityOcrBinding>(R.layout.activity_ocr) {
 
     private fun initCameraBtnClickListener() {
         binding.btnOcrCamera.setOnSingleClickListener {
-            // 뷰 연결을 위한 임시 설정 (서버 연결 시 수정)
-            val intent = Intent(this, OcrGuideActivity::class.java).apply {
-                setResult(RESULT_OK, intent)
-            }
-            finish()
+            passiveResultDialog.show()
         }
     }
 
@@ -106,8 +102,17 @@ class OcrActivity : BindingActivity<ActivityOcrBinding>(R.layout.activity_ocr) {
         autoResultDialog.setContentView(autoResultBinding.root)
     }
 
-    private fun initAutoOcrResultBtnClickListeners() {
-        autoResultBinding.
+    private fun initPassiveOcrResultBtnClickListeners() {
+        passiveResultBinding.btnPassiveOcrResultReshoot.setOnSingleClickListener {
+            passiveResultDialog.dismiss()
+        }
+
+        passiveResultBinding.btnPassiveOcrResultConfirm.setOnSingleClickListener {
+            val intent = Intent(this, OcrGuideActivity::class.java).apply {
+                setResult(RESULT_OK, intent)
+            }
+            finish()
+        }
     }
 
     override fun onDestroy() {
