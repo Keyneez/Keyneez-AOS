@@ -98,4 +98,8 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="test_complete_my_item">나의 아이템</string>
+    <string name="jelly_description_title">%s\'s Jelly</string>
+    <string name="jelly_description_hashtag_dummy">#문화생활 #호기심 가득</string>
+    <string name="jelly_description_type_dummy">호기심 가득 문화인</string>
+    <string name="jelly_description_content_dummy">오늘은 또 어떤 활동들을 해볼까? 이곳저곳 둘러보는 눈빛이 더욱 빛나는 날! 당신의 호기심 가득한 문화생활이 더욱 풍부해질 수 있도록 키니즈가 안내해 줄게요! 🐥</string>
 </resources>
