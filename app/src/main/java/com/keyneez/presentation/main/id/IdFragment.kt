@@ -15,10 +15,10 @@ class IdFragment : BindingFragment<FragmentIdBinding>(R.layout.fragment_id) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        getIds()
+        initIdLayout()
     }
 
-    private fun getIds() {
+    private fun initIdLayout() {
         if (false) {
             // 발급하기 화면이 뜨게
             binding.layoutIdIssue.visibility = View.VISIBLE
