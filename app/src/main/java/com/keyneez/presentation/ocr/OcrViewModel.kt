@@ -16,14 +16,9 @@ class OcrViewModel @Inject constructor() : ViewModel() {
     val isPassive: LiveData<Boolean>
         get() = _isPassive
 
-    private val _isStudentId = MutableLiveData<Boolean>()
-    val isStudentId: LiveData<Boolean>
-        get() = _isStudentId
-
     init {
         _isVertical.value = false
         _isPassive.value = false
-        _isStudentId.value = false
     }
 
     /** 카메라 프레임 회전 */
