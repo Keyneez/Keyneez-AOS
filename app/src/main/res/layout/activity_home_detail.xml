@@ -45,12 +45,12 @@
                 android:id="@+id/btn_detail_heart"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="12dp"
                 android:layout_marginStart="4dp"
                 android:layout_marginTop="48dp"
                 android:layout_marginEnd="19dp"
+                android:backgroundTint="@null"
+                android:padding="12dp"
                 android:src="@drawable/sel_detail_heart"
-                android:background="@null"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/btn_detail_share"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -231,13 +231,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/iv_detail_line_use" />
 
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="&#xA;                android:layout_width=&quot;wrap_content&quot;&#xA;                android:layout_height=&quot;wrap_content&quot;&#xA;                android:padding=&quot;12dp&quot;&#xA;                android:layout_marginStart=&quot;4dp&quot;&#xA;                android:layout_marginTop=&quot;48dp&quot;&#xA;                android:layout_marginEnd=&quot;19dp&quot;&#xA;                android:src=&quot;@drawable/sel_detail_heart&quot;&#xA;                android:background=&quot;@null&quot;&#xA;                app:layout_constraintEnd_toEndOf=&quot;parent&quot;&#xA;                app:layout_constraintStart_toEndOf=&quot;@id/btn_detail_share&quot;&#xA;                app:layout_constraintTop_toTopOf=&quot;parent&quot; />&#xA;&#xA;            &lt;TextView"
-                tools:layout_editor_absoluteX="175dp"
-                tools:layout_editor_absoluteY="294dp" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
