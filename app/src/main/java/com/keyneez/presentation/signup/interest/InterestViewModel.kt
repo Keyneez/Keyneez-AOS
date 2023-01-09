@@ -35,6 +35,6 @@ class InterestViewModel @Inject constructor() : ViewModel() {
     }
 
     companion object {
-        const val INTEREST_SELECTION_MAX = 3
+        private const val INTEREST_SELECTION_MAX = 3
     }
 }
