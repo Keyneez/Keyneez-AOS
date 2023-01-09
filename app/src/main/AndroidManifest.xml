@@ -44,11 +44,11 @@
             android:screenOrientation="portrait" />
         <activity
             android:name="com.keyneez.presentation.ocr.guide.OcrGuideActivity"
-            android:exported="false"
+            android:exported="true"
             android:screenOrientation="portrait" />
         <activity
             android:name="com.keyneez.presentation.ocr.OcrActivity"
-            android:exported="true"
+            android:exported="false"
             android:screenOrientation="portrait" />
     </application>
 

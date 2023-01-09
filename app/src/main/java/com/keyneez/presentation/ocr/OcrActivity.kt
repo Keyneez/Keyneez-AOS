@@ -12,11 +12,11 @@ import androidx.core.content.ContextCompat
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.keyneez.presentation.ocr.guide.OcrGuideActivity
 import com.keyneez.util.binding.BindingActivity
+import com.keyneez.util.extension.hideKeyboard
 import com.keyneez.util.extension.setOnSingleClickListener
 import com.lab.keyneez.R
 import com.lab.keyneez.databinding.ActivityOcrBinding
-import com.lab.keyneez.databinding.BotSheetAutoOcrResultBinding
-import com.lab.keyneez.databinding.BotSheetPassiveOcrResultBinding
+import com.lab.keyneez.databinding.BotSheetOcrResultBinding
 import timber.log.Timber
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
@@ -24,10 +24,8 @@ import java.util.concurrent.Executors
 class OcrActivity : BindingActivity<ActivityOcrBinding>(R.layout.activity_ocr) {
     private val viewModel by viewModels<OcrViewModel>()
 
-    private lateinit var autoResultBinding: BotSheetAutoOcrResultBinding
-    private lateinit var autoResultDialog: BottomSheetDialog
-    private lateinit var passiveResultBinding: BotSheetPassiveOcrResultBinding
-    private lateinit var passiveResultDialog: BottomSheetDialog
+    private lateinit var ocrResultBinding: BotSheetOcrResultBinding
+    private lateinit var ocrResultDialog: BottomSheetDialog
 
     private lateinit var cameraExecutor: ExecutorService
 
@@ -41,7 +39,7 @@ class OcrActivity : BindingActivity<ActivityOcrBinding>(R.layout.activity_ocr) {
         initOcrTypeChangeBtn()
         initCameraBtnClickListener()
         initBottomSheet()
-        initPassiveOcrResultBtnClickListeners()
+        initOcrResultBtnClickListeners()
     }
 
     private fun initCameraPreview() {
@@ -88,26 +86,27 @@ class OcrActivity : BindingActivity<ActivityOcrBinding>(R.layout.activity_ocr) {
 
     private fun initCameraBtnClickListener() {
         binding.btnOcrCamera.setOnSingleClickListener {
-            passiveResultDialog.show()
+            ocrResultDialog.show()
         }
     }
 
     private fun initBottomSheet() {
-        passiveResultBinding = BotSheetPassiveOcrResultBinding.inflate(layoutInflater)
-        passiveResultDialog = BottomSheetDialog(this)
-        passiveResultDialog.setContentView(passiveResultBinding.root)
-
-        autoResultBinding = BotSheetAutoOcrResultBinding.inflate(layoutInflater)
-        autoResultDialog = BottomSheetDialog(this)
-        autoResultDialog.setContentView(autoResultBinding.root)
+        ocrResultBinding = BotSheetOcrResultBinding.inflate(layoutInflater)
+        ocrResultDialog = BottomSheetDialog(this)
+        ocrResultDialog.setContentView(ocrResultBinding.root)
     }
 
-    private fun initPassiveOcrResultBtnClickListeners() {
-        passiveResultBinding.btnPassiveOcrResultReshoot.setOnSingleClickListener {
-            passiveResultDialog.dismiss()
+    private fun initOcrResultBtnClickListeners() {
+        ocrResultBinding.layoutOcrResult.setOnSingleClickListener {
+            Timber.tag("OcrActivity_Layout_Click").d("layout clicked")
+            ocrResultDialog.context.hideKeyboard(ocrResultBinding.root)
         }
 
-        passiveResultBinding.btnPassiveOcrResultConfirm.setOnSingleClickListener {
+        ocrResultBinding.btnOcrResultReshoot.setOnSingleClickListener {
+            ocrResultDialog.dismiss()
+        }
+
+        ocrResultBinding.btnOcrResultConfirm.setOnSingleClickListener {
             val intent = Intent(this, OcrGuideActivity::class.java).apply {
                 setResult(RESULT_OK, intent)
             }

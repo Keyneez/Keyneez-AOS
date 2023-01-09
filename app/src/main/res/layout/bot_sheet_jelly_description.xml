@@ -8,6 +8,7 @@
         android:id="@+id/layout_jelly_description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/shape_gray050_fill_top20_rect"
         android:paddingHorizontal="26dp"
         android:paddingBottom="92dp"
         app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
