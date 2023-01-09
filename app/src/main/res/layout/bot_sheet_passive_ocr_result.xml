@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data></data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_passive_ocr_result"
+        android:layout_width="match_parent"
+        android:paddingBottom="38dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_passive_ocr_result_description"
+            style="@style/PretendardBold24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="36dp"
+            android:text="정보를 입력해주세요."
+            android:textColor="@color/gray900"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_passive_ocr_result_toggle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/shape_gray100_fill_8_rect"
+            android:padding="2dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_passive_ocr_result_description">
+
+            <TextView
+                android:id="@+id/tv_passive_ocr_result_student_id"
+                style="@style/PretendardSemibold18"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="3dp"
+                android:background="@drawable/sel_passive_ocr_result_id_type"
+                android:gravity="center"
+                android:paddingVertical="8dp"
+                android:text="학생증"
+                android:textColor="@color/gray050"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/tv_passive_ocr_result_youth_id"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_passive_ocr_result_youth_id"
+                style="@style/PretendardSemibold18"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/sel_passive_ocr_result_id_type"
+                android:gravity="center"
+                android:paddingVertical="8dp"
+                android:text="청소년증"
+                android:textColor="@color/gray050"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_passive_ocr_result_student_id"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tv_passive_ocr_result_name"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="32dp"
+            android:textColor="@color/gray900"
+            style="@style/PretendardMedium14"
+            android:text="@string/auto_ocr_result_name"
+            app:layout_constraintTop_toBottomOf="@id/layout_passive_ocr_result_toggle"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="24dp"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/et_passive_ocr_result_name"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="24dp"
+            android:hint="@string/auto_ocr_result_name_hint"
+            android:paddingVertical="17dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_passive_ocr_result_name"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_passive_ocr_result_sub_entry"
+            android:layout_width="wrap_content"
+            android:text="@string/auto_ocr_result_school"
+            app:layout_constraintTop_toBottomOf="@id/et_passive_ocr_result_name"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="24dp"
+            style="@style/PretendardMedium14"
+            android:textColor="@color/gray900"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/et_passive_ocr_result_sub_entry"
+            android:layout_width="match_parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_passive_ocr_result_sub_entry"
+            android:paddingVertical="17dp"
+            android:hint="@string/auto_ocr_result_school_hint"
+            android:layout_marginHorizontal="24dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/btn_passive_ocr_result_reshoot"
+            android:layout_width="0dp"
+            android:text="다시 촬영"
+            android:textColor="@color/gray900"
+            android:paddingVertical="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_passive_ocr_result_sub_entry"
+            android:layout_marginTop="111dp"
+            android:layout_marginStart="24dp"
+            android:background="@drawable/shape_gray050_fill_gray900_line_5_rect"
+            app:layout_constraintEnd_toStartOf="@id/btn_passive_ocr_result_confirm"
+            android:gravity="center"
+            style="@style/PretendardBold16"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/btn_passive_ocr_result_confirm"
+            android:layout_width="0dp"
+            android:text="다 적었어요!"
+            app:layout_constraintStart_toEndOf="@id/btn_passive_ocr_result_reshoot"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_passive_ocr_result_sub_entry"
+            android:layout_marginTop="111dp"
+            android:paddingVertical="15dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginStart="8dp"
+            android:gravity="center"
+            android:background="@drawable/sel_passive_ocr_result_confirm_btn"
+            style="@style/PretendardBold16"
+            android:textColor="@color/gray050"
+            android:layout_height="wrap_content" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
