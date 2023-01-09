@@ -1,6 +1,5 @@
 package com.keyneez.presentation.main
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
@@ -10,7 +9,6 @@ import com.keyneez.presentation.main.home.HomeFragment
 import com.keyneez.presentation.main.id.IdFragment
 import com.keyneez.presentation.main.like.LikeFragment
 import com.keyneez.presentation.main.setting.SettingFragment
-import com.keyneez.presentation.ocr.guide.OcrGuideActivity
 import com.keyneez.util.binding.BindingActivity
 import com.keyneez.util.extension.setOnSingleClickListener
 import com.lab.keyneez.R
@@ -31,10 +29,6 @@ class MainActivity : BindingActivity<ActivityMainBinding>(R.layout.activity_main
         val currentFragment = supportFragmentManager.findFragmentById(R.id.container_main)
         if (currentFragment == null) navigateTo<HomeFragment>()
 
-        binding.btnMainCard.setOnClickListener() {
-            navigateTo<IdFragment>()
-        }
-
         // 메뉴 클릭 시 프래그먼트 전환
         binding.botNavMain.setOnItemSelectedListener {
             when (it.itemId) {
@@ -49,8 +43,7 @@ class MainActivity : BindingActivity<ActivityMainBinding>(R.layout.activity_main
 
     private fun initCardBtnClickListener() {
         binding.btnMainCard.setOnSingleClickListener {
-            val intent = Intent(this, OcrGuideActivity::class.java)
-            startActivity(intent)
+            navigateTo<IdFragment>()
         }
     }
 

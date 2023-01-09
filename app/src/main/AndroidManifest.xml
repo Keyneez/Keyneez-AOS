@@ -25,6 +25,10 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
+            android:name="com.keyneez.presentation.main.id.IdPhotoActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
             android:name="com.keyneez.presentation.signup.SignupActivity"
             android:exported="true"
             android:screenOrientation="portrait" />
