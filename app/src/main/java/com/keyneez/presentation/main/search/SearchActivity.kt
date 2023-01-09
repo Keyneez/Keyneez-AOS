@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import com.keyneez.util.binding.BindingActivity
+import com.keyneez.util.extension.hideKeyboard
 import com.keyneez.util.extension.setOnSingleClickListener
 import com.lab.keyneez.R
 import com.lab.keyneez.databinding.ActivitySearchBinding
@@ -18,6 +19,7 @@ class SearchActivity : BindingActivity<ActivitySearchBinding>(R.layout.activity_
 
         initLikeAdapter()
         setupSearchData()
+        initHideKeyboard()
         initSearchBackBtnClickListener()
     }
 
@@ -28,11 +30,18 @@ class SearchActivity : BindingActivity<ActivitySearchBinding>(R.layout.activity_
         }
     }
 
+    private fun initHideKeyboard() {
+        binding.layoutSearchResult.setOnSingleClickListener {
+            hideKeyboard()
+        }
+    }
+
     private fun initLikeAdapter() {
         searchAdapter = SearchAdapter()
         binding.rvSearchResultContent.adapter = searchAdapter
         binding.rvSearchResultContent.layoutManager = GridLayoutManager(this, 2)
     }
+
     private fun initSearchBackBtnClickListener() {
         binding.btnSearchBack.setOnSingleClickListener {
             finish()
