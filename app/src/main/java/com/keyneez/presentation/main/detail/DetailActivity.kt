@@ -12,17 +12,14 @@ class DetailActivity :
         super.onCreate(savedInstanceState)
     }
 
-    // 뒤로가기 버튼
     private fun initBackClickListener() {
         binding.btnDetailBack.setOnSingleClickListener { }
     }
 
-    // 공유 버튼
     private fun initShareClickListener() {
         binding.btnDetailShare.setOnSingleClickListener { }
     }
 
-    // 좋아요 버튼
     private fun initHeartClickListener() {
         binding.btnDetailHeart.setOnSingleClickListener { }
     }

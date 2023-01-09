@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
     </data>
 
     <ScrollView
-        android:id="@+id/detail_scroll_layout"
+        android:id="@+id/sv_detail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/detail_layout"
+            android:id="@+id/layout_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -60,7 +61,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="31dp"
                 android:layout_marginTop="8dp"
-                android:text="문화"
+                android:text="@string/detail_keyword"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/btn_detail_back" />
 
@@ -71,7 +72,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="24dp"
                 android:layout_marginTop="8dp"
-                android:text="2023 아트페어"
+                android:text="@string/detail_title"
                 android:textColor="@color/gray900"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_detail_keyword" />
@@ -83,7 +84,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="24dp"
                 android:layout_marginTop="16dp"
-                android:text="위치"
+                android:text="@string/detail_place_title"
                 android:textColor="@color/gray900"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_detail_title" />
@@ -94,7 +95,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="24dp"
-                android:text="서울 코엑스"
+                android:text="@string/detail_place"
                 android:textColor="@color/gray900"
                 app:layout_constraintStart_toEndOf="@id/tv_detail_palce_title"
                 app:layout_constraintTop_toTopOf="@id/tv_detail_palce_title" />
@@ -106,7 +107,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="24dp"
                 android:layout_marginTop="8dp"
-                android:text="기간"
+                android:text="@string/detail_period_title"
                 android:textColor="@color/gray900"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_detail_palce_title" />
@@ -117,7 +118,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="24dp"
-                android:text="22.11.24-22.12.32"
+                android:text="@string/detail_period"
                 android:textColor="@color/gray900"
                 app:layout_constraintStart_toEndOf="@id/tv_detail_period_title"
                 app:layout_constraintTop_toTopOf="@id/tv_detail_period_title" />
@@ -129,25 +130,23 @@
                 android:layout_marginTop="275dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/img_detail_background"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/btn_detail_link"
+                style="@style/PretendardMedium14"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="24dp"
                 android:layout_marginTop="24dp"
-                android:background="@drawable/shape_rect_fill_gray800_100"
-                android:text="사이트 바로가기"
-                style="@style/PretendardMedium14"
-                android:textColor="@color/gray050"
-                android:paddingVertical="10dp"
+                android:background="@drawable/shape_gray800_fill_100_rect"
                 android:paddingHorizontal="12dp"
+                android:paddingVertical="10dp"
+                android:text="@string/detail_link"
+                android:textColor="@color/gray050"
+                app:drawableEndCompat="@drawable/ic_detail_forward"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/iv_detail"
-                app:drawableEndCompat="@drawable/ic_detail_forward" />
+                app:layout_constraintTop_toBottomOf="@id/iv_detail" />
 
             <TextView
                 android:id="@+id/tv_detail_content"
@@ -156,11 +155,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="24dp"
                 android:layout_marginTop="16dp"
-                android:text="활동소개활동소개활동소개활동소개
-                활동소개활동소개활동소개활동소개활동소개활동소개활동소개활동소개활동소개활동"
                 android:textColor="@color/gray900"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/btn_detail_link" />
+                app:layout_constraintTop_toBottomOf="@id/btn_detail_link"
+                tools:text="활동소개활동소개활동소개활동소개
+                활동소개활동소개활동소개활동소개활동소개활동소개활동소개활동소개활동소개활동" />
 
             <TextView
                 android:id="@+id/tv_detail_benefit_title"
@@ -169,18 +168,18 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="24dp"
                 android:layout_marginTop="40dp"
-                android:text="청소년 혜택"
+                android:text="@string/detail_benefit_title"
                 android:textColor="@color/gray900"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_detail_content" />
 
-            <ImageView
+            <View
                 android:id="@+id/iv_detail_line_benefit"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginHorizontal="24dp"
                 android:layout_marginTop="16dp"
-                android:src="@drawable/shape_rect_fill_gray500"
+                android:src="@drawable/shape_fill_gray500_rect"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_detail_benefit_title" />
 
@@ -191,7 +190,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="24dp"
                 android:layout_marginTop="16dp"
-                android:text="티켓 가격 5% 할인\n음식물 5% 할인"
+                android:text="@string/detail_benefit"
                 android:textColor="@color/gray900"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/iv_detail_line_benefit" />
@@ -203,18 +202,18 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="24dp"
                 android:layout_marginTop="40dp"
-                android:text="이용방법"
+                android:text="@string/detail_use_title"
                 android:textColor="@color/gray900"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_detail_benefit" />
 
-            <ImageView
+            <View
                 android:id="@+id/iv_detail_line_use"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginHorizontal="24dp"
                 android:layout_marginTop="16dp"
-                android:src="@drawable/shape_rect_fill_gray500"
+                android:src="@drawable/shape_fill_gray500_rect"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_detail_use_title" />
 
@@ -225,12 +224,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="24dp"
                 android:layout_marginTop="16dp"
-                android:text="학생증/청소년증 제시"
-                android:textColor="@color/gray900"
                 android:layout_marginBottom="113dp"
+                android:text="@string/detail_use"
+                android:textColor="@color/gray900"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/iv_detail_line_use"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                app:layout_constraintTop_toBottomOf="@id/iv_detail_line_use" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
