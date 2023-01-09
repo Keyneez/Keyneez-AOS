@@ -13,6 +13,11 @@
     <string name="login_otp_description">간편 비밀번호를\n입력해주세요.</string>
     <string name="login_otp_rearrange">재배열</string>
 
+    //search
+    <string name="search_content">제목, 키워드</string>
+    <string name="search_result">검색결과</string>
+    <string name="search_count">15개</string>
+
     // like
     <string name="like_save">저장</string>
     <string name="like_data">11.24–12.31</string>

@@ -1,10 +1,12 @@
 package com.keyneez.presentation.main.like
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import com.keyneez.data.entity.LikeData
+import com.keyneez.presentation.main.search.SearchActivity
 import com.keyneez.util.binding.BindingFragment
 import com.keyneez.util.extension.setOnSingleClickListener
 import com.lab.keyneez.R
@@ -25,7 +27,8 @@ class LikeFragment : BindingFragment<FragmentLikeBinding>(R.layout.fragment_like
 
     private fun initLikeSearchClickListener() {
         binding.btnLikeSearch.setOnSingleClickListener {
-            // 검색화면으로 이동
+            val intent = Intent(activity, SearchActivity::class.java)
+            startActivity(intent)
         }
     }
 

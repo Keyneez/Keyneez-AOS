@@ -29,6 +29,10 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
+            android:name="com.keyneez.presentation.main.search.SearchActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
             android:name="com.keyneez.presentation.signup.SignupActivity"
             android:exported="true"
             android:screenOrientation="portrait" />

@@ -3,27 +3,32 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data></data>
+    <data>
+        <variable
+            name="vm"
+            type="com.keyneez.presentation.main.search.SearchViewModel" />
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/layout_like_rv"
+        android:id="@+id/layout_search_rv"
         android:layout_width="match_parent"
         android:layout_height="240dp"
         android:layout_marginHorizontal="4dp"
         android:layout_marginTop="8dp">
 
         <ImageView
-            android:id="@+id/iv_like_background"
+            android:id="@+id/iv_search_background"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:scaleType="centerCrop"
+            android:background="@drawable/img_like_background"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tv_like_date"
+            android:id="@+id/tv_search_date"
             style="@style/PretendardBold14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -32,10 +37,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="@string/like_data" />
+            android:text="@string/like_data" />
 
         <TextView
-            android:id="@+id/tv_like_title"
+            android:id="@+id/tv_search_title"
             style="@style/PretendardBold24"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -45,7 +50,20 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_like_date"
-            tools:text="@string/like_content" />
+            app:layout_constraintTop_toBottomOf="@id/tv_search_date"
+            android:text="@string/like_content" />
+
+        <ImageButton
+            android:id="@+id/btn_search_liked"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:background="@null"
+            android:src="@drawable/sel_search_heart"
+            android:layout_marginBottom="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
