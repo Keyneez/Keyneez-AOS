@@ -1,13 +1,174 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.keyneez.presentation.main.setting.SettingFragment">
+    tools:context=".presentation.main.setting.SettingFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_setting"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
 
-</FrameLayout>
+        <ImageView
+            android:id="@+id/iv_setting_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="104dp"
+            android:src="@drawable/iv_setting_profile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_setting_name"
+            style="@style/PretendardBold20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/setting_name"
+            android:textColor="@color/gray900"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_setting_profile" />
+
+        <View
+            android:id="@+id/iv_setting_baseline"
+            android:layout_width="match_parent"
+            android:layout_height="6dp"
+            android:layout_marginTop="44dp"
+            android:background="@color/gray100"
+            app:layout_constraintTop_toBottomOf="@id/tv_setting_name" />
+
+        <TextView
+            android:id="@+id/tv_setting_phone"
+            style="@style/PretendardSemibold16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="23dp"
+            android:text="@string/setting_phone"
+            android:textColor="@color/gray900"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_setting_baseline" />
+
+        <ImageView
+            android:id="@+id/iv_setting_phone_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:padding="12dp"
+            android:src="@drawable/ic_setting_arrow"
+            app:layout_constraintBottom_toBottomOf="@id/tv_setting_phone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_setting_phone" />
+
+        <TextView
+            android:id="@+id/tv_setting_password"
+            style="@style/PretendardSemibold16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="28dp"
+            android:text="@string/setting_password"
+            android:textColor="@color/gray900"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_setting_phone" />
+
+        <ImageView
+            android:id="@+id/iv_setting_password_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:padding="12dp"
+            android:src="@drawable/ic_setting_arrow"
+            app:layout_constraintBottom_toBottomOf="@id/tv_setting_password"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_setting_password" />
+
+        <TextView
+            android:id="@+id/tv_setting_id"
+            style="@style/PretendardSemibold16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="28dp"
+            android:text="@string/setting_id"
+            android:textColor="@color/gray900"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_setting_password" />
+
+        <ImageView
+            android:id="@+id/iv_setting_id_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:padding="12dp"
+            android:src="@drawable/ic_setting_arrow"
+            app:layout_constraintBottom_toBottomOf="@id/tv_setting_id"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_setting_id" />
+
+        <TextView
+            android:id="@+id/tv_setting_alert"
+            style="@style/PretendardSemibold16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="28dp"
+            android:text="@string/setting_alert"
+            android:textColor="@color/gray900"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_setting_id" />
+
+        <Switch
+            android:id="@+id/switch_setting_alert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="7dp"
+            android:minWidth="0dp"
+            android:switchMinWidth="0dp"
+            android:thumbTint="@color/gray050"
+            android:trackTint="@color/mint500"
+            app:layout_constraintBottom_toBottomOf="@id/tv_setting_alert"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_setting_alert" />
+
+        <View
+            android:id="@+id/iv_setting_baseline2"
+            android:layout_width="match_parent"
+            android:layout_height="6dp"
+            android:layout_marginTop="23dp"
+            android:background="@color/gray100"
+            app:layout_constraintTop_toBottomOf="@id/tv_setting_alert" />
+
+        <TextView
+            android:id="@+id/tv_setting_log_out"
+            style="@style/PretendardSemibold16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="12dp"
+            android:padding="12dp"
+            android:text="@string/setting_log_out"
+            android:textColor="@color/red500"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_setting_baseline2" />
+
+        <TextView
+            android:id="@+id/tv_setting_withdrawl"
+            style="@style/PretendardSemibold16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:padding="12dp"
+            android:text="@string/setting_withdrawl"
+            android:textColor="@color/gray400"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_setting_log_out" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

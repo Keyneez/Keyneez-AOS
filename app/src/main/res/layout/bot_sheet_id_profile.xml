@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data></data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_id_profile"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="28dp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <TextView
+            android:id="@+id/tv_id_profile_semititle"
+            style="@style/PretendardMedium12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="29dp"
+            android:layout_marginTop="40dp"
+            android:textColor="@color/gray900"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@string/id_semi_title" />
+
+        <TextView
+            android:id="@+id/tv_id_profile_name"
+            style="@style/PretendardBold28"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="29dp"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/gray900"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_id_profile_semititle"
+            android:text="@string/id_name" />
+
+        <ImageView
+            android:id="@+id/iv_id_profile_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="34dp"
+            android:layout_marginEnd="29dp"
+            android:src="@drawable/img_id_profile_logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/iv_id_profile_baseline"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="29dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/gray300"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_id_profile_logo" />
+
+        <TextView
+            android:id="@+id/tv_id_profile_school"
+            style="@style/PretendardMedium16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="29dp"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/gray900"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_id_profile_baseline"
+            android:text="@string/id_school" />
+
+        <TextView
+            android:id="@+id/tv_id_profile_birth"
+            style="@style/PretendardMedium16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="29dp"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/gray900"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_id_profile_school"
+            android:text="@string/id_birth" />
+
+        <TextView
+            android:id="@+id/btn_id_profile_photo"
+            style="@style/PretendardBold16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="17dp"
+            android:layout_marginTop="83dp"
+            android:background="@drawable/shape_gray900_fill_4_rect"
+            android:gravity="center"
+            android:padding="15dp"
+            android:text="@string/id_photo"
+            android:textColor="@color/gray050"
+            app:layout_constraintTop_toTopOf="@id/tv_id_profile_birth" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
