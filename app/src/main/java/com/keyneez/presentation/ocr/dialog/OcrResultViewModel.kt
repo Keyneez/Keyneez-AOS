@@ -20,5 +20,6 @@ class OcrResultViewModel @Inject constructor() : ViewModel() {
     /** ID 카드 유형 변경 */
     fun updateIdType(isStudent: Boolean) {
         _isStudentId.value = isStudent
+        subEntryText.value = ""
     }
 }
