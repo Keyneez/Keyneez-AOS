@@ -24,13 +24,10 @@
             android:name="com.keyneez.presentation.login.LoginActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
-
         <activity
             android:name="com.keyneez.presentation.main.detail.DetailActivity"
             android:exported="false"
-            android:screenOrientation="portrait">
-
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.keyneez.presentation.main.id.IdPhotoActivity"
             android:exported="false"
