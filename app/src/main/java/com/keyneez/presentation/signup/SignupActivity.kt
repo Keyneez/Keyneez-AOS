@@ -1,14 +1,11 @@
 package com.keyneez.presentation.signup
 
 import android.os.Bundle
-import androidx.viewpager2.widget.ViewPager2
 import com.keyneez.util.binding.BindingActivity
 import com.lab.keyneez.R
 import com.lab.keyneez.databinding.ActivitySignupBinding
 
 class SignupActivity : BindingActivity<ActivitySignupBinding>(R.layout.activity_signup) {
-    lateinit var viewPager: ViewPager2
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -16,7 +13,6 @@ class SignupActivity : BindingActivity<ActivitySignupBinding>(R.layout.activity_
     }
 
     private fun initSignupViewPager() {
-        viewPager = binding.vpSignup
         binding.vpSignup.adapter = SignupAdapter(this)
         binding.vpSignup.isUserInputEnabled = false // disable swipe
     }
