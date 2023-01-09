@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data></data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_jelly_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="26dp"
+        android:paddingBottom="92dp">
+
+        <TextView
+            android:id="@+id/tv_jelly_description_title"
+            style="@style/PretendardSemibold14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="%s's Jelly"
+            android:textColor="@color/gray700"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_jelly_description_type"
+            style="@style/PretendardBold24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/gray900"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_jelly_description_title"
+            tools:text="호기심 가득 문화인" />
+
+        <ImageView
+            android:id="@+id/iv_jelly_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:src="@drawable/img_jelly_description_dummy"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_jelly_description_type" />
+
+        <TextView
+            android:id="@+id/tv_jelly_description_hashtag"
+            style="@style/PretendardBold16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:textColor="@color/gray900"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_jelly_description"
+            tools:text="#문화생활 #호기심 가득" />
+
+        <TextView
+            android:id="@+id/tv_jelly_description_content"
+            style="@style/PretendardMedium14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:textColor="@color/gray900"
+            app:layout_constraintTop_toBottomOf="@id/tv_jelly_description_hashtag"
+            tools:text="오늘은 또 어떤 활동들을 해볼까? 이곳저곳 둘러보는  눈빛이 더욱 빛나는 날! 당신의 호기심 가득한 문화생활이  더욱 풍부해질 수 있도록 키니즈가 안내해 줄게요! 🐥" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
