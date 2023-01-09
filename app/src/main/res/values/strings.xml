@@ -120,7 +120,7 @@
     <string name="signup_otp_confirm_description">설정한 비밀번호를\n한번 더 입력해주세요</string>
 
 
-    //onboarding
+    // onboarding
     <string name="onboarding_login">로그인</string>
     <string name="onboarding_signup">회원가입</string>
     <string name="onboarding_first">우리의 일상을 다채롭고\n풍부하게! 키니즈</string>
