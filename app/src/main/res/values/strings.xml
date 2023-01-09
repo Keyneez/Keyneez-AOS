@@ -4,10 +4,52 @@
     // common
     <string name="binding_error">Binding not initialized to reference the view.</string>
 
+    // phone
+    <string name="phone_description">로그인을 위해\n휴대폰 번호를 입력해주세요.</string>
+    <string name="phone_number_hint">휴대폰 번호</string>
+    <string name="phone_next">다음으로</string>
+
+    // login otp
+    <string name="login_otp_description">간편 비밀번호를\n입력해주세요.</string>
+    <string name="login_otp_rearrange">재배열</string>
+
     // like
     <string name="like_save">저장</string>
-    <string name="like_data">11.24-12.31</string>
+    <string name="like_data">11.24–12.31</string>
     <string name="like_content">청소년 \n영화관 할인</string>
+
+    // id
+    <string name="id_title">나의 ID</string>
+    <string name="id_content">온라인 ID로 더 다양한\n활동을 즐겨보세요</string>
+    <string name="id_issue">발급하기</string>
+    <string name="id_semi_title">호기심 가득 문화인</string>
+    <string name="id_name">김민지</string>
+    <string name="id_school">키니즈 고등학교</string>
+    <string name="id_birth">2001.01.17</string>
+    <string name="id_benefit">혜택안내</string>
+    <string name="id_photo">실물인증</string>
+    <string name="id_benefit_title">청소년 혜택안내</string>
+    <string name="id_museum">박물관, 미술관, 공원의 이용료 면제 혹은 50% 내외 할인</string>
+    <string name="id_museum_img">🏛</string>
+    <string name="id_crown">궁, 릉 50% 할인</string>
+    <string name="id_crown_img">👑</string>
+    <string name="id_amusementpark">유원지 30~50% 내외 할인</string>
+    <string name="id_amusementpark_img">🎡</string>
+    <string name="id_leaf">자연 휴양림 40% 할인</string>
+    <string name="id_leaf_img">🌿</string>
+    <string name="id_bus">버스, 지하철 20~40% 할인</string>
+    <string name="id_bus_img">🚍</string>
+    <string name="id_train">철도 요금 10~30% 할인</string>
+    <string name="id_train_img">🚆</string>
+
+    // setting
+    <string name="setting_name">김민지</string>
+    <string name="setting_phone">휴대폰 번호 설정</string>
+    <string name="setting_password">비밀번호 설정</string>
+    <string name="setting_id">ID 관리</string>
+    <string name="setting_alert">알림 설정</string>
+    <string name="setting_log_out">로그아웃</string>
+    <string name="setting_withdrawl">회원탈퇴</string>
 
     // main
     <string name="main_home">홈</string>
@@ -68,6 +110,7 @@
     // test complete
     <string name="test_complete_description">%d님의 젤리는</string>
     <string name="test_complete_start_keyneez">키니즈 시작하기</string>
+    <string name="test_complete_my_item">나의 아이템</string>
 
     // signup otp
     <string name="signup_otp_description">간편 비밀번호를\n설정해주세요</string>
@@ -75,7 +118,6 @@
 
     // signup otp confirm
     <string name="signup_otp_confirm_description">설정한 비밀번호를\n한번 더 입력해주세요</string>
-
 
     // ocr guide
     <string name="ocr_guide_description">학생증 또는 청소년증을\n준비해주세요.</string>
@@ -106,5 +148,4 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="test_complete_my_item">나의 아이템</string>
 </resources>
