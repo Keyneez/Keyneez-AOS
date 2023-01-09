@@ -4,9 +4,18 @@
     // common
     <string name="binding_error">Binding not initialized to reference the view.</string>
 
+    // phone
+    <string name="phone_description">로그인을 위해\n휴대폰 번호를 입력해주세요.</string>
+    <string name="phone_number_hint">휴대폰 번호</string>
+    <string name="phone_next">다음으로</string>
+
+    // login otp
+    <string name="login_otp_description">간편 비밀번호를\n입력해주세요.</string>
+    <string name="login_otp_rearrange">재배열</string>
+
     // like
     <string name="like_save">저장</string>
-    <string name="like_data">11.24-12.31</string>
+    <string name="like_data">11.24–12.31</string>
     <string name="like_content">청소년 \n영화관 할인</string>
 
     // main
@@ -68,6 +77,7 @@
     // test complete
     <string name="test_complete_description">%d님의 젤리는</string>
     <string name="test_complete_start_keyneez">키니즈 시작하기</string>
+    <string name="test_complete_my_item">나의 아이템</string>
 
     // signup otp
     <string name="signup_otp_description">간편 비밀번호를\n설정해주세요</string>
@@ -75,7 +85,6 @@
 
     // signup otp confirm
     <string name="signup_otp_confirm_description">설정한 비밀번호를\n한번 더 입력해주세요</string>
-
 
     // ocr guide
     <string name="ocr_guide_description">학생증 또는 청소년증을\n준비해주세요.</string>
@@ -97,5 +106,4 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="test_complete_my_item">나의 아이템</string>
 </resources>
