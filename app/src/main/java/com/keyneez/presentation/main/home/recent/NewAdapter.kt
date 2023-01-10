@@ -1,4 +1,4 @@
-package com.keyneez.presentation.main.home.neww
+package com.keyneez.presentation.main.home.recent
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

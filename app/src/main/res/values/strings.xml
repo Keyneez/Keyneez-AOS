@@ -1,9 +1,7 @@
 <resources>
-
     <string name="app_name">Keyneez</string>
 
     // common
-
     <string name="binding_error">Binding not initialized to reference the view.</string>
 
     // onboarding
