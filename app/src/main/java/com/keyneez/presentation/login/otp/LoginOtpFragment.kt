@@ -1,41 +1,43 @@
-package com.keyneez.presentation.signup.otp.confirm
+package com.keyneez.presentation.login.otp
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
+import com.keyneez.presentation.login.LoginActivity
 import com.keyneez.presentation.main.MainActivity
-import com.keyneez.presentation.signup.SignupActivity
 import com.keyneez.presentation.signup.otp.SignupOtpViewModel
 import com.keyneez.util.binding.BindingFragment
+import com.keyneez.util.extension.hideKeyboard
 import com.keyneez.util.extension.setOnSingleClickListener
 import com.lab.keyneez.R
-import com.lab.keyneez.databinding.FragmentSignupOtpConfirmBinding
+import com.lab.keyneez.databinding.FragmentLoginOtpBinding
 
-class SignupOtpConfirmFragment :
-    BindingFragment<FragmentSignupOtpConfirmBinding>(R.layout.fragment_signup_otp_confirm) {
+class LoginOtpFragment : BindingFragment<FragmentLoginOtpBinding>(R.layout.fragment_login_otp) {
     private val viewModel by viewModels<SignupOtpViewModel>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.vm = viewModel
 
+        initHideKeyboard()
         initBackBtnClickListener()
         setupPasswordText()
     }
 
+    private fun initHideKeyboard() {
+        binding.layoutLoginOtp.setOnClickListener { requireContext().hideKeyboard(requireView()) }
+    }
+
     private fun initBackBtnClickListener() {
-        binding.btnSignupOtpConfirmBack.setOnSingleClickListener {
-            viewModel.resetPassword()
-            (activity as SignupActivity).intentToPreviousPage()
+        binding.btnLoginOtpBack.setOnSingleClickListener {
+            (activity as LoginActivity).intentToPreviousPage()
         }
     }
 
     private fun setupPasswordText() {
         viewModel.passwordText.observe(viewLifecycleOwner) { pwd ->
-            if (pwd.length == 6) {
-                // 이전 비밀번호와 비교 로직 필요
-                // 서버 통신 - 유저 생성 (비밀번호)
+            if (pwd.length >= 6) {
                 val intent = Intent(activity, MainActivity::class.java)
                 startActivity(intent)
                 requireActivity().finish()
@@ -44,6 +46,7 @@ class SignupOtpConfirmFragment :
     }
 
     companion object {
-        fun newInstance() = SignupOtpConfirmFragment()
+        @JvmStatic
+        fun newInstance() = LoginOtpFragment()
     }
 }

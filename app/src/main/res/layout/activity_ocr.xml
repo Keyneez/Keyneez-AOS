@@ -106,7 +106,7 @@
             android:layout_marginTop="154dp"
             android:gravity="center"
             android:text="@{vm.isPassive() ? @string/ocr_guide_bottom_passive : @string/ocr_guide_bottom_auto}"
-            android:textColor="@color/gray050_50"
+            android:textColor="@color/gray200"
             android:visibility="@{vm.isVertical() &amp;&amp; vm.isPassive() ? View.GONE : View.VISIBLE}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
