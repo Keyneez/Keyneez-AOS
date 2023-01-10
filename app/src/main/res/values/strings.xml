@@ -28,6 +28,7 @@
     // danal guide
     <string name="danal_guide_description">휴대폰 인증을\n진행해주세요.</string>
     <string name="danal_guide_verify">휴대폰 인증하기</string>
+    <string name="danal_guide_msg_existential_user">이미 가입된 회원입니다.</string>
 
     // test guide
     <string name="test_guide_description">나의 젤리 만들기</string>
@@ -187,5 +188,4 @@
     <string name="detail_use">학생증/청소년증 제시</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="danal_guide_msg_existential_user">이미 가입된 회원입니다.</string>
 </resources>

@@ -5,9 +5,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.keyneez.util.binding.BindingActivity
 import com.lab.keyneez.R
 import com.lab.keyneez.databinding.ActivityOcrGuideBinding
-import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
 class OcrGuideActivity : BindingActivity<ActivityOcrGuideBinding>(R.layout.activity_ocr_guide) {
     lateinit var viewPager: ViewPager2
 

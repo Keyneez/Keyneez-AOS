@@ -5,9 +5,7 @@ import android.view.View
 import com.keyneez.util.binding.BindingFragment
 import com.lab.keyneez.R
 import com.lab.keyneez.databinding.FragmentSettingBinding
-import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
 class SettingFragment : BindingFragment<FragmentSettingBinding>(R.layout.fragment_setting) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

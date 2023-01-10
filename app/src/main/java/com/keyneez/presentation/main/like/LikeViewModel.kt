@@ -5,11 +5,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.keyneez.data.entity.LikeData
 import com.lab.keyneez.R
-import dagger.hilt.android.lifecycle.HiltViewModel
-import javax.inject.Inject
 
-@HiltViewModel
-class LikeViewModel @Inject constructor() : ViewModel() {
+class LikeViewModel : ViewModel() {
     private val _likeList = MutableLiveData<List<LikeData>>()
     val likeList: LiveData<List<LikeData>>
         get() = _likeList
