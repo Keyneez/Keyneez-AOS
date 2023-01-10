@@ -3,10 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+
         <variable
             name="viewModel"
             type="com.keyneez.presentation.onboarding.OnboardingViewModel" />
-        <import type="android.view.View"/>
+
+        <import type="android.view.View" />
 
     </data>
 
@@ -19,35 +21,36 @@
             android:id="@+id/img_onboarding_logo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="104dp"
-            android:src="@drawable/ic_onboarding_logo"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:paddingBottom="8dp"
+            android:src="@drawable/ic_onboarding_logo" />
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/vp_onboarding"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/img_onboarding_logo" />
+            android:layout_height="wrap_content" />
 
         <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
             android:id="@+id/tab_onboarding_dot"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="90dp"
             app:dotsColor="@color/mint500"
             app:dotsCornerRadius="8dp"
             app:dotsSize="16dp"
             app:dotsSpacing="4dp"
             app:dotsStrokeColor="@color/gray200"
-            app:dotsStrokeWidth="2dp"
+            app:dotsStrokeWidth="2dp" />
+
+        <androidx.constraintlayout.helper.widget.Flow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:orientation="vertical"
+            app:constraint_referenced_ids="img_onboarding_logo,vp_onboarding,tab_onboarding_dot"
+            app:flow_verticalGap="32dp"
+            app:layout_constraintBottom_toTopOf="@id/btn_onboarding_signup"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/btn_onboarding_signup" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/btn_onboarding_signup"
@@ -61,7 +64,7 @@
             android:paddingVertical="14dp"
             android:text="@string/onboarding_signup"
             android:textColor="@color/gray900"
-            android:visibility="@{viewModel.positon == 3 ? View.VISIBLE : View.GONE}"
+            android:visibility="@{viewModel.positon == 3 ? View.VISIBLE : View.INVISIBLE}"
             app:layout_constraintBottom_toTopOf="@id/btn_onboarding_login" />
 
         <TextView
@@ -76,7 +79,7 @@
             android:paddingVertical="14dp"
             android:text="@string/onboarding_login"
             android:textColor="@color/gray050"
-            android:visibility="@{viewModel.positon == 3 ? View.VISIBLE : View.GONE}"
+            android:visibility="@{viewModel.positon == 3 ? View.VISIBLE : View.INVISIBLE}"
             app:layout_constraintBottom_toBottomOf="parent" />
 
 

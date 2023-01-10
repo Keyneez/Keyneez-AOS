@@ -24,22 +24,6 @@
         <activity
             android:name="com.keyneez.presentation.onboarding.OnboardingActivity"
             android:exported="true"
-            android:screenOrientation="portrait"/>
-        <activity
-            android:name="com.keyneez.presentation.login.LoginActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.keyneez.presentation.main.id.IdPhotoActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.keyneez.presentation.signup.SignupActivity"
-            android:exported="true"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.keyneez.presentation.main.MainActivity"
-            android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -48,11 +32,27 @@
             </intent-filter>
         </activity>
         <activity
+            android:name="com.keyneez.presentation.login.LoginActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.keyneez.presentation.signup.SignupActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.keyneez.presentation.main.MainActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
             android:name="com.keyneez.presentation.ocr.guide.OcrGuideActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name="com.keyneez.presentation.ocr.OcrActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.keyneez.presentation.main.id.IdPhotoActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
     </application>

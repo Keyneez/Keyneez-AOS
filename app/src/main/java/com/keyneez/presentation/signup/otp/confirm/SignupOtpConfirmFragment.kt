@@ -3,6 +3,7 @@ package com.keyneez.presentation.signup.otp.confirm
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.viewModels
 import com.keyneez.presentation.main.MainActivity
 import com.keyneez.presentation.signup.SignupActivity
@@ -36,8 +37,9 @@ class SignupOtpConfirmFragment :
             if (pwd.length == 6) {
                 // 이전 비밀번호와 비교 로직 필요
                 // 서버 통신 - 유저 생성 (비밀번호)
-                val intent = Intent(activity, MainActivity::class.java)
-                startActivity(intent)
+                val toMain = Intent(activity, MainActivity::class.java)
+                requireActivity().setResult(AppCompatActivity.RESULT_OK, toMain)
+                startActivity(toMain)
                 requireActivity().finish()
             }
         }

@@ -50,9 +50,10 @@ android {
 
 dependencies {
     // bottomsheet
-    implementation 'com.google.android.material:material:1.4.0-alpha02'
-    implementation 'com.google.android.material:material:1.2.1'
-    implementation 'com.google.android.material:material:1.5.0-alpha02'
+    implementation 'com.google.android.material:material:1.8.0-beta01'
+    implementation 'com.google.android.material:material:1.7.0'
+    implementation 'com.google.android.material:material:1.8.0-beta01'
+
     // hilt
     implementation "com.google.dagger:hilt-android:2.44.2"
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'

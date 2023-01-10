@@ -19,7 +19,7 @@ class OcrCompleteFragment :
 
     private fun initBackBtnClickListener() {
         binding.btnOcrCompleteBack.setOnSingleClickListener {
-            (activity as OcrGuideActivity).selectIndex(0)
+            (activity as OcrGuideActivity).intentToPreviousPage()
         }
     }
 
