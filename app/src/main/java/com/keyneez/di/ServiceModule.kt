@@ -10,7 +10,7 @@ import retrofit2.Retrofit
 
 @Module
 @InstallIn(SingletonComponent::class)
-object RetrofitServiceModule {
+object ServiceModule {
     @Provides
     fun providesContentService(retrofit: Retrofit): ContentService =
         retrofit.create(ContentService::class.java)
