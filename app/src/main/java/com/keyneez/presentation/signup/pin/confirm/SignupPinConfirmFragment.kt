@@ -1,4 +1,4 @@
-package com.keyneez.presentation.signup.otp.confirm
+package com.keyneez.presentation.signup.pin.confirm
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,15 +7,15 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.viewModels
 import com.keyneez.presentation.main.MainActivity
 import com.keyneez.presentation.signup.SignupActivity
-import com.keyneez.presentation.signup.otp.SignupOtpViewModel
+import com.keyneez.presentation.signup.pin.SignupPinViewModel
 import com.keyneez.util.binding.BindingFragment
 import com.keyneez.util.extension.setOnSingleClickListener
 import com.lab.keyneez.R
-import com.lab.keyneez.databinding.FragmentSignupOtpConfirmBinding
+import com.lab.keyneez.databinding.FragmentSignupPinConfirmBinding
 
-class SignupOtpConfirmFragment :
-    BindingFragment<FragmentSignupOtpConfirmBinding>(R.layout.fragment_signup_otp_confirm) {
-    private val viewModel by viewModels<SignupOtpViewModel>()
+class SignupPinConfirmFragment :
+    BindingFragment<FragmentSignupPinConfirmBinding>(R.layout.fragment_signup_pin_confirm) {
+    private val viewModel by viewModels<SignupPinViewModel>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -26,7 +26,7 @@ class SignupOtpConfirmFragment :
     }
 
     private fun initBackBtnClickListener() {
-        binding.btnSignupOtpConfirmBack.setOnSingleClickListener {
+        binding.btnSignupPinConfirmBack.setOnSingleClickListener {
             viewModel.resetPassword()
             (activity as SignupActivity).intentToPreviousPage()
         }
@@ -46,6 +46,6 @@ class SignupOtpConfirmFragment :
     }
 
     companion object {
-        fun newInstance() = SignupOtpConfirmFragment()
+        fun newInstance() = SignupPinConfirmFragment()
     }
 }
