@@ -21,7 +21,7 @@
         <activity
             android:name="com.keyneez.presentation.onboarding.OnboardingActivity"
             android:exported="true"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -38,6 +38,10 @@
             android:screenOrientation="portrait" />
         <activity
             android:name="com.keyneez.presentation.main.MainActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.keyneez.presentation.main.detail.DetailActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
