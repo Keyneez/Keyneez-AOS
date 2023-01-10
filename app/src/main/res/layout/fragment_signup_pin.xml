@@ -1,23 +1,23 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.keyneez.presentation.signup.otp.SignupOtpFragment">
+    tools:context="com.keyneez.presentation.signup.pin.SignupPinFragment">
 
     <data>
 
         <variable
             name="vm"
-            type="com.keyneez.presentation.signup.otp.SignupOtpViewModel" />
+            type="com.keyneez.presentation.signup.pin.SignupPinViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/layout_signup_otp"
+        android:id="@+id/layout_signup_pin"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingBottom="36dp">
 
         <ImageButton
-            android:id="@+id/btn_signup_otp_back"
+            android:id="@+id/btn_signup_pin_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
@@ -29,80 +29,80 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tv_signup_otp_description"
+            android:id="@+id/tv_signup_pin_description"
             style="@style/PretendardBold24"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:gravity="center"
-            android:text="@string/signup_otp_description"
+            android:text="@string/signup_pin_description"
             android:textColor="@color/gray900"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn_signup_otp_back" />
+            app:layout_constraintTop_toBottomOf="@id/btn_signup_pin_back" />
 
         <View
-            android:id="@+id/view_signup_otp_pwd0"
+            android:id="@+id/view_signup_pin_pwd0"
             isSelected="@{vm.passwordText.length() >= 1}"
             android:layout_width="20dp"
             android:layout_height="0dp"
-            android:background="@drawable/sel_otp_circle"
+            android:background="@drawable/sel_pin_circle"
             app:layout_constraintDimensionRatio="1:1" />
 
         <View
-            android:id="@+id/view_signup_otp_pwd1"
+            android:id="@+id/view_signup_pin_pwd1"
             isSelected="@{vm.passwordText.length() >= 2}"
             android:layout_width="20dp"
             android:layout_height="0dp"
-            android:background="@drawable/sel_otp_circle"
+            android:background="@drawable/sel_pin_circle"
             app:layout_constraintDimensionRatio="1:1" />
 
         <View
-            android:id="@+id/view_signup_otp_pwd2"
+            android:id="@+id/view_signup_pin_pwd2"
             isSelected="@{vm.passwordText.length() >= 3}"
             android:layout_width="20dp"
             android:layout_height="0dp"
-            android:background="@drawable/sel_otp_circle"
+            android:background="@drawable/sel_pin_circle"
             app:layout_constraintDimensionRatio="1:1" />
 
         <View
-            android:id="@+id/view_signup_otp_pwd3"
+            android:id="@+id/view_signup_pin_pwd3"
             isSelected="@{vm.passwordText.length() >= 4}"
             android:layout_width="20dp"
             android:layout_height="0dp"
-            android:background="@drawable/sel_otp_circle"
+            android:background="@drawable/sel_pin_circle"
             app:layout_constraintDimensionRatio="1:1" />
 
         <View
-            android:id="@+id/view_signup_otp_pwd4"
+            android:id="@+id/view_signup_pin_pwd4"
             isSelected="@{vm.passwordText.length() >= 5}"
             android:layout_width="20dp"
             android:layout_height="0dp"
-            android:background="@drawable/sel_otp_circle"
+            android:background="@drawable/sel_pin_circle"
             app:layout_constraintDimensionRatio="1:1" />
 
         <View
-            android:id="@+id/view_signup_otp_pwd5"
+            android:id="@+id/view_signup_pin_pwd5"
             isSelected="@{vm.passwordText.length() >= 6}"
             android:layout_width="20dp"
             android:layout_height="0dp"
-            android:background="@drawable/sel_otp_circle"
+            android:background="@drawable/sel_pin_circle"
             app:layout_constraintDimensionRatio="1:1" />
 
         <androidx.constraintlayout.helper.widget.Flow
-            android:id="@+id/flow_signup_otp_pwd"
+            android:id="@+id/flow_signup_pin_pwd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="41dp"
-            app:constraint_referenced_ids="view_signup_otp_pwd0,view_signup_otp_pwd1,view_signup_otp_pwd2,view_signup_otp_pwd3,view_signup_otp_pwd4,view_signup_otp_pwd5"
+            app:constraint_referenced_ids="view_signup_pin_pwd0,view_signup_pin_pwd1,view_signup_pin_pwd2,view_signup_pin_pwd3,view_signup_pin_pwd4,view_signup_pin_pwd5"
             app:flow_horizontalGap="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_chainStyle="spread_inside"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_signup_otp_description" />
+            app:layout_constraintTop_toBottomOf="@id/tv_signup_pin_description" />
 
         <TextView
-            android:id="@+id/btn_signup_otp_keypad0"
+            android:id="@+id/btn_signup_pin_keypad0"
             style="@style/PretendardBold24"
             android:layout_width="0dp"
             android:layout_height="90dp"
@@ -111,13 +111,13 @@
             android:onClick="@{()->vm.editPassword(0)}"
             android:text="@{vm.keypadList[0].toString()}"
             android:textColor="@color/gray900"
-            app:layout_constraintBottom_toTopOf="@id/btn_signup_otp_keypad3"
-            app:layout_constraintEnd_toStartOf="@id/btn_signup_otp_keypad1"
+            app:layout_constraintBottom_toTopOf="@id/btn_signup_pin_keypad3"
+            app:layout_constraintEnd_toStartOf="@id/btn_signup_pin_keypad1"
             app:layout_constraintStart_toStartOf="parent"
             tools:text="0" />
 
         <TextView
-            android:id="@+id/btn_signup_otp_keypad1"
+            android:id="@+id/btn_signup_pin_keypad1"
             style="@style/PretendardBold24"
             android:layout_width="0dp"
             android:layout_height="90dp"
@@ -125,13 +125,13 @@
             android:onClick="@{()->vm.editPassword(1)}"
             android:text="@{vm.keypadList[1].toString()}"
             android:textColor="@color/gray900"
-            app:layout_constraintBottom_toTopOf="@id/btn_signup_otp_keypad4"
-            app:layout_constraintEnd_toStartOf="@id/btn_signup_otp_keypad2"
-            app:layout_constraintStart_toEndOf="@id/btn_signup_otp_keypad0"
+            app:layout_constraintBottom_toTopOf="@id/btn_signup_pin_keypad4"
+            app:layout_constraintEnd_toStartOf="@id/btn_signup_pin_keypad2"
+            app:layout_constraintStart_toEndOf="@id/btn_signup_pin_keypad0"
             tools:text="1" />
 
         <TextView
-            android:id="@+id/btn_signup_otp_keypad2"
+            android:id="@+id/btn_signup_pin_keypad2"
             style="@style/PretendardBold24"
             android:layout_width="0dp"
             android:layout_height="90dp"
@@ -140,13 +140,13 @@
             android:onClick="@{()->vm.editPassword(2)}"
             android:text="@{vm.keypadList[2].toString()}"
             android:textColor="@color/gray900"
-            app:layout_constraintBottom_toTopOf="@id/btn_signup_otp_keypad5"
+            app:layout_constraintBottom_toTopOf="@id/btn_signup_pin_keypad5"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/btn_signup_otp_keypad1"
+            app:layout_constraintStart_toEndOf="@id/btn_signup_pin_keypad1"
             tools:text="2" />
 
         <TextView
-            android:id="@+id/btn_signup_otp_keypad3"
+            android:id="@+id/btn_signup_pin_keypad3"
             style="@style/PretendardBold24"
             android:layout_width="0dp"
             android:layout_height="90dp"
@@ -155,13 +155,13 @@
             android:onClick="@{()->vm.editPassword(3)}"
             android:text="@{vm.keypadList[3].toString()}"
             android:textColor="@color/gray900"
-            app:layout_constraintBottom_toTopOf="@id/btn_signup_otp_keypad6"
-            app:layout_constraintEnd_toStartOf="@id/btn_signup_otp_keypad4"
+            app:layout_constraintBottom_toTopOf="@id/btn_signup_pin_keypad6"
+            app:layout_constraintEnd_toStartOf="@id/btn_signup_pin_keypad4"
             app:layout_constraintStart_toStartOf="parent"
             tools:text="3" />
 
         <TextView
-            android:id="@+id/btn_signup_otp_keypad4"
+            android:id="@+id/btn_signup_pin_keypad4"
             style="@style/PretendardBold24"
             android:layout_width="0dp"
             android:layout_height="90dp"
@@ -169,13 +169,13 @@
             android:onClick="@{()->vm.editPassword(4)}"
             android:text="@{vm.keypadList[4].toString()}"
             android:textColor="@color/gray900"
-            app:layout_constraintBottom_toTopOf="@id/btn_signup_otp_keypad7"
-            app:layout_constraintEnd_toStartOf="@id/btn_signup_otp_keypad5"
-            app:layout_constraintStart_toEndOf="@id/btn_signup_otp_keypad3"
+            app:layout_constraintBottom_toTopOf="@id/btn_signup_pin_keypad7"
+            app:layout_constraintEnd_toStartOf="@id/btn_signup_pin_keypad5"
+            app:layout_constraintStart_toEndOf="@id/btn_signup_pin_keypad3"
             tools:text="4" />
 
         <TextView
-            android:id="@+id/btn_signup_otp_keypad5"
+            android:id="@+id/btn_signup_pin_keypad5"
             style="@style/PretendardBold24"
             android:layout_width="0dp"
             android:layout_height="90dp"
@@ -184,13 +184,13 @@
             android:onClick="@{()->vm.editPassword(5)}"
             android:text="@{vm.keypadList[5].toString()}"
             android:textColor="@color/gray900"
-            app:layout_constraintBottom_toTopOf="@id/btn_signup_otp_keypad8"
+            app:layout_constraintBottom_toTopOf="@id/btn_signup_pin_keypad8"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/btn_signup_otp_keypad4"
+            app:layout_constraintStart_toEndOf="@id/btn_signup_pin_keypad4"
             tools:text="5" />
 
         <TextView
-            android:id="@+id/btn_signup_otp_keypad6"
+            android:id="@+id/btn_signup_pin_keypad6"
             style="@style/PretendardBold24"
             android:layout_width="0dp"
             android:layout_height="90dp"
@@ -199,13 +199,13 @@
             android:onClick="@{()->vm.editPassword(6)}"
             android:text="@{vm.keypadList[6].toString()}"
             android:textColor="@color/gray900"
-            app:layout_constraintBottom_toTopOf="@id/btn_signup_otp_keypad_rearrange"
-            app:layout_constraintEnd_toStartOf="@id/btn_signup_otp_keypad7"
+            app:layout_constraintBottom_toTopOf="@id/btn_signup_pin_keypad_rearrange"
+            app:layout_constraintEnd_toStartOf="@id/btn_signup_pin_keypad7"
             app:layout_constraintStart_toStartOf="parent"
             tools:text="6" />
 
         <TextView
-            android:id="@+id/btn_signup_otp_keypad7"
+            android:id="@+id/btn_signup_pin_keypad7"
             style="@style/PretendardBold24"
             android:layout_width="0dp"
             android:layout_height="90dp"
@@ -213,13 +213,13 @@
             android:onClick="@{()->vm.editPassword(7)}"
             android:text="@{vm.keypadList[7].toString()}"
             android:textColor="@color/gray900"
-            app:layout_constraintBottom_toTopOf="@id/btn_signup_otp_keypad9"
-            app:layout_constraintEnd_toStartOf="@id/btn_signup_otp_keypad8"
-            app:layout_constraintStart_toEndOf="@id/btn_signup_otp_keypad6"
+            app:layout_constraintBottom_toTopOf="@id/btn_signup_pin_keypad9"
+            app:layout_constraintEnd_toStartOf="@id/btn_signup_pin_keypad8"
+            app:layout_constraintStart_toEndOf="@id/btn_signup_pin_keypad6"
             tools:text="7" />
 
         <TextView
-            android:id="@+id/btn_signup_otp_keypad8"
+            android:id="@+id/btn_signup_pin_keypad8"
             style="@style/PretendardBold24"
             android:layout_width="0dp"
             android:layout_height="90dp"
@@ -228,27 +228,27 @@
             android:onClick="@{()->vm.editPassword(8)}"
             android:text="@{vm.keypadList[8].toString()}"
             android:textColor="@color/gray900"
-            app:layout_constraintBottom_toTopOf="@id/btn_signup_otp_erase"
+            app:layout_constraintBottom_toTopOf="@id/btn_signup_pin_erase"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/btn_signup_otp_keypad7"
+            app:layout_constraintStart_toEndOf="@id/btn_signup_pin_keypad7"
             tools:text="8" />
 
         <TextView
-            android:id="@+id/btn_signup_otp_keypad_rearrange"
+            android:id="@+id/btn_signup_pin_keypad_rearrange"
             style="@style/PretendardBold16"
             android:layout_width="0dp"
             android:layout_height="90dp"
             android:layout_marginStart="9dp"
             android:gravity="center"
             android:onClick="@{()->vm.rearrangeKeypad()}"
-            android:text="@string/signup_otp_rearrange"
+            android:text="@string/signup_pin_rearrange"
             android:textColor="@color/gray500"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/btn_signup_otp_keypad9"
+            app:layout_constraintEnd_toStartOf="@id/btn_signup_pin_keypad9"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/btn_signup_otp_keypad9"
+            android:id="@+id/btn_signup_pin_keypad9"
             style="@style/PretendardBold24"
             android:layout_width="0dp"
             android:layout_height="90dp"
@@ -257,20 +257,20 @@
             android:text="@{vm.keypadList[9].toString()}"
             android:textColor="@color/gray900"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/btn_signup_otp_erase"
-            app:layout_constraintStart_toEndOf="@id/btn_signup_otp_keypad_rearrange"
+            app:layout_constraintEnd_toStartOf="@id/btn_signup_pin_erase"
+            app:layout_constraintStart_toEndOf="@id/btn_signup_pin_keypad_rearrange"
             tools:text="9" />
 
         <ImageButton
-            android:id="@+id/btn_signup_otp_erase"
+            android:id="@+id/btn_signup_pin_erase"
             android:layout_width="0dp"
             android:layout_height="90dp"
             android:layout_marginEnd="9dp"
             android:background="@null"
             android:onClick="@{()->vm.erasePassword()}"
-            android:src="@drawable/ic_signup_otp_erase"
+            android:src="@drawable/ic_signup_pin_erase"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/btn_signup_otp_keypad9" />
+            app:layout_constraintStart_toEndOf="@id/btn_signup_pin_keypad9" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
