@@ -1,4 +1,4 @@
-package com.keyneez.presentation.main.home.neww
+package com.keyneez.presentation.main.home.recent
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

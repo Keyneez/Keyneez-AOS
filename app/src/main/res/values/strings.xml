@@ -1,9 +1,7 @@
 <resources>
-
     <string name="app_name">Keyneez</string>
 
     // common
-
     <string name="binding_error">Binding not initialized to reference the view.</string>
 
     // onboarding
@@ -188,5 +186,4 @@
     <string name="detail_use">학생증/청소년증 제시</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
-
 </resources>
