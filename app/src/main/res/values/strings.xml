@@ -186,7 +186,7 @@
     <string name="detail_benefit">티켓 가격 5% 할인\n음식물 5% 할인</string>
     <string name="detail_use_title">이용방법</string>
     <string name="detail_use">학생증/청소년증 제시</string>
-    
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
