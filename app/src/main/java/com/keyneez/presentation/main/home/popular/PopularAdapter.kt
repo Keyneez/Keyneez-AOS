@@ -5,7 +5,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.keyneez.data.entity.HomeData
-import com.keyneez.util.extension.setOnSingleClickListener
 import com.lab.keyneez.databinding.ItemHomeBinding
 
 class PopularAdapter : RecyclerView.Adapter<PopularAdapter.InfoViewHolder>() {
@@ -16,8 +15,7 @@ class PopularAdapter : RecyclerView.Adapter<PopularAdapter.InfoViewHolder>() {
         fun bind(item: HomeData) {
             binding.ivHomeItem.load(item.background)
             binding.tvHomeTitle.text = item.title
-            binding.root.setOnClickListener{
-
+            binding.root.setOnClickListener {
             }
         }
     }
