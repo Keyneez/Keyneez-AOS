@@ -25,12 +25,8 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.keyneez.presentation.main.id.IdPhotoActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
             android:name="com.keyneez.presentation.signup.SignupActivity"
-            android:exported="true"
+            android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name="com.keyneez.presentation.main.MainActivity"
@@ -42,6 +38,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.keyneez.presentation.main.id.IdPhotoActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.keyneez.presentation.ocr.guide.OcrGuideActivity"
             android:exported="false"

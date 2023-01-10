@@ -1,6 +1,5 @@
 package com.keyneez.presentation.ocr
 
-import android.content.Intent
 import android.graphics.Paint
 import android.os.Bundle
 import android.view.View
@@ -9,7 +8,7 @@ import androidx.camera.core.CameraSelector
 import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
-import com.keyneez.presentation.ocr.guide.OcrGuideActivity
+import com.keyneez.presentation.ocr.dialog.OcrResultFragment
 import com.keyneez.util.binding.BindingActivity
 import com.keyneez.util.extension.setOnSingleClickListener
 import com.lab.keyneez.R
@@ -78,11 +77,8 @@ class OcrActivity : BindingActivity<ActivityOcrBinding>(R.layout.activity_ocr) {
 
     private fun initCameraBtnClickListener() {
         binding.btnOcrCamera.setOnSingleClickListener {
-            // 뷰 연결을 위한 임시 설정 (서버 연결 시 수정)
-            val intent = Intent(this, OcrGuideActivity::class.java).apply {
-                setResult(RESULT_OK, intent)
-            }
-            finish()
+            val ocrResultBottomSheet = OcrResultFragment()
+            ocrResultBottomSheet.show(supportFragmentManager, ocrResultBottomSheet.tag)
         }
     }
 

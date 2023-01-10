@@ -112,6 +112,12 @@
     <string name="test_complete_start_keyneez">키니즈 시작하기</string>
     <string name="test_complete_my_item">나의 아이템</string>
 
+    // jelly description (bottom sheet)
+    <string name="jelly_description_title">%s\'s Jelly</string>
+    <string name="jelly_description_hashtag_dummy">#문화생활 #호기심 가득</string>
+    <string name="jelly_description_type_dummy">호기심 가득 문화인</string>
+    <string name="jelly_description_content_dummy">오늘은 또 어떤 활동들을 해볼까? 이곳저곳 둘러보는 눈빛이 더욱 빛나는 날! 당신의 호기심 가득한 문화생활이 더욱 풍부해질 수 있도록 키니즈가 안내해 줄게요! 🐥</string>
+
     // signup otp
     <string name="signup_otp_description">간편 비밀번호를\n설정해주세요</string>
     <string name="signup_otp_rearrange">재배열</string>
@@ -133,10 +139,22 @@
     <string name="ocr_passive_recognition">신분증 인식이 안 되나요?</string>
     <string name="ocr_auto_recognition">자동인식</string>
 
+    // ocr result
+    <string name="ocr_result_name">이름</string>
+    <string name="ocr_result_name_hint">OOO</string>
+    <string name="ocr_result_school">학교</string>
+    <string name="ocr_result_birth_date">생년월일</string>
+    <string name="ocr_result_school_hint">OO학교</string>
+    <string name="ocr_result_birth_date_hint">YYMMDD</string>
+    <string name="ocr_result_reshoot">다시 촬영</string>
+    <string name="ocr_result_confirm">네, 맞아요</string>
+    <string name="ocr_result_description">아래의 정보가 맞나요?</string>
+    <string name="ocr_result_student_id">학생증</string>
+    <string name="ocr_result_youth_id">청소년증</string>
+
     // ocr complete
     <string name="ocr_complete_description">%s님의\nID를 발급했어요!</string>
     <string name="ocr_complete_confirm">확인</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
