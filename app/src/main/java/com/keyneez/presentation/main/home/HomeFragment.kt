@@ -6,7 +6,9 @@ import com.google.android.material.tabs.TabLayoutMediator
 import com.keyneez.util.binding.BindingFragment
 import com.lab.keyneez.R
 import com.lab.keyneez.databinding.FragmentHomeBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class HomeFragment : BindingFragment<FragmentHomeBinding>(R.layout.fragment_home) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

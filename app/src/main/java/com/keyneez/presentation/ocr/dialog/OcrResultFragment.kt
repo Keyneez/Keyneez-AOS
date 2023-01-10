@@ -11,7 +11,9 @@ import com.keyneez.util.extension.hideKeyboard
 import com.keyneez.util.extension.setOnSingleClickListener
 import com.lab.keyneez.R
 import com.lab.keyneez.databinding.BotSheetOcrResultBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class OcrResultFragment :
     BindingBottomSheetDialog<BotSheetOcrResultBinding>(R.layout.bot_sheet_ocr_result) {
     private val viewModel by viewModels<OcrResultViewModel>()

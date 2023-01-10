@@ -6,7 +6,6 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.Json
 import okhttp3.Interceptor
 import okhttp3.MediaType.Companion.toMediaType
@@ -37,8 +36,11 @@ object RetrofitModule {
 
     @Provides
     @Singleton
-    fun providesKeyneezOkHttpClient(): OkHttpClient =
+    fun providesKeyneezOkHttpClient(
+        interceptor: Interceptor
+    ): OkHttpClient =
         OkHttpClient.Builder()
+            .addInterceptor(interceptor)
             .addInterceptor(
                 HttpLoggingInterceptor().apply {
                     level = HttpLoggingInterceptor.Level.BODY
@@ -46,7 +48,6 @@ object RetrofitModule {
             )
             .build()
 
-    @OptIn(ExperimentalSerializationApi::class)
     @Provides
     @Singleton
     fun providesKeyneezRetrofit(

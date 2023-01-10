@@ -5,7 +5,9 @@ import com.keyneez.util.binding.BindingActivity
 import com.keyneez.util.extension.setOnSingleClickListener
 import com.lab.keyneez.R
 import com.lab.keyneez.databinding.ActivityHomeDetailBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class DetailActivity :
     BindingActivity<ActivityHomeDetailBinding>(R.layout.activity_home_detail) {
     override fun onCreate(savedInstanceState: Bundle?) {

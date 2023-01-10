@@ -14,7 +14,9 @@ import com.keyneez.util.binding.BindingActivity
 import com.keyneez.util.extension.setOnSingleClickListener
 import com.lab.keyneez.R
 import com.lab.keyneez.databinding.ActivityOnboardingBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class OnboardingActivity :
     BindingActivity<ActivityOnboardingBinding>(R.layout.activity_onboarding) {
     private val viewModel: OnboardingViewModel by viewModels()

@@ -10,7 +10,9 @@ import com.keyneez.presentation.main.id.IdPhotoActivity
 import com.keyneez.util.extension.setOnSingleClickListener
 import com.lab.keyneez.R
 import com.lab.keyneez.databinding.BotSheetIdProfileBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class IdProfileFragment : BottomSheetDialogFragment() {
     private var _binding: BotSheetIdProfileBinding? = null
     private val binding: BotSheetIdProfileBinding

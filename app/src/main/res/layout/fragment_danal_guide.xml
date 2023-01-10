@@ -5,6 +5,9 @@
 
     <data>
 
+        <variable
+            name="vm"
+            type="com.keyneez.presentation.signup.danal.guide.DanalGuideViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -53,9 +56,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
-            android:layout_marginBottom="32dp"
+            android:layout_marginBottom="28dp"
             android:background="@drawable/shape_gray900_fill_4_rect"
             android:gravity="center"
+            android:onClick="@{() -> vm.postDanalSignup()}"
             android:paddingVertical="15dp"
             android:text="@string/danal_guide_verify"
             android:textColor="@color/gray050"

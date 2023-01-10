@@ -17,7 +17,9 @@ import com.keyneez.util.extension.setOnSingleClickListener
 import com.keyneez.util.extension.showToast
 import com.lab.keyneez.R
 import com.lab.keyneez.databinding.FragmentOcrGuideBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class OcrGuideFragment : BindingFragment<FragmentOcrGuideBinding>(R.layout.fragment_ocr_guide) {
     private lateinit var resultLauncher: ActivityResultLauncher<Intent>
 

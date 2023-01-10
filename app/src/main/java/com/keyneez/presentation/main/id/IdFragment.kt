@@ -10,9 +10,10 @@ import com.keyneez.util.binding.BindingFragment
 import com.keyneez.util.extension.setOnSingleClickListener
 import com.lab.keyneez.R
 import com.lab.keyneez.databinding.FragmentIdBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class IdFragment : BindingFragment<FragmentIdBinding>(R.layout.fragment_id) {
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initIdLayout()

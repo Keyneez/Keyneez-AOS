@@ -4,7 +4,9 @@ import android.os.Bundle
 import com.keyneez.util.binding.BindingActivity
 import com.lab.keyneez.R
 import com.lab.keyneez.databinding.ActivityLoginBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class LoginActivity : BindingActivity<ActivityLoginBinding>(R.layout.activity_login) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

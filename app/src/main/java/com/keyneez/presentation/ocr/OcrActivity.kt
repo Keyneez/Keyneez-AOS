@@ -13,10 +13,12 @@ import com.keyneez.util.binding.BindingActivity
 import com.keyneez.util.extension.setOnSingleClickListener
 import com.lab.keyneez.R
 import com.lab.keyneez.databinding.ActivityOcrBinding
+import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 
+@AndroidEntryPoint
 class OcrActivity : BindingActivity<ActivityOcrBinding>(R.layout.activity_ocr) {
     private val viewModel by viewModels<OcrViewModel>()
 

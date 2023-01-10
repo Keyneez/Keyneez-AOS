@@ -3,8 +3,10 @@ package com.keyneez.presentation.ocr.dialog
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
+@HiltViewModel
 class OcrResultViewModel @Inject constructor() : ViewModel() {
     private val _isStudentId = MutableLiveData<Boolean>()
     val isStudentId: LiveData<Boolean>

@@ -13,7 +13,9 @@ import com.keyneez.util.extension.hideKeyboard
 import com.keyneez.util.extension.setOnSingleClickListener
 import com.lab.keyneez.R
 import com.lab.keyneez.databinding.FragmentLoginPinBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class LoginPinFragment : BindingFragment<FragmentLoginPinBinding>(R.layout.fragment_login_pin) {
     private val viewModel by viewModels<SignupPinViewModel>()
 

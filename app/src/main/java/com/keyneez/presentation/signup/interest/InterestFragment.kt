@@ -8,7 +8,9 @@ import com.keyneez.util.binding.BindingFragment
 import com.keyneez.util.extension.setOnSingleClickListener
 import com.lab.keyneez.R
 import com.lab.keyneez.databinding.FragmentInterestBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class InterestFragment : BindingFragment<FragmentInterestBinding>(R.layout.fragment_interest) {
     private val viewModel by viewModels<InterestViewModel>()
 

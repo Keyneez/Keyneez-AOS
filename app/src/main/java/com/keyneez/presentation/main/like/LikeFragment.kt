@@ -9,7 +9,9 @@ import com.keyneez.util.binding.BindingFragment
 import com.keyneez.util.extension.setOnSingleClickListener
 import com.lab.keyneez.R
 import com.lab.keyneez.databinding.FragmentLikeBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class LikeFragment : BindingFragment<FragmentLikeBinding>(R.layout.fragment_like) {
     lateinit var likeAdapter: LikeAdapter
     val data = mutableListOf<LikeData>()

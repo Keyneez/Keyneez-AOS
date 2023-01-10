@@ -7,7 +7,9 @@ import com.keyneez.data.entity.HomeData
 import com.keyneez.util.binding.BindingFragment
 import com.lab.keyneez.R
 import com.lab.keyneez.databinding.FragmentHomeNewBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class NewFragment : BindingFragment<FragmentHomeNewBinding>(R.layout.fragment_home_new) {
     private val viewModel: NewViewModel by viewModels()
     val data = mutableListOf<HomeData>()
