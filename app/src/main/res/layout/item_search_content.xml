@@ -37,7 +37,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:text="@string/like_data" />
+            android:text="@string/like_date" />
 
         <TextView
             android:id="@+id/tv_search_title"

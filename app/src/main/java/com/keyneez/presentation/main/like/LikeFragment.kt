@@ -6,6 +6,7 @@ import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import com.keyneez.data.model.response.ResponseLikeDto
+import com.keyneez.data.service.ContentService
 import com.keyneez.presentation.main.search.SearchActivity
 import com.keyneez.util.binding.BindingFragment
 import com.keyneez.util.extension.setOnSingleClickListener
@@ -18,7 +19,7 @@ class LikeFragment : BindingFragment<FragmentLikeBinding>(R.layout.fragment_like
     lateinit var likeAdapter: LikeAdapter
     val data = mutableListOf<ResponseLikeDto>()
     val viewModel: LikeViewModel by viewModels()
-    lateinit var likeService: LikeService
+    lateinit var likeService: ContentService
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

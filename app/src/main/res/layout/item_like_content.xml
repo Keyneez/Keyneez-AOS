@@ -20,7 +20,7 @@
             android:id="@+id/iv_like_background"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            setRoundedImage="@{data.data.background}"
+            setRoundedImage="@{data.background}"
             android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -37,7 +37,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="@{@string/like_date(data.data.start,data.data.end)}" />
+            tools:text="@{@string/like_date(data.start,data.end)}" />
 
         <TextView
             android:id="@+id/tv_like_title"
@@ -51,6 +51,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_like_date"
-            tools:text="@{data.data.title}" />
+            tools:text="@{data.title}" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

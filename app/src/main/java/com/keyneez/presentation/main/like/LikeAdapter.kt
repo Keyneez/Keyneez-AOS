@@ -3,10 +3,7 @@ package com.keyneez.presentation.main.like
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import coil.load
-import coil.transform.RoundedCornersTransformation
 import com.keyneez.data.model.response.ResponseLikeDto
-import com.lab.keyneez.R
 import com.lab.keyneez.databinding.ItemLikeContentBinding
 
 class LikeAdapter : RecyclerView.Adapter<LikeAdapter.getViewHolder>() {
