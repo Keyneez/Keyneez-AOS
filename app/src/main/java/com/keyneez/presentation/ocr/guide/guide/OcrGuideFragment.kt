@@ -37,7 +37,7 @@ class OcrGuideFragment : BindingFragment<FragmentOcrGuideBinding>(R.layout.fragm
             registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
                 // text recognition success
                 if (result.resultCode == Activity.RESULT_OK) {
-                    (activity as OcrGuideActivity).selectIndex(1)
+                    (activity as OcrGuideActivity).intentToNextPage()
                 }
             }
 

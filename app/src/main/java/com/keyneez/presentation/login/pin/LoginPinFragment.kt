@@ -1,20 +1,21 @@
-package com.keyneez.presentation.login.otp
+package com.keyneez.presentation.login.pin
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.viewModels
 import com.keyneez.presentation.login.LoginActivity
 import com.keyneez.presentation.main.MainActivity
-import com.keyneez.presentation.signup.otp.SignupOtpViewModel
+import com.keyneez.presentation.signup.pin.SignupPinViewModel
 import com.keyneez.util.binding.BindingFragment
 import com.keyneez.util.extension.hideKeyboard
 import com.keyneez.util.extension.setOnSingleClickListener
 import com.lab.keyneez.R
-import com.lab.keyneez.databinding.FragmentLoginOtpBinding
+import com.lab.keyneez.databinding.FragmentLoginPinBinding
 
-class LoginOtpFragment : BindingFragment<FragmentLoginOtpBinding>(R.layout.fragment_login_otp) {
-    private val viewModel by viewModels<SignupOtpViewModel>()
+class LoginPinFragment : BindingFragment<FragmentLoginPinBinding>(R.layout.fragment_login_pin) {
+    private val viewModel by viewModels<SignupPinViewModel>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -26,11 +27,11 @@ class LoginOtpFragment : BindingFragment<FragmentLoginOtpBinding>(R.layout.fragm
     }
 
     private fun initHideKeyboard() {
-        binding.layoutLoginOtp.setOnClickListener { requireContext().hideKeyboard(requireView()) }
+        binding.layoutLoginPin.setOnClickListener { requireContext().hideKeyboard(requireView()) }
     }
 
     private fun initBackBtnClickListener() {
-        binding.btnLoginOtpBack.setOnSingleClickListener {
+        binding.btnLoginPinBack.setOnSingleClickListener {
             (activity as LoginActivity).intentToPreviousPage()
         }
     }
@@ -38,8 +39,9 @@ class LoginOtpFragment : BindingFragment<FragmentLoginOtpBinding>(R.layout.fragm
     private fun setupPasswordText() {
         viewModel.passwordText.observe(viewLifecycleOwner) { pwd ->
             if (pwd.length >= 6) {
-                val intent = Intent(activity, MainActivity::class.java)
-                startActivity(intent)
+                val toMain = Intent(activity, MainActivity::class.java)
+                requireActivity().setResult(AppCompatActivity.RESULT_OK, toMain)
+                startActivity(toMain)
                 requireActivity().finish()
             }
         }
@@ -47,6 +49,6 @@ class LoginOtpFragment : BindingFragment<FragmentLoginOtpBinding>(R.layout.fragm
 
     companion object {
         @JvmStatic
-        fun newInstance() = LoginOtpFragment()
+        fun newInstance() = LoginPinFragment()
     }
 }

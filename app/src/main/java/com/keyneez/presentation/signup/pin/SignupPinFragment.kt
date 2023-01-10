@@ -1,4 +1,4 @@
-package com.keyneez.presentation.signup.otp
+package com.keyneez.presentation.signup.pin
 
 import android.os.Bundle
 import android.view.View
@@ -7,10 +7,10 @@ import com.keyneez.presentation.signup.SignupActivity
 import com.keyneez.util.binding.BindingFragment
 import com.keyneez.util.extension.setOnSingleClickListener
 import com.lab.keyneez.R
-import com.lab.keyneez.databinding.FragmentSignupOtpBinding
+import com.lab.keyneez.databinding.FragmentSignupPinBinding
 
-class SignupOtpFragment : BindingFragment<FragmentSignupOtpBinding>(R.layout.fragment_signup_otp) {
-    private val viewModel by viewModels<SignupOtpViewModel>()
+class SignupPinFragment : BindingFragment<FragmentSignupPinBinding>(R.layout.fragment_signup_pin) {
+    private val viewModel by viewModels<SignupPinViewModel>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -21,7 +21,7 @@ class SignupOtpFragment : BindingFragment<FragmentSignupOtpBinding>(R.layout.fra
     }
 
     private fun initBackBtnClickListener() {
-        binding.btnSignupOtpBack.setOnSingleClickListener {
+        binding.btnSignupPinBack.setOnSingleClickListener {
             viewModel.rearrangeKeypad()
             (activity as SignupActivity).intentToPreviousPage()
         }
@@ -38,6 +38,6 @@ class SignupOtpFragment : BindingFragment<FragmentSignupOtpBinding>(R.layout.fra
     }
 
     companion object {
-        fun newInstance() = SignupOtpFragment()
+        fun newInstance() = SignupPinFragment()
     }
 }

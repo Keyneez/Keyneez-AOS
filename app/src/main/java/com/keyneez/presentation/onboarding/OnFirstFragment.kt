@@ -10,4 +10,8 @@ class OnFirstFragment : BindingFragment<FragmentOnFirstBinding>(R.layout.fragmen
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
     }
+
+    companion object {
+        fun newInstance() = OnFirstFragment()
+    }
 }
