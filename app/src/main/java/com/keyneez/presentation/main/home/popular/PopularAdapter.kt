@@ -16,7 +16,8 @@ class PopularAdapter : RecyclerView.Adapter<PopularAdapter.InfoViewHolder>() {
         fun bind(item: HomeData) {
             binding.ivHomeItem.load(item.background)
             binding.tvHomeTitle.text = item.title
-            binding.ivHomeCard.setOnSingleClickListener {
+            binding.root.setOnClickListener{
+
             }
         }
     }
