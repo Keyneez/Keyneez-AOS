@@ -1,4 +1,4 @@
-package com.keyneez.presentation.signup.otp
+package com.keyneez.presentation.signup.pin
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -7,7 +7,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class SignupOtpViewModel @Inject constructor() : ViewModel() {
+class SignupPinViewModel @Inject constructor() : ViewModel() {
     private val _passwordText = MutableLiveData("")
     val passwordText: LiveData<String>
         get() = _passwordText

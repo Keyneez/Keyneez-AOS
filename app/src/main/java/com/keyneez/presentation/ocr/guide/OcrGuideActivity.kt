@@ -21,8 +21,13 @@ class OcrGuideActivity : BindingActivity<ActivityOcrGuideBinding>(R.layout.activ
         binding.vpOcrGuide.isUserInputEnabled = false // disable swipe
     }
 
-    /** 해당 인덱스의 프래그먼트로 ViewPager 전환 */
-    fun selectIndex(newIndex: Int) {
-        binding.vpOcrGuide.currentItem = newIndex
+    /** 이전 페이지의 프래그먼트로 ViewPager 전환 */
+    fun intentToPreviousPage() {
+        binding.vpOcrGuide.currentItem--
+    }
+
+    /** 다음 페이지의 프래그먼트로 ViewPager 전환 */
+    fun intentToNextPage() {
+        binding.vpOcrGuide.currentItem++
     }
 }
