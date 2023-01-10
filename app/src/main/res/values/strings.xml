@@ -95,6 +95,14 @@
     <string name="main_character">캐릭터</string>
     <string name="main_setting">설정</string>
 
+    //home
+    <string name="home_recommend">추천</string>
+    <string name="home_popular">인기</string>
+    <string name="home_new">최신</string>
+    <string name="home_keyword">문화</string>
+    <string name="home_sub">유적 탐방부터 미술품까지!</string>
+    <string name="home_title">청소년 미술관 할인</string>
+
     // like
     <string name="like_save">저장</string>
     <string name="like_data">11.24–12.31</string>

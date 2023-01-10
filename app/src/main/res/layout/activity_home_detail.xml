@@ -61,6 +61,11 @@
                 android:layout_marginStart="31dp"
                 android:layout_marginTop="8dp"
                 android:text="@string/detail_keyword"
+                style="@style/PretendardBold14"
+                android:textColor="@color/mint500"
+                android:background="@drawable/shape_mint500_line_rect"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="8dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/btn_detail_back" />
 
