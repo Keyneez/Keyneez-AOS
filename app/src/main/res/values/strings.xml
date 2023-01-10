@@ -165,6 +165,10 @@
     <string name="setting_withdrawl">회원탈퇴</string>
 
     // detail
+    <string name="detail_title">2023 아트페어</string>
+    <string name="detail_place_title">위치</string>
+    <string name="detail_place">서울 코엑스</string>
+    <string name="detail_keyword">문화</string>
     <string name="detail_period_title">기간</string>
     <string name="detail_period">22.11.24-22.12.32</string>
     <string name="detail_link">사이트 바로가기</string>
@@ -175,4 +179,5 @@
 
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>
