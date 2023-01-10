@@ -2,11 +2,25 @@ package com.keyneez.util.binding
 
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import androidx.lifecycle.LiveData
+import coil.load
+import coil.transform.RoundedCornersTransformation
+import com.lab.keyneez.R
 
 object BindingAdapter {
+    @JvmStatic
+    @BindingAdapter("setRoundedImage")
+    fun ImageView.setRoundedImage(url: String?) {
+        this.load(url) {
+            fallback(R.drawable.img_like_background)
+            placeholder(R.drawable.img_like_background)
+            transformations(RoundedCornersTransformation(14f))
+        }
+    }
+
     @JvmStatic
     @BindingAdapter("isSelected")
     fun View.isSelected(selected: Boolean) {

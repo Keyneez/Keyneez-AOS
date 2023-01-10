@@ -3,7 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data></data>
+    <data>
+        <variable
+            name="data"
+            type="com.keyneez.data.model.response.ResponseLikeDto" />
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout_like_rv"
@@ -16,6 +20,7 @@
             android:id="@+id/iv_like_background"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            setRoundedImage="@{data.data.background}"
             android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -32,7 +37,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="@string/like_data" />
+            tools:text="@{@string/like_date(data.data.start,data.data.end)}" />
 
         <TextView
             android:id="@+id/tv_like_title"
@@ -46,6 +51,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_like_date"
-            tools:text="@string/like_content" />
+            tools:text="@{data.data.title}" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

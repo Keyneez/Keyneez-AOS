@@ -26,13 +26,7 @@ class LikeAdapter : RecyclerView.Adapter<LikeAdapter.getViewHolder>() {
     class getViewHolder(private val binding: ItemLikeContentBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: ResponseLikeDto) {
-            binding.ivLikeBackground.load(item.background) {
-                fallback(R.drawable.img_like_background)
-                placeholder(R.drawable.img_like_background)
-                transformations(RoundedCornersTransformation(14f))
-            }
-            binding.tvLikeDate.text = item.date
-            binding.tvLikeTitle.text = item.title
+            binding.data = item
         }
     }
 }
