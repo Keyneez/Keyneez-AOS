@@ -8,6 +8,7 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.Json
+import okhttp3.Interceptor
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -17,6 +18,23 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object RetrofitModule {
+    private const val CONTENT_TYPE = "Content-Type"
+    private const val APPLICATION_JSON = "application/json"
+
+    @Provides
+    @Singleton
+    fun providesKeyneezInterceptor(): Interceptor =
+        Interceptor { chain ->
+            with(chain) {
+                proceed(
+                    request()
+                        .newBuilder()
+                        .addHeader(CONTENT_TYPE, APPLICATION_JSON)
+                        .build()
+                )
+            }
+        }
+
     @Provides
     @Singleton
     fun providesKeyneezOkHttpClient(): OkHttpClient =
