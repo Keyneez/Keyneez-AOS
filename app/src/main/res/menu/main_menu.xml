@@ -16,6 +16,8 @@
     <item
         android:id="@+id/menu_character"
         android:title="@string/main_character"
+        android:enabled="false"
+        android:checkable="false"
         android:icon="@drawable/ic_main_character" />
     <item
         android:id="@+id/menu_setting"
