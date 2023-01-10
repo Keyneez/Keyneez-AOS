@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.lab.keyneez.R
 import com.lab.keyneez.databinding.BotSheetIdBenefitBinding
-import dagger.hilt.android.AndroidEntryPoint
 
 class IdBenefitFragment : BottomSheetDialogFragment() {
     private var _binding: BotSheetIdBenefitBinding? = null

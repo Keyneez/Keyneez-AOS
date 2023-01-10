@@ -7,7 +7,6 @@ import com.keyneez.data.entity.HomeData
 import com.keyneez.util.binding.BindingFragment
 import com.lab.keyneez.R
 import com.lab.keyneez.databinding.FragmentHomePopularBinding
-import dagger.hilt.android.AndroidEntryPoint
 
 class PopularFragment :
     BindingFragment<FragmentHomePopularBinding>(R.layout.fragment_home_popular) {
