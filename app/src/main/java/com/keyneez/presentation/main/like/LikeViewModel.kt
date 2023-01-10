@@ -3,13 +3,20 @@ package com.keyneez.presentation.main.like
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.keyneez.data.entity.LikeData
-import com.lab.keyneez.R
+import androidx.lifecycle.viewModelScope
+import com.keyneez.data.model.response.ResponseLikeDto
+import com.keyneez.util.UiState
+import kotlinx.coroutines.launch
+import timber.log.Timber
 
 class LikeViewModel : ViewModel() {
-    private val _likeList = MutableLiveData<List<LikeData>>()
-    val likeList: LiveData<List<LikeData>>
+    private val _likeList = MutableLiveData<List<ResponseLikeDto>>()
+    val likeList: LiveData<List<ResponseLikeDto>>
         get() = _likeList
+
+    private val _stateMessage = MutableLiveData<UiState>()
+    val stateMessage: LiveData<UiState>
+        get() = _stateMessage
 
     init {
         getLikeList()
@@ -17,38 +24,29 @@ class LikeViewModel : ViewModel() {
 
     private fun getLikeList() {
         // 코틀린은 자동적으로 타입을 추론해 주기 때문에 굳이 타입을 안 써줘도 된다.
-        val LikeDatas = listOf(
-            LikeData(
-                background = R.drawable.img_like_background,
-                date = "12.4-12-10",
-                title = "청소년\n영화관 할인"
-            ),
-            LikeData(
-                background = R.drawable.img_like_background,
-                date = "12.11-12.17",
-                title = "청소년\n미술관 할인"
-            ),
-            LikeData(
-                background = R.drawable.img_like_background,
-                date = "12.18-12.24",
-                title = "청소년\n공연장 할인"
-            ),
-            LikeData(
-                background = R.drawable.img_like_background,
-                date = "12.25-12.31",
-                title = "청소년\n박물관 할인"
-            ),
-            LikeData(
-                background = R.drawable.img_like_background,
-                date = "1.1-1.7",
-                title = "청소년\n서점 할인"
-            ),
-            LikeData(
-                background = R.drawable.img_like_background,
-                date = "1.8-1.14",
-                title = "청소년\n강의 할인"
-            )
-        )
-        _likeList.value = LikeDatas
+        viewModelScope.launch {
+            likeRepository.getMusicList()
+                .onSuccess { response ->
+                    // 음악이 존재하지 않는 경우
+                    if (response.data == null) {
+                        Timber.d("GET LIKE LIST IS NULL")
+                        _stateMessage.value = UiState.Failure(LIKE_NULL_CODE)
+                        return@onSuccess
+                    }
+
+                    Timber.d("GET LIKE LIST SUCCESS")
+                    Timber.d("response : $response")
+                    _likeList.value = response.data!!
+                    _stateMessage.value = UiState.Success
+                }
+                .onFailure {
+                    Timber.e("GET LIKE LIST SERVER ERROR")
+                    Timber.e("message : ${it.message}")
+                    _stateMessage.value = UiState.Error
+                }
+        }
+    }
+    companion object {
+        const val LIKE_NULL_CODE = 100
     }
 }

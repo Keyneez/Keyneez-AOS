@@ -5,12 +5,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import coil.transform.RoundedCornersTransformation
-import com.keyneez.data.entity.LikeData
+import com.keyneez.data.model.response.ResponseLikeDto
 import com.lab.keyneez.R
 import com.lab.keyneez.databinding.ItemLikeContentBinding
 
 class LikeAdapter : RecyclerView.Adapter<LikeAdapter.getViewHolder>() {
-    var data = listOf<LikeData>()
+    var data = listOf<ResponseLikeDto>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): getViewHolder {
         val binding =
@@ -25,7 +25,7 @@ class LikeAdapter : RecyclerView.Adapter<LikeAdapter.getViewHolder>() {
 
     class getViewHolder(private val binding: ItemLikeContentBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: LikeData) {
+        fun bind(item: ResponseLikeDto) {
             binding.ivLikeBackground.load(item.background) {
                 fallback(R.drawable.img_like_background)
                 placeholder(R.drawable.img_like_background)
