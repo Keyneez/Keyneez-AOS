@@ -83,7 +83,7 @@
                 android:text="@string/home_keyword"
                 style="@style/PretendardBold14"
                 android:textColor="@color/mint500"
-                android:background="@drawable/shape_mint500_stroke_rect"
+                android:background="@drawable/shape_mint500_line_rect"
                 android:layout_marginTop="27dp"
                 android:layout_marginHorizontal="21dp"
                 app:layout_constraintStart_toStartOf="parent"
