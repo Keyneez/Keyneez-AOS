@@ -59,7 +59,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
             android:layout_marginBottom="12dp"
-            android:background="@drawable/shape_gray050_gary900line_4_rect"
+            android:background="@drawable/shape_gray050_fill_gary900_line_4_rect"
             android:gravity="center"
             android:paddingVertical="14dp"
             android:text="@string/onboarding_signup"

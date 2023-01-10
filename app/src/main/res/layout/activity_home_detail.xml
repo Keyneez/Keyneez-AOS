@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <ScrollView
+        android:id="@+id/sv_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="113dp">
+
+            <ImageButton
+                android:id="@+id/btn_detail_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="48dp"
+                android:background="@null"
+                android:padding="12dp"
+                android:src="@drawable/ic_detail_arrowback"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/btn_detail_share"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:layout_marginEnd="4dp"
+                android:background="@null"
+                android:padding="12dp"
+                android:src="@drawable/ic_detail_share"
+                app:layout_constraintEnd_toStartOf="@id/btn_detail_heart"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/btn_detail_heart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:layout_marginEnd="12dp"
+                android:background="@null"
+                android:padding="12dp"
+                android:src="@drawable/sel_detail_heart"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_detail_keyword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="31dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/detail_keyword"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_detail_back" />
+
+            <TextView
+                android:id="@+id/tv_detail_title"
+                style="@style/PretendardBold24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/detail_title"
+                android:textColor="@color/gray900"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_detail_keyword" />
+
+            <TextView
+                android:id="@+id/tv_detail_palce_title"
+                style="@style/PretendardBold14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/detail_place_title"
+                android:textColor="@color/gray900"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_detail_title" />
+
+            <TextView
+                android:id="@+id/tv_detail_place"
+                style="@style/PretendardMedium14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:text="@string/detail_place"
+                android:textColor="@color/gray900"
+                app:layout_constraintStart_toEndOf="@id/tv_detail_palce_title"
+                app:layout_constraintTop_toTopOf="@id/tv_detail_palce_title" />
+
+            <TextView
+                android:id="@+id/tv_detail_period_title"
+                style="@style/PretendardBold14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/detail_period_title"
+                android:textColor="@color/gray900"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_detail_palce_title" />
+
+            <TextView
+                android:id="@+id/tv_detail_period"
+                style="@style/PretendardMedium14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:text="@string/detail_period"
+                android:textColor="@color/gray900"
+                app:layout_constraintStart_toEndOf="@id/tv_detail_period_title"
+                app:layout_constraintTop_toTopOf="@id/tv_detail_period_title" />
+
+            <ImageView
+                android:id="@+id/iv_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/img_detail_background"
+                app:layout_constraintTop_toBottomOf="@id/tv_detail_period_title" />
+
+            <TextView
+                android:id="@+id/btn_detail_link"
+                style="@style/PretendardMedium14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/shape_gray800_fill_100_rect"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="10dp"
+                android:text="@string/detail_link"
+                android:textColor="@color/gray050"
+                app:drawableEndCompat="@drawable/ic_detail_forward"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_detail" />
+
+            <TextView
+                android:id="@+id/tv_detail_content"
+                style="@style/PretendardMedium14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/gray900"
+                app:layout_constraintTop_toBottomOf="@id/btn_detail_link"
+                tools:text="활동소개활동소개활동소개활동소개
+                활동소개활동소개활동소개활동소개활동소개활동소개활동소개활동소개활동소개활동" />
+
+            <TextView
+                android:id="@+id/tv_detail_benefit_title"
+                style="@style/PretendardBold18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="40dp"
+                android:text="@string/detail_benefit_title"
+                android:textColor="@color/gray900"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_detail_content" />
+
+            <View
+                android:id="@+id/iv_detail_line_benefit"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/gray500"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_detail_benefit_title" />
+
+            <TextView
+                android:id="@+id/tv_detail_benefit"
+                style="@style/PretendardMedium14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/detail_benefit"
+                android:textColor="@color/gray900"
+                app:layout_constraintTop_toBottomOf="@id/iv_detail_line_benefit" />
+
+            <TextView
+                android:id="@+id/tv_detail_use_title"
+                style="@style/PretendardBold18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="40dp"
+                android:text="@string/detail_use_title"
+                android:textColor="@color/gray900"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_detail_benefit" />
+
+            <View
+                android:id="@+id/iv_detail_line_use"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/gray500"
+                app:layout_constraintTop_toBottomOf="@id/tv_detail_use_title" />
+
+            <TextView
+                android:id="@+id/tv_detail_use"
+                style="@style/PretendardMedium14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/detail_use"
+                android:textColor="@color/gray900"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_detail_line_use" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</layout>
