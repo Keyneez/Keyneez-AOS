@@ -17,7 +17,7 @@ data class ResponseIdDto(
     @SerialName("user_benefit") val benefit: Boolean?,
     @SerialName("user_ocr") val ocrImg: String?,
     @SerialName("ocr_dir") val ocrDir: Boolean?,
-    val Characters: Character
+    val Characters: Character?
 ) {
     @Serializable
     data class Character(

@@ -34,19 +34,19 @@ class IdFragment : BindingFragment<FragmentIdBinding>(R.layout.fragment_id) {
     private fun initIdBackGround() {
         if (viewModel.userData.value?.userCharacter?.rem(5) == 1) {
             // 문화인-파란색
-            binding.ivIdMainBackground.setImageDrawable(R.drawable.img_like_background)
+            binding.ivIdMainBackground.setImageDrawable(R.mipmap.card_bg_mint)
         } else if (viewModel.userData.value?.userCharacter?.rem(5) == 2) {
             // 진로탐색러-초록색
-            binding.ivIdMainBackground.setImageDrawable(R.drawable.img_like_background)
+            binding.ivIdMainBackground.setImageDrawable(R.mipmap.card_bg_green)
         } else if (viewModel.userData.value?.userCharacter?.rem(5) == 3) {
             // 탐험가-핑크색
-            binding.ivIdMainBackground.setImageDrawable(R.drawable.img_like_background)
+            binding.ivIdMainBackground.setImageDrawable(R.mipmap.card_bg_pink)
         } else if (viewModel.userData.value?.userCharacter?.rem(5) == 4) {
             // 경제인-빨간색
-            binding.ivIdMainBackground.setImageDrawable(R.drawable.img_like_background)
+            binding.ivIdMainBackground.setImageDrawable(R.mipmap.card_bg_red)
         } else {
             // 봉사자-보라색
-            binding.ivIdMainBackground.setImageDrawable(R.drawable.img_like_background)
+            binding.ivIdMainBackground.setImageDrawable(R.mipmap.card_bg_purple)
         }
     }
 
