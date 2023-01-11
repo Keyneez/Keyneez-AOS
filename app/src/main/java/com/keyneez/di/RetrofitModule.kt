@@ -1,8 +1,6 @@
 package com.keyneez.di
 
-import android.content.SharedPreferences
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
-import com.keyneez.data.repository.UserRepository
 import com.keyneez.data.source.LocalPrefDataSource
 import com.lab.keyneez.BuildConfig.BASE_URL
 import dagger.Module
@@ -35,7 +33,10 @@ object RetrofitModule {
                     request()
                         .newBuilder()
                         .addHeader(CONTENT_TYPE, APPLICATION_JSON)
-                        .addHeader(AUTHORIZATION, requireNotNull(localPrefDataSource.getAccessToken()))
+                        .addHeader(
+                            AUTHORIZATION,
+                            requireNotNull(localPrefDataSource.getAccessToken())
+                        )
                         .build()
                 )
             }
