@@ -6,11 +6,8 @@
 
     <data>
         <variable
-            name="data"
-            type="com.keyneez.data.model.response.ResponseIdDto.Character" />
-        <variable
-            name="highdata"
-            type="com.keyneez.data.model.response.ResponseIdDto" />
+            name="vm"
+            type="com.keyneez.presentation.main.id.IdViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -118,7 +115,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/img_id_main_character"
-                setCharacterImage="@{data.characterImg}"
+                setCharacterImage="@{data.characters.characterImg}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -133,7 +130,7 @@
                 android:textColor="@color/gray050"
                 app:layout_constraintStart_toStartOf="@id/iv_id_main_background"
                 app:layout_constraintTop_toTopOf="@id/iv_id_main_background"
-                tools:text="@{data.character}"/>
+                tools:text="@{data.characters.character}"/>
 
             <TextView
                 android:id="@+id/tv_id_main_name"
@@ -145,7 +142,7 @@
                 android:textColor="@color/gray050"
                 app:layout_constraintStart_toStartOf="@id/iv_id_main_background"
                 app:layout_constraintTop_toBottomOf="@id/tv_id_main_semi_title"
-                tools:text="@{highdata.name}" />
+                tools:text="@{data.name}" />
 
             <ImageButton
                 android:id="@+id/btn_id_main_arrow"
@@ -181,7 +178,7 @@
                 android:textColor="@color/gray050"
                 app:layout_constraintStart_toStartOf="@id/iv_id_main_background"
                 app:layout_constraintTop_toBottomOf="@id/iv_id_main_baseline"
-                tools:text="@{highdata.birth}" />
+                tools:text="@{data.birth}" />
 
             <ImageView
                 android:id="@+id/iv_id_main_logo"
