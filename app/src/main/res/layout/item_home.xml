@@ -3,6 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+        <variable
+            name="content"
+            type="com.keyneez.data.model.response.ResponseContentDto" />
 
     </data>
 
@@ -26,7 +29,7 @@
                 android:layout_height="240dp"
                 android:layout_marginBottom="160dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/img_home_item_background"
+                android:src="@{content.img}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -39,7 +42,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="72dp"
                 android:paddingHorizontal="21dp"
-                android:text="@string/home_title"
+                android:text="@{content.title}"
                 android:textColor="@color/gray900"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/iv_home_item" />
@@ -52,7 +55,7 @@
                 android:layout_marginTop="4dp"
                 android:layout_marginBottom="34dp"
                 android:paddingHorizontal="21dp"
-                android:text="@string/home_sub"
+                android:text="@{content.introduction}"
                 android:textColor="@color/gary600"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
@@ -82,6 +85,7 @@
 
             <TextView
                 android:id="@+id/tv_home_keyword"
+                keywordColor="@{content.category.category}"
                 style="@style/PretendardBold14"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -94,6 +98,20 @@
                 android:textColor="@color/mint500"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/iv_home_item" />
+            <TextView
+                android:id="@+id/tv_home_period"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_gray050_80_fill_gray050_line_rect"
+                android:text="11.24 - 11.25"
+                style="@style/PretendardSemibold12"
+                android:textColor="@color/gray900"
+                android:paddingVertical="8dp"
+                android:paddingHorizontal="15dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="26dp"
+                android:layout_marginStart="21dp" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

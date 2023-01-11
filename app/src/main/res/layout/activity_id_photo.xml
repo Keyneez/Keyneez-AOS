@@ -28,14 +28,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="28dp"
-            android:background="@color/gray050_80" />
+            android:background="@color/gray900_80" />
 
         <com.keyneez.util.custom.VerticalCardFrameView
             android:id="@+id/cfv_id_photo_vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="28dp"
-            android:background="@color/gray050_80" />
+            android:background="@color/gray900_80" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layout_id_photo_title"

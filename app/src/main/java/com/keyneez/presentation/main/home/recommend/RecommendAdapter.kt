@@ -3,32 +3,32 @@ package com.keyneez.presentation.main.home.recommend
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import coil.load
-import com.keyneez.data.entity.HomeData
+import com.keyneez.data.model.response.ResponseContentDto
 import com.keyneez.util.extension.setOnSingleClickListener
 import com.lab.keyneez.databinding.ItemHomeBinding
 
-class RecommendAdapter : RecyclerView.Adapter<RecommendAdapter.InfoViewHolder>() {
-    var data = listOf<HomeData>()
+class RecommendAdapter : RecyclerView.Adapter<RecommendAdapter.HomeViewHolder>() {
+    var data = listOf<ResponseContentDto>()
 
-    class InfoViewHolder(private val binding: ItemHomeBinding) :
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeViewHolder {
+        val binding = ItemHomeBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return HomeViewHolder(binding)
+    }
+
+    override fun getItemCount(): Int {
+        return data.size
+    }
+
+    override fun onBindViewHolder(holder: HomeViewHolder, position: Int) {
+        holder.onBind(data[position])
+    }
+
+    class HomeViewHolder(private val binding: ItemHomeBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: HomeData) {
-            binding.ivHomeItem.load(item.background)
-            binding.tvHomeTitle.text = item.title
-            binding.ivHomeCard.setOnSingleClickListener {
+        fun onBind(item: ResponseContentDto) {
+            binding.content = item
+            binding.root.setOnSingleClickListener {
             }
         }
-    }
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): InfoViewHolder {
-        val binding = ItemHomeBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return InfoViewHolder(binding)
-    }
-
-    override fun getItemCount(): Int = data.size
-
-    override fun onBindViewHolder(holder: InfoViewHolder, position: Int) {
-        holder.bind(data[position])
     }
 }

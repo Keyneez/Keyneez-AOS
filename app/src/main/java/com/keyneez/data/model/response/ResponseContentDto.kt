@@ -17,5 +17,10 @@ data class ResponseContentDto(
     @SerialName("end_at")
     val end: String,
     val liked: Boolean,
-    val category: List<String>
-)
+    val category: Category
+) {
+    @kotlinx.serialization.Serializable
+    data class Category(
+        val category: String
+    )
+}

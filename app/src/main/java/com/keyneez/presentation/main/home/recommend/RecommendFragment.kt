@@ -3,34 +3,39 @@ package com.keyneez.presentation.main.home.recommend
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
-import com.keyneez.data.entity.HomeData
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.keyneez.data.model.response.ResponseContentDto
 import com.keyneez.util.binding.BindingFragment
 import com.lab.keyneez.R
 import com.lab.keyneez.databinding.FragmentHomeRecommendBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class RecommendFragment :
     BindingFragment<FragmentHomeRecommendBinding>(R.layout.fragment_home_recommend) {
     private val viewModel: RecommendViewModel by viewModels()
-    val data = mutableListOf<HomeData>()
-    private lateinit var RecommendAdapter: RecommendAdapter
+    val data = mutableListOf<ResponseContentDto>()
+    private lateinit var recommendAdapter: RecommendAdapter
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.vm = viewModel
 
         setupHomeData()
         initRecommendAdapter()
     }
 
     private fun setupHomeData() {
-        viewModel.itemList.observe(viewLifecycleOwner) {
-            RecommendAdapter.data = it
-            RecommendAdapter.notifyDataSetChanged()
+        viewModel.contentList.observe(viewLifecycleOwner) {
+            recommendAdapter.data = listOf(it)
+            recommendAdapter.notifyDataSetChanged()
         }
     }
 
     private fun initRecommendAdapter() {
-        RecommendAdapter = RecommendAdapter()
-        binding.rvRecommend.adapter = RecommendAdapter
+        recommendAdapter = RecommendAdapter()
+        binding.rvRecommend.adapter = recommendAdapter
+        binding.rvRecommend.layoutManager = LinearLayoutManager(requireContext())
     }
 
     companion object {
