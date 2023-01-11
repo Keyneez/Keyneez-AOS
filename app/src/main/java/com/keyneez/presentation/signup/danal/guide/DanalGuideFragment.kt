@@ -32,24 +32,21 @@ class DanalGuideFragment :
     }
 
     private fun setupPostDanalSignup() {
-        viewModel.postDanalSignupState.observe(viewLifecycleOwner) { it ->
+        viewModel.postDanalSignupState.observe(viewLifecycleOwner) {
             when (it) {
-                is UiState.Success -> {
-                    // 로컬에 회원 정보 저장
-                    (activity as SignupActivity).intentToNextPage()
-                }
+                is UiState.Success -> (activity as SignupActivity).intentToNextPage()
                 is UiState.Failure -> {
                     when (it.code) {
-                        USER_DATA_NULL_CODE -> {
-                            requireContext().showSnackbar(
-                                binding.root,
-                                getString(R.string.msg_error)
-                            )
-                        }
                         EXISTENTIAL_USER_CODE -> {
                             requireContext().showSnackbar(
                                 binding.root,
                                 getString(R.string.danal_guide_msg_existential_user)
+                            )
+                        }
+                        USER_DATA_NULL_CODE -> {
+                            requireContext().showSnackbar(
+                                binding.root,
+                                getString(R.string.msg_error)
                             )
                         }
                     }
