@@ -3,6 +3,8 @@ package com.keyneez.presentation.main.id
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import androidx.activity.viewModels
+import androidx.fragment.app.viewModels
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.keyneez.presentation.main.id.dialog.IdBenefitFragment
 import com.keyneez.presentation.ocr.guide.OcrGuideActivity
@@ -11,14 +13,17 @@ import com.keyneez.util.extension.setOnSingleClickListener
 import com.lab.keyneez.R
 import com.lab.keyneez.databinding.BotSheetIdProfileBinding
 import com.lab.keyneez.databinding.FragmentIdBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class IdFragment : BindingFragment<FragmentIdBinding>(R.layout.fragment_id) {
 
     private lateinit var bottomSheetBinding: BotSheetIdProfileBinding
     private lateinit var bottomSheetDialog: BottomSheetDialog
-
+    private val viewModel by viewModels<IdViewModel>()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.vm = viewModel
         initIdLayout()
         initBottomSheet()
         initIdPhotoBtnClickListener()

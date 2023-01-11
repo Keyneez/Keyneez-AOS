@@ -5,7 +5,12 @@
     tools:context=".presentation.main.id.IdFragment">
 
     <data>
-
+        <variable
+            name="data"
+            type="com.keyneez.data.model.response.ResponseIdDto.Character" />
+        <variable
+            name="highdata"
+            type="com.keyneez.data.model.response.ResponseIdDto" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -113,6 +118,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/img_id_main_character"
+                setCharacterImage="@{data.characterImg}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -127,7 +133,7 @@
                 android:textColor="@color/gray050"
                 app:layout_constraintStart_toStartOf="@id/iv_id_main_background"
                 app:layout_constraintTop_toTopOf="@id/iv_id_main_background"
-                android:text="@string/id_semi_title" />
+                tools:text="@{data.character}"/>
 
             <TextView
                 android:id="@+id/tv_id_main_name"
@@ -139,7 +145,7 @@
                 android:textColor="@color/gray050"
                 app:layout_constraintStart_toStartOf="@id/iv_id_main_background"
                 app:layout_constraintTop_toBottomOf="@id/tv_id_main_semi_title"
-                android:text="@string/id_name" />
+                tools:text="@{highdata.name}" />
 
             <ImageButton
                 android:id="@+id/btn_id_main_arrow"
@@ -175,7 +181,7 @@
                 android:textColor="@color/gray050"
                 app:layout_constraintStart_toStartOf="@id/iv_id_main_background"
                 app:layout_constraintTop_toBottomOf="@id/iv_id_main_baseline"
-                android:text="@string/id_birth" />
+                tools:text="@{highdata.birth}" />
 
             <ImageView
                 android:id="@+id/iv_id_main_logo"

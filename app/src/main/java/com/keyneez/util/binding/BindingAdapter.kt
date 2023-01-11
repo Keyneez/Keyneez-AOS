@@ -22,6 +22,15 @@ object BindingAdapter {
     }
 
     @JvmStatic
+    @BindingAdapter("setCharacterImage")
+    fun ImageView.setCharacterImage(url: String?) {
+        this.load(url) {
+            fallback(R.drawable.img_id_main_character)
+            placeholder(R.drawable.img_id_main_character)
+        }
+    }
+
+    @JvmStatic
     @BindingAdapter("isSelected")
     fun View.isSelected(selected: Boolean) {
         this.isSelected = selected

@@ -7,7 +7,7 @@ import retrofit2.http.Body
 import retrofit2.http.GET
 
 interface ContentService {
-    @GET("api/content")
+    @GET("content/liked")
     suspend fun getLike(
         @Body response: RequestLikeDto
     ): BaseResponse<List<ResponseLikeDto>>

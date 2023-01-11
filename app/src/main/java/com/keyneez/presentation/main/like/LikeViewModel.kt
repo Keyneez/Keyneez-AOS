@@ -42,7 +42,6 @@ class LikeViewModel @Inject constructor(
                     _stateMessage.value = UiState.Failure(LIKE_NULL_CODE)
                     return@onSuccess
                 }
-
                 Timber.d("GET LIKE LIST SUCCESS")
                 Timber.d("response : $response")
                 _likeList.value = response.data!!
