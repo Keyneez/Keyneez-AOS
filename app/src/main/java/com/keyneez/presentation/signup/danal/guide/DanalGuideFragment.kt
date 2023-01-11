@@ -34,10 +34,7 @@ class DanalGuideFragment :
     private fun setupPostDanalSignup() {
         viewModel.postDanalSignupState.observe(viewLifecycleOwner) { it ->
             when (it) {
-                is UiState.Success -> {
-                    // 로컬에 회원 정보 저장
-                    (activity as SignupActivity).intentToNextPage()
-                }
+                is UiState.Success -> (activity as SignupActivity).intentToNextPage()
                 is UiState.Failure -> {
                     when (it.code) {
                         USER_DATA_NULL_CODE -> {
