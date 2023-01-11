@@ -9,7 +9,9 @@ import com.keyneez.util.extension.hideKeyboard
 import com.keyneez.util.extension.setOnSingleClickListener
 import com.lab.keyneez.R
 import com.lab.keyneez.databinding.FragmentPhoneBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class PhoneFragment : BindingFragment<FragmentPhoneBinding>(R.layout.fragment_phone) {
     private val viewModel by viewModels<PhoneViewModel>()
 

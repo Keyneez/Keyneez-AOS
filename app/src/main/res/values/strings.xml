@@ -2,6 +2,7 @@
     <string name="app_name">Keyneez</string>
 
     // common
+    <string name="msg_error">오류가 발생하였습니다.</string>
     <string name="binding_error">Binding not initialized to reference the view.</string>
 
     // onboarding
@@ -27,6 +28,7 @@
     // danal guide
     <string name="danal_guide_description">휴대폰 인증을\n진행해주세요.</string>
     <string name="danal_guide_verify">휴대폰 인증하기</string>
+    <string name="danal_guide_msg_existential_user">이미 가입된 회원입니다.</string>
 
     // test guide
     <string name="test_guide_description">나의 젤리 만들기</string>
