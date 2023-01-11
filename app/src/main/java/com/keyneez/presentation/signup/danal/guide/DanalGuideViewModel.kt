@@ -29,7 +29,7 @@ class DanalGuideViewModel @Inject constructor(
     /** 서버에 다날 정보 관련 유저 생성 요청 */
     fun postDanalSignup() {
         Timber.e("CLICK!!!!!! CLICK!!!!!!")
-        val name = "내가일빠"
+        val name = "테스터"
         val birth = "000101"
         val gender = "female"
         val tel = "SKT"
@@ -56,12 +56,12 @@ class DanalGuideViewModel @Inject constructor(
                     }
                 }
                 .onFailure {
+                    Timber.tag(failTag).e("throwable : $it")
                     if (it is HttpException) {
                         Timber.tag(failTag).e("code : ${it.code()}")
                         Timber.tag(failTag).e("message : ${it.message()}")
-
-                        _postDanalSignupState.value = UiState.Error
                     }
+                    _postDanalSignupState.value = UiState.Error
                 }
         }
     }

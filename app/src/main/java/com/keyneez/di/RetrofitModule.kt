@@ -12,6 +12,7 @@ import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
+import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
 @Module
@@ -40,6 +41,9 @@ object RetrofitModule {
         interceptor: Interceptor
     ): OkHttpClient =
         OkHttpClient.Builder()
+            .connectTimeout(10, TimeUnit.SECONDS)
+            .writeTimeout(10, TimeUnit.SECONDS)
+            .readTimeout(10, TimeUnit.SECONDS)
             .addInterceptor(interceptor)
             .addInterceptor(
                 HttpLoggingInterceptor().apply {
@@ -55,7 +59,7 @@ object RetrofitModule {
     ): Retrofit =
         Retrofit.Builder()
             .baseUrl(BASE_URL)
-            .client(client)
             .addConverterFactory(Json.asConverterFactory("application/json".toMediaType()))
+            .client(client)
             .build()
 }
