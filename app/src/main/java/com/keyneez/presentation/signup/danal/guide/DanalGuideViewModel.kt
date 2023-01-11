@@ -28,16 +28,14 @@ class DanalGuideViewModel @Inject constructor(
 
     /** 서버에 다날 정보 관련 유저 생성 요청 */
     fun postDanalSignup() {
-        Timber.e("CLICK!!!!!! CLICK!!!!!!")
         val name = "테스터"
         val birth = "000101"
         val gender = "female"
-        val tel = "SKT"
         val phone = "010-0000-0000"
 
         viewModelScope.launch {
             userRepository.postDanalSignup(
-                RequestPostDanalSignupDto(name, birth, gender, tel, phone)
+                RequestPostDanalSignupDto(name, birth, gender, phone)
             )
                 .onSuccess { response ->
                     Timber.tag(successTag).d("response : $response")
