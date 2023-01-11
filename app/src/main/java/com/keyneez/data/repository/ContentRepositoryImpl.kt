@@ -5,4 +5,8 @@ import javax.inject.Inject
 
 class ContentRepositoryImpl @Inject constructor(
     private val contentDataSource: ContentDataSource
-) : ContentRepository
+) : ContentRepository{
+    override suspend fun getContent() {
+        TODO("Not yet implemented")
+    }
+}

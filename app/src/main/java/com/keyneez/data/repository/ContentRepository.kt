@@ -1,3 +1,5 @@
 package com.keyneez.data.repository
 
-interface ContentRepository
+interface ContentRepository {
+    suspend fun getContent()
+}
