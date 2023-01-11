@@ -12,7 +12,6 @@ import com.lab.keyneez.R
 import com.lab.keyneez.databinding.FragmentIdBinding
 
 class IdFragment : BindingFragment<FragmentIdBinding>(R.layout.fragment_id) {
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initIdLayout()

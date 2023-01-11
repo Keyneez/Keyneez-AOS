@@ -7,7 +7,9 @@ import com.keyneez.util.binding.BindingFragment
 import com.keyneez.util.extension.setOnSingleClickListener
 import com.lab.keyneez.R
 import com.lab.keyneez.databinding.FragmentOcrCompleteBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class OcrCompleteFragment :
     BindingFragment<FragmentOcrCompleteBinding>(R.layout.fragment_ocr_complete) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

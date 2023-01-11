@@ -10,6 +10,9 @@
         android:id="@+id/cv_home_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:cardCornerRadius="4dp"
+        android:shadowColor="@color/gray100"
+        android:layout_marginHorizontal="17dp"
         android:layout_marginTop="17dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -73,7 +76,7 @@
                 android:layout_marginEnd="12dp"
                 android:background="@null"
                 android:padding="12dp"
-                android:src="@drawable/ic_home_heart"
+                android:src="@drawable/sel_home_heart"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
