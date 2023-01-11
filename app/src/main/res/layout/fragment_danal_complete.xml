@@ -3,7 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.keyneez.presentation.signup.danal.complete.DanalCompleteFragment">
 
-    <data></data>
+    <data>
+        <variable
+            name="vm"
+            type="com.keyneez.presentation.signup.danal.complete.DanalCompleteViewModel" />
+
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout_danal_complete"
@@ -17,7 +22,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="120dp"
-            android:text="만나서 반가워요!\n이제 %s님의 젤리를\n만들어 볼까요?"
+            tools:text="@string/danal_complete_welcome"
+            android:text="@{@string/danal_complete_welcome(vm.userName)}"
             android:textColor="@color/gray900"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

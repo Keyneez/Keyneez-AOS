@@ -30,6 +30,9 @@
     <string name="danal_guide_verify">휴대폰 인증하기</string>
     <string name="danal_guide_msg_existential_user">이미 가입된 회원입니다.</string>
 
+    // danal complete
+    <string name="danal_complete_welcome">만나서 반가워요!\n이제 %s님의 젤리를\n만들어 볼까요?</string>
+
     // test guide
     <string name="test_guide_description">나의 젤리 만들기</string>
     <string name="test_guide_sub_description">나의 마음에서 태어날 젤리와\n더욱 다채로운 일상을 함께해요!</string>
@@ -39,8 +42,8 @@
     <string name="tendency_description">젤리에게 나를 소개해 주세요!\n자유시간에 나는..</string>
     <string name="tendency_active">활발하게 놀러다녀요!</string>
     <string name="tendency_active_selected">🎾 활발하게 놀러다녀요!</string>
-    <string name="tendency_curious">호기심 가득 정보를 탐색 중</string>
-    <string name="tendency_curious_selected">🔍 호기심 가득 정보를 탐색 중</string>
+    <string name="tendency_curious">호기심 가득 정보를 탐색중</string>
+    <string name="tendency_curious_selected">🔍 호기심 가득 정보를 탐색중</string>
     <string name="tendency_cozy">포근한 집이 최고</string>
     <string name="tendency_cozy_selected">🧸 포근한 집이 최고</string>
 

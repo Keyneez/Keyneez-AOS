@@ -28,6 +28,7 @@ class TendencyFragment : BindingFragment<FragmentTendencyBinding>(R.layout.fragm
 
     private fun initNextBtnClickListener() {
         binding.btnTendencyNext.setOnSingleClickListener {
+            (activity as SignupActivity).setTendency(requireNotNull(viewModel.selectedTendency.value))
             (activity as SignupActivity).intentToNextPage()
         }
     }
