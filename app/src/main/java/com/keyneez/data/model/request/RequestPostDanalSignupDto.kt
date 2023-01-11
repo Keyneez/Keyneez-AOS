@@ -11,8 +11,6 @@ data class RequestPostDanalSignupDto(
     val birth: String,
     @SerialName("user_gender")
     val gender: String,
-    @SerialName("user_tel")
-    val tel: String,
     @SerialName("user_phone")
     val phone: String
 )
