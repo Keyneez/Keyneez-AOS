@@ -1,8 +1,9 @@
 package com.keyneez.data.model.response
 
 import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
 
-@kotlinx.serialization.Serializable
+@Serializable
 data class ResponseIdDto(
     @SerialName("user_key") val key: Int,
     @SerialName("user_name") val name: String,
@@ -17,6 +18,7 @@ data class ResponseIdDto(
     @SerialName("ocr_dir") val ocrDir: Boolean,
     val Characters: Character
 ) {
+    @Serializable
     data class Character(
         val character: String,
         @SerialName("character_img") val characterImg: String

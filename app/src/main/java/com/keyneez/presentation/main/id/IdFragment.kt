@@ -3,7 +3,6 @@ package com.keyneez.presentation.main.id
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import androidx.activity.viewModels
 import androidx.fragment.app.viewModels
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.keyneez.presentation.main.id.dialog.IdBenefitFragment
@@ -31,7 +30,7 @@ class IdFragment : BindingFragment<FragmentIdBinding>(R.layout.fragment_id) {
     }
 
     private fun initIdLayout() {
-        if (false) {
+        if (viewModel.userData.value?.ocrImg == null) {
             // 발급하기 화면이 뜨게
             binding.layoutIdIssue.visibility = View.VISIBLE
             binding.layoutIdMain.visibility = View.GONE

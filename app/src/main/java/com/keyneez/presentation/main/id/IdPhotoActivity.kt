@@ -15,6 +15,7 @@ class IdPhotoActivity : BindingActivity<ActivityIdPhotoBinding>(R.layout.activit
     private val viewModel by viewModels<IdPhotoViewModel>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding.vm = viewModel
         Toast.makeText(getApplicationContext(), "OCR 본인인증이 완료된 학생증입니다", Toast.LENGTH_SHORT).show()
         // 본인인증이 된 학생증
         getIdPhoto()
@@ -23,7 +24,7 @@ class IdPhotoActivity : BindingActivity<ActivityIdPhotoBinding>(R.layout.activit
     }
 
     private fun getIdPhoto() {
-        if (true) {
+        if (viewModel.userData.value?.ocrDir==true) {
             // 세로로
             binding.cfvIdPhotoVertical.visibility = View.VISIBLE
             binding.cfvIdPhotoHorizontal.visibility = View.GONE

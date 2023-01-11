@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.keyneez.data.model.request.RequestLikeDto
 import com.keyneez.data.model.response.ResponseLikeDto
 import com.keyneez.data.repository.ContentRepository
 import com.keyneez.util.UiState
@@ -34,8 +33,7 @@ class LikeViewModel @Inject constructor(
         // 코틀린은 자동적으로 타입을 추론해 주기 때문에 굳이 타입을 안 써줘도 된다.
         viewModelScope.launch {
             // 유저 키 받아오는 로직
-            val requestLikeDto = RequestLikeDto(1)
-            contentRepository.getLike(requestLikeDto).onSuccess { response ->
+            contentRepository.getLike().onSuccess { response ->
                 // 존재하지 않는 경우
                 if (response.data == null) {
                     Timber.d("GET LIKE LIST IS NULL")
@@ -57,7 +55,7 @@ class LikeViewModel @Inject constructor(
                                 UiState.Failure(LIKE_NO_USER_CODE)
                         else -> _stateMessage.value = UiState.Error
                     }
-                }
+                } else _stateMessage.value = UiState.Error
             }
         }
     }

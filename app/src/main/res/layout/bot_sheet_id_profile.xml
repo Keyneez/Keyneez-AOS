@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".presentation.main.id.dialog.IdProfileFragment">
 
-    <data></data>
+    <data>
+        <variable
+            name="vm"
+            type="com.keyneez.presentation.main.id.dialog.IdProfileViewModel" />
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout_id_profile"
@@ -21,7 +27,7 @@
             android:textColor="@color/gray900"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:text="@string/id_semi_title" />
+            tools:text="@{vm.userData.characters.character}" />
 
         <TextView
             android:id="@+id/tv_id_profile_name"
@@ -33,7 +39,7 @@
             android:textColor="@color/gray900"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_id_profile_semititle"
-            android:text="@string/id_name" />
+            tools:text="@{vm.userData.name}" />
 
         <ImageView
             android:id="@+id/iv_id_profile_logo"
@@ -66,7 +72,7 @@
             android:textColor="@color/gray900"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/iv_id_profile_baseline"
-            android:text="@string/id_school" />
+            tools:text="@{vm.userData.school}" />
 
         <TextView
             android:id="@+id/tv_id_profile_birth"
@@ -78,7 +84,7 @@
             android:textColor="@color/gray900"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_id_profile_school"
-            android:text="@string/id_birth" />
+            tools:text="@{vm.userData.birth}" />
 
         <TextView
             android:id="@+id/btn_id_profile_photo"
