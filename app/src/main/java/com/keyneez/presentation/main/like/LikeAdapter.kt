@@ -8,7 +8,6 @@ import com.lab.keyneez.databinding.ItemLikeContentBinding
 
 class LikeAdapter : RecyclerView.Adapter<LikeAdapter.getViewHolder>() {
     var data = listOf<ResponseLikeDto>()
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): getViewHolder {
         val binding =
             ItemLikeContentBinding.inflate(LayoutInflater.from(parent.context), parent, false)

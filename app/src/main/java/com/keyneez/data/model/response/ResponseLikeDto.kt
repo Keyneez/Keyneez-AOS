@@ -10,9 +10,9 @@ data class ResponseLikeDto(
     @SerialName("content_title")
     val title: String,
     @SerialName("start_at")
-    val start: String,
-    @SerialName("start_end")
-    val end: String,
+    val start: String?,
+    @SerialName("end_at")
+    val end: String?,
     @SerialName("content_img")
     val background: String
 )

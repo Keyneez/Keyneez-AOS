@@ -24,7 +24,7 @@ class IdPhotoActivity : BindingActivity<ActivityIdPhotoBinding>(R.layout.activit
     }
 
     private fun getIdPhoto() {
-        if (viewModel.userData.value?.ocrDir==true) {
+        if (viewModel.userData.value?.ocrDir == true) {
             // 세로로
             binding.cfvIdPhotoVertical.visibility = View.VISIBLE
             binding.cfvIdPhotoHorizontal.visibility = View.GONE

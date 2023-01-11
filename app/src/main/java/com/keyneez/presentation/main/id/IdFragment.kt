@@ -3,6 +3,7 @@ package com.keyneez.presentation.main.id
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageView
 import androidx.fragment.app.viewModels
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.keyneez.presentation.main.id.dialog.IdBenefitFragment
@@ -27,6 +28,26 @@ class IdFragment : BindingFragment<FragmentIdBinding>(R.layout.fragment_id) {
         initIdLayout()
         initBottomSheet()
         initIdPhotoBtnClickListener()
+        initIdBackGround()
+    }
+
+    private fun initIdBackGround() {
+        if (viewModel.userData.value?.userCharacter?.rem(5) == 1) {
+            // 문화인-파란색
+            binding.ivIdMainBackground.setImageDrawable(R.drawable.img_like_background)
+        } else if (viewModel.userData.value?.userCharacter?.rem(5) == 2) {
+            // 진로탐색러-초록색
+            binding.ivIdMainBackground.setImageDrawable(R.drawable.img_like_background)
+        } else if (viewModel.userData.value?.userCharacter?.rem(5) == 3) {
+            // 탐험가-핑크색
+            binding.ivIdMainBackground.setImageDrawable(R.drawable.img_like_background)
+        } else if (viewModel.userData.value?.userCharacter?.rem(5) == 4) {
+            // 경제인-빨간색
+            binding.ivIdMainBackground.setImageDrawable(R.drawable.img_like_background)
+        } else {
+            // 봉사자-보라색
+            binding.ivIdMainBackground.setImageDrawable(R.drawable.img_like_background)
+        }
     }
 
     private fun initIdLayout() {
@@ -85,4 +106,7 @@ class IdFragment : BindingFragment<FragmentIdBinding>(R.layout.fragment_id) {
             return IdFragment()
         }
     }
+}
+
+private fun ImageView.setImageDrawable(imgLikeBackground: Int) {
 }

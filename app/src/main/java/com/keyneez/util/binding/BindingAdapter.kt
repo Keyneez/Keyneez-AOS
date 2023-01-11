@@ -31,6 +31,12 @@ object BindingAdapter {
     }
 
     @JvmStatic
+    @BindingAdapter("setOcrImage")
+    fun ImageView.setOcrImage(url: String) {
+        this.load(url)
+    }
+
+    @JvmStatic
     @BindingAdapter("isSelected")
     fun View.isSelected(selected: Boolean) {
         this.isSelected = selected

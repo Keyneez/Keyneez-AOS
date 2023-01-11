@@ -107,7 +107,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="101dp"
-                android:src="@drawable/img_id_main_background"
+                tools:src="@drawable/img_id_main_background"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -192,7 +192,6 @@
                 android:src="@drawable/img_id_main_logo"
                 app:layout_constraintEnd_toEndOf="@id/iv_id_main_background"
                 app:layout_constraintTop_toBottomOf="@id/iv_id_main_baseline" />
-
 
             <TextView
                 android:id="@+id/btn_id_main_benefit"
