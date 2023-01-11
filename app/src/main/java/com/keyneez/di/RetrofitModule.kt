@@ -1,6 +1,9 @@
 package com.keyneez.di
 
+import android.content.SharedPreferences
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
+import com.keyneez.data.repository.UserRepository
+import com.keyneez.data.source.LocalPrefDataSource
 import com.lab.keyneez.BuildConfig.BASE_URL
 import dagger.Module
 import dagger.Provides
@@ -19,16 +22,20 @@ import javax.inject.Singleton
 object RetrofitModule {
     private const val CONTENT_TYPE = "Content-Type"
     private const val APPLICATION_JSON = "application/json"
+    private const val AUTHORIZATION = "Authorization"
 
     @Provides
     @Singleton
-    fun providesKeyneezInterceptor(): Interceptor =
+    fun providesKeyneezInterceptor(
+        localPrefDataSource: LocalPrefDataSource
+    ): Interceptor =
         Interceptor { chain ->
             with(chain) {
                 proceed(
                     request()
                         .newBuilder()
                         .addHeader(CONTENT_TYPE, APPLICATION_JSON)
+                        .addHeader(AUTHORIZATION, requireNotNull(localPrefDataSource.getAccessToken()))
                         .build()
                 )
             }
