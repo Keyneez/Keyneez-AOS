@@ -1,6 +1,7 @@
 package com.keyneez.di
 
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
+import com.keyneez.data.source.LocalPrefDataSource
 import com.lab.keyneez.BuildConfig.BASE_URL
 import dagger.Module
 import dagger.Provides
@@ -12,7 +13,6 @@ import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
-import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
 @Module
@@ -20,16 +20,23 @@ import javax.inject.Singleton
 object RetrofitModule {
     private const val CONTENT_TYPE = "Content-Type"
     private const val APPLICATION_JSON = "application/json"
+    private const val AUTHORIZATION = "Authorization"
 
     @Provides
     @Singleton
-    fun providesKeyneezInterceptor(): Interceptor =
+    fun providesKeyneezInterceptor(
+        localPrefDataSource: LocalPrefDataSource
+    ): Interceptor =
         Interceptor { chain ->
             with(chain) {
                 proceed(
                     request()
                         .newBuilder()
                         .addHeader(CONTENT_TYPE, APPLICATION_JSON)
+                        .addHeader(
+                            AUTHORIZATION,
+                            requireNotNull(localPrefDataSource.getAccessToken())
+                        )
                         .build()
                 )
             }
@@ -41,9 +48,9 @@ object RetrofitModule {
         interceptor: Interceptor
     ): OkHttpClient =
         OkHttpClient.Builder()
-            .connectTimeout(10, TimeUnit.SECONDS)
-            .writeTimeout(10, TimeUnit.SECONDS)
-            .readTimeout(10, TimeUnit.SECONDS)
+//            .connectTimeout(10, TimeUnit.SECONDS)
+//            .writeTimeout(10, TimeUnit.SECONDS)
+//            .readTimeout(10, TimeUnit.SECONDS)
             .addInterceptor(interceptor)
             .addInterceptor(
                 HttpLoggingInterceptor().apply {
