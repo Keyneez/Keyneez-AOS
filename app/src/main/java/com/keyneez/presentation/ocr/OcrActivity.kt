@@ -150,13 +150,13 @@ class OcrActivity : BindingActivity<ActivityOcrBinding>(R.layout.activity_ocr) {
         }
 
         for (block in text.textBlocks) {
-            Timber.tag(tag).d("block : $block")
+            Timber.tag(tag).d("block : ${block.text}")
 
             for (line in block.lines) {
-                Timber.tag(tag).d("line : $line")
+                Timber.tag(tag).d("line : ${line.text}")
 
                 for (element in line.elements)
-                    Timber.tag(tag).d("element : $element")
+                    Timber.tag(tag).d("element : ${element.text}")
             }
         }
     }
