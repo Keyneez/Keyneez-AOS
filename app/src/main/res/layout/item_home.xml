@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
         <variable
@@ -94,7 +95,7 @@
                 android:background="@drawable/shape_mint500_line_rect"
                 android:paddingHorizontal="12dp"
                 android:paddingVertical="8dp"
-                android:text="@string/home_keyword"
+                tools:text="@string/home_keyword"
                 android:textColor="@color/mint500"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/iv_home_item" />
@@ -103,7 +104,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/shape_gray050_80_fill_gray050_line_rect"
-                android:text="11.24 - 11.25"
+                putStartDate="@{content.start}"
+                putEndDate="@{content.end}"
+                android:text="@{@string/home_period(content.start,content.end)}"
                 style="@style/PretendardSemibold12"
                 android:textColor="@color/gray900"
                 android:paddingVertical="8dp"
