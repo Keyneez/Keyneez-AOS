@@ -1,13 +1,7 @@
 package com.keyneez.data.repository
 
-import com.keyneez.data.model.request.RequestPatchPwdSignupDto
-import com.keyneez.data.model.request.RequestPatchUserTypeDto
-import com.keyneez.data.model.request.RequestPostDanalSignupDto
-import com.keyneez.data.model.request.RequestPostPwdCheckDto
-import com.keyneez.data.model.response.ResponseIdDto
-import com.keyneez.data.model.response.ResponsePatchPwdSignupDto
-import com.keyneez.data.model.response.ResponsePatchUserTypeDto
-import com.keyneez.data.model.response.ResponsePostDanalSignupDto
+import com.keyneez.data.model.request.*
+import com.keyneez.data.model.response.*
 import com.keyneez.data.model.response.wrapper.BaseResponse
 
 interface UserRepository {
@@ -21,6 +15,10 @@ interface UserRepository {
     suspend fun postDanalSignup(
         requestPostDanalSignupDto: RequestPostDanalSignupDto
     ): Result<BaseResponse<ResponsePostDanalSignupDto>>
+
+    suspend fun postUserLogIn(
+        requestPostUserLogInDto: RequestPostUserLogInDto
+    ): Result<BaseResponse<ResponsePostUserLogInDto>>
 
     suspend fun getId(): Result<BaseResponse<ResponseIdDto>>
 
