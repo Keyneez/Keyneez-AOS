@@ -31,6 +31,7 @@ class SignupPinConfirmFragment :
 
     private fun initBackBtnClickListener() {
         binding.btnSignupPinConfirmBack.setOnSingleClickListener {
+            viewModel.rearrangeKeypad()
             viewModel.resetPassword()
             (activity as SignupActivity).intentToPreviousPage()
         }
@@ -48,6 +49,7 @@ class SignupPinConfirmFragment :
         viewModel.stateMessage.observe(viewLifecycleOwner) {
             when (it) {
                 is UiState.Success -> {
+                    viewModel.resetPassword()
                     val toMain = Intent(activity, MainActivity::class.java)
                     requireActivity().setResult(AppCompatActivity.RESULT_OK, toMain)
                     startActivity(toMain)
