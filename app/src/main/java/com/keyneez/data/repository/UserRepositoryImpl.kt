@@ -34,7 +34,7 @@ class UserRepositoryImpl @Inject constructor(
     override suspend fun postUserLogIn(
         requestPostUserLogInDto: RequestPostUserLogInDto
     ): Result<BaseResponse<ResponsePostUserLogInDto>> =
-        kotlin.runCatching { userDataSource.postUserLogIn(requestPostUserLogInDto)}
+        kotlin.runCatching { userDataSource.postUserLogIn(requestPostUserLogInDto) }
 
     override suspend fun patchUserTypeSignup(
         requestPatchUserTypeDto: RequestPatchUserTypeDto
