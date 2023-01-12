@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.viewModels
 import com.keyneez.presentation.login.LoginActivity
 import com.keyneez.presentation.main.MainActivity
-import com.keyneez.presentation.signup.pin.SignupPinViewModel
 import com.keyneez.util.binding.BindingFragment
 import com.keyneez.util.extension.hideKeyboard
 import com.keyneez.util.extension.setOnSingleClickListener
@@ -15,7 +14,7 @@ import com.lab.keyneez.R
 import com.lab.keyneez.databinding.FragmentLoginPinBinding
 
 class LoginPinFragment : BindingFragment<FragmentLoginPinBinding>(R.layout.fragment_login_pin) {
-    private val viewModel by viewModels<SignupPinViewModel>()
+    private val viewModel by viewModels<LoginPinViewModel>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

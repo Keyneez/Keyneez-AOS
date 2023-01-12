@@ -5,7 +5,11 @@
     tools:context=".presentation.main.id.IdFragment">
 
     <data>
+        <variable
+            name="vm"
+            type="com.keyneez.presentation.main.id.IdViewModel" />
 
+        <import type="android.view.View" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -103,7 +107,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="101dp"
-                android:src="@drawable/img_id_main_background"
+                tools:src="@drawable/img_id_main_background"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -112,7 +116,7 @@
                 android:id="@+id/iv_id_main_character"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/img_id_main_character"
+                setCharacterImage="@{vm.userData.characters.characterImg}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -127,7 +131,7 @@
                 android:textColor="@color/gray050"
                 app:layout_constraintStart_toStartOf="@id/iv_id_main_background"
                 app:layout_constraintTop_toTopOf="@id/iv_id_main_background"
-                android:text="@string/id_semi_title" />
+                android:text="@{vm.userData.characters.character}"/>
 
             <TextView
                 android:id="@+id/tv_id_main_name"
@@ -139,7 +143,7 @@
                 android:textColor="@color/gray050"
                 app:layout_constraintStart_toStartOf="@id/iv_id_main_background"
                 app:layout_constraintTop_toBottomOf="@id/tv_id_main_semi_title"
-                android:text="@string/id_name" />
+                android:text="@{vm.userData.name}" />
 
             <ImageButton
                 android:id="@+id/btn_id_main_arrow"
@@ -148,6 +152,7 @@
                 android:background="@null"
                 android:layout_marginStart="-8dp"
                 android:padding="12dp"
+                android:visibility="@{vm.userData.school == null ? View.GONE : View.VISIBLE}"
                 android:src="@drawable/ic_id_main_arrow"
                 app:layout_constraintStart_toEndOf="@id/tv_id_main_name"
                 app:layout_constraintTop_toTopOf="@id/tv_id_main_name"
@@ -173,9 +178,10 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="12dp"
                 android:textColor="@color/gray050"
+                putBirth="@{vm.userData.birth}"
                 app:layout_constraintStart_toStartOf="@id/iv_id_main_background"
                 app:layout_constraintTop_toBottomOf="@id/iv_id_main_baseline"
-                android:text="@string/id_birth" />
+                tools:text="@{vm.userData.birth}" />
 
             <ImageView
                 android:id="@+id/iv_id_main_logo"
@@ -186,7 +192,6 @@
                 android:src="@drawable/img_id_main_logo"
                 app:layout_constraintEnd_toEndOf="@id/iv_id_main_background"
                 app:layout_constraintTop_toBottomOf="@id/iv_id_main_baseline" />
-
 
             <TextView
                 android:id="@+id/btn_id_main_benefit"

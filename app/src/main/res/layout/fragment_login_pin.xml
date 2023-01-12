@@ -6,7 +6,7 @@
     <data>
 <variable
     name="vm"
-    type="com.keyneez.presentation.signup.pin.SignupPinViewModel" />
+    type="com.keyneez.presentation.login.pin.LoginPinViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
