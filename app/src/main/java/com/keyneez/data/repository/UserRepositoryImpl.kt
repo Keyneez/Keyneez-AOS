@@ -4,6 +4,7 @@ import com.keyneez.data.model.request.RequestPatchPwdSignupDto
 import com.keyneez.data.model.request.RequestPatchUserTypeDto
 import com.keyneez.data.model.request.RequestPostDanalSignupDto
 import com.keyneez.data.model.request.RequestPostPwdCheckDto
+import com.keyneez.data.model.response.ResponseIdDto
 import com.keyneez.data.model.response.ResponsePatchPwdSignupDto
 import com.keyneez.data.model.response.ResponsePatchUserTypeDto
 import com.keyneez.data.model.response.ResponsePostDanalSignupDto
@@ -32,6 +33,9 @@ class UserRepositoryImpl @Inject constructor(
         requestPostDanalSignupDto: RequestPostDanalSignupDto
     ): Result<BaseResponse<ResponsePostDanalSignupDto>> =
         kotlin.runCatching { userDataSource.postDanalSignup(requestPostDanalSignupDto) }
+
+    override suspend fun getId(): Result<BaseResponse<ResponseIdDto>> =
+        kotlin.runCatching { userDataSource.getId() }
 
     override suspend fun patchUserTypeSignup(
         requestPatchUserTypeDto: RequestPatchUserTypeDto

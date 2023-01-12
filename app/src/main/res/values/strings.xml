@@ -18,6 +18,14 @@
     <string name="phone_number_hint">휴대폰 번호</string>
     <string name="phone_next">다음으로</string>
 
+    //uiState
+    <string name="msg_id_null">저장된 아이디가 없습니다.</string>
+    <string name="msg_photo_null">저장된 ocr 이미지가 없습니다.</string>
+    <string name="msg_profile_null">저장된 프로필 정보가 없습니다.</string>
+    <string name="msg_like_null">저장된 찜 목록이 없습니다.</string>
+    <string name="msg_server_error">네트워크 연결에 실패했습니다.</string>
+    <string name="msg_profile_success">프로필 상세보기 조회에 성공했습니다.</string>
+
     // login pin
     <string name="login_pin_description">간편 비밀번호를\n입력해주세요.</string>
     <string name="login_pin_rearrange">재배열</string>
@@ -26,12 +34,16 @@
     <string name="signup_next">다음으로</string>
 
     // danal guide
-    <string name="danal_guide_description">휴대폰 인증을\n진행해주세요.</string>
+    <string name="danal_guide_description">회원가입을 위해\n기본 정보를 입력해주세요.</string>
     <string name="danal_guide_verify">휴대폰 인증하기</string>
     <string name="danal_guide_msg_existential_user">이미 가입된 회원입니다.</string>
 
     // danal complete
     <string name="danal_complete_welcome">만나서 반가워요!\n이제 %s님의 젤리를\n만들어 볼까요?</string>
+    <string name="danal_guide_name_hint">이름</string>
+    <string name="danal_guide_phone_hint">휴대폰 번호</string>
+    <string name="danal_guide_birth_hint">생년월일(6자)</string>
+    <string name="danal_guide_next">다음으로</string>
 
     // test guide
     <string name="test_guide_description">나의 젤리 만들기</string>
@@ -111,7 +123,7 @@
 
     // like
     <string name="like_save">저장</string>
-    <string name="like_data">11.24–12.31</string>
+    <string name="like_date">%s–%s</string>
     <string name="like_content">청소년 \n영화관 할인</string>
 
     // id
@@ -137,6 +149,11 @@
     <string name="id_bus_img">🚍</string>
     <string name="id_train">철도 요금 10~30% 할인</string>
     <string name="id_train_img">🚆</string>
+
+    //search
+    <string name="search_content">제목, 키워드</string>
+    <string name="search_result">검색결과</string>
+    <string name="search_count">15개</string>
 
     // ocr guide
     <string name="ocr_guide_description">학생증 또는 청소년증을\n준비해주세요.</string>
@@ -184,7 +201,7 @@
     <string name="detail_place">서울 코엑스</string>
     <string name="detail_keyword">문화</string>
     <string name="detail_period_title">기간</string>
-    <string name="detail_period">22.11.24-22.12.32</string>
+    <string name="detail_period">%s-%s</string>
     <string name="detail_link">사이트 바로가기</string>
     <string name="detail_benefit_title">청소년 혜택</string>
     <string name="detail_benefit">티켓 가격 5% 할인\n음식물 5% 할인</string>
