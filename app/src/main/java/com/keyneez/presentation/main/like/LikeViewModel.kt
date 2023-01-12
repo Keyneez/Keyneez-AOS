@@ -28,7 +28,6 @@ class LikeViewModel @Inject constructor(
     init {
         getLikeList()
     }
-
     private fun getLikeList() {
         // 코틀린은 자동적으로 타입을 추론해 주기 때문에 굳이 타입을 안 써줘도 된다.
         viewModelScope.launch {
@@ -42,6 +41,7 @@ class LikeViewModel @Inject constructor(
                 }
                 Timber.d("GET LIKE LIST SUCCESS")
                 Timber.d("response : $response")
+
                 _likeList.value = response.data!!
                 _stateMessage.value = UiState.Success
             }.onFailure {

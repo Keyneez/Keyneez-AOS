@@ -31,7 +31,7 @@ class DanalGuideViewModel @Inject constructor(
         val name = "테스터"
         val birth = "000101"
         val gender = "female"
-        val phone = "010-2000-0001"
+        val phone = "010-0000-0001"
 
         viewModelScope.launch {
             userRepository.postDanalSignup(

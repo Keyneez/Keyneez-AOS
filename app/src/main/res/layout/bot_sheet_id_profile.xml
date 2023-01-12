@@ -27,7 +27,7 @@
             android:textColor="@color/gray900"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="@{vm.userData.characters.character}" />
+            android:text="@{vm.userData.characters.character}" />
 
         <TextView
             android:id="@+id/tv_id_profile_name"
@@ -39,7 +39,7 @@
             android:textColor="@color/gray900"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_id_profile_semititle"
-            tools:text="@{vm.userData.name}" />
+            android:text="@{vm.userData.name}" />
 
         <ImageView
             android:id="@+id/iv_id_profile_logo"
@@ -72,7 +72,7 @@
             android:textColor="@color/gray900"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/iv_id_profile_baseline"
-            tools:text="@{vm.userData.school}" />
+            android:text="@{vm.userData.school}" />
 
         <TextView
             android:id="@+id/tv_id_profile_birth"
@@ -82,6 +82,7 @@
             android:layout_marginStart="29dp"
             android:layout_marginTop="5dp"
             android:textColor="@color/gray900"
+            putBirth="@{vm.userData.birth}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_id_profile_school"
             tools:text="@{vm.userData.birth}" />

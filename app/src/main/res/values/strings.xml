@@ -18,6 +18,14 @@
     <string name="phone_number_hint">휴대폰 번호</string>
     <string name="phone_next">다음으로</string>
 
+    //uiState
+    <string name="msg_id_null">저장된 아이디가 없습니다.</string>
+    <string name="msg_photo_null">저장된 ocr 이미지가 없습니다.</string>
+    <string name="msg_profile_null">저장된 프로필 정보가 없습니다.</string>
+    <string name="msg_like_null">저장된 찜 목록이 없습니다.</string>
+    <string name="msg_server_error">네트워크 연결에 실패했습니다.</string>
+    <string name="msg_profile_success">프로필 상세보기 조회에 성공했습니다.</string>
+
     // login pin
     <string name="login_pin_description">간편 비밀번호를\n입력해주세요.</string>
     <string name="login_pin_rearrange">재배열</string>

@@ -43,8 +43,39 @@ object BindingAdapter {
     }
 
     @JvmStatic
+    @BindingAdapter("putStartDate", "putEndDate")
+    fun TextView.setDuration(start: String, end: String) {
+        if (start == null || end == null) {
+            this.text = "2023"
+            return
+        }
+
+        var tempStart = ""
+        var tempEnd = ""
+        if (start != null) tempStart = "${end.substring(4, 6)}.${end.substring(6, 8)}"
+        if (end != null) tempEnd = "${end.substring(4, 6)}.${end.substring(6, 8)}"
+
+        this.text = "$tempStart - $tempEnd"
+    }
+    //20200202
+    //01234567
+    @JvmStatic
+    @BindingAdapter("putBirth")
+    fun TextView.putBirth(birth: String) {
+        var tempBirth = ""
+        tempBirth = "${birth.substring(0,4)}.${birth.substring(4,6)}.${birth.substring(6,8)}"
+        this.text = "$tempBirth"
+    }
+
+    @JvmStatic
     @BindingAdapter("selectedInterestSet", "interestHashTag")
     fun TextView.setInterestIndex(set: LiveData<LinkedHashSet<String>>, interest: String) {
+        this.text = set.value?.indexOf(interest)?.plus(1).toString()
+    }
+
+    @JvmStatic
+    @BindingAdapter("setSaveDate")
+    fun TextView.setSaveDate(set: LiveData<LinkedHashSet<String>>, interest: String) {
         this.text = set.value?.indexOf(interest)?.plus(1).toString()
     }
 

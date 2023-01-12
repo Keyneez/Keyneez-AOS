@@ -37,20 +37,21 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="@{@string/like_date(data.start,data.end)}" />
+            putStartDate="@{@string/like_date(data.start)"
+            putEndDate="@{@string/like_date(data.end)"
+            android:text="@{@string/like_date(data.start,data.end)}" />
 
         <TextView
             android:id="@+id/tv_like_title"
             style="@style/PretendardBold24"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="6dp"
             android:gravity="center"
             android:textColor="@color/gray050"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_like_date"
-            tools:text="@{data.title}" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@{data.title}" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

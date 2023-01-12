@@ -4,8 +4,11 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.core.content.ContentProviderCompat.requireContext
+import com.keyneez.util.UiState
 import com.keyneez.util.binding.BindingActivity
 import com.keyneez.util.extension.setOnSingleClickListener
+import com.keyneez.util.extension.showSnackbar
 import com.lab.keyneez.R
 import com.lab.keyneez.databinding.ActivityIdPhotoBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -18,20 +21,32 @@ class IdPhotoActivity : BindingActivity<ActivityIdPhotoBinding>(R.layout.activit
         binding.vm = viewModel
         Toast.makeText(getApplicationContext(), "OCR 본인인증이 완료된 학생증입니다", Toast.LENGTH_SHORT).show()
         // 본인인증이 된 학생증
-        getIdPhoto()
         initIdPhotoFrameView()
         initIdBackBtnClickListener()
+        observeIdPhotoStateMessage()
     }
 
-    private fun getIdPhoto() {
-        if (viewModel.userData.value?.ocrDir == true) {
-            // 세로로
-            binding.cfvIdPhotoVertical.visibility = View.VISIBLE
-            binding.cfvIdPhotoHorizontal.visibility = View.GONE
-        } else {
-            // 가로로
-            binding.cfvIdPhotoHorizontal.visibility = View.VISIBLE
-            binding.cfvIdPhotoVertical.visibility = View.GONE
+    private fun observeIdPhotoStateMessage() {
+        viewModel.stateMessage.observe(this) {
+            when (it) {
+                is UiState.Success -> if (viewModel.userData.value?.ocrDir == true) {
+                    // 세로로
+                    binding.cfvIdPhotoVertical.visibility = View.VISIBLE
+                    binding.cfvIdPhotoHorizontal.visibility = View.GONE
+                } else {
+                    // 가로로
+                    binding.cfvIdPhotoHorizontal.visibility = View.VISIBLE
+                    binding.cfvIdPhotoVertical.visibility = View.GONE
+                }
+                is UiState.Failure -> showSnackbar(
+                    binding.root,
+                    getString(R.string.msg_photo_null)
+                )
+                is UiState.Error -> showSnackbar(
+                    binding.root,
+                    getString(R.string.msg_server_error)
+                )
+            }
         }
     }
 

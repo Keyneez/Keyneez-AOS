@@ -8,8 +8,10 @@ import androidx.fragment.app.viewModels
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.keyneez.presentation.main.id.dialog.IdBenefitFragment
 import com.keyneez.presentation.ocr.guide.OcrGuideActivity
+import com.keyneez.util.UiState
 import com.keyneez.util.binding.BindingFragment
 import com.keyneez.util.extension.setOnSingleClickListener
+import com.keyneez.util.extension.showSnackbar
 import com.lab.keyneez.R
 import com.lab.keyneez.databinding.BotSheetIdProfileBinding
 import com.lab.keyneez.databinding.FragmentIdBinding
@@ -25,44 +27,63 @@ class IdFragment : BindingFragment<FragmentIdBinding>(R.layout.fragment_id) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.vm = viewModel
-        initIdLayout()
         initBottomSheet()
         initIdPhotoBtnClickListener()
-        initIdBackGround()
+        observeIdStateMessage()
+    }
+
+    private fun observeIdStateMessage() {
+        viewModel.stateMessage.observe(viewLifecycleOwner) {
+            when (it) {
+                is UiState.Success -> if (viewModel.userData.value?.ocrImg == null) {
+                    // 발급하기 화면이 뜨게
+                    binding.layoutIdIssue.visibility = View.VISIBLE
+                    binding.layoutIdMain.visibility = View.GONE
+                    initIdIssueBtnClickListener()
+                } else {
+                    // 메인 아이디 화면이 뜨게
+                    binding.layoutIdIssue.visibility = View.GONE
+                    binding.layoutIdMain.visibility = View.VISIBLE
+                    initIdMainBtnClickListener()
+                    initIdBackGround()
+                }
+                is UiState.Failure -> requireContext().showSnackbar(
+                    binding.root,
+                    getString(R.string.msg_id_null)
+                )
+                is UiState.Error -> requireContext().showSnackbar(
+                    binding.root,
+                    getString(R.string.msg_server_error)
+                )
+            }
+        }
     }
 
     private fun initIdBackGround() {
-        if (viewModel.userData.value?.userCharacter?.rem(5) == 1) {
+        when (viewModel.userData.value?.userCharacter?.rem(5)) {
             // 문화인-파란색
-            binding.ivIdMainBackground.setImageDrawable(R.mipmap.card_bg_mint)
-        } else if (viewModel.userData.value?.userCharacter?.rem(5) == 2) {
+            1 -> {
+                binding.ivIdMainBackground.setImageDrawable(R.mipmap.card_bg_mint)
+            }
             // 진로탐색러-초록색
-            binding.ivIdMainBackground.setImageDrawable(R.mipmap.card_bg_green)
-        } else if (viewModel.userData.value?.userCharacter?.rem(5) == 3) {
+            2 -> {
+                binding.ivIdMainBackground.setImageDrawable(R.mipmap.card_bg_green)
+            }
             // 탐험가-핑크색
-            binding.ivIdMainBackground.setImageDrawable(R.mipmap.card_bg_pink)
-        } else if (viewModel.userData.value?.userCharacter?.rem(5) == 4) {
+            3 -> {
+                binding.ivIdMainBackground.setImageDrawable(R.mipmap.card_bg_pink)
+            }
             // 경제인-빨간색
-            binding.ivIdMainBackground.setImageDrawable(R.mipmap.card_bg_red)
-        } else {
+            4 -> {
+                binding.ivIdMainBackground.setImageDrawable(R.mipmap.card_bg_red)
+            }
             // 봉사자-보라색
-            binding.ivIdMainBackground.setImageDrawable(R.mipmap.card_bg_purple)
+            else -> {
+                binding.ivIdMainBackground.setImageDrawable(R.mipmap.card_bg_purple)
+            }
         }
     }
 
-    private fun initIdLayout() {
-        if (viewModel.userData.value?.ocrImg == null) {
-            // 발급하기 화면이 뜨게
-            binding.layoutIdIssue.visibility = View.VISIBLE
-            binding.layoutIdMain.visibility = View.GONE
-            initIdIssueBtnClickListener()
-        } else {
-            // 메인 아이디 화면이 뜨게
-            binding.layoutIdIssue.visibility = View.GONE
-            binding.layoutIdMain.visibility = View.VISIBLE
-            initIdMainBtnClickListener()
-        }
-    }
     private fun initBottomSheet() {
         bottomSheetBinding = BotSheetIdProfileBinding.inflate(layoutInflater)
         bottomSheetDialog = BottomSheetDialog(requireContext())

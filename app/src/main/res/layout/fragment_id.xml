@@ -116,7 +116,6 @@
                 android:id="@+id/iv_id_main_character"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/img_id_main_character"
                 setCharacterImage="@{vm.userData.characters.characterImg}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -132,7 +131,7 @@
                 android:textColor="@color/gray050"
                 app:layout_constraintStart_toStartOf="@id/iv_id_main_background"
                 app:layout_constraintTop_toTopOf="@id/iv_id_main_background"
-                tools:text="@{vm.userData.characters.character}"/>
+                android:text="@{vm.userData.characters.character}"/>
 
             <TextView
                 android:id="@+id/tv_id_main_name"
@@ -144,7 +143,7 @@
                 android:textColor="@color/gray050"
                 app:layout_constraintStart_toStartOf="@id/iv_id_main_background"
                 app:layout_constraintTop_toBottomOf="@id/tv_id_main_semi_title"
-                tools:text="@{vm.userData.name}" />
+                android:text="@{vm.userData.name}" />
 
             <ImageButton
                 android:id="@+id/btn_id_main_arrow"
@@ -179,6 +178,7 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="12dp"
                 android:textColor="@color/gray050"
+                putBirth="@{vm.userData.birth}"
                 app:layout_constraintStart_toStartOf="@id/iv_id_main_background"
                 app:layout_constraintTop_toBottomOf="@id/iv_id_main_baseline"
                 tools:text="@{vm.userData.birth}" />

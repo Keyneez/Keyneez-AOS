@@ -7,8 +7,10 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import com.keyneez.data.model.response.ResponseLikeDto
 import com.keyneez.presentation.main.search.SearchActivity
+import com.keyneez.util.UiState
 import com.keyneez.util.binding.BindingFragment
 import com.keyneez.util.extension.setOnSingleClickListener
+import com.keyneez.util.extension.showSnackbar
 import com.lab.keyneez.R
 import com.lab.keyneez.databinding.FragmentLikeBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -26,6 +28,7 @@ class LikeFragment : BindingFragment<FragmentLikeBinding>(R.layout.fragment_like
         initLikeSaveClickListener()
         initLikeSearchClickListener()
         setupLikeData()
+        observeLikeStateMessage()
     }
 
     private fun initLikeSearchClickListener() {
@@ -38,6 +41,22 @@ class LikeFragment : BindingFragment<FragmentLikeBinding>(R.layout.fragment_like
     private fun initLikeSaveClickListener() {
         binding.btnLikeSave.setOnSingleClickListener {
             binding.rvLikeContent.smoothScrollToPosition(0)
+        }
+    }
+
+    private fun observeLikeStateMessage() {
+        viewModel.stateMessage.observe(viewLifecycleOwner) {
+            when (it) {
+                is UiState.Success -> setupLikeData()
+                is UiState.Failure -> requireContext().showSnackbar(
+                    binding.root,
+                    getString(R.string.msg_like_null)
+                )
+                is UiState.Error -> requireContext().showSnackbar(
+                    binding.root,
+                    getString(R.string.msg_server_error)
+                )
+            }
         }
     }
 
