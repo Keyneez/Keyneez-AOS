@@ -45,6 +45,10 @@
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity
+            android:name="com.keyneez.presentation.main.search.SearchActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
             android:name="com.keyneez.presentation.ocr.guide.OcrGuideActivity"
             android:exported="false"
             android:screenOrientation="portrait" />

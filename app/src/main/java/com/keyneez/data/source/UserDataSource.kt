@@ -4,6 +4,7 @@ import com.keyneez.data.model.request.RequestPatchPwdSignupDto
 import com.keyneez.data.model.request.RequestPatchUserTypeDto
 import com.keyneez.data.model.request.RequestPostDanalSignupDto
 import com.keyneez.data.model.request.RequestPostPwdCheckDto
+import com.keyneez.data.model.response.ResponseIdDto
 import com.keyneez.data.model.response.ResponsePatchPwdSignupDto
 import com.keyneez.data.model.response.ResponsePatchUserTypeDto
 import com.keyneez.data.model.response.ResponsePostDanalSignupDto
@@ -18,6 +19,8 @@ class UserDataSource @Inject constructor(
         requestPostDanalSignupDto: RequestPostDanalSignupDto
     ): BaseResponse<ResponsePostDanalSignupDto> =
         userService.postDanalSignup(requestPostDanalSignupDto)
+
+    suspend fun getId(): BaseResponse<ResponseIdDto> = userService.getId()
 
     suspend fun patchUserTypeSignup(
         requestPatchUserTypeDto: RequestPatchUserTypeDto
