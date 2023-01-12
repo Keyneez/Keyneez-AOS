@@ -4,8 +4,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.keyneez.presentation.main.home.neww.NewFragment
 import com.keyneez.presentation.main.home.popular.PopularFragment
+import com.keyneez.presentation.main.home.recent.NewFragment
 import com.keyneez.presentation.main.home.recommend.RecommendFragment
 
 class HomeAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle) :

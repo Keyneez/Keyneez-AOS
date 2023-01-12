@@ -4,7 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".presentation.main.like.LikeFragment">
 
-    <data></data>
+    <data>
+        <variable
+            name="vm"
+            type="com.keyneez.presentation.main.like.LikeViewModel" />
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout_like"

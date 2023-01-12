@@ -14,73 +14,53 @@
         tools:context=".presentation.main.home.HomeFragment">
 
         <ImageView
-            android:id="@+id/tv_home_logo"
-            android:layout_width="80dp"
-            android:layout_height="30dp"
+            android:id="@+id/iv_home_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="61dp"
-            android:src="@drawable/img_onboarding_logoa"
+            android:src="@drawable/ic_home_logo"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
             android:id="@+id/btn_home_search"
-            android:layout_width="24dp"
-            android:layout_height="0dp"
-            app:layout_constraintDimensionRatio="1"
-            android:padding="13dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="16dp"
             android:background="@null"
-            android:src="@drawable/ic_like_search"
-            android:layout_marginStart="200dp"
-            android:layout_marginTop="60dp"
-
+            android:padding="12dp"
+            android:src="@drawable/ic_home_search"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/tv_home_logo"
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tab_home"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginHorizontal="115dp"
-            android:layout_marginTop="13dp"
-            app:layout_constraintEnd_toEndOf="@+id/tv_home_logo"
-            app:layout_constraintStart_toStartOf="@+id/tv_home_logo"
-            app:layout_constraintTop_toBottomOf="@id/tv_home_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="29dp"
+            android:paddingBottom="6dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_home_logo"
             app:tabIndicatorColor="@color/gray900"
+            app:tabIndicatorFullWidth="false"
             app:tabIndicatorHeight="3dp"
             app:tabSelectedTextColor="@color/gray900"
-            app:tabTextColor="@color/gray400"
-            style="@style/PretendardBold20">
-
-            <com.google.android.material.tabs.TabItem
-                android:id="@+id/tabitem_recommend"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/home_recommend" />
-
-            <com.google.android.material.tabs.TabItem
-                android:id="@+id/tabitem_popular"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/home_popular" />
-
-            <com.google.android.material.tabs.TabItem
-                android:id="@+id/tabitem_new"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/home_new" />
-        </com.google.android.material.tabs.TabLayout>
+            app:tabTextAppearance="@style/PretendardBold20"
+            app:tabTextColor="@color/gray400" />
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/vp_home"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:layout_marginTop="9dp"
+            android:paddingTop="5dp"
+            android:clipToPadding="false"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tab_home" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </layout>

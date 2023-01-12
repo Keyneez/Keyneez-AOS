@@ -3,8 +3,11 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
+    id 'org.jetbrains.kotlin.plugin.serialization' version '1.7.10'
     id "org.jlleitschuh.gradle.ktlint" version "10.3.0"
 }
+
+apply plugin: 'kotlin-kapt'
 
 Properties properties = new Properties()
 properties.load(project.rootProject.file('local.properties').newDataInputStream())
@@ -50,9 +53,10 @@ android {
 
 dependencies {
     // bottomsheet
-    implementation 'com.google.android.material:material:1.4.0-alpha02'
-    implementation 'com.google.android.material:material:1.2.1'
-    implementation 'com.google.android.material:material:1.5.0-alpha02'
+    implementation 'com.google.android.material:material:1.8.0-beta01'
+    implementation 'com.google.android.material:material:1.7.0'
+    implementation 'com.google.android.material:material:1.8.0-beta01'
+
     // hilt
     implementation "com.google.dagger:hilt-android:2.44.2"
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
@@ -74,7 +78,6 @@ dependencies {
     implementation "com.squareup.okhttp3:logging-interceptor:4.10.0"
     implementation "com.google.code.gson:gson:2.9.1"
     implementation "com.squareup.retrofit2:retrofit:2.9.0"
-    implementation "com.squareup.retrofit2:converter-gson:2.9.0"
 
     // coil
     implementation "io.coil-kt:coil:2.2.2"
@@ -108,6 +111,12 @@ dependencies {
     // viewpager2
     implementation 'androidx.viewpager2:viewpager2:1.1.0-beta01'
 
+    // dot indicator
+    implementation "com.tbuonomo:dotsindicator:4.3"
+
+    // shared preference
+    implementation 'androidx.security:security-crypto-ktx:1.1.0-alpha03'
+
     implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.7.0'
@@ -115,8 +124,6 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
-    //dot indicator
-    implementation "com.tbuonomo:dotsindicator:4.3"
 }
 
 ktlint {

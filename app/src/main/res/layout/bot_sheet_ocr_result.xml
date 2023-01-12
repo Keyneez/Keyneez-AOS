@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.keyneez.presentation.ocr.dialog.OcrResultViewModel" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_ocr_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="38dp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <TextView
+            android:id="@+id/tv_ocr_result_description"
+            style="@style/PretendardBold24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="36dp"
+            android:text="@string/ocr_result_description"
+            android:textColor="@color/gray900"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_ocr_result_toggle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/shape_gray100_fill_8_rect"
+            android:padding="2dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_ocr_result_description">
+
+            <TextView
+                android:id="@+id/tv_ocr_result_student_id"
+                style="@style/PretendardSemibold18"
+                isSelected="@{vm.isStudentId()}"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="3dp"
+                android:background="@drawable/sel_ocr_result_id_type"
+                android:gravity="center"
+                android:onClick="@{()->vm.updateIdType(true)}"
+                android:paddingVertical="8dp"
+                android:text="@string/ocr_result_student_id"
+                android:textColor="@{vm.isStudentId() ? @color/gray050 : @color/gray400}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/tv_ocr_result_youth_id"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_ocr_result_youth_id"
+                style="@style/PretendardSemibold18"
+                isSelected="@{!vm.isStudentId()}"
+                android:onClick="@{()->vm.updateIdType(false)}"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/sel_ocr_result_id_type"
+                android:gravity="center"
+                android:paddingVertical="8dp"
+                android:text="@string/ocr_result_youth_id"
+                android:textColor="@{vm.isStudentId() ? @color/gray400 : @color/gray050}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_ocr_result_student_id"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tv_ocr_result_name"
+            style="@style/PretendardMedium14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="32dp"
+            android:text="@string/ocr_result_name"
+            android:textColor="@color/gray900"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_ocr_result_toggle" />
+
+        <EditText
+            android:id="@+id/et_ocr_result_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:background="@drawable/shape_gray400_bottomline_rect"
+            android:hint="@string/ocr_result_name_hint"
+            android:paddingVertical="17dp"
+            android:text="@={vm.nameText}"
+            app:layout_constraintTop_toBottomOf="@id/tv_ocr_result_name" />
+
+        <ImageView
+            android:id="@+id/iv_ocr_result_name_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:src="@drawable/ic_auto_login_result_edit"
+            app:layout_constraintBottom_toBottomOf="@id/et_ocr_result_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/et_ocr_result_name" />
+
+        <TextView
+            android:id="@+id/tv_ocr_result_sub_entry"
+            style="@style/PretendardMedium14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:text="@{vm.isStudentId() ? @string/ocr_result_school : @string/ocr_result_birth_date}"
+            android:textColor="@color/gray900"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_ocr_result_name"
+            tools:text="@string/ocr_result_school" />
+
+        <EditText
+            android:id="@+id/et_ocr_result_sub_entry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:background="@drawable/shape_gray400_bottomline_rect"
+            android:hint="@{vm.isStudentId()? @string/ocr_result_school_hint : @string/ocr_result_birth_date_hint}"
+            android:paddingVertical="17dp"
+            android:text="@={vm.subEntryText}"
+            app:layout_constraintTop_toBottomOf="@id/tv_ocr_result_sub_entry"
+            tools:hint="@string/ocr_result_school_hint" />
+
+        <ImageView
+            android:id="@+id/iv_ocr_result_sub_entry_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:src="@drawable/ic_auto_login_result_edit"
+            app:layout_constraintBottom_toBottomOf="@id/et_ocr_result_sub_entry"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/et_ocr_result_sub_entry" />
+
+        <TextView
+            android:id="@+id/btn_ocr_result_reshoot"
+            style="@style/PretendardBold16"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="111dp"
+            android:background="@drawable/shape_gray050_fill_gray900_line_5_rect"
+            android:gravity="center"
+            android:paddingVertical="15dp"
+            android:text="@string/ocr_result_reshoot"
+            android:textColor="@color/gray900"
+            app:layout_constraintEnd_toStartOf="@id/btn_ocr_result_confirm"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_ocr_result_sub_entry" />
+
+        <TextView
+            android:id="@+id/btn_ocr_result_confirm"
+            style="@style/PretendardBold16"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="111dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/sel_ocr_result_confirm_btn"
+            android:enabled="@{!vm.nameText.isEmpty() &amp;&amp; !vm.subEntryText.isEmpty()}"
+            android:gravity="center"
+            android:paddingVertical="15dp"
+            android:text="@string/ocr_result_confirm"
+            android:textColor="@color/gray050"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btn_ocr_result_reshoot"
+            app:layout_constraintTop_toBottomOf="@id/et_ocr_result_sub_entry" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -10,6 +10,9 @@
         android:id="@+id/cv_home_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:cardCornerRadius="4dp"
+        android:shadowColor="@color/gray100"
+        android:layout_marginHorizontal="17dp"
         android:layout_marginTop="17dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -21,13 +24,13 @@
                 android:id="@+id/iv_home_item"
                 android:layout_width="0dp"
                 android:layout_height="240dp"
+                android:layout_marginBottom="160dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/img_home_item_background"
-                android:layout_marginBottom="160dp"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tv_home_title"
@@ -60,10 +63,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="24dp"
-                android:layout_marginBottom="124dp"
+                android:layout_marginTop="204dp"
                 android:src="@drawable/ic_home_card_mint"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
                 android:id="@+id/btn_home_heart"
@@ -73,21 +76,25 @@
                 android:layout_marginEnd="12dp"
                 android:background="@null"
                 android:padding="12dp"
-                android:src="@drawable/ic_home_heart"
+                android:src="@drawable/sel_home_heart"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
             <TextView
                 android:id="@+id/tv_home_keyword"
+                style="@style/PretendardBold14"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/home_keyword"
-                style="@style/PretendardBold14"
-                android:textColor="@color/mint500"
-                android:background="@drawable/shape_mint500_stroke_rect"
-                android:layout_marginTop="27dp"
                 android:layout_marginHorizontal="21dp"
+                android:layout_marginTop="27dp"
+                android:background="@drawable/shape_mint500_line_rect"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="8dp"
+                android:text="@string/home_keyword"
+                android:textColor="@color/mint500"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/iv_home_item"/>
+                app:layout_constraintTop_toBottomOf="@id/iv_home_item" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </layout>

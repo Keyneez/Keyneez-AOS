@@ -2,68 +2,48 @@
     <string name="app_name">Keyneez</string>
 
     // common
+    <string name="msg_error">오류가 발생하였습니다.</string>
     <string name="binding_error">Binding not initialized to reference the view.</string>
+
+    // onboarding
+    <string name="onboarding_login">로그인</string>
+    <string name="onboarding_signup">회원가입</string>
+    <string name="onboarding_first">우리의 일상을 다채롭고\n풍부하게! 키니즈</string>
+    <string name="onboarding_second">나에게 꼭 맞는\n활동을 추천받고,</string>
+    <string name="onboarding_third">다양한 정보와\n혜택을 경험하고</string>
+    <string name="onboarding_fourth">나만의 개성이 담긴\nID를 만들 수 있도록!</string>
 
     // phone
     <string name="phone_description">로그인을 위해\n휴대폰 번호를 입력해주세요.</string>
     <string name="phone_number_hint">휴대폰 번호</string>
     <string name="phone_next">다음으로</string>
 
-    // login otp
-    <string name="login_otp_description">간편 비밀번호를\n입력해주세요.</string>
-    <string name="login_otp_rearrange">재배열</string>
+    //uiState
+    <string name="msg_id_null">저장된 아이디가 없습니다.</string>
+    <string name="msg_photo_null">저장된 ocr 이미지가 없습니다.</string>
+    <string name="msg_profile_null">저장된 프로필 정보가 없습니다.</string>
+    <string name="msg_like_null">저장된 찜 목록이 없습니다.</string>
+    <string name="msg_server_error">네트워크 연결에 실패했습니다.</string>
+    <string name="msg_profile_success">프로필 상세보기 조회에 성공했습니다.</string>
 
-    // like
-    <string name="like_save">저장</string>
-    <string name="like_data">11.24–12.31</string>
-    <string name="like_content">청소년 \n영화관 할인</string>
-
-    // id
-    <string name="id_title">나의 ID</string>
-    <string name="id_content">온라인 ID로 더 다양한\n활동을 즐겨보세요</string>
-    <string name="id_issue">발급하기</string>
-    <string name="id_semi_title">호기심 가득 문화인</string>
-    <string name="id_name">김민지</string>
-    <string name="id_school">키니즈 고등학교</string>
-    <string name="id_birth">2001.01.17</string>
-    <string name="id_benefit">혜택안내</string>
-    <string name="id_photo">실물인증</string>
-    <string name="id_benefit_title">청소년 혜택안내</string>
-    <string name="id_museum">박물관, 미술관, 공원의 이용료 면제 혹은 50% 내외 할인</string>
-    <string name="id_museum_img">🏛</string>
-    <string name="id_crown">궁, 릉 50% 할인</string>
-    <string name="id_crown_img">👑</string>
-    <string name="id_amusementpark">유원지 30~50% 내외 할인</string>
-    <string name="id_amusementpark_img">🎡</string>
-    <string name="id_leaf">자연 휴양림 40% 할인</string>
-    <string name="id_leaf_img">🌿</string>
-    <string name="id_bus">버스, 지하철 20~40% 할인</string>
-    <string name="id_bus_img">🚍</string>
-    <string name="id_train">철도 요금 10~30% 할인</string>
-    <string name="id_train_img">🚆</string>
-
-    // setting
-    <string name="setting_name">김민지</string>
-    <string name="setting_phone">휴대폰 번호 설정</string>
-    <string name="setting_password">비밀번호 설정</string>
-    <string name="setting_id">ID 관리</string>
-    <string name="setting_alert">알림 설정</string>
-    <string name="setting_log_out">로그아웃</string>
-    <string name="setting_withdrawl">회원탈퇴</string>
-
-    // main
-    <string name="main_home">홈</string>
-    <string name="main_like">좋아요</string>
-    <string name="main_card">Card</string>
-    <string name="main_character">캐릭터</string>
-    <string name="main_setting">설정</string>
+    // login pin
+    <string name="login_pin_description">간편 비밀번호를\n입력해주세요.</string>
+    <string name="login_pin_rearrange">재배열</string>
 
     // signup (common)
     <string name="signup_next">다음으로</string>
 
     // danal guide
-    <string name="danal_guide_description">휴대폰 인증을\n진행해주세요.</string>
+    <string name="danal_guide_description">회원가입을 위해\n기본 정보를 입력해주세요.</string>
     <string name="danal_guide_verify">휴대폰 인증하기</string>
+    <string name="danal_guide_msg_existential_user">이미 가입된 회원입니다.</string>
+
+    // danal complete
+    <string name="danal_complete_welcome">만나서 반가워요!\n이제 %s님의 젤리를\n만들어 볼까요?</string>
+    <string name="danal_guide_name_hint">이름</string>
+    <string name="danal_guide_phone_hint">휴대폰 번호</string>
+    <string name="danal_guide_birth_hint">생년월일(6자)</string>
+    <string name="danal_guide_next">다음으로</string>
 
     // test guide
     <string name="test_guide_description">나의 젤리 만들기</string>
@@ -74,8 +54,8 @@
     <string name="tendency_description">젤리에게 나를 소개해 주세요!\n자유시간에 나는..</string>
     <string name="tendency_active">활발하게 놀러다녀요!</string>
     <string name="tendency_active_selected">🎾 활발하게 놀러다녀요!</string>
-    <string name="tendency_curious">호기심 가득 정보를 탐색 중</string>
-    <string name="tendency_curious_selected">🔍 호기심 가득 정보를 탐색 중</string>
+    <string name="tendency_curious">호기심 가득 정보를 탐색중</string>
+    <string name="tendency_curious_selected">🔍 호기심 가득 정보를 탐색중</string>
     <string name="tendency_cozy">포근한 집이 최고</string>
     <string name="tendency_cozy_selected">🧸 포근한 집이 최고</string>
 
@@ -108,16 +88,72 @@
     <string name="interest_vision_emoji">💭</string>
 
     // test complete
-    <string name="test_complete_description">%d님의 젤리는</string>
+    <string name="test_complete_description">%s님의 젤리는</string>
     <string name="test_complete_start_keyneez">키니즈 시작하기</string>
     <string name="test_complete_my_item">나의 아이템</string>
 
-    // signup otp
-    <string name="signup_otp_description">간편 비밀번호를\n설정해주세요</string>
-    <string name="signup_otp_rearrange">재배열</string>
+    // jelly description (bottom sheet)
+    <string name="jelly_description_title">%s\'s Jelly</string>
+    <string name="jelly_description_hashtag_dummy">#문화생활 #호기심 가득</string>
+    <string name="jelly_description_type_dummy">호기심 가득 문화인</string>
+    <string name="jelly_description_content_dummy">오늘은 또 어떤 활동들을 해볼까? 이곳저곳 둘러보는 눈빛이 더욱 빛나는 날! 당신의 호기심 가득한 문화생활이 더욱 풍부해질 수 있도록 키니즈가 안내해 줄게요! 🐥</string>
 
-    // signup otp confirm
-    <string name="signup_otp_confirm_description">설정한 비밀번호를\n한번 더 입력해주세요</string>
+    // signup pin
+    <string name="signup_pin_description">간편 비밀번호를\n설정해주세요</string>
+    <string name="signup_pin_rearrange">재배열</string>
+
+    // signup pin confirm
+    <string name="signup_pin_confirm_description">설정한 비밀번호를\n한번 더 입력해주세요</string>
+    <string name="signup_pin_confirm_invalid_pwd_msg">잘못된 비밀번호 입니다.</string>
+
+    // main
+    <string name="main_home">홈</string>
+    <string name="main_like">좋아요</string>
+    <string name="main_card">Card</string>
+    <string name="main_character">캐릭터</string>
+    <string name="main_setting">설정</string>
+
+    //home
+    <string name="home_recommend">추천</string>
+    <string name="home_popular">인기</string>
+    <string name="home_new">최신</string>
+    <string name="home_keyword">문화</string>
+    <string name="home_sub">유적 탐방부터 미술품까지!</string>
+    <string name="home_title">청소년 미술관 할인</string>
+
+    // like
+    <string name="like_save">저장</string>
+    <string name="like_date">%s–%s</string>
+    <string name="like_content">청소년 \n영화관 할인</string>
+
+    // id
+    <string name="id_title">나의 ID</string>
+    <string name="id_content">온라인 ID로 더 다양한\n활동을 즐겨보세요</string>
+    <string name="id_issue">발급하기</string>
+    <string name="id_semi_title">호기심 가득 문화인</string>
+    <string name="id_name">김민지</string>
+    <string name="id_school">키니즈 고등학교</string>
+    <string name="id_birth">2001.01.17</string>
+    <string name="id_benefit">혜택안내</string>
+    <string name="id_photo">실물인증</string>
+    <string name="id_benefit_title">청소년 혜택안내</string>
+    <string name="id_museum">박물관, 미술관, 공원의 이용료 면제 혹은 50% 내외 할인</string>
+    <string name="id_museum_img">🏛</string>
+    <string name="id_crown">궁, 릉 50% 할인</string>
+    <string name="id_crown_img">👑</string>
+    <string name="id_amusementpark">유원지 30~50% 내외 할인</string>
+    <string name="id_amusementpark_img">🎡</string>
+    <string name="id_leaf">자연 휴양림 40% 할인</string>
+    <string name="id_leaf_img">🌿</string>
+    <string name="id_bus">버스, 지하철 20~40% 할인</string>
+    <string name="id_bus_img">🚍</string>
+    <string name="id_train">철도 요금 10~30% 할인</string>
+    <string name="id_train_img">🚆</string>
+
+    //search
+    <string name="search_content">제목, 키워드</string>
+    <string name="search_result">검색결과</string>
+    <string name="search_count">15개</string>
 
     // ocr guide
     <string name="ocr_guide_description">학생증 또는 청소년증을\n준비해주세요.</string>
@@ -133,27 +169,44 @@
     <string name="ocr_passive_recognition">신분증 인식이 안 되나요?</string>
     <string name="ocr_auto_recognition">자동인식</string>
 
+    // ocr result
+    <string name="ocr_result_name">이름</string>
+    <string name="ocr_result_name_hint">OOO</string>
+    <string name="ocr_result_school">학교</string>
+    <string name="ocr_result_birth_date">생년월일</string>
+    <string name="ocr_result_school_hint">OO학교</string>
+    <string name="ocr_result_birth_date_hint">YYMMDD</string>
+    <string name="ocr_result_reshoot">다시 촬영</string>
+    <string name="ocr_result_confirm">네, 맞아요</string>
+    <string name="ocr_result_description">아래의 정보가 맞나요?</string>
+    <string name="ocr_result_student_id">학생증</string>
+    <string name="ocr_result_youth_id">청소년증</string>
+
     // ocr complete
     <string name="ocr_complete_description">%s님의\nID를 발급했어요!</string>
     <string name="ocr_complete_confirm">확인</string>
 
+    // setting
+    <string name="setting_name">김민지</string>
+    <string name="setting_phone">휴대폰 번호 설정</string>
+    <string name="setting_password">비밀번호 설정</string>
+    <string name="setting_id">ID 관리</string>
+    <string name="setting_alert">알림 설정</string>
+    <string name="setting_log_out">로그아웃</string>
+    <string name="setting_withdrawl">회원탈퇴</string>
 
-    //onboarding
-    <string name="onboarding_login">로그인</string>
-    <string name="onboarding_signup">회원가입</string>
-    <string name="onboarding_first">우리의 일상을 다채롭고\n풍부하게! 키니즈</string>
-    <string name="onboarding_second">나에게 꼭 맞는\n활동을 추천받고,</string>
-    <string name="onboarding_third">다양한 정보와\n혜택을 경험하고</string>
-    <string name="onboarding_fourth">나만의 개성이 담긴\nID를 만들 수 있도록!</string>
+    // detail
+    <string name="detail_title">2023 아트페어</string>
+    <string name="detail_place_title">위치</string>
+    <string name="detail_place">서울 코엑스</string>
+    <string name="detail_keyword">문화</string>
+    <string name="detail_period_title">기간</string>
+    <string name="detail_period">%s-%s</string>
+    <string name="detail_link">사이트 바로가기</string>
+    <string name="detail_benefit_title">청소년 혜택</string>
+    <string name="detail_benefit">티켓 가격 5% 할인\n음식물 5% 할인</string>
+    <string name="detail_use_title">이용방법</string>
+    <string name="detail_use">학생증/청소년증 제시</string>
 
-    //home
-    <string name="home_recommend">추천</string>
-    <string name="home_popular">인기</string>
-    <string name="home_new">최신</string>
-    <string name="home_keyword">문화</string>
-    <string name="home_sub">유적 탐방부터 미술품까지!</string>
-    <string name="home_title">청소년 미술관 할인</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

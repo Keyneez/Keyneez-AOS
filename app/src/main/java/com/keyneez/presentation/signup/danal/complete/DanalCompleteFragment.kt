@@ -7,13 +7,16 @@ import com.keyneez.presentation.signup.SignupActivity
 import com.keyneez.util.binding.BindingFragment
 import com.lab.keyneez.R
 import com.lab.keyneez.databinding.FragmentDanalCompleteBinding
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class DanalCompleteFragment :
     BindingFragment<FragmentDanalCompleteBinding>(R.layout.fragment_danal_complete) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.avm = (activity as SignupActivity).viewModel
 
         intentToNextPage()
     }
