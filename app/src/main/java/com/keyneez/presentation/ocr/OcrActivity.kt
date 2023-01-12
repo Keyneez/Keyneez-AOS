@@ -1,5 +1,6 @@
 package com.keyneez.presentation.ocr
 
+import android.graphics.Bitmap
 import android.graphics.Paint
 import android.os.Bundle
 import android.view.View
@@ -8,9 +9,14 @@ import androidx.camera.core.CameraSelector
 import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
+import com.google.mlkit.vision.common.InputImage
+import com.google.mlkit.vision.text.Text
+import com.google.mlkit.vision.text.TextRecognition
+import com.google.mlkit.vision.text.korean.KoreanTextRecognizerOptions
 import com.keyneez.presentation.ocr.dialog.OcrResultFragment
 import com.keyneez.util.binding.BindingActivity
 import com.keyneez.util.extension.setOnSingleClickListener
+import com.keyneez.util.extension.showSnackbar
 import com.lab.keyneez.R
 import com.lab.keyneez.databinding.ActivityOcrBinding
 import timber.log.Timber
@@ -79,6 +85,42 @@ class OcrActivity : BindingActivity<ActivityOcrBinding>(R.layout.activity_ocr) {
         binding.btnOcrCamera.setOnSingleClickListener {
             val ocrResultBottomSheet = OcrResultFragment()
             ocrResultBottomSheet.show(supportFragmentManager, ocrResultBottomSheet.tag)
+        }
+    }
+
+    // Text Recognition
+
+    // CameraX -> OnImageCapturedListener & ImageAnalysis.Analyzer 활용해서 rotation 계산
+
+    private fun runTextRecognition(img: Bitmap) {
+        // 이미지 유형 : Bitmap, media.Image, ByteBuffer, byte array, device file
+        val image = InputImage.fromBitmap(img, 0)
+        val recognizer = TextRecognition.getClient(KoreanTextRecognizerOptions.Builder().build())
+        recognizer.process(image)
+            .addOnSuccessListener { visionText ->
+                processTextRecognitionResult(visionText)
+            }
+            .addOnFailureListener { e ->
+                showSnackbar(binding.root, getString(R.string.msg_error))
+            }
+    }
+
+    private fun processTextRecognitionResult(text: Text) {
+        if (text.textBlocks.size == 0) {
+            Timber.e("인식된 글자 없음")
+            showSnackbar(binding.root, "인식된 글자가 없습니다.")
+            return
+        }
+
+        for (block in text.textBlocks) {
+            Timber.d("block : $block")
+
+            for (line in block.lines) {
+                Timber.d("line : $line")
+
+                for (element in line.elements)
+                    Timber.d("element : $element")
+            }
         }
     }
 

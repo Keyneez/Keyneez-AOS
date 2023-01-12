@@ -115,6 +115,15 @@ dependencies {
     // shared preference
     implementation 'androidx.security:security-crypto-ktx:1.1.0-alpha03'
 
+    // google ml kit text recognition
+    implementation 'com.google.mlkit:text-recognition-korean:16.0.0-beta6'
+
+    // text features
+    implementation 'com.google.android.gms:play-services-mlkit-text-recognition:16.0.0'
+
+    // firebase storage
+    implementation 'com.google.firebase:firebase-storage'
+
     implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.7.0'
