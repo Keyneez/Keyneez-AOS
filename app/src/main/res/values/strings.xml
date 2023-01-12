@@ -26,12 +26,16 @@
     <string name="signup_next">다음으로</string>
 
     // danal guide
-    <string name="danal_guide_description">휴대폰 인증을\n진행해주세요.</string>
+    <string name="danal_guide_description">회원가입을 위해\n기본 정보를 입력해주세요.</string>
     <string name="danal_guide_verify">휴대폰 인증하기</string>
     <string name="danal_guide_msg_existential_user">이미 가입된 회원입니다.</string>
 
     // danal complete
     <string name="danal_complete_welcome">만나서 반가워요!\n이제 %s님의 젤리를\n만들어 볼까요?</string>
+    <string name="danal_guide_name_hint">이름</string>
+    <string name="danal_guide_phone_hint">휴대폰 번호</string>
+    <string name="danal_guide_birth_hint">생년월일(6자)</string>
+    <string name="danal_guide_next">다음으로</string>
 
     // test guide
     <string name="test_guide_description">나의 젤리 만들기</string>
@@ -184,7 +188,7 @@
     <string name="detail_place">서울 코엑스</string>
     <string name="detail_keyword">문화</string>
     <string name="detail_period_title">기간</string>
-    <string name="detail_period">22.11.24-22.12.32</string>
+    <string name="detail_period">%s-%s</string>
     <string name="detail_link">사이트 바로가기</string>
     <string name="detail_benefit_title">청소년 혜택</string>
     <string name="detail_benefit">티켓 가격 5% 할인\n음식물 5% 할인</string>
