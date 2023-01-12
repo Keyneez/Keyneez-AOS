@@ -28,6 +28,7 @@ class SignupPinFragment : BindingFragment<FragmentSignupPinBinding>(R.layout.fra
     private fun initBackBtnClickListener() {
         binding.btnSignupPinBack.setOnSingleClickListener {
             viewModel.rearrangeKeypad()
+            viewModel.resetPassword()
             (activity as SignupActivity).intentToPreviousPage()
         }
     }
@@ -36,7 +37,6 @@ class SignupPinFragment : BindingFragment<FragmentSignupPinBinding>(R.layout.fra
         viewModel.passwordText.observe(viewLifecycleOwner) { pwd ->
             if (pwd.length == 6) {
                 viewModel.patchPwdSignup()
-                viewModel.resetPassword()
             }
         }
     }
@@ -44,7 +44,10 @@ class SignupPinFragment : BindingFragment<FragmentSignupPinBinding>(R.layout.fra
     private fun setupPatchPwdSignup() {
         viewModel.stateMessage.observe(viewLifecycleOwner) {
             when (it) {
-                is UiState.Success -> (activity as SignupActivity).intentToNextPage()
+                is UiState.Success -> {
+                    viewModel.resetPassword()
+                    (activity as SignupActivity).intentToNextPage()
+                }
                 is UiState.Failure -> requireContext().showSnackbar(
                     binding.root,
                     getString(R.string.msg_error)
