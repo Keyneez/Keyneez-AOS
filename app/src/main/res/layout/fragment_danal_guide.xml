@@ -39,17 +39,52 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn_danal_guide_back" />
 
-        <ImageView
-            android:id="@+id/iv_danal_guide_phone"
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/et_danal_guide_name"
+            android:layout_width="match_parent"
+            android:text="@={vm.userData.name}"
+            android:background="@drawable/shape_gray400_bottomline_rect"
             android:layout_height="wrap_content"
-            android:src="@drawable/img_danal_guide_phone"
-            app:layout_constraintBottom_toTopOf="@id/btn_danal_guide_verify"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:inputType="phone"
             app:layout_constraintTop_toBottomOf="@id/tv_danal_guide_description"
-            app:layout_goneMarginBottom="41dp" />
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="91dp"
+            style="@style/PretendardMedium18"
+            android:textColorHint="@color/gray400"
+            android:textColor="@color/gray900"
+            android:paddingVertical="18dp"
+            android:hint="이름"/>
+        <EditText
+            android:id="@+id/et_danal_guide_phone"
+            android:layout_width="match_parent"
+            android:text="@={vm.userData.phone}"
+            android:background="@drawable/shape_gray400_bottomline_rect"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            app:layout_constraintTop_toBottomOf="@id/et_danal_guide_name"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="20dp"
+            style="@style/PretendardMedium18"
+            android:textColorHint="@color/gray400"
+            android:textColor="@color/gray900"
+            android:paddingVertical="18dp"
+            android:hint="휴대폰 번호"/>
 
+        <EditText
+            android:id="@+id/et_danal_guide_birth"
+            android:layout_width="match_parent"
+            android:text="@={vm.userData.birth}"
+            android:background="@drawable/shape_gray400_bottomline_rect"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            app:layout_constraintTop_toBottomOf="@id/et_danal_guide_phone"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="20dp"
+            style="@style/PretendardMedium18"
+            android:textColorHint="@color/gray400"
+            android:textColor="@color/gray900"
+            android:paddingVertical="18dp"
+            android:hint="생년월일(6자)"/>
         <TextView
             android:id="@+id/btn_danal_guide_verify"
             style="@style/PretendardBold16"
@@ -61,7 +96,7 @@
             android:gravity="center"
             android:onClick="@{() -> vm.postDanalSignup()}"
             android:paddingVertical="15dp"
-            android:text="@string/danal_guide_verify"
+            android:text="다음으로"
             android:textColor="@color/gray050"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

@@ -26,7 +26,7 @@
     <string name="signup_next">다음으로</string>
 
     // danal guide
-    <string name="danal_guide_description">휴대폰 인증을\n진행해주세요.</string>
+    <string name="danal_guide_description">회원가입을 위해\n기본 정보를 입력해주세요.</string>
     <string name="danal_guide_verify">휴대폰 인증하기</string>
     <string name="danal_guide_msg_existential_user">이미 가입된 회원입니다.</string>
 
