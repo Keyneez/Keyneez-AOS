@@ -84,8 +84,7 @@
             android:textColor="@color/gray900"
             putBirth="@{vm.userData.birth}"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_id_profile_school"
-            tools:text="@{vm.userData.birth}" />
+            app:layout_constraintTop_toBottomOf="@id/tv_id_profile_school" />
 
         <TextView
             android:id="@+id/btn_id_profile_photo"

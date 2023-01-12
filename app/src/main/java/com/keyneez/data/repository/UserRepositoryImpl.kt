@@ -1,13 +1,7 @@
 package com.keyneez.data.repository
 
-import com.keyneez.data.model.request.RequestPatchPwdSignupDto
-import com.keyneez.data.model.request.RequestPatchUserTypeDto
-import com.keyneez.data.model.request.RequestPostDanalSignupDto
-import com.keyneez.data.model.request.RequestPostPwdCheckDto
-import com.keyneez.data.model.response.ResponseIdDto
-import com.keyneez.data.model.response.ResponsePatchPwdSignupDto
-import com.keyneez.data.model.response.ResponsePatchUserTypeDto
-import com.keyneez.data.model.response.ResponsePostDanalSignupDto
+import com.keyneez.data.model.request.*
+import com.keyneez.data.model.response.*
 import com.keyneez.data.model.response.wrapper.BaseResponse
 import com.keyneez.data.source.LocalPrefDataSource
 import com.keyneez.data.source.UserDataSource
@@ -36,6 +30,11 @@ class UserRepositoryImpl @Inject constructor(
 
     override suspend fun getId(): Result<BaseResponse<ResponseIdDto>> =
         kotlin.runCatching { userDataSource.getId() }
+
+    override suspend fun postUserLogIn(
+        requestPostUserLogInDto: RequestPostUserLogInDto
+    ): Result<BaseResponse<ResponsePostUserLogInDto>> =
+        kotlin.runCatching { userDataSource.postUserLogIn(requestPostUserLogInDto)}
 
     override suspend fun patchUserTypeSignup(
         requestPatchUserTypeDto: RequestPatchUserTypeDto
