@@ -60,7 +60,11 @@ object BindingAdapter {
 
     @JvmStatic
     @BindingAdapter("putBirth")
-    fun TextView.putBirth(birth: String) {
+    fun TextView.putBirth(birth: String?) {
+        if (birth == null) {
+            this.text = ""
+            return
+        }
         var tempBirth = ""
         tempBirth = "${birth.substring(0, 4)}.${birth.substring(4, 6)}.${birth.substring(6, 8)}"
         this.text = "$tempBirth"
