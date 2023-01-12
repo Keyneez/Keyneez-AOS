@@ -34,6 +34,7 @@ class PhoneFragment : BindingFragment<FragmentPhoneBinding>(R.layout.fragment_ph
 
     private fun initNextBtnClickListener() {
         binding.btnPhoneNext.setOnSingleClickListener {
+            (activity as LoginActivity).setPhoneNumber(viewModel.phoneNumber.value.toString())
             (activity as LoginActivity).intentToNextPage()
         }
     }

@@ -8,6 +8,7 @@ import com.keyneez.presentation.signup.danal.guide.DanalGuideViewModel.Companion
 import com.keyneez.presentation.signup.danal.guide.DanalGuideViewModel.Companion.USER_DATA_NULL_CODE
 import com.keyneez.util.UiState
 import com.keyneez.util.binding.BindingFragment
+import com.keyneez.util.extension.hideKeyboard
 import com.keyneez.util.extension.setOnSingleClickListener
 import com.keyneez.util.extension.showSnackbar
 import com.lab.keyneez.R
@@ -23,8 +24,15 @@ class DanalGuideFragment :
         super.onViewCreated(view, savedInstanceState)
         binding.vm = viewModel
 
+        initHideKeyboard()
         initBackBtnClickListener()
         setupPostDanalSignup()
+    }
+
+    private fun initHideKeyboard() {
+        binding.layoutDanalGuide.setOnSingleClickListener {
+            requireActivity().hideKeyboard(requireView())
+        }
     }
 
     private fun initBackBtnClickListener() {
