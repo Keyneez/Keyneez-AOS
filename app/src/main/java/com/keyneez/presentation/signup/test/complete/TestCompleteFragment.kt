@@ -9,14 +9,18 @@ import com.keyneez.util.extension.setOnSingleClickListener
 import com.lab.keyneez.R
 import com.lab.keyneez.databinding.BotSheetJellyDescriptionBinding
 import com.lab.keyneez.databinding.FragmentTestCompleteBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class TestCompleteFragment :
     BindingFragment<FragmentTestCompleteBinding>(R.layout.fragment_test_complete) {
+
     private lateinit var bottomSheetBinding: BotSheetJellyDescriptionBinding
     private lateinit var bottomSheetDialog: BottomSheetDialog
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.vm = (activity as SignupActivity).viewModel
 
         initNextBtnClickListener()
         initDetailBtnClickListener()

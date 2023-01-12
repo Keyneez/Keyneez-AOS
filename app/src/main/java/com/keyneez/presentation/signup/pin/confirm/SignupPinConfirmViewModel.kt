@@ -1,10 +1,10 @@
-package com.keyneez.presentation.signup.pin
+package com.keyneez.presentation.signup.pin.confirm
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.keyneez.data.model.request.RequestPatchPwdSignupDto
+import com.keyneez.data.model.request.RequestPostPwdCheckDto
 import com.keyneez.data.repository.UserRepository
 import com.keyneez.util.UiState
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -14,16 +14,16 @@ import timber.log.Timber
 import javax.inject.Inject
 
 @HiltViewModel
-class SignupPinViewModel @Inject constructor(
+class SignupPinConfirmViewModel @Inject constructor(
     private val userRepository: UserRepository
 ) : ViewModel() {
-    private val _passwordText = MutableLiveData("")
-    val passwordText: LiveData<String>
-        get() = _passwordText
-
     private val _stateMessage = MutableLiveData<UiState>()
     val stateMessage: LiveData<UiState>
         get() = _stateMessage
+
+    private val _passwordText = MutableLiveData("")
+    val passwordText: LiveData<String>
+        get() = _passwordText
 
     private val _keypadList = MutableLiveData<List<Int>>()
     val keypadList: LiveData<List<Int>>
@@ -33,17 +33,11 @@ class SignupPinViewModel @Inject constructor(
         rearrangeKeypad()
     }
 
-    /** 서버에 비밀번호 생성 요청 */
-    fun patchPwdSignup() {
+    fun postPwdCheck(pwd: String) {
         viewModelScope.launch {
-            userRepository.patchPwdSignup(RequestPatchPwdSignupDto(_passwordText.value.toString()))
+            userRepository.postPwdCheck(RequestPostPwdCheckDto(pwd))
                 .onSuccess { response ->
                     Timber.tag(successTag).d("response : $response")
-
-                    if (response.data == null) {
-                        _stateMessage.value = UiState.Failure(RESPONSE_NULL_CODE)
-                        return@onSuccess
-                    }
 
                     _stateMessage.value = UiState.Success
                 }
@@ -52,8 +46,14 @@ class SignupPinViewModel @Inject constructor(
                     if (it is HttpException) {
                         Timber.tag(failTag).e("code : ${it.code()}")
                         Timber.tag(failTag).e("message : ${it.message()}")
-                    }
-                    _stateMessage.value = UiState.Error
+
+                        when (it.code()) {
+                            INVALID_PWD_CODE ->
+                                _stateMessage.value =
+                                    UiState.Failure(INVALID_PWD_CODE)
+                            else -> _stateMessage.value = UiState.Error
+                        }
+                    } else _stateMessage.value = UiState.Error
                 }
         }
     }
@@ -70,6 +70,10 @@ class SignupPinViewModel @Inject constructor(
         }
 
         _keypadList.value = tempKeypadList
+    }
+
+    /** 서버에 비밀번호 대조 요청 */
+    fun patchPwdSignup() {
     }
 
     /** 비밀번호 입력 */
@@ -91,9 +95,9 @@ class SignupPinViewModel @Inject constructor(
     }
 
     companion object {
-        private const val RESPONSE_NULL_CODE = 100
+        const val INVALID_PWD_CODE = 400
 
-        private const val successTag = "PATCH_PWD_SIGNUP_SUCCESS"
-        private const val failTag = "PATCH_PWD_SIGNUP_FAIL"
+        private const val successTag = "POST_PWD_CHECK_SUCCESS"
+        private const val failTag = "POST_PWD_CHECK_FAIL"
     }
 }

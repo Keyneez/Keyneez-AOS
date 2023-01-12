@@ -4,6 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <variable
+            name="vm"
+            type="com.keyneez.presentation.main.detail.DetailViewModel" />
 
     </data>
 
@@ -60,7 +63,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="31dp"
                 android:layout_marginTop="8dp"
-                android:text="@string/detail_keyword"
+                android:text="@{vm.detailContent.category.category}"
                 style="@style/PretendardBold14"
                 android:textColor="@color/mint500"
                 android:background="@drawable/shape_mint500_line_rect"
@@ -76,7 +79,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="24dp"
                 android:layout_marginTop="8dp"
-                android:text="@string/detail_title"
+                android:text="@{vm.detailContent.title}"
                 android:textColor="@color/gray900"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_detail_keyword" />
@@ -99,7 +102,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="24dp"
-                android:text="@string/detail_place"
+                android:text="@{vm.detailContent.place}"
                 android:textColor="@color/gray900"
                 app:layout_constraintStart_toEndOf="@id/tv_detail_palce_title"
                 app:layout_constraintTop_toTopOf="@id/tv_detail_palce_title" />
@@ -122,7 +125,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="24dp"
-                android:text="@string/detail_period"
+                android:text="@{@string/detail_period(vm.detailContent.start,vm.detailContent.end)}"
                 android:textColor="@color/gray900"
                 app:layout_constraintStart_toEndOf="@id/tv_detail_period_title"
                 app:layout_constraintTop_toTopOf="@id/tv_detail_period_title" />
@@ -133,7 +136,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/img_detail_background"
+                android:src="@{vm.detailContent.img}"
                 app:layout_constraintTop_toBottomOf="@id/tv_detail_period_title" />
 
             <TextView
@@ -161,8 +164,7 @@
                 android:layout_marginTop="16dp"
                 android:textColor="@color/gray900"
                 app:layout_constraintTop_toBottomOf="@id/btn_detail_link"
-                tools:text="활동소개활동소개활동소개활동소개
-                활동소개활동소개활동소개활동소개활동소개활동소개활동소개활동소개활동소개활동" />
+                android:text="@{vm.detailContent.introdution}" />
 
             <TextView
                 android:id="@+id/tv_detail_benefit_title"
@@ -193,7 +195,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="24dp"
                 android:layout_marginTop="16dp"
-                android:text="@string/detail_benefit"
+                android:text="@{vm.detailContent.benefit}"
                 android:textColor="@color/gray900"
                 app:layout_constraintTop_toBottomOf="@id/iv_detail_line_benefit" />
 
@@ -225,7 +227,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="24dp"
                 android:layout_marginTop="16dp"
-                android:text="@string/detail_use"
+                android:text="@{vm.detailContent.usage}"
                 android:textColor="@color/gray900"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/iv_detail_line_use" />
