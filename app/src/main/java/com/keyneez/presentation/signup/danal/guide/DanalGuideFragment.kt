@@ -34,7 +34,10 @@ class DanalGuideFragment :
     private fun setupPostDanalSignup() {
         viewModel.postDanalSignupState.observe(viewLifecycleOwner) {
             when (it) {
-                is UiState.Success -> (activity as SignupActivity).intentToNextPage()
+                is UiState.Success -> {
+                    (activity as SignupActivity).setUserName(viewModel.userName.value.toString())
+                    (activity as SignupActivity).intentToNextPage()
+                }
                 is UiState.Failure -> {
                     when (it.code) {
                         EXISTENTIAL_USER_CODE -> {

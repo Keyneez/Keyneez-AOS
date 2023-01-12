@@ -7,7 +7,7 @@
 
         <variable
             name="vm"
-            type="com.keyneez.presentation.signup.pin.SignupPinViewModel" />
+            type="com.keyneez.presentation.signup.pin.confirm.SignupPinConfirmViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

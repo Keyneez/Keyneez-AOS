@@ -13,7 +13,7 @@ class LocalPrefDataSource @Inject constructor(
     }
 
     fun getUserName(): String? {
-        return prefs.getString(PREF_USER_NAME, "")
+        return prefs.getString(PREF_USER_NAME, "어르니")
     }
 
     fun setAccessToken(accessToken: String) {
