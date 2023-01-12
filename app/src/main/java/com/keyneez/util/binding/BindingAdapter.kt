@@ -57,25 +57,18 @@ object BindingAdapter {
 
         this.text = "$tempStart - $tempEnd"
     }
-    //20200202
-    //01234567
+
     @JvmStatic
     @BindingAdapter("putBirth")
     fun TextView.putBirth(birth: String) {
         var tempBirth = ""
-        tempBirth = "${birth.substring(0,4)}.${birth.substring(4,6)}.${birth.substring(6,8)}"
+        tempBirth = "${birth.substring(0, 4)}.${birth.substring(4, 6)}.${birth.substring(6, 8)}"
         this.text = "$tempBirth"
     }
 
     @JvmStatic
     @BindingAdapter("selectedInterestSet", "interestHashTag")
     fun TextView.setInterestIndex(set: LiveData<LinkedHashSet<String>>, interest: String) {
-        this.text = set.value?.indexOf(interest)?.plus(1).toString()
-    }
-
-    @JvmStatic
-    @BindingAdapter("setSaveDate")
-    fun TextView.setSaveDate(set: LiveData<LinkedHashSet<String>>, interest: String) {
         this.text = set.value?.indexOf(interest)?.plus(1).toString()
     }
 
