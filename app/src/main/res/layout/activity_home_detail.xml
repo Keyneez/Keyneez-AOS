@@ -63,10 +63,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="31dp"
                 android:layout_marginTop="8dp"
-                android:text="@{vm.detailContent.category.category}"
+                android:text="@{vm.detailContent.category.get(0)}"
+                keywordColor="@{vm.detailContent.category.get(0)}"
                 style="@style/PretendardBold14"
-                android:textColor="@color/mint500"
-                android:background="@drawable/shape_mint500_line_rect"
                 android:paddingHorizontal="12dp"
                 android:paddingVertical="8dp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -125,6 +124,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="24dp"
+                putStartDate="@{vm.detailContent.start}"
+                putEndDate="@{vm.detailContent.end}"
                 android:text="@{@string/detail_period(vm.detailContent.start,vm.detailContent.end)}"
                 android:textColor="@color/gray900"
                 app:layout_constraintStart_toEndOf="@id/tv_detail_period_title"
@@ -136,7 +137,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 android:scaleType="centerCrop"
-                android:src="@{vm.detailContent.img}"
+                setImage="@{vm.detailContent.img}"
                 app:layout_constraintTop_toBottomOf="@id/tv_detail_period_title" />
 
             <TextView
@@ -164,7 +165,7 @@
                 android:layout_marginTop="16dp"
                 android:textColor="@color/gray900"
                 app:layout_constraintTop_toBottomOf="@id/btn_detail_link"
-                android:text="@{vm.detailContent.introdution}" />
+                android:text="@{vm.detailContent.introduction}" />
 
             <TextView
                 android:id="@+id/tv_detail_benefit_title"
