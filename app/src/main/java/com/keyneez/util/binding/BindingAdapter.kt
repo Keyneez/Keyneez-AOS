@@ -37,6 +37,12 @@ object BindingAdapter {
     }
 
     @JvmStatic
+    @BindingAdapter("setImage")
+    fun ImageView.setImage(url: String?) {
+        this.load(url)
+    }
+
+    @JvmStatic
     @BindingAdapter("isSelected")
     fun View.isSelected(selected: Boolean) {
         this.isSelected = selected
@@ -44,7 +50,7 @@ object BindingAdapter {
 
     @JvmStatic
     @BindingAdapter("putStartDate", "putEndDate")
-    fun TextView.setDuration(start: String, end: String) {
+    fun TextView.setDuration(start: String?, end: String?) {
         if (start == null || end == null) {
             this.text = "2023"
             return

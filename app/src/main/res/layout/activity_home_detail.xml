@@ -124,6 +124,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="24dp"
+                putStartDate="@{vm.detailContent.start}"
+                putEndDate="@{vm.detailContent.end}"
                 android:text="@{@string/detail_period(vm.detailContent.start,vm.detailContent.end)}"
                 android:textColor="@color/gray900"
                 app:layout_constraintStart_toEndOf="@id/tv_detail_period_title"
@@ -135,7 +137,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 android:scaleType="centerCrop"
-                android:src="@{vm.detailContent.img}"
+                setImage="@{vm.detailContent.img}"
                 app:layout_constraintTop_toBottomOf="@id/tv_detail_period_title" />
 
             <TextView
