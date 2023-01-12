@@ -1,13 +1,7 @@
 package com.keyneez.data.service
 
-import com.keyneez.data.model.request.RequestPatchPwdSignupDto
-import com.keyneez.data.model.request.RequestPatchUserTypeDto
-import com.keyneez.data.model.request.RequestPostDanalSignupDto
-import com.keyneez.data.model.request.RequestPostPwdCheckDto
-import com.keyneez.data.model.response.ResponseIdDto
-import com.keyneez.data.model.response.ResponsePatchPwdSignupDto
-import com.keyneez.data.model.response.ResponsePatchUserTypeDto
-import com.keyneez.data.model.response.ResponsePostDanalSignupDto
+import com.keyneez.data.model.request.*
+import com.keyneez.data.model.response.*
 import com.keyneez.data.model.response.wrapper.BaseResponse
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -41,4 +35,10 @@ interface UserService {
     suspend fun postPwdCheck(
         @Body request: RequestPostPwdCheckDto
     )
+
+    // 로그인
+    @POST("user/signin")
+    suspend fun postUserLogIn(
+        @Body request: RequestPostUserLogInDto
+    ): BaseResponse<ResponsePostUserLogInDto>
 }
