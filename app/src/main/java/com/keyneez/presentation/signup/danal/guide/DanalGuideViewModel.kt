@@ -5,7 +5,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.keyneez.data.model.request.RequestPostDanalSignupDto
-import com.keyneez.data.model.response.ResponsePostDanalSignupDto
 import com.keyneez.data.repository.UserRepository
 import com.keyneez.util.UiState
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -22,16 +21,16 @@ class DanalGuideViewModel @Inject constructor(
     val postDanalSignupState: LiveData<UiState>
         get() = _postDanalSignupState
 
-    private val _userData = MutableLiveData<ResponsePostDanalSignupDto>()
-    val userData: LiveData<ResponsePostDanalSignupDto>
-        get() = _userData
+    private val _userName = MutableLiveData("")
+    val userName: LiveData<String>
+        get() = _userName
 
     /** 서버에 다날 정보 관련 유저 생성 요청 */
     fun postDanalSignup() {
-        val name = "테스터"
+        val name = "키니즈"
         val birth = "000101"
         val gender = "female"
-        val phone = "010-0000-1122"
+        val phone = "010-0000-0029"
 
         viewModelScope.launch {
             userRepository.postDanalSignup(
@@ -53,10 +52,10 @@ class DanalGuideViewModel @Inject constructor(
                     }
 
                     // danal signup success
-                    setUserName(response.data.name)
-                    setAccessToken(response.data.accessToken)
+                    userRepository.setUserName(response.data.name)
+                    userRepository.setAccessToken(response.data.accessToken)
+                    _userName.value = response.data.name
                     _postDanalSignupState.value = UiState.Success
-                    _userData.value = response.data!!
                 }
                 .onFailure {
                     Timber.tag(failTag).e("throwable : $it")
@@ -67,14 +66,6 @@ class DanalGuideViewModel @Inject constructor(
                     _postDanalSignupState.value = UiState.Error
                 }
         }
-    }
-
-    private fun setUserName(name: String) {
-        userRepository.setUserName(name)
-    }
-
-    private fun setAccessToken(accessToken: String) {
-        userRepository.setAccessToken(accessToken)
     }
 
     companion object {
