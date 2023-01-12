@@ -15,7 +15,7 @@ import com.lab.keyneez.R
 import com.lab.keyneez.databinding.FragmentLoginPinBinding
 
 class LoginPinFragment : BindingFragment<FragmentLoginPinBinding>(R.layout.fragment_login_pin) {
-    private val viewModel by viewModels<SignupPinViewModel>()
+    private val viewModel by viewModels<LoginPinViewModel>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

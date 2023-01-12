@@ -19,9 +19,9 @@ import javax.inject.Inject
 class InterestViewModel @Inject constructor(
     private val userRepository: UserRepository
 ) : ViewModel() {
-    private val _patchUserTypeState = MutableLiveData<UiState>()
-    val patchUserTypeState: LiveData<UiState>
-        get() = _patchUserTypeState
+    private val _stateMessage = MutableLiveData<UiState>()
+    val stateMessage: LiveData<UiState>
+        get() = _stateMessage
 
     private val _userData = MutableLiveData<ResponsePatchUserTypeDto>()
     val userData: LiveData<ResponsePatchUserTypeDto>
@@ -72,12 +72,12 @@ class InterestViewModel @Inject constructor(
                     Timber.tag(successTag).d("response: $response")
 
                     if (response.data == null) {
-                        _patchUserTypeState.value = UiState.Failure(RESPONSE_NULL_CODE)
+                        _stateMessage.value = UiState.Failure(RESPONSE_NULL_CODE)
                         return@onSuccess
                     }
 
                     _userData.value = response.data!!
-                    _patchUserTypeState.value = UiState.Success
+                    _stateMessage.value = UiState.Success
                 }
                 .onFailure {
                     Timber.tag(failTag).d("throwable : $it")
@@ -85,7 +85,7 @@ class InterestViewModel @Inject constructor(
                         Timber.tag(failTag).e("code : ${it.code()}")
                         Timber.tag(failTag).e("message : ${it.message()}")
                     }
-                    _patchUserTypeState.value = UiState.Error
+                    _stateMessage.value = UiState.Error
                 }
         }
     }

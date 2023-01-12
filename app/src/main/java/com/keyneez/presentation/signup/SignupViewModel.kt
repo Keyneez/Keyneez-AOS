@@ -9,6 +9,10 @@ import javax.inject.Inject
 
 @HiltViewModel
 class SignupViewModel @Inject constructor() : ViewModel() {
+    private val _userName = MutableLiveData("")
+    val userName: LiveData<String>
+        get() = _userName
+
     private val _selectedTendency = MutableLiveData("")
     val selectedTendency: LiveData<String>
         get() = _selectedTendency
@@ -16,6 +20,11 @@ class SignupViewModel @Inject constructor() : ViewModel() {
     private val _testResult = MutableLiveData<ResponsePatchUserTypeDto>()
     val testResult: LiveData<ResponsePatchUserTypeDto>
         get() = _testResult
+
+    /** 유저 이름 저장 */
+    fun setUserName(name: String) {
+        _userName.value = name
+    }
 
     /** 선택한 관심사 저장 */
     fun setTendency(tendency: String) {

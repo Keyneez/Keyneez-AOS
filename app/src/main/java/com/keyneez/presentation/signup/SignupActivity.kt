@@ -10,7 +10,7 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class SignupActivity : BindingActivity<ActivitySignupBinding>(R.layout.activity_signup) {
-    private val viewModel by viewModels<SignupViewModel>()
+    val viewModel by viewModels<SignupViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,23 +33,18 @@ class SignupActivity : BindingActivity<ActivitySignupBinding>(R.layout.activity_
         binding.vpSignup.currentItem++
     }
 
+    /** 유저 이름 저장 */
+    fun setUserName(name: String) {
+        viewModel.setUserName(name)
+    }
+
     /** 선택한 성향 저장 */
     fun setTendency(tendency: String) {
         viewModel.setTendency(tendency)
     }
 
-    /** 선택한 성향 반환 */
-    fun getTendency(): String? {
-        return viewModel.selectedTendency.value
-    }
-
     /** 테스트 결과 저장 */
     fun setUserResult(responsePatchUserTypeDto: ResponsePatchUserTypeDto) {
         viewModel.setTestResult(responsePatchUserTypeDto)
-    }
-
-    /** 테스트 결과 반환 */
-    fun getUserResult(): ResponsePatchUserTypeDto? {
-        return viewModel.testResult.value
     }
 }

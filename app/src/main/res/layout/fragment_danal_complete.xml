@@ -5,8 +5,8 @@
 
     <data>
         <variable
-            name="vm"
-            type="com.keyneez.presentation.signup.danal.complete.DanalCompleteViewModel" />
+            name="avm"
+            type="com.keyneez.presentation.signup.SignupViewModel" />
 
     </data>
 
@@ -23,7 +23,7 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="120dp"
             tools:text="@string/danal_complete_welcome"
-            android:text="@{@string/danal_complete_welcome(vm.userName)}"
+            android:text="@{@string/danal_complete_welcome(avm.userName)}"
             android:textColor="@color/gray900"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

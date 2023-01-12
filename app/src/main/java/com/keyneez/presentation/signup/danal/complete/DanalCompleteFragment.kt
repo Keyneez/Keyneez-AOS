@@ -2,7 +2,6 @@ package com.keyneez.presentation.signup.danal.complete
 
 import android.os.Bundle
 import android.view.View
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.keyneez.presentation.signup.SignupActivity
 import com.keyneez.util.binding.BindingFragment
@@ -15,18 +14,11 @@ import kotlinx.coroutines.launch
 @AndroidEntryPoint
 class DanalCompleteFragment :
     BindingFragment<FragmentDanalCompleteBinding>(R.layout.fragment_danal_complete) {
-    private val viewModel by viewModels<DanalCompleteViewModel>()
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.vm = viewModel
+        binding.avm = (activity as SignupActivity).viewModel
 
-        initUserName()
         intentToNextPage()
-    }
-
-    private fun initUserName() {
-        viewModel.initUserName()
     }
 
     private fun intentToNextPage() {

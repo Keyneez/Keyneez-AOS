@@ -21,12 +21,16 @@ class DanalGuideViewModel @Inject constructor(
     val postDanalSignupState: LiveData<UiState>
         get() = _postDanalSignupState
 
+    private val _userName = MutableLiveData("")
+    val userName: LiveData<String>
+        get() = _userName
+
     /** 서버에 다날 정보 관련 유저 생성 요청 */
     fun postDanalSignup() {
-        val name = "테스터"
+        val name = "어르니"
         val birth = "000101"
         val gender = "female"
-        val phone = "010-0000-0013"
+        val phone = "010-0000-0028"
 
         viewModelScope.launch {
             userRepository.postDanalSignup(
@@ -50,6 +54,7 @@ class DanalGuideViewModel @Inject constructor(
                     // danal signup success
                     userRepository.setUserName(response.data.name)
                     userRepository.setAccessToken(response.data.accessToken)
+                    _userName.value = response.data.name
                     _postDanalSignupState.value = UiState.Success
                 }
                 .onFailure {

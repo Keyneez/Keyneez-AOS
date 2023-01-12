@@ -33,13 +33,13 @@ class InterestFragment : BindingFragment<FragmentInterestBinding>(R.layout.fragm
 
     private fun initNextBtnClickListener() {
         binding.btnInterestNext.setOnSingleClickListener {
-            val tendency = (activity as SignupActivity).getTendency()
+            val tendency = (activity as SignupActivity).viewModel.selectedTendency.value
             viewModel.patchUserTypeSignup(tendency)
         }
     }
 
     private fun setupPatchUserTypeState() {
-        viewModel.patchUserTypeState.observe(viewLifecycleOwner) {
+        viewModel.stateMessage.observe(viewLifecycleOwner) {
             when (it) {
                 is UiState.Success -> {
                     (activity as SignupActivity).setUserResult(requireNotNull(viewModel.userData.value))
