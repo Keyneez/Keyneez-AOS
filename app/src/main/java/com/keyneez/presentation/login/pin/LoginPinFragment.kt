@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.viewModels
 import com.keyneez.presentation.login.LoginActivity
 import com.keyneez.presentation.main.MainActivity
-import com.keyneez.presentation.signup.pin.SignupPinViewModel
 import com.keyneez.util.binding.BindingFragment
 import com.keyneez.util.extension.hideKeyboard
 import com.keyneez.util.extension.setOnSingleClickListener

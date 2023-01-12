@@ -27,10 +27,10 @@ class DanalGuideViewModel @Inject constructor(
 
     /** 서버에 다날 정보 관련 유저 생성 요청 */
     fun postDanalSignup() {
-        val name = "어르니"
+        val name = "키니즈"
         val birth = "000101"
         val gender = "female"
-        val phone = "010-0000-0028"
+        val phone = "010-0000-0029"
 
         viewModelScope.launch {
             userRepository.postDanalSignup(
