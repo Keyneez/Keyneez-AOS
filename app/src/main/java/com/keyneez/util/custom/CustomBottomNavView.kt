@@ -1,3 +1,5 @@
+package com.keyneez.util.custom
+
 import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Color
@@ -9,7 +11,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.keyneez.util.extension.dpToPx
 import com.lab.keyneez.R
 
-class RoundedBottomNavigationView : BottomNavigationView {
+class CustomBottomNavView : BottomNavigationView {
     private var mPath: Path = Path()
     private var mPaint: Paint = Paint()
 

@@ -28,8 +28,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
-
-            <com.keyneez.util.custom.RoundedBottomNavigationView
+            <com.keyneez.util.custom.CustomBottomNavView
                 android:id="@+id/bot_nav_main"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -41,8 +40,7 @@
                 app:itemTextColor="@drawable/sel_main_bottomnavi"
                 app:labelVisibilityMode="labeled"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:menu="@menu/main_menu"
-                tools:layout_editor_absoluteX="0dp" />
+                app:menu="@menu/main_menu" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
