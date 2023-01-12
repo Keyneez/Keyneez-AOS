@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
 import androidx.camera.core.CameraSelector
+import androidx.camera.core.ImageCapture
 import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
@@ -27,6 +28,7 @@ class OcrActivity : BindingActivity<ActivityOcrBinding>(R.layout.activity_ocr) {
     private val viewModel by viewModels<OcrViewModel>()
 
     private lateinit var cameraExecutor: ExecutorService
+    private lateinit var cameraProvider: ProcessCameraProvider
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,7 +49,7 @@ class OcrActivity : BindingActivity<ActivityOcrBinding>(R.layout.activity_ocr) {
         cameraProviderFuture.addListener(
             {
                 // bind camera lifecycle
-                val cameraProvider: ProcessCameraProvider = cameraProviderFuture.get()
+                cameraProvider = cameraProviderFuture.get()
 
                 val preview = Preview.Builder().build().also {
                     it.setSurfaceProvider(binding.previewOcr.surfaceProvider)
@@ -83,13 +85,15 @@ class OcrActivity : BindingActivity<ActivityOcrBinding>(R.layout.activity_ocr) {
 
     private fun initCameraBtnClickListener() {
         binding.btnOcrCamera.setOnSingleClickListener {
-            val ocrResultBottomSheet = OcrResultFragment()
-            ocrResultBottomSheet.show(supportFragmentManager, ocrResultBottomSheet.tag)
+            takePhoto()
         }
     }
 
-    // Text Recognition
+    private fun takePhoto() {
+        val imageCapture = ImageCapture.Builder().build()
+    }
 
+    // Text Recognition
     // CameraX -> OnImageCapturedListener & ImageAnalysis.Analyzer 활용해서 rotation 계산
 
     private fun runTextRecognition(img: Bitmap) {
@@ -106,6 +110,9 @@ class OcrActivity : BindingActivity<ActivityOcrBinding>(R.layout.activity_ocr) {
     }
 
     private fun processTextRecognitionResult(text: Text) {
+        val ocrResultBottomSheet = OcrResultFragment()
+        ocrResultBottomSheet.show(supportFragmentManager, ocrResultBottomSheet.tag)
+
         if (text.textBlocks.size == 0) {
             Timber.e("인식된 글자 없음")
             showSnackbar(binding.root, "인식된 글자가 없습니다.")
