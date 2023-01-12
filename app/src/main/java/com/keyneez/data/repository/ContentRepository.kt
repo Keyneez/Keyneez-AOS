@@ -10,7 +10,7 @@ interface ContentRepository {
     suspend fun getContent(): Result<BaseResponse<ResponseContentDto>>
     suspend fun postSave(
         requestPostSaveDto: RequestPostSaveDto
-    ): Result<BaseResponse<Void>>
+    ): Result<BaseResponse<Unit>>
 
     suspend fun getLike(): Result<BaseResponse<List<ResponseLikeDto>>>
 

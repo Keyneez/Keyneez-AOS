@@ -1,16 +1,14 @@
 package com.keyneez.data.service
 
-import com.keyneez.data.model.response.ResponseGetContentDeatilDto
-import com.keyneez.data.model.response.ResponseLikeDto
-import com.keyneez.data.model.response.wrapper.BaseResponse
-import retrofit2.http.GET
-import retrofit2.http.Path
 import com.keyneez.data.model.request.RequestPostSaveDto
 import com.keyneez.data.model.response.ResponseContentDto
+import com.keyneez.data.model.response.ResponseGetContentDeatilDto
+import com.keyneez.data.model.response.ResponseLikeDto
 import com.keyneez.data.model.response.wrapper.BaseResponse
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.Path
 
 interface ContentService {
     @GET("content/liked")
@@ -20,9 +18,6 @@ interface ContentService {
     suspend fun getDetail(
         @Path("content_id") contentId: Int
     ): BaseResponse<ResponseGetContentDeatilDto>
-}
-
-interface ContentService {
 
     // 게시물 전체 조회 API
     @GET("content/")
@@ -32,5 +27,5 @@ interface ContentService {
     @POST("content/save")
     suspend fun postSave(
         @Body requestBody: RequestPostSaveDto
-    ): BaseResponse<Void>
+    ): BaseResponse<Unit>
 }
