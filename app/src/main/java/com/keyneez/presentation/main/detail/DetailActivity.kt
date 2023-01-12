@@ -28,7 +28,9 @@ class DetailActivity :
     }
 
     private fun initBackClickListener() {
-        binding.btnDetailBack.setOnSingleClickListener { }
+        binding.btnDetailBack.setOnSingleClickListener {
+            finish()
+        }
     }
 
     private fun initShareClickListener() {
