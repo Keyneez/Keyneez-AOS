@@ -44,7 +44,7 @@
             android:id="@+id/view_login_pin_pwd0"
             isSelected="@{vm.passwordText.length() >= 1}"
             android:layout_width="20dp"
-            android:layout_height="0dp"
+            android:layout_height="20dp"
             android:background="@drawable/sel_pin_circle"
             app:layout_constraintDimensionRatio="1:1" />
 
@@ -52,7 +52,7 @@
             android:id="@+id/view_login_pin_pwd1"
             isSelected="@{vm.passwordText.length() >= 2}"
             android:layout_width="20dp"
-            android:layout_height="0dp"
+            android:layout_height="20dp"
             android:background="@drawable/sel_pin_circle"
             app:layout_constraintDimensionRatio="1:1" />
 
@@ -60,7 +60,7 @@
             android:id="@+id/view_login_pin_pwd2"
             isSelected="@{vm.passwordText.length() >= 3}"
             android:layout_width="20dp"
-            android:layout_height="0dp"
+            android:layout_height="20dp"
             android:background="@drawable/sel_pin_circle"
             app:layout_constraintDimensionRatio="1:1" />
 
@@ -68,7 +68,7 @@
             android:id="@+id/view_login_pin_pwd3"
             isSelected="@{vm.passwordText.length() >= 4}"
             android:layout_width="20dp"
-            android:layout_height="0dp"
+            android:layout_height="20dp"
             android:background="@drawable/sel_pin_circle"
             app:layout_constraintDimensionRatio="1:1" />
 
@@ -76,7 +76,7 @@
             android:id="@+id/view_login_pin_pwd4"
             isSelected="@{vm.passwordText.length() >= 5}"
             android:layout_width="20dp"
-            android:layout_height="0dp"
+            android:layout_height="20dp"
             android:background="@drawable/sel_pin_circle"
             app:layout_constraintDimensionRatio="1:1" />
 
@@ -84,7 +84,7 @@
             android:id="@+id/view_login_pin_pwd5"
             isSelected="@{vm.passwordText.length() >= 6}"
             android:layout_width="20dp"
-            android:layout_height="0dp"
+            android:layout_height="20dp"
             android:background="@drawable/sel_pin_circle"
             app:layout_constraintDimensionRatio="1:1" />
 

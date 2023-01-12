@@ -29,6 +29,8 @@ class IdFragment : BindingFragment<FragmentIdBinding>(R.layout.fragment_id) {
         binding.vm = viewModel
         initBottomSheet()
         initIdPhotoBtnClickListener()
+        initIdIssueBtnClickListener()
+        initIdMainBtnClickListener()
         observeIdStateMessage()
     }
 
@@ -39,12 +41,10 @@ class IdFragment : BindingFragment<FragmentIdBinding>(R.layout.fragment_id) {
                     // 발급하기 화면이 뜨게
                     binding.layoutIdIssue.visibility = View.VISIBLE
                     binding.layoutIdMain.visibility = View.GONE
-                    initIdIssueBtnClickListener()
                 } else {
                     // 메인 아이디 화면이 뜨게
                     binding.layoutIdIssue.visibility = View.GONE
                     binding.layoutIdMain.visibility = View.VISIBLE
-                    initIdMainBtnClickListener()
                     initIdBackGround()
                 }
                 is UiState.Failure -> requireContext().showSnackbar(

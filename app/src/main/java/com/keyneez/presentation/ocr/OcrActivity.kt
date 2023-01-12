@@ -1,13 +1,12 @@
 package com.keyneez.presentation.ocr
 
 import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.graphics.Paint
 import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
-import androidx.camera.core.CameraSelector
-import androidx.camera.core.ImageCapture
-import androidx.camera.core.Preview
+import androidx.camera.core.* // ktlint-disable no-wildcard-imports
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
 import com.google.mlkit.vision.common.InputImage
@@ -21,6 +20,7 @@ import com.keyneez.util.extension.showSnackbar
 import com.lab.keyneez.R
 import com.lab.keyneez.databinding.ActivityOcrBinding
 import timber.log.Timber
+import java.nio.ByteBuffer
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 
@@ -29,6 +29,7 @@ class OcrActivity : BindingActivity<ActivityOcrBinding>(R.layout.activity_ocr) {
 
     private lateinit var cameraExecutor: ExecutorService
     private lateinit var cameraProvider: ProcessCameraProvider
+    private var imageCapture: ImageCapture? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,12 +56,15 @@ class OcrActivity : BindingActivity<ActivityOcrBinding>(R.layout.activity_ocr) {
                     it.setSurfaceProvider(binding.previewOcr.surfaceProvider)
                 }
 
+                imageCapture = ImageCapture.Builder()
+                    .build()
+
                 // select default back camera
                 val cameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
 
                 try {
                     cameraProvider.unbindAll()
-                    cameraProvider.bindToLifecycle(this, cameraSelector, preview)
+                    cameraProvider.bindToLifecycle(this, cameraSelector, preview, imageCapture)
                 } catch (e: Exception) {
                     Timber.e("$e : Use case binding failed")
                 }
@@ -90,7 +94,32 @@ class OcrActivity : BindingActivity<ActivityOcrBinding>(R.layout.activity_ocr) {
     }
 
     private fun takePhoto() {
-        val imageCapture = ImageCapture.Builder().build()
+        imageCapture = imageCapture ?: return
+
+        imageCapture!!.takePicture(
+            cameraExecutor,
+            object : ImageCapture.OnImageCapturedCallback() {
+                override fun onCaptureSuccess(image: ImageProxy) {
+                    val bitmap = imageProxyToBitmap(image)
+                    runTextRecognition(bitmap)
+                    super.onCaptureSuccess(image)
+                }
+
+                override fun onError(exception: ImageCaptureException) {
+                    Timber.tag(tag).e("exception : $exception")
+                    showSnackbar(binding.root, getString(R.string.msg_error))
+                    super.onError(exception)
+                }
+            }
+        )
+    }
+
+    private fun imageProxyToBitmap(image: ImageProxy): Bitmap {
+        val planeProxy = image.planes[0]
+        val buffer: ByteBuffer = planeProxy.buffer
+        val bytes = ByteArray(buffer.remaining())
+        buffer.get(bytes)
+        return BitmapFactory.decodeByteArray(bytes, 0, bytes.size)
     }
 
     // Text Recognition
@@ -105,6 +134,7 @@ class OcrActivity : BindingActivity<ActivityOcrBinding>(R.layout.activity_ocr) {
                 processTextRecognitionResult(visionText)
             }
             .addOnFailureListener { e ->
+                Timber.tag(tag).e("error : $e")
                 showSnackbar(binding.root, getString(R.string.msg_error))
             }
     }
@@ -114,19 +144,19 @@ class OcrActivity : BindingActivity<ActivityOcrBinding>(R.layout.activity_ocr) {
         ocrResultBottomSheet.show(supportFragmentManager, ocrResultBottomSheet.tag)
 
         if (text.textBlocks.size == 0) {
-            Timber.e("인식된 글자 없음")
+            Timber.tag(tag).e("인식된 글자 없음")
             showSnackbar(binding.root, "인식된 글자가 없습니다.")
             return
         }
 
         for (block in text.textBlocks) {
-            Timber.d("block : $block")
+            Timber.tag(tag).d("block : $block")
 
             for (line in block.lines) {
-                Timber.d("line : $line")
+                Timber.tag(tag).d("line : $line")
 
                 for (element in line.elements)
-                    Timber.d("element : $element")
+                    Timber.tag(tag).d("element : $element")
             }
         }
     }
@@ -134,5 +164,9 @@ class OcrActivity : BindingActivity<ActivityOcrBinding>(R.layout.activity_ocr) {
     override fun onDestroy() {
         super.onDestroy()
         cameraExecutor.shutdown()
+    }
+
+    companion object {
+        private const val tag = "OCR_TEST"
     }
 }

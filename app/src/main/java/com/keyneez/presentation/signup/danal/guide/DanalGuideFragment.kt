@@ -33,6 +33,9 @@ class DanalGuideFragment :
         binding.layoutDanalGuide.setOnSingleClickListener {
             requireActivity().hideKeyboard(requireView())
         }
+        binding.layoutDanalGuideContent.setOnSingleClickListener {
+            requireActivity().hideKeyboard(requireView())
+        }
     }
 
     private fun initBackBtnClickListener() {
