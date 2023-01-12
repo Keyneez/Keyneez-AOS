@@ -7,13 +7,14 @@ import androidx.lifecycle.viewModelScope
 import com.keyneez.data.model.response.ResponseGetContentDeatilDto
 import com.keyneez.data.repository.ContentRepository
 import com.keyneez.util.UiState
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
-import retrofit2.HttpException
 import timber.log.Timber
 import javax.inject.Inject
 
+@HiltViewModel
 class DetailViewModel @Inject constructor(
-    private val repository: ContentRepository
+    private val contentRepository: ContentRepository
 ) : ViewModel() {
 
     private val _detailContent = MutableLiveData<ResponseGetContentDeatilDto>()
@@ -24,37 +25,22 @@ class DetailViewModel @Inject constructor(
     val stateMessage: LiveData<UiState>
         get() = _stateMessage
 
-    val contentId = MutableLiveData<Int>()
-
-    private fun initContentId(id: Int) {
-        contentId.value = id
-    }
-
-    private fun getDetail(contentId: Int) {
+    fun getDetail(contentId: Int) {
         viewModelScope.launch {
-            ContentRepository.getDetail(contentId).onSuccess { response ->
-                if (response.data == null) {
-                    Timber.d("GET DETAIL LIST IS NULL")
-                    _stateMessage.value = UiState.Failure(100)
-                    return@onSuccess
-                }
-                Timber.d("GET DETAIL LIST SUCCESS")
-                Timber.d("response : $response")
-                _detailContent.value = response.data!!
-                _stateMessage.value = UiState.Success
-            }.onFailure {
-                Timber.e("GET DETAIL LIST SERVER ERROR")
-                Timber.e("message : $message")
-                if (it is HttpException) {
-                    Timber.e("response : $it")
-                    when (it.code()) {
-                        404 ->
-                            _stateMessage.value =
-                                UiState.Failure(404)
-                        else -> _stateMessage.value = UiState.Error
+            contentRepository.getDetail(contentId)
+                .onSuccess { response ->
+                    if (response.data == null) {
+                        Timber.d("GET DETAIL LIST IS NULL")
+                        _stateMessage.value = UiState.Failure(100)
+                        return@onSuccess
                     }
-                } else _stateMessage.value = UiState.Error
-            }
+                    Timber.d("GET DETAIL LIST SUCCESS")
+                    Timber.d("response : $response")
+                    _detailContent.value = response.data!!
+                    _stateMessage.value = UiState.Success
+                }.onFailure { throwable ->
+                    Timber.e("$throwable")
+                }
         }
     }
 }

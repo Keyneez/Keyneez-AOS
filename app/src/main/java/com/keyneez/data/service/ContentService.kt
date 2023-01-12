@@ -6,7 +6,7 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface ContentService {
-    @GET("content/view/:content_id")
+    @GET("content/view/{content_id}")
     suspend fun getDetail(
         @Path("content_id") contentId: Int
     ): BaseResponse<ResponseGetContentDeatilDto>

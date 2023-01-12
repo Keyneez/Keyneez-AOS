@@ -11,20 +11,20 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class DetailActivity :
     BindingActivity<ActivityHomeDetailBinding>(R.layout.activity_home_detail) {
-    private val viewModel: DetailViewModel by viewModels()
+    val detailViewModel: DetailViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding.vm = viewModel
+        binding.vm = detailViewModel
 
+        initContentId()
         initBackClickListener()
         initShareClickListener()
         initHeartClickListener()
     }
 
-    private fun initContentIdObserve() {
-        viewModel.detailContent.observe(this) {
-        }
+    private fun initContentId() {
+        detailViewModel.getDetail(2)
     }
 
     private fun initBackClickListener() {

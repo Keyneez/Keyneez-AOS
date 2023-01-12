@@ -180,7 +180,7 @@
     <string name="detail_place">서울 코엑스</string>
     <string name="detail_keyword">문화</string>
     <string name="detail_period_title">기간</string>
-    <string name="detail_period">22.11.24-22.12.32</string>
+    <string name="detail_period">%s-%s</string>
     <string name="detail_link">사이트 바로가기</string>
     <string name="detail_benefit_title">청소년 혜택</string>
     <string name="detail_benefit">티켓 가격 5% 할인\n음식물 5% 할인</string>

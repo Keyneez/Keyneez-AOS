@@ -8,6 +8,6 @@ import javax.inject.Inject
 class ContentRepositoryImpl @Inject constructor(
     private val contentDataSource: ContentDataSource
 ) : ContentRepository {
-    override suspend fun getDetail(conntentId: Int): Result<BaseResponse<ResponseGetContentDeatilDto>> =
-        kotlin.runCatching { contentDataSource.getDetail(conntentId) }
+    override suspend fun getDetail(contentId: Int): Result<BaseResponse<ResponseGetContentDeatilDto>> =
+        kotlin.runCatching { contentDataSource.getDetail(contentId) }
 }
