@@ -17,7 +17,7 @@
             android:id="@+id/container_main"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:layout_constraintBottom_toTopOf="@id/layout_main_bot_nav"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:layout="@layout/fragment_home" />
 
@@ -28,7 +28,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
-            <com.keyneez.util.custom.CustomBottomNavView
+
+            <com.keyneez.util.custom.RoundedBottomNavigationView
                 android:id="@+id/bot_nav_main"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
