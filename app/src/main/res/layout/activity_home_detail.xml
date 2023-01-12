@@ -4,6 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <variable
+            name="vm"
+            type="com.keyneez.presentation.main.detail.DetailViewModel" />
 
     </data>
 
@@ -60,7 +63,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="31dp"
                 android:layout_marginTop="8dp"
-                android:text="@string/detail_keyword"
+                android:text="@{}"
+
                 style="@style/PretendardBold14"
                 android:textColor="@color/mint500"
                 android:background="@drawable/shape_mint500_line_rect"
