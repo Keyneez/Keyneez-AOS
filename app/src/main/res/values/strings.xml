@@ -32,6 +32,10 @@
 
     // danal complete
     <string name="danal_complete_welcome">만나서 반가워요!\n이제 %s님의 젤리를\n만들어 볼까요?</string>
+    <string name="danal_guide_name_hint">이름</string>
+    <string name="danal_guide_phone_hint">휴대폰 번호</string>
+    <string name="danal_guide_birth_hint">생년월일(6자)</string>
+    <string name="danal_guide_next">다음으로</string>
 
     // test guide
     <string name="test_guide_description">나의 젤리 만들기</string>
