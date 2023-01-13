@@ -11,7 +11,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class DetailActivity :
     BindingActivity<ActivityHomeDetailBinding>(R.layout.activity_home_detail) {
-    val detailViewModel: DetailViewModel by viewModels()
+    private val detailViewModel: DetailViewModel by viewModels()
 
     private val contentId: Int by lazy { intent.getIntExtra("contentId", 2) }
 
@@ -23,6 +23,7 @@ class DetailActivity :
         initBackClickListener()
         initShareClickListener()
         initHeartClickListener()
+        initHeartActiveObserve()
     }
 
     private fun initContentId() {
@@ -40,6 +41,17 @@ class DetailActivity :
     }
 
     private fun initHeartClickListener() {
-        binding.btnDetailHeart.setOnSingleClickListener { }
+        binding.btnDetailHeart.setOnSingleClickListener {
+            detailViewModel.postSave(contentId)
+        }
+    }
+
+    private fun initHeartActiveObserve() {
+        detailViewModel.saveState.observe(this) {
+            binding.btnDetailHeart.isSelected = it
+        }
+        detailViewModel.detailContent.observe(this) {
+            binding.btnDetailHeart.isSelected = it.liked
+        }
     }
 }

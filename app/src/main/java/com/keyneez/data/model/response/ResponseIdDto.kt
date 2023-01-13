@@ -21,7 +21,7 @@ data class ResponseIdDto(
 ) {
     @Serializable
     data class Character(
-        val character: String?,
+        val character: String?
 //        @SerialName("character_img") val characterImg: String?
     )
 }

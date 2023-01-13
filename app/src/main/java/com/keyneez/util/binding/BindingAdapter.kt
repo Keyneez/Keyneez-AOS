@@ -128,16 +128,4 @@ object BindingAdapter {
             }
         }
     }
-
-    @JvmStatic
-    @BindingAdapter("keywordColorCard")
-    fun ImageView.keywordColorCard(txt: String?) {
-        when (txt) {
-            "문화" -> this.context.getDrawable(R.drawable.ic_home_card_mint)
-            "진로" -> this.context.getDrawable(R.drawable.ic_home_card_green)
-            "봉사" -> this.context.getDrawable(R.drawable.ic_home_card_purple)
-            "여행" -> this.context.getDrawable(R.drawable.ic_home_card_pink)
-            "경제" -> this.context.getDrawable(R.drawable.ic_home_card_red)
-        }
-    }
 }

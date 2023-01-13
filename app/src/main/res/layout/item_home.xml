@@ -39,8 +39,9 @@
             <TextView
                 android:id="@+id/tv_home_title"
                 style="@style/PretendardBold28"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:ellipsize="none"
                 android:layout_marginTop="72dp"
                 android:paddingHorizontal="21dp"
                 android:text="@{content.title}"
@@ -70,7 +71,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="24dp"
                 android:layout_marginTop="204dp"
-                keywordColorCard="@{content.category.get(0)}"
+                android:src="@drawable/ic_home_card_mint"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 

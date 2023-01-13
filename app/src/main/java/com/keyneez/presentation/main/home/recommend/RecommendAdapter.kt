@@ -2,7 +2,6 @@ package com.keyneez.presentation.main.home.recommend
 
 import android.content.Intent
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
@@ -31,6 +30,8 @@ class RecommendAdapter : RecyclerView.Adapter<RecommendAdapter.HomeViewHolder>()
         RecyclerView.ViewHolder(binding.root) {
         fun onBind(item: ResponseContentDto) {
             binding.content = item
+            binding.ivHomeCard
+            binding.btnHomeHeart.isSelected = item.liked
             binding.root.setOnSingleClickListener {
                 val intent = Intent(binding.root.context, DetailActivity::class.java)
                 intent.putExtra("contentId", item.key)
@@ -38,4 +39,30 @@ class RecommendAdapter : RecyclerView.Adapter<RecommendAdapter.HomeViewHolder>()
             }
         }
     }
+//    private fun initIdBackGround() {
+//        when (data.) {
+//            // 문화인-파란색
+//            "문화" -> {
+//                binding.ivsetImageDrawable(R.mipmap.card_bg_mint)
+//            }
+//            // 진로탐색러-초록색
+//            2 -> {
+//                binding.ivIdMainBackground.setImageDrawable(R.mipmap.card_bg_green)
+//            }
+//            // 탐험가-핑크색
+//            3 -> {
+//                binding.ivIdMainBackground.setImageDrawable(R.mipmap.card_bg_pink)
+//            }
+//            // 경제인-빨간색
+//            4 -> {
+//                binding.ivIdMainBackground.setImageDrawable(R.mipmap.card_bg_red)
+//            }
+//            // 봉사자-보라색
+//            else -> {
+//                binding.ivIdMainBackground.setImageDrawable(R.mipmap.card_bg_purple)
+//            }
+//        }
+//
+//        fun ImageView.setImageDrawable(img: Int) {
+//        }
 }

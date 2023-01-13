@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.keyneez.data.model.request.RequestPostSaveDto
 import com.keyneez.data.model.response.ResponseContentDto
 import com.keyneez.data.repository.ContentRepository
 import com.keyneez.util.UiState
