@@ -27,7 +27,7 @@
             android:id="@+id/view_ocr_frame_space"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:background="@color/gray050_80"
+            android:background="@color/gray900_80"
             app:layout_constraintBottom_toTopOf="@id/cfv_ocr_horizontal"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -36,7 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="28dp"
-            android:background="@color/gray050_80"
+            android:background="@color/gray900_80"
             android:visibility="@{vm.isVertical() ? View.INVISIBLE : View.VISIBLE}" />
 
         <com.keyneez.util.custom.VerticalCardFrameView
@@ -44,7 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="28dp"
-            android:background="@color/gray050_80"
+            android:background="@color/gray900_80"
             android:visibility="@{vm.isVertical() ? View.VISIBLE : View.INVISIBLE}"
             tools:visibility="invisible" />
 

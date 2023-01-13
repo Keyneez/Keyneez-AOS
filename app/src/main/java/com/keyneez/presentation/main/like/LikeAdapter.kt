@@ -28,7 +28,7 @@ class LikeAdapter : RecyclerView.Adapter<LikeAdapter.getViewHolder>() {
             binding.data = item
             binding.root.setOnClickListener {
                 val intent = Intent(binding.root.context, DetailActivity::class.java)
-                intent.putExtra("key", item.key)
+                intent.putExtra("contentId", item.key)
                 ContextCompat.startActivity(binding.root.context, intent, null)
             }
         }
