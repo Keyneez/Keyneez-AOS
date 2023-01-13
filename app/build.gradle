@@ -119,6 +119,10 @@ dependencies {
     // shared preference
     implementation 'androidx.security:security-crypto-ktx:1.1.0-alpha04'
 
+    // firebase
+    implementation platform('com.google.firebase:firebase-bom:31.1.1')
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+
     // firebase storage
     implementation 'com.google.firebase:firebase-core:21.1.1'
     implementation 'com.google.firebase:firebase-storage:20.1.0'

@@ -50,4 +50,14 @@ class UserRepositoryImpl @Inject constructor(
         requestPostPwdCheckDto: RequestPostPwdCheckDto
     ): Result<Unit> =
         kotlin.runCatching { userDataSource.postPwdCheck(requestPostPwdCheckDto) }
+
+    override suspend fun postStudentUserCheck(
+        requestPostStudentUserCheckDto: RequestPostStudentUserCheckDto
+    ): Result<BaseResponse<ResponsePostUserCheckDto>> =
+        kotlin.runCatching { userDataSource.postStudentUserCheck(requestPostStudentUserCheckDto) }
+
+    override suspend fun postYouthUserCheck(
+        requestPostYouthUserCheckDto: RequestPostYouthUserCheckDto
+    ): Result<BaseResponse<ResponsePostUserCheckDto>> =
+        kotlin.runCatching { userDataSource.postYouthUserCheck(requestPostYouthUserCheckDto) }
 }
