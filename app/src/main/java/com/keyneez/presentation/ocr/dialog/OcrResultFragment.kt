@@ -17,7 +17,6 @@ import com.keyneez.util.extension.showToast
 import com.lab.keyneez.R
 import com.lab.keyneez.databinding.BotSheetOcrResultBinding
 import dagger.hilt.android.AndroidEntryPoint
-import timber.log.Timber
 
 @AndroidEntryPoint
 class OcrResultFragment :
