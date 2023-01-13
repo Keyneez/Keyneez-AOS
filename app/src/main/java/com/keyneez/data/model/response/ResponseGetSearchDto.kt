@@ -2,6 +2,7 @@ package com.keyneez.data.model.response
 
 import kotlinx.serialization.SerialName
 
+@kotlinx.serialization.Serializable
 data class ResponseGetSearchDto(
     @SerialName("content_key")
     val key: Int,

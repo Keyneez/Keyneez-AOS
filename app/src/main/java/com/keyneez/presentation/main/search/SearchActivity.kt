@@ -34,6 +34,7 @@ class SearchActivity : BindingActivity<ActivitySearchBinding>(R.layout.activity_
         viewModel.searchList.observe(this) {
             searchAdapter.data = it
             searchAdapter.notifyDataSetChanged()
+            binding.tvSearchCount.setText(it.size.toString())
         }
     }
     private fun observeSearchStateMessage() {
