@@ -2,21 +2,25 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <data></data>
+    <data>
+        <variable
+            name="data"
+            type="com.keyneez.data.entity.ItemData" />
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout_test_complete_item"
         android:layout_width="wrap_content"
-        android:padding="12dp"
-        android:background="@drawable/sel_test_complete_item"
+        android:layout_height="wrap_content"
         android:layout_marginHorizontal="6dp"
-        android:layout_height="wrap_content">
+        android:background="@drawable/sel_test_complete_item"
+        android:padding="12dp">
 
         <ImageView
             android:id="@+id/iv_test_complete_item"
+            item="@{data.itemImage}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/img_test_complete_item_dummy"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

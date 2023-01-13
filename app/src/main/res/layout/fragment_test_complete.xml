@@ -89,7 +89,7 @@
             style="@style/PretendardBold14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=" 0"
+            android:text="10"
             android:textColor="@color/mint500"
             app:layout_constraintBottom_toBottomOf="@id/tv_test_complete_my_item"
             app:layout_constraintStart_toEndOf="@id/tv_test_complete_my_item"

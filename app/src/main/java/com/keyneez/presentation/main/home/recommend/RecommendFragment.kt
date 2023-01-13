@@ -21,11 +21,11 @@ class RecommendFragment :
         super.onViewCreated(view, savedInstanceState)
         binding.vm = viewModel
 
-        setupHomeData()
+        setHomeData()
         initRecommendAdapter()
     }
 
-    private fun setupHomeData() {
+    private fun setHomeData() {
         viewModel.contentList.observe(viewLifecycleOwner) {
             recommendAdapter.data = it
             recommendAdapter.notifyDataSetChanged()
