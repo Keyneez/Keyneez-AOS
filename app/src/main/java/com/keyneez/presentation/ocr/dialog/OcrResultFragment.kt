@@ -6,15 +6,18 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
 import com.keyneez.presentation.ocr.OcrActivity
+import com.keyneez.presentation.ocr.dialog.OcrResultViewModel.Companion.CHECK_FAIL_CODE
 import com.keyneez.presentation.ocr.guide.OcrGuideActivity
 import com.keyneez.util.UiState
 import com.keyneez.util.binding.BindingBottomSheetDialog
 import com.keyneez.util.extension.hideKeyboard
 import com.keyneez.util.extension.setOnSingleClickListener
 import com.keyneez.util.extension.showSnackbar
+import com.keyneez.util.extension.showToast
 import com.lab.keyneez.R
 import com.lab.keyneez.databinding.BotSheetOcrResultBinding
 import dagger.hilt.android.AndroidEntryPoint
+import timber.log.Timber
 
 @AndroidEntryPoint
 class OcrResultFragment :
@@ -65,10 +68,17 @@ class OcrResultFragment :
                     }
                     requireActivity().finish()
                 }
-                is UiState.Failure -> requireContext().showSnackbar(
-                    binding.root,
-                    getString(R.string.msg_error)
-                )
+                is UiState.Failure -> {
+                    when (it.code) {
+                        CHECK_FAIL_CODE -> {
+                            requireContext().showToast(getString(R.string.ocr_result_check_fail_msg))
+                        }
+                        else -> requireContext().showSnackbar(
+                            binding.root,
+                            getString(R.string.msg_error)
+                        )
+                    }
+                }
                 is UiState.Error -> requireContext().showSnackbar(
                     binding.root,
                     getString(R.string.msg_error)

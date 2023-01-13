@@ -184,6 +184,7 @@
     <string name="ocr_result_description">아래의 정보가 맞나요?</string>
     <string name="ocr_result_student_id">학생증</string>
     <string name="ocr_result_youth_id">청소년증</string>
+    <string name="ocr_result_check_fail_msg">회원 정보와 일치하지 않습니다.</string>
 
     // ocr complete
     <string name="ocr_complete_description">%s님의\nID를 발급했어요!</string>
