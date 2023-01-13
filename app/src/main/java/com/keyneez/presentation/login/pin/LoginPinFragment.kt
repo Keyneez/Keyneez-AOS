@@ -64,16 +64,22 @@ class LoginPinFragment : BindingFragment<FragmentLoginPinBinding>(R.layout.fragm
                 }
                 is UiState.Failure -> {
                     when (it.code) {
-                        UNAUTHORIZED_USER_CODE -> requireContext().showSnackbar(
-                            binding.root,
-                            getString(
-                                R.string.login_pin_unauthorized_msg
+                        UNAUTHORIZED_USER_CODE -> {
+                            viewModel.resetPassword()
+                            requireContext().showSnackbar(
+                                binding.root,
+                                getString(
+                                    R.string.signup_pin_confirm_invalid_pwd_msg
+                                )
                             )
-                        )
-                        INVALID_PWD_CODE -> requireContext().showSnackbar(
-                            binding.root,
-                            getString(R.string.signup_pin_confirm_invalid_pwd_msg)
-                        )
+                        }
+                        INVALID_PWD_CODE -> {
+                            viewModel.resetPassword()
+                            requireContext().showSnackbar(
+                                binding.root,
+                                getString(R.string.signup_pin_confirm_invalid_pwd_msg)
+                            )
+                        }
                         else -> requireContext().showSnackbar(
                             binding.root,
                             getString(R.string.msg_error)

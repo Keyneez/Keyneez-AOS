@@ -27,64 +27,79 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/tv_danal_guide_description"
-            style="@style/PretendardBold24"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="16dp"
-            android:text="@string/danal_guide_description"
-            android:textColor="@color/gray900"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn_danal_guide_back" />
-
-        <EditText
-            android:id="@+id/et_danal_guide_name"
-            style="@style/PretendardMedium18"
+        <ScrollView
+            android:id="@+id/sv_danal_guide"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="24dp"
-            android:layout_marginTop="91dp"
-            android:background="@drawable/shape_gray400_bottomline_rect"
-            android:hint="@string/danal_guide_name_hint"
-            android:paddingVertical="18dp"
-            android:text="@={vm.userName}"
-            android:textColor="@color/gray900"
-            android:textColorHint="@color/gray400"
-            app:layout_constraintTop_toBottomOf="@id/tv_danal_guide_description" />
+            android:layout_height="0dp"
+            android:layout_marginVertical="9dp"
+            app:layout_constraintBottom_toTopOf="@id/btn_danal_guide_verify"
+            app:layout_constraintTop_toBottomOf="@id/btn_danal_guide_back">
 
-        <EditText
-            android:id="@+id/et_danal_guide_phone"
-            style="@style/PretendardMedium18"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="24dp"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/shape_gray400_bottomline_rect"
-            android:hint="@string/danal_guide_phone_hint"
-            android:inputType="phone"
-            android:paddingVertical="18dp"
-            android:text="@={vm.phone}"
-            android:textColor="@color/gray900"
-            android:textColorHint="@color/gray400"
-            app:layout_constraintTop_toBottomOf="@id/et_danal_guide_name" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_danal_guide_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-        <EditText
-            android:id="@+id/et_danal_guide_birth"
-            style="@style/PretendardMedium18"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="24dp"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/shape_gray400_bottomline_rect"
-            android:hint="@string/danal_guide_birth_hint"
-            android:inputType="number"
-            android:paddingVertical="18dp"
-            android:text="@={vm.birth}"
-            android:textColor="@color/gray900"
-            android:textColorHint="@color/gray400"
-            app:layout_constraintTop_toBottomOf="@id/et_danal_guide_phone" />
+                <TextView
+                    android:id="@+id/tv_danal_guide_description"
+                    style="@style/PretendardBold24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="7dp"
+                    android:text="@string/danal_guide_description"
+                    android:textColor="@color/gray900"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/et_danal_guide_name"
+                    style="@style/PretendardMedium18"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="24dp"
+                    android:layout_marginTop="91dp"
+                    android:background="@drawable/shape_gray400_bottomline_rect"
+                    android:hint="@string/danal_guide_name_hint"
+                    android:paddingVertical="18dp"
+                    android:text="@={vm.userName}"
+                    android:textColor="@color/gray900"
+                    android:textColorHint="@color/gray400"
+                    app:layout_constraintTop_toBottomOf="@id/tv_danal_guide_description" />
+
+                <EditText
+                    android:id="@+id/et_danal_guide_phone"
+                    style="@style/PretendardMedium18"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="24dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/shape_gray400_bottomline_rect"
+                    android:hint="@string/danal_guide_phone_hint"
+                    android:inputType="phone"
+                    android:paddingVertical="18dp"
+                    android:text="@={vm.phone}"
+                    android:textColor="@color/gray900"
+                    android:textColorHint="@color/gray400"
+                    app:layout_constraintTop_toBottomOf="@id/et_danal_guide_name" />
+
+                <EditText
+                    android:id="@+id/et_danal_guide_birth"
+                    style="@style/PretendardMedium18"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="24dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/shape_gray400_bottomline_rect"
+                    android:hint="@string/danal_guide_birth_hint"
+                    android:inputType="number"
+                    android:paddingVertical="18dp"
+                    android:text="@={vm.birth}"
+                    android:textColor="@color/gray900"
+                    android:textColorHint="@color/gray400"
+                    app:layout_constraintTop_toBottomOf="@id/et_danal_guide_phone" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
 
         <TextView
             android:id="@+id/btn_danal_guide_verify"
