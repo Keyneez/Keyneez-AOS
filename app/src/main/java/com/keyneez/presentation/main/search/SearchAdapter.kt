@@ -1,9 +1,12 @@
 package com.keyneez.presentation.main.search
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.keyneez.data.model.response.ResponseGetSearchDto
+import com.keyneez.presentation.main.detail.DetailActivity
 import com.lab.keyneez.databinding.ItemSearchContentBinding
 
 class SearchAdapter : RecyclerView.Adapter<SearchAdapter.getViewHolder>() {
@@ -25,6 +28,11 @@ class SearchAdapter : RecyclerView.Adapter<SearchAdapter.getViewHolder>() {
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: ResponseGetSearchDto) {
             binding.data = item
+            binding.root.setOnClickListener {
+                val intent = Intent(binding.root.context, DetailActivity::class.java)
+                intent.putExtra("contentId", item.key)
+                ContextCompat.startActivity(binding.root.context, intent, null)
+            }
         }
     }
 }

@@ -50,7 +50,7 @@ object BindingAdapter {
     @BindingAdapter("putStartDate", "putEndDate")
     fun TextView.setDuration(start: String?, end: String?) {
         if (start == null || end == null) {
-            this.text = "2023-"
+            this.text = "2023 -"
             return
         }
 
@@ -119,11 +119,32 @@ object BindingAdapter {
                     this.background = this.context.getDrawable(R.drawable.shape_pink500_line_rect)
                 }
 
-                "진로" -> {
+                "경제" -> {
                     this.setTextColor(this.context.getColor(R.color.red500))
                     this.background = this.context.getDrawable(R.drawable.shape_red500_line_rect)
                 }
             }
         }
     }
+
+    @JvmStatic
+    @BindingAdapter("replaceNewline")
+    fun TextView.replaceNewline(string: String?) {
+        this.text = string?.replace("\n", " ")
+    }
+
+    @JvmStatic
+    @BindingAdapter("card")
+    fun ImageView.card(string: String?) {
+        when (string) {
+            "문화" -> this.setImageDrawable(R.drawable.ic_home_card_mint)
+            "진로" -> this.setImageDrawable(R.drawable.ic_home_card_green)
+            "봉사" -> this.setImageDrawable(R.drawable.ic_home_card_purple)
+            "여행" -> this.setImageDrawable(R.drawable.ic_home_card_pink)
+            "경제" -> this.setImageDrawable(R.drawable.ic_home_card_red)
+        }
+    }
+}
+
+private fun ImageView.setImageDrawable(drawable: Int) {
 }

@@ -1,5 +1,7 @@
 package com.keyneez.data.repository
 
+import com.keyneez.data.model.request.RequestPostSaveDto
+import com.keyneez.data.model.response.ResponseContentDto
 import com.keyneez.data.model.response.ResponseGetContentDeatilDto
 import com.keyneez.data.model.response.ResponseGetSearchDto
 import com.keyneez.data.model.response.ResponseLikeDto
@@ -19,4 +21,12 @@ class ContentRepositoryImpl @Inject constructor(
 
     override suspend fun getDetail(contentId: Int): Result<BaseResponse<ResponseGetContentDeatilDto>> =
         kotlin.runCatching { contentDataSource.getDetail(contentId) }
+
+    override suspend fun getContent(): Result<BaseResponse<List<ResponseContentDto>>> =
+        kotlin.runCatching { contentDataSource.getContent() }
+
+    override suspend fun postSave(
+        requestPostSaveDto: RequestPostSaveDto
+    ): Result<BaseResponse<Unit>> =
+        kotlin.runCatching { contentDataSource.postSave(requestPostSaveDto) }
 }
