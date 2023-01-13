@@ -48,6 +48,28 @@ class MainActivity : BindingActivity<ActivityMainBinding>(R.layout.activity_main
     private fun initCardBackGround() {
         binding.btnMainCard.setOnSingleClickListener {
             navigateTo<IdFragment>()
+//            when (viewModel.userData.value?.userCharacter?.rem(5)) {
+//                // 문화인-파란색
+//                1 -> {
+//                    binding.btnMainCard.setImageDrawable(R.drawable.img_id_navi_blue)
+//                }
+//                // 진로탐색러-초록색
+//                2 -> {
+//                    binding.btnMainCard.setImageDrawable(R.drawable.img_id_navi_green)
+//                }
+//                // 탐험가-핑크색
+//                3 -> {
+//                    binding.btnMainCard.setImageDrawable(R.drawable.img_id_navi_pink)
+//                }
+//                // 경제인-빨간색
+//                4 -> {
+//                    binding.btnMainCard.setImageDrawable(R.drawable.img_id_navi_red)
+//                }
+//                // 봉사자-보라색
+//                else -> {
+//                    binding.btnMainCard.setImageDrawable(R.drawable.img_id_navi_purple)
+//                }
+//            }
         }
     }
 
