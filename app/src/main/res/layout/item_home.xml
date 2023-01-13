@@ -30,7 +30,7 @@
                 android:layout_height="240dp"
                 android:layout_marginBottom="160dp"
                 android:scaleType="centerCrop"
-                android:src="@{content.img}"
+                setImage="@{content.img}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -39,7 +39,7 @@
             <TextView
                 android:id="@+id/tv_home_title"
                 style="@style/PretendardBold28"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="72dp"
                 android:paddingHorizontal="21dp"
@@ -53,6 +53,8 @@
                 style="@style/PretendardMedium14"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:ellipsize="end"
                 android:layout_marginTop="4dp"
                 android:layout_marginBottom="34dp"
                 android:paddingHorizontal="21dp"
@@ -68,7 +70,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="24dp"
                 android:layout_marginTop="204dp"
-                android:src="@drawable/ic_home_card_mint"
+                keywordColorCard="@{content.category.get(0)}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -86,7 +88,8 @@
 
             <TextView
                 android:id="@+id/tv_home_keyword"
-                keywordColor="@{content.category.category}"
+                keywordColor="@{content.category.get(0)}"
+                android:text="@{content.category.get(0)}"
                 style="@style/PretendardBold14"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

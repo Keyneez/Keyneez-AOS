@@ -23,8 +23,8 @@ class RecommendViewModel @Inject constructor(
     val stateMessage: LiveData<UiState>
         get() = _stateMessage
 
-    private val _contentList = MutableLiveData<ResponseContentDto>()
-    val contentList: LiveData<ResponseContentDto>
+    private val _contentList = MutableLiveData<List<ResponseContentDto>>()
+    val contentList: LiveData<List<ResponseContentDto>>
         get() = _contentList
 
     private val _saveState = MutableLiveData<Boolean>()

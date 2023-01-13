@@ -27,7 +27,7 @@ class RecommendFragment :
 
     private fun setupHomeData() {
         viewModel.contentList.observe(viewLifecycleOwner) {
-            recommendAdapter.data = listOf(it)
+            recommendAdapter.data = it
             recommendAdapter.notifyDataSetChanged()
         }
     }

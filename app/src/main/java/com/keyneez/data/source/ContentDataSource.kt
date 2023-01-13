@@ -11,7 +11,7 @@ import javax.inject.Inject
 class ContentDataSource @Inject constructor(
     private val contentService: ContentService
 ) {
-    suspend fun getContent(): BaseResponse<ResponseContentDto> =
+    suspend fun getContent(): BaseResponse<List<ResponseContentDto>> =
         contentService.getContent()
 
     suspend fun getLike(): BaseResponse<List<ResponseLikeDto>> = contentService.getLike()

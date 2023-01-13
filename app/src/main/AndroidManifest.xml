@@ -30,7 +30,7 @@
         </activity>
         <activity
             android:name="com.keyneez.presentation.login.LoginActivity"
-            android:exported="false"
+            android:exported="true"
             android:screenOrientation="portrait" />
         <activity
             android:name="com.keyneez.presentation.signup.SignupActivity"

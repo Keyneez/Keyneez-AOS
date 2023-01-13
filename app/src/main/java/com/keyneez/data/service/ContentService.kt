@@ -21,7 +21,7 @@ interface ContentService {
 
     // 게시물 전체 조회 API
     @GET("content/")
-    suspend fun getContent(): BaseResponse<ResponseContentDto>
+    suspend fun getContent(): BaseResponse<List<ResponseContentDto>>
 
     // 게시물 찜
     @POST("content/save")
