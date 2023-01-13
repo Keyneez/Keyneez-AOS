@@ -3,7 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools">
     <!-- Add uses-permissions -->
     <uses-permission android:name="android.permission.INTERNET" />
+
     <uses-feature android:name="android.hardware.camera.any" />
+
     <uses-permission android:name="android.permission.CAMERA" />
 
     <application
@@ -19,7 +21,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name="com.keyneez.presentation.onboarding.OnboardingActivity"
+            android:name="com.keyneez.presentation.splash.SplashActivity"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -27,6 +29,13 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+        <activity
+            android:name="com.keyneez.presentation.onboarding.OnboardingActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+
         </activity>
         <activity
             android:name="com.keyneez.presentation.login.LoginActivity"
@@ -61,4 +70,5 @@
             android:exported="false"
             android:screenOrientation="portrait" />
     </application>
+
 </manifest>
