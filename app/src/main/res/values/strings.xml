@@ -30,6 +30,7 @@
     // login pin
     <string name="login_pin_description">간편 비밀번호를\n입력해주세요.</string>
     <string name="login_pin_rearrange">재배열</string>
+    <string name="login_pin_unauthorized_msg">존재하지 않는 회원입니다.</string>
 
     // signup (common)
     <string name="signup_next">다음으로</string>

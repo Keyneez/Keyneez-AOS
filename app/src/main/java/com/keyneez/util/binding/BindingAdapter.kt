@@ -15,8 +15,6 @@ object BindingAdapter {
     @BindingAdapter("setRoundedImage")
     fun ImageView.setRoundedImage(url: String?) {
         this.load(url) {
-            fallback(R.drawable.img_like_background)
-            placeholder(R.drawable.img_like_background)
             transformations(RoundedCornersTransformation(14f))
         }
     }
