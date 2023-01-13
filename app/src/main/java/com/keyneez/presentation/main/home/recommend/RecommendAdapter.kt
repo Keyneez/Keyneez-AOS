@@ -38,28 +38,4 @@ class RecommendAdapter : RecyclerView.Adapter<RecommendAdapter.HomeViewHolder>()
             }
         }
     }
-//    private fun initIdBackGround() {
-//        when (data.) {
-//            // 문화인-파란색
-//            "문화" -> {
-//                binding.ivsetImageDrawable(R.mipmap.card_bg_mint)
-//            }
-//            // 진로탐색러-초록색
-//            2 -> {
-//                binding.ivIdMainBackground.setImageDrawable(R.mipmap.card_bg_green)
-//            }
-//            // 탐험가-핑크색
-//            3 -> {
-//                binding.ivIdMainBackground.setImageDrawable(R.mipmap.card_bg_pink)
-//            }
-//            // 경제인-빨간색
-//            4 -> {
-//                binding.ivIdMainBackground.setImageDrawable(R.mipmap.card_bg_red)
-//            }
-//            // 봉사자-보라색
-//            else -> {
-//                binding.ivIdMainBackground.setImageDrawable(R.mipmap.card_bg_purple)
-//            }
-//        }
-//
 }
