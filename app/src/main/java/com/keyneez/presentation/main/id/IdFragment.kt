@@ -37,15 +37,19 @@ class IdFragment : BindingFragment<FragmentIdBinding>(R.layout.fragment_id) {
     private fun observeIdStateMessage() {
         viewModel.stateMessage.observe(viewLifecycleOwner) {
             when (it) {
-                is UiState.Success -> if (viewModel.userData.value?.ocrImg == null) {
-                    // 발급하기 화면이 뜨게
-                    binding.layoutIdIssue.visibility = View.VISIBLE
-                    binding.layoutIdMain.visibility = View.GONE
-                } else {
-                    // 메인 아이디 화면이 뜨게
-                    binding.layoutIdIssue.visibility = View.GONE
-                    binding.layoutIdMain.visibility = View.VISIBLE
-                    initIdBackGround()
+                is UiState.Success -> {
+                    // ID를 발급하지 않은 경우
+                    if (viewModel.userData.value?.ocrImg == null) {
+                        binding.layoutIdIssue.visibility = View.VISIBLE
+                        binding.layoutIdMain.visibility = View.GONE
+                    }
+                    // ID를 발급한 경우
+                    else {
+                        // 메인 아이디 화면이 뜨게
+                        binding.layoutIdIssue.visibility = View.GONE
+                        binding.layoutIdMain.visibility = View.VISIBLE
+                        initIdBackGround()
+                    }
                 }
                 is UiState.Failure -> requireContext().showSnackbar(
                     binding.root,
@@ -61,26 +65,16 @@ class IdFragment : BindingFragment<FragmentIdBinding>(R.layout.fragment_id) {
 
     private fun initIdBackGround() {
         when (viewModel.userData.value?.userCharacter?.rem(5)) {
-            // 문화인-파란색
-            1 -> {
-                binding.ivIdMainBackground.setImageDrawable(R.mipmap.card_bg_mint)
-            }
-            // 진로탐색러-초록색
-            2 -> {
-                binding.ivIdMainBackground.setImageDrawable(R.mipmap.card_bg_green)
-            }
-            // 탐험가-핑크색
-            3 -> {
-                binding.ivIdMainBackground.setImageDrawable(R.mipmap.card_bg_pink)
-            }
-            // 경제인-빨간색
-            4 -> {
-                binding.ivIdMainBackground.setImageDrawable(R.mipmap.card_bg_red)
-            }
-            // 봉사자-보라색
-            else -> {
-                binding.ivIdMainBackground.setImageDrawable(R.mipmap.card_bg_purple)
-            }
+            // 문화인 - 파란색
+            1 -> binding.ivIdMainBackground.setImageResource(R.mipmap.card_bg_mint)
+            // 진로탐색러 - 초록색
+            2 -> binding.ivIdMainBackground.setImageResource(R.mipmap.card_bg_green)
+            // 탐험가 - 핑크색
+            3 -> binding.ivIdMainBackground.setImageResource(R.mipmap.card_bg_pink)
+            // 경제인 - 빨간색
+            4 -> binding.ivIdMainBackground.setImageResource(R.mipmap.card_bg_red)
+            // 봉사자 - 보라색
+            else -> binding.ivIdMainBackground.setImageResource(R.mipmap.card_bg_purple)
         }
     }
 
@@ -93,7 +87,7 @@ class IdFragment : BindingFragment<FragmentIdBinding>(R.layout.fragment_id) {
     private fun initIdPhotoBtnClickListener() {
         bottomSheetBinding.btnIdProfilePhoto.setOnSingleClickListener {
             // 실물 인증 화면
-            val intent = Intent(getActivity(), IdPhotoActivity::class.java)
+            val intent = Intent(activity, IdPhotoActivity::class.java)
             startActivity(intent)
         }
     }
@@ -102,6 +96,7 @@ class IdFragment : BindingFragment<FragmentIdBinding>(R.layout.fragment_id) {
         binding.btnIdIssue.setOnSingleClickListener {
             val intent = Intent(activity, OcrGuideActivity::class.java)
             startActivity(intent)
+            // launcher로 반환값에 따라 화면 다르게 처리 필요
         }
     }
 

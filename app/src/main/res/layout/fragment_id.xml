@@ -95,8 +95,7 @@
             android:id="@+id/layout_id_main"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="158dp"
-            android:layout_marginTop="159dp"
+            android:layout_marginHorizontal="54dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -104,7 +103,7 @@
 
             <ImageView
                 android:id="@+id/iv_id_main_background"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="101dp"
                 android:src="@drawable/img_id_main_background"
@@ -116,6 +115,8 @@
                 android:id="@+id/iv_id_main_character"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                tools:src="@drawable/img_id_main_character"
+                android:src="@{vm.userData.characters.characterImg}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -179,17 +180,6 @@
                 android:textColor="@color/gray050"
                 putBirth="@{vm.userData.birth}"
                 app:layout_constraintStart_toStartOf="@id/iv_id_main_background"
-                app:layout_constraintTop_toBottomOf="@id/iv_id_main_baseline"
-                tools:text="@{vm.userData.birth}" />
-
-            <ImageView
-                android:id="@+id/iv_id_main_logo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:layout_marginEnd="34dp"
-                android:src="@drawable/img_id_main_logo"
-                app:layout_constraintEnd_toEndOf="@id/iv_id_main_background"
                 app:layout_constraintTop_toBottomOf="@id/iv_id_main_baseline" />
 
             <TextView
