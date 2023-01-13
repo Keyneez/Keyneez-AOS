@@ -25,7 +25,7 @@ import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 
 class OcrActivity : BindingActivity<ActivityOcrBinding>(R.layout.activity_ocr) {
-    private val viewModel by viewModels<OcrViewModel>()
+    val viewModel by viewModels<OcrViewModel>()
 
     private lateinit var cameraExecutor: ExecutorService
     private lateinit var cameraProvider: ProcessCameraProvider
@@ -140,24 +140,43 @@ class OcrActivity : BindingActivity<ActivityOcrBinding>(R.layout.activity_ocr) {
     }
 
     private fun processTextRecognitionResult(text: Text) {
-        val ocrResultBottomSheet = OcrResultFragment()
-        ocrResultBottomSheet.show(supportFragmentManager, ocrResultBottomSheet.tag)
-
         if (text.textBlocks.size == 0) {
             Timber.tag(tag).e("인식된 글자 없음")
             showSnackbar(binding.root, "인식된 글자가 없습니다.")
             return
         }
 
+        viewModel.resetIdInfo()
+        var isSuccess = false
+
         for (block in text.textBlocks) {
-            Timber.tag(tag).d("block : ${block.text}")
-
             for (line in block.lines) {
-                Timber.tag(tag).d("line : ${line.text}")
+                for (element in line.elements) {
+                    val word = element.text
+                    Timber.tag(tag).d("element : $word")
 
-                for (element in line.elements)
-                    Timber.tag(tag).d("element : ${element.text}")
+                    when (word) {
+                        "학생증" -> {
+                            viewModel.setIsStudent(true)
+                            isSuccess = true
+                        }
+                        "청소년증" -> {
+                            viewModel.setIsStudent(false)
+                            isSuccess = true
+                        }
+                        else -> {
+                            if (isSuccess && viewModel.idName.value == "" && word.length == 3) viewModel.setIdName(word)
+                            if (isSuccess && viewModel.isStudentId.value == true && viewModel.idSubEntry.value == "" && word.endsWith("학교")) viewModel.setIdSchool(word)
+                            if (isSuccess && viewModel.isStudentId.value == false && viewModel.idSubEntry.value == "" && word.length == 14 && word.contains('-')) viewModel.setBirthDate(word)
+                        }
+                    }
+                }
             }
+        }
+
+        if (isSuccess) {
+            val ocrResultBottomSheet = OcrResultFragment()
+            ocrResultBottomSheet.show(supportFragmentManager, ocrResultBottomSheet.tag)
         }
     }
 
