@@ -30,11 +30,25 @@ data class ResponsePatchUserTypeDto(
     @SerialName("user_benefit")
     val benefit: Boolean?,
     @SerialName("Characters")
-    val characterType: Character?
+    val characterType: Character?,
+    @SerialName("Items")
+    val items: List<Item>?
 ) {
     @Serializable
     data class Character(
+        @SerialName("character_key") val characterKey: Int?,
         @SerialName("character")
-        val type: String
+        val type: String,
+        val dispo: String,
+        val inter: String,
+        @SerialName("character_img") val characterImg: String?,
+        @SerialName("character_desc") val characterDesc: String?,
+        @SerialName("test_img") val testImg: String?
+    )
+    @Serializable
+    data class Item(
+        @SerialName("items_key") val itemsKey: Int?,
+        @SerialName("item_img") val itemImg: String?,
+        @SerialName("item_name") val itemName: String?
     )
 }

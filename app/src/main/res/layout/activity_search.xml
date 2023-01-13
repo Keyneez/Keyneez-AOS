@@ -40,6 +40,7 @@
             android:layout_marginEnd="16dp"
             android:background="@drawable/shape_gray400_bottomline_rect"
             android:hint="@string/search_content"
+            android:text="@={vm.key}"
             android:paddingBottom="14dp"
             android:textColor="@color/gray900"
             android:textColorHint="@color/gray400"

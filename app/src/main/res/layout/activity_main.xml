@@ -5,7 +5,11 @@
     tools:context=".presentation.main.MainActivity">
 
     <data>
+        <variable
+            name="vm"
+            type="com.keyneez.presentation.main.MainViewModel" />
 
+        <import type="android.view.View"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

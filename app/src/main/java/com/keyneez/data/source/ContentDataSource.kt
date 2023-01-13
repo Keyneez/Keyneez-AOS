@@ -1,6 +1,7 @@
 package com.keyneez.data.source
 
 import com.keyneez.data.model.response.ResponseGetContentDeatilDto
+import com.keyneez.data.model.response.ResponseGetSearchDto
 import com.keyneez.data.model.response.ResponseLikeDto
 import com.keyneez.data.model.response.wrapper.BaseResponse
 import com.keyneez.data.service.ContentService
@@ -14,4 +15,7 @@ class ContentDataSource @Inject constructor(
 
     suspend fun getDetail(contentId: Int): BaseResponse<ResponseGetContentDeatilDto> =
         contentService.getDetail(contentId)
+
+    suspend fun getSearch(keyword: String): BaseResponse<List<ResponseGetSearchDto>> =
+        contentService.getSearch(keyword)
 }
