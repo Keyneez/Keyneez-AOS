@@ -3,6 +3,7 @@ package com.keyneez.presentation.main.like
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import com.keyneez.data.model.response.ResponseLikeDto
@@ -29,6 +30,7 @@ class LikeFragment : BindingFragment<FragmentLikeBinding>(R.layout.fragment_like
         initLikeSearchClickListener()
         setupLikeData()
         observeLikeStateMessage()
+        setToastMessage()
     }
 
     private fun initLikeSearchClickListener() {
@@ -64,6 +66,12 @@ class LikeFragment : BindingFragment<FragmentLikeBinding>(R.layout.fragment_like
         viewModel.likeList.observe(viewLifecycleOwner) {
             likeAdapter.data = it
             likeAdapter.notifyDataSetChanged()
+        }
+    }
+
+    private fun setToastMessage() {
+        if (likeAdapter.data.size == 0) {
+            Toast.makeText(context, getString(R.string.like_toast), Toast.LENGTH_SHORT).show()
         }
     }
 

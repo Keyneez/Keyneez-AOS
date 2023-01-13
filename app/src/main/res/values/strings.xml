@@ -128,7 +128,7 @@
     <string name="like_save">저장</string>
     <string name="like_date">%s–%s</string>
     <string name="like_content">청소년 \n영화관 할인</string>
-
+    <string name="like_toast">찜한 게시물이 없습니다.</string>
     // id
     <string name="id_title">나의 ID</string>
     <string name="id_content">온라인 ID로 더 다양한\n활동을 즐겨보세요</string>
