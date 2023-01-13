@@ -58,19 +58,19 @@ class RecommendViewModel @Inject constructor(
         }
     }
 
-    fun postSave() {
-        viewModelScope.launch {
-            contentRepository.postSave(
-                RequestPostSaveDto(key = 1, content = 1)
-            )
-                .onSuccess { response ->
-                    Timber.tag(successTag).d("response : $response")
-                    _saveState.value = true
-                }.onFailure {
-                    Timber.tag(failTag).e("throwable : $it")
-                }
-        }
-    }
+//    fun postSave() {
+//        viewModelScope.launch {
+//            contentRepository.postSave(
+//                RequestPostSaveDto(contentId)
+//            )
+//                .onSuccess { response ->
+//                    Timber.tag(successTag).d("response : $response")
+//                    _saveState.value = true
+//                }.onFailure {
+//                    Timber.tag(failTag).e("throwable : $it")
+//                }
+//        }
+//    }
 
     companion object {
         const val CONTENT_DATA_NULL_CODE = 100

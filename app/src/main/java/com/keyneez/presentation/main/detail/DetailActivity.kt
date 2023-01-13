@@ -13,6 +13,8 @@ class DetailActivity :
     BindingActivity<ActivityHomeDetailBinding>(R.layout.activity_home_detail) {
     val detailViewModel: DetailViewModel by viewModels()
 
+    private val contentId: Int by lazy { intent.getIntExtra("contentId", 2) }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding.vm = detailViewModel
@@ -24,7 +26,7 @@ class DetailActivity :
     }
 
     private fun initContentId() {
-        detailViewModel.getDetail(2)
+        detailViewModel.getDetail(contentId)
     }
 
     private fun initBackClickListener() {

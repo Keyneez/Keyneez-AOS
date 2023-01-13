@@ -25,6 +25,10 @@ class DetailViewModel @Inject constructor(
     val stateMessage: LiveData<UiState>
         get() = _stateMessage
 
+    private val _saveState = MutableLiveData<Boolean>()
+    val saveState: LiveData<Boolean>
+        get() = _saveState
+
     fun getDetail(contentId: Int) {
         viewModelScope.launch {
             contentRepository.getDetail(contentId)
