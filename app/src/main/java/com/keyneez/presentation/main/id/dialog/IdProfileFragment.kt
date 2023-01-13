@@ -25,10 +25,7 @@ class IdProfileFragment :
     private fun observeIdProfileStateMessage() {
         viewModel.stateMessage.observe(viewLifecycleOwner) {
             when (it) {
-                is UiState.Success -> requireContext().showSnackbar(
-                    binding.root,
-                    getString(R.string.msg_profile_success)
-                )
+                is UiState.Success -> return@observe
                 is UiState.Failure -> requireContext().showSnackbar(
                     binding.root,
                     getString(R.string.msg_profile_null)

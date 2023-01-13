@@ -3,14 +3,11 @@ package com.keyneez.presentation.main.search
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import coil.load
-import coil.transform.RoundedCornersTransformation
-import com.keyneez.data.entity.SearchData
-import com.lab.keyneez.R
+import com.keyneez.data.model.response.ResponseGetSearchDto
 import com.lab.keyneez.databinding.ItemSearchContentBinding
 
 class SearchAdapter : RecyclerView.Adapter<SearchAdapter.getViewHolder>() {
-    var data = listOf<SearchData>()
+    var data = listOf<ResponseGetSearchDto>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): getViewHolder {
         val binding =
@@ -26,15 +23,8 @@ class SearchAdapter : RecyclerView.Adapter<SearchAdapter.getViewHolder>() {
 
     class getViewHolder(private val binding: ItemSearchContentBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: SearchData) {
-            binding.ivSearchBackground.load(item.background) {
-                fallback(R.drawable.img_like_background)
-                placeholder(R.drawable.img_like_background)
-                transformations(RoundedCornersTransformation(14f))
-            }
-            binding.tvSearchDate.text = item.date
-            binding.tvSearchTitle.text = item.title
-            binding.btnSearchLiked.isSelected = item.liked
+        fun bind(item: ResponseGetSearchDto) {
+            binding.data = item
         }
     }
 }

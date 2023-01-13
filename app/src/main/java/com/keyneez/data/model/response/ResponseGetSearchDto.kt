@@ -1,10 +1,9 @@
 package com.keyneez.data.model.response
 
 import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
 
-@Serializable
-data class ResponseLikeDto(
+@kotlinx.serialization.Serializable
+data class ResponseGetSearchDto(
     @SerialName("content_key")
     val key: Int,
     @SerialName("content_title")
@@ -14,5 +13,6 @@ data class ResponseLikeDto(
     @SerialName("end_at")
     val end: String?,
     @SerialName("content_img")
-    val background: String?
+    val background: String?,
+    val liked: Boolean
 )
