@@ -28,6 +28,10 @@ class OcrViewModel @Inject constructor() : ViewModel() {
     val isStudentId: LiveData<Boolean>
         get() = _isStudentId
 
+    private val _imgUrl = MutableLiveData<String>()
+    val imgUrl: LiveData<String>
+        get() = _imgUrl
+
     init {
         _isVertical.value = false
         _isPassive.value = false

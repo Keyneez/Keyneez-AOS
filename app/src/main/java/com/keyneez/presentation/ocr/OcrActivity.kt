@@ -162,10 +162,23 @@ class OcrActivity : BindingActivity<ActivityOcrBinding>(R.layout.activity_ocr) {
                             isSuccess = true
                         }
                         else -> {
-                            if (isSuccess && viewModel.idName.value == "" && word.length == 3) viewModel.setIdName(word)
-                            if (isSuccess && viewModel.idName.value == "" && word.startsWith("명:")) viewModel.setIdName(word.substring(2, 5))
-                            if (isSuccess && viewModel.isStudentId.value == true && viewModel.idSubEntry.value == "" && word.endsWith("학교")) viewModel.setIdSchool(word)
-                            if (isSuccess && viewModel.isStudentId.value == false && viewModel.idSubEntry.value == "" && word.length == 14 && word.contains('-')) viewModel.setBirthDate(word)
+                            if (isSuccess && viewModel.idName.value == "" && word.length == 3) viewModel.setIdName(
+                                word
+                            )
+                            if (isSuccess && viewModel.idName.value == "" && word.startsWith("명:")) viewModel.setIdName(
+                                word.substring(2, 5)
+                            )
+                            if (isSuccess && viewModel.idName.value == "" && word.startsWith(":") && word.length == 4) viewModel.setIdName(
+                                word.substring(1, 4)
+                            )
+                            if (isSuccess && viewModel.isStudentId.value == true && viewModel.idSubEntry.value == "" && word.endsWith(
+                                    "학교"
+                                )
+                            ) viewModel.setIdSchool(word)
+                            if (isSuccess && viewModel.isStudentId.value == false && viewModel.idSubEntry.value == "" && word.length == 14 && word.contains(
+                                    '-'
+                                )
+                            ) viewModel.setBirthDate(word)
                         }
                     }
                 }
