@@ -70,7 +70,7 @@ class LikeFragment : BindingFragment<FragmentLikeBinding>(R.layout.fragment_like
     }
 
     private fun setToastMessage() {
-        if (likeAdapter.data.size == 0) {
+        if (likeAdapter.itemCount == 0) {
             Toast.makeText(context, getString(R.string.like_toast), Toast.LENGTH_SHORT).show()
         }
     }
