@@ -41,4 +41,16 @@ interface UserService {
     suspend fun postUserLogIn(
         @Body request: RequestPostUserLogInDto
     ): BaseResponse<ResponsePostUserLogInDto>
+
+    // 학생증 유저 대조 (다날*학생)
+    @POST("user/check")
+    suspend fun postCheckStudentUser(
+        @Body request: RequestPostStudentUserCheckDto
+    ): BaseResponse<ResponsePostUserCheckDto>
+
+    // 청소년증 유저 대조 (다날*학생)
+    @POST("user/check")
+    suspend fun postCheckYouthUser(
+        @Body request: RequestPostYouthUserCheckDto
+    ): BaseResponse<ResponsePostUserCheckDto>
 }

@@ -20,6 +20,7 @@ class MainViewModel @Inject constructor(
     private val _userData = MutableLiveData<ResponseIdDto>()
     val userData: LiveData<ResponseIdDto>
         get() = _userData
+
     private val _stateMessage = MutableLiveData<UiState>()
     val stateMessage: LiveData<UiState>
         get() = _stateMessage

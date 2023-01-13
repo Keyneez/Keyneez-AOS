@@ -33,4 +33,12 @@ interface UserRepository {
     suspend fun postPwdCheck(
         requestPostPwdCheckDto: RequestPostPwdCheckDto
     ): Result<Unit>
+
+    suspend fun postStudentUserCheck(
+        requestPostStudentUserCheckDto: RequestPostStudentUserCheckDto
+    ): Result<BaseResponse<ResponsePostUserCheckDto>>
+
+    suspend fun postYouthUserCheck(
+        requestPostYouthUserCheckDto: RequestPostYouthUserCheckDto
+    ): Result<BaseResponse<ResponsePostUserCheckDto>>
 }

@@ -34,4 +34,14 @@ class UserDataSource @Inject constructor(
     suspend fun postPwdCheck(
         requestPostPwdCheckDto: RequestPostPwdCheckDto
     ): Unit = userService.postPwdCheck(requestPostPwdCheckDto)
+
+    suspend fun postStudentUserCheck(
+        requestPostStudentUserCheckDto: RequestPostStudentUserCheckDto
+    ): BaseResponse<ResponsePostUserCheckDto> =
+        userService.postCheckStudentUser(requestPostStudentUserCheckDto)
+
+    suspend fun postYouthUserCheck(
+        requestPostYouthUserCheckDto: RequestPostYouthUserCheckDto
+    ): BaseResponse<ResponsePostUserCheckDto> =
+        userService.postCheckYouthUser(requestPostYouthUserCheckDto)
 }
