@@ -17,6 +17,10 @@ class SignupViewModel @Inject constructor() : ViewModel() {
     val selectedTendency: LiveData<String>
         get() = _selectedTendency
 
+    private val _testResultItem = MutableLiveData<ResponsePatchUserTypeDto.Item>()
+    val testResultItem: LiveData<ResponsePatchUserTypeDto.Item>
+        get() = _testResultItem
+
     private val _testResult = MutableLiveData<ResponsePatchUserTypeDto>()
     val testResult: LiveData<ResponsePatchUserTypeDto>
         get() = _testResult

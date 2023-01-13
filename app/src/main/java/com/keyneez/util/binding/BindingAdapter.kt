@@ -144,4 +144,10 @@ object BindingAdapter {
             "경제" -> this.setImageResource(R.drawable.ic_home_card_red)
         }
     }
+
+    @JvmStatic
+    @BindingAdapter("item")
+    fun ImageView.item(int: Int) {
+        this.setImageResource(int)
+    }
 }
