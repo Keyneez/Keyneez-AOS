@@ -34,6 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="259dp"
             android:layout_marginBottom="246dp"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -95,7 +96,7 @@
             android:id="@+id/layout_id_main"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="54dp"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -103,8 +104,8 @@
 
             <ImageView
                 android:id="@+id/iv_id_main_background"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_width="253dp"
+                android:layout_height="318dp"
                 android:layout_marginTop="101dp"
                 android:src="@drawable/img_id_main_background"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -116,7 +117,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:src="@drawable/img_id_main_character"
-                android:src="@{vm.userData.characters.characterImg}"
+                android:src="@drawable/img_id_main_real"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

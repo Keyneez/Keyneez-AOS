@@ -30,7 +30,7 @@ object BindingAdapter {
 
     @JvmStatic
     @BindingAdapter("setOcrImage")
-    fun ImageView.setOcrImage(url: String) {
+    fun ImageView.setOcrImage(url: String?) {
         this.load(url)
     }
 

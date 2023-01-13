@@ -22,11 +22,12 @@ class IdFragment : BindingFragment<FragmentIdBinding>(R.layout.fragment_id) {
 
     private lateinit var bottomSheetBinding: BotSheetIdProfileBinding
     private lateinit var bottomSheetDialog: BottomSheetDialog
-    private val viewModel by viewModels<IdViewModel>()
+    val viewModel by viewModels<IdViewModel>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.vm = viewModel
+
         initBottomSheet()
         initIdPhotoBtnClickListener()
         initIdIssueBtnClickListener()
