@@ -50,7 +50,7 @@ object BindingAdapter {
     @BindingAdapter("putStartDate", "putEndDate")
     fun TextView.setDuration(start: String?, end: String?) {
         if (start == null || end == null) {
-            this.text = "2023-"
+            this.text = "2023 -"
             return
         }
 
@@ -129,13 +129,13 @@ object BindingAdapter {
 
     @JvmStatic
     @BindingAdapter("replaceNewline")
-    fun TextView.replaceNewline(string: String) {
-        this.text = string.replace("\n", " ")
+    fun TextView.replaceNewline(string: String?) {
+        this.text = string?.replace("\n", " ")
     }
 
     @JvmStatic
     @BindingAdapter("card")
-    fun ImageView.card(string: String) {
+    fun ImageView.card(string: String?) {
         when (string) {
             "문화" -> this.setImageDrawable(R.drawable.ic_home_card_mint)
             "진로" -> this.setImageDrawable(R.drawable.ic_home_card_green)

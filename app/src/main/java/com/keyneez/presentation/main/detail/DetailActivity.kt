@@ -13,7 +13,7 @@ class DetailActivity :
     BindingActivity<ActivityHomeDetailBinding>(R.layout.activity_home_detail) {
     private val detailViewModel: DetailViewModel by viewModels()
 
-    private val contentId: Int by lazy { intent.getIntExtra("contentId", 2) }
+    private val contentId: Int by lazy { intent.getIntExtra("contentId", 0) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
