@@ -120,6 +120,7 @@
     <string name="home_popular">인기</string>
     <string name="home_new">최신</string>
     <string name="home_keyword">문화</string>
+    <string name="home_period">%s–%s</string>
     <string name="home_sub">유적 탐방부터 미술품까지!</string>
     <string name="home_title">청소년 미술관 할인</string>
 
@@ -127,7 +128,7 @@
     <string name="like_save">저장</string>
     <string name="like_date">%s–%s</string>
     <string name="like_content">청소년 \n영화관 할인</string>
-
+    <string name="like_toast">찜한 게시물이 없습니다.</string>
     // id
     <string name="id_title">나의 ID</string>
     <string name="id_content">온라인 ID로 더 다양한\n활동을 즐겨보세요</string>

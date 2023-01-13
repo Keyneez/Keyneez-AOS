@@ -4,8 +4,10 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.keyneez.data.model.request.RequestPostSaveDto
 import com.keyneez.data.model.response.ResponseGetContentDeatilDto
 import com.keyneez.data.repository.ContentRepository
+import com.keyneez.presentation.main.like.LikeViewModel
 import com.keyneez.util.UiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -25,6 +27,10 @@ class DetailViewModel @Inject constructor(
     val stateMessage: LiveData<UiState>
         get() = _stateMessage
 
+    private val _saveState = MutableLiveData<Boolean>()
+    val saveState: LiveData<Boolean>
+        get() = _saveState
+
     fun getDetail(contentId: Int) {
         viewModelScope.launch {
             contentRepository.getDetail(contentId)
@@ -37,9 +43,31 @@ class DetailViewModel @Inject constructor(
                     Timber.d("GET DETAIL LIST SUCCESS")
                     Timber.d("response : $response")
                     _detailContent.value = response.data!!
+                    _saveState.value = response.data.liked
                     _stateMessage.value = UiState.Success
                 }.onFailure { throwable ->
                     Timber.e("$throwable")
+                }
+        }
+    }
+
+    fun postSave(contentId: Int) {
+        viewModelScope.launch {
+            contentRepository.postSave(RequestPostSaveDto(contentId)).onSuccess { response ->
+                if (response.data == null) {
+                    Timber.d("GET LIKE LIST IS NULL")
+                    _stateMessage.value = UiState.Failure(LikeViewModel.LIKE_NULL_CODE)
+                    return@onSuccess
+                }
+                Timber.d("POST SAVE STATE SUCCESS")
+                Timber.d("response : $response")
+
+                _saveState.value = true
+                _stateMessage.value = UiState.Success
+            }
+                .onFailure {
+                    Timber.d("throwable : $it")
+                    _stateMessage.value = UiState.Error
                 }
         }
     }

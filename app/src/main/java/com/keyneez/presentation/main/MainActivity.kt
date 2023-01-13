@@ -1,7 +1,6 @@
 package com.keyneez.presentation.main
 
 import android.os.Bundle
-import android.widget.ImageView
 import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
@@ -11,10 +10,8 @@ import com.keyneez.presentation.main.home.HomeFragment
 import com.keyneez.presentation.main.id.IdFragment
 import com.keyneez.presentation.main.like.LikeFragment
 import com.keyneez.presentation.main.setting.SettingFragment
-import com.keyneez.util.UiState
 import com.keyneez.util.binding.BindingActivity
 import com.keyneez.util.extension.setOnSingleClickListener
-import com.keyneez.util.extension.showSnackbar
 import com.lab.keyneez.R
 import com.lab.keyneez.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -22,14 +19,15 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class MainActivity : BindingActivity<ActivityMainBinding>(R.layout.activity_main) {
     private val viewModel by viewModels<MainViewModel>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding.vm = viewModel
 
         initBottomNavigationBar()
-        observeIdStateMessage()
         initCardBackGround()
     }
+
     private fun initBottomNavigationBar() {
         // 초기 프래그먼트 설정
         val currentFragment = supportFragmentManager.findFragmentById(R.id.container_main)
@@ -44,22 +42,6 @@ class MainActivity : BindingActivity<ActivityMainBinding>(R.layout.activity_main
                 R.id.menu_setting -> navigateTo<SettingFragment>()
             }
             true
-        }
-    }
-
-    private fun observeIdStateMessage() {
-        viewModel.stateMessage.observe(this) {
-            when (it) {
-                is UiState.Success -> return@observe
-                is UiState.Failure -> showSnackbar(
-                    binding.root,
-                    getString(R.string.msg_id_null)
-                )
-                is UiState.Error -> showSnackbar(
-                    binding.root,
-                    getString(R.string.msg_server_error)
-                )
-            }
         }
     }
 
@@ -95,8 +77,5 @@ class MainActivity : BindingActivity<ActivityMainBinding>(R.layout.activity_main
         supportFragmentManager.commit {
             replace<T>(R.id.container_main, T::class.java.canonicalName)
         }
-    }
-
-    private fun ImageView.setImageDrawable(imgLikeBackground: Int) {
     }
 }

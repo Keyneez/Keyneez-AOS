@@ -49,5 +49,6 @@
     <color name="gray050">#FFFFFF</color>
 
     <!-- custom color -->
-    <color name="gray050_80">#CC000000</color>
+    <color name="gray900_80">#CC000000</color>
+    <color name="gray050_80">#CCFFFFFF</color>
 </resources>
