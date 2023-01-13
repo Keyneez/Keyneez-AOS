@@ -8,7 +8,7 @@ import com.keyneez.util.binding.BindingActivity
 import com.lab.keyneez.R
 import com.lab.keyneez.databinding.ActivitySplashBinding
 
-class SplashActivity : BindingActivity<ActivitySplashBinding>(R.layout.activity_splash){
+class SplashActivity : BindingActivity<ActivitySplashBinding>(R.layout.activity_splash) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,10 +19,10 @@ class SplashActivity : BindingActivity<ActivitySplashBinding>(R.layout.activity_
             intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
             startActivity(intent)
             finish()
-        },DURATION)
-
+        }, DURATION)
     }
+
     companion object {
-        private const val DURATION : Long = 3000
+        private const val DURATION: Long = 3000
     }
 }
