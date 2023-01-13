@@ -38,10 +38,13 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
 
-    - name: Access Google Services
+    - name: Create Google-Services.json
       env:
-        FIREBASE_API_KEY: ${{ secrets.FIRBASE_API_KEY }}
-      run: echo '${{ secrets.GOOGLE_SERVICES_JSON }}' > ./app/google-services.json
+        GOOGLE_SERVICES: ${{ secrets.GOOGLE_SERVICES }}
+      run: |
+        touch ./app/google-services.json
+        echo $GOOGLE_SERVICES >> ./app/google-services.json
+        cat ./app/google-services.json
 
     - name: Lint Check
       run: ./gradlew ktlintCheck
