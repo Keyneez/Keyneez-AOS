@@ -7,7 +7,6 @@ import androidx.lifecycle.viewModelScope
 import com.keyneez.data.model.request.RequestPostSaveDto
 import com.keyneez.data.model.response.ResponseGetContentDeatilDto
 import com.keyneez.data.repository.ContentRepository
-import com.keyneez.presentation.main.like.LikeViewModel
 import com.keyneez.util.UiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -54,11 +53,7 @@ class DetailViewModel @Inject constructor(
     fun postSave(contentId: Int) {
         viewModelScope.launch {
             contentRepository.postSave(RequestPostSaveDto(contentId)).onSuccess { response ->
-                if (response.data == null) {
-                    Timber.d("GET LIKE LIST IS NULL")
-                    _stateMessage.value = UiState.Failure(LikeViewModel.LIKE_NULL_CODE)
-                    return@onSuccess
-                }
+
                 Timber.d("POST SAVE STATE SUCCESS")
                 Timber.d("response : $response")
 

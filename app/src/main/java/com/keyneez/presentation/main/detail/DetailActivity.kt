@@ -22,8 +22,6 @@ class DetailActivity :
         initContentId()
         initBackClickListener()
         initShareClickListener()
-        initHeartClickListener()
-        initHeartActiveObserve()
     }
 
     private fun initContentId() {
@@ -38,20 +36,5 @@ class DetailActivity :
 
     private fun initShareClickListener() {
         binding.btnDetailShare.setOnSingleClickListener { }
-    }
-
-    private fun initHeartClickListener() {
-        binding.btnDetailHeart.setOnSingleClickListener {
-            detailViewModel.postSave(contentId)
-        }
-    }
-
-    private fun initHeartActiveObserve() {
-        detailViewModel.saveState.observe(this) {
-            binding.btnDetailHeart.isSelected = it
-        }
-        detailViewModel.detailContent.observe(this) {
-            binding.btnDetailHeart.isSelected = it.liked
-        }
     }
 }
