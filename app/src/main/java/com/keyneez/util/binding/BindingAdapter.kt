@@ -50,14 +50,12 @@ object BindingAdapter {
     @BindingAdapter("putStartDate", "putEndDate")
     fun TextView.setDuration(start: String?, end: String?) {
         if (start == null || end == null) {
-            this.text = "2023"
+            this.text = "2023-"
             return
         }
 
-        var tempStart = ""
-        var tempEnd = ""
-        if (start != null) tempStart = "${end.substring(4, 6)}.${end.substring(6, 8)}"
-        if (end != null) tempEnd = "${end.substring(4, 6)}.${end.substring(6, 8)}"
+        val tempStart = "${end.substring(4, 6)}.${end.substring(6, 8)}"
+        val tempEnd = "${end.substring(4, 6)}.${end.substring(6, 8)}"
 
         this.text = "$tempStart - $tempEnd"
     }
