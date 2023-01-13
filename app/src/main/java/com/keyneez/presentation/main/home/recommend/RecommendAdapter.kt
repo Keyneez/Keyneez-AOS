@@ -30,7 +30,6 @@ class RecommendAdapter : RecyclerView.Adapter<RecommendAdapter.HomeViewHolder>()
         RecyclerView.ViewHolder(binding.root) {
         fun onBind(item: ResponseContentDto) {
             binding.content = item
-            binding.ivHomeCard
             binding.btnHomeHeart.isSelected = item.liked
             binding.root.setOnSingleClickListener {
                 val intent = Intent(binding.root.context, DetailActivity::class.java)
@@ -63,6 +62,4 @@ class RecommendAdapter : RecyclerView.Adapter<RecommendAdapter.HomeViewHolder>()
 //            }
 //        }
 //
-//        fun ImageView.setImageDrawable(img: Int) {
-//        }
 }
