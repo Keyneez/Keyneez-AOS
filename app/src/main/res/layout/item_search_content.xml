@@ -5,8 +5,9 @@
 
     <data>
         <variable
-            name="vm"
-            type="com.keyneez.presentation.main.search.SearchViewModel" />
+            name="data"
+            type="com.keyneez.data.model.response.ResponseGetSearchDto" />
+        <import type="android.view.View"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -21,7 +22,7 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:scaleType="centerCrop"
-            android:background="@drawable/img_like_background"
+            setRoundedImage="@{data.background}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -37,7 +38,9 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:text="@string/like_date" />
+            putStartDate="@{@string/like_date(data.start)"
+            putEndDate="@{@string/like_date(data.end)"
+            tools:text="@string/like_date" />
 
         <TextView
             android:id="@+id/tv_search_title"
@@ -50,7 +53,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:text="@string/like_content" />
+            android:text="@{data.title}" />
 
         <ImageButton
             android:id="@+id/btn_search_liked"
@@ -59,6 +62,7 @@
             android:padding="12dp"
             android:background="@null"
             android:src="@drawable/sel_search_heart"
+            isSelected="@{data.liked}"
             android:layout_marginBottom="12dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

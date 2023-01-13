@@ -3,14 +3,20 @@ package com.keyneez.presentation.main.search
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
+import com.keyneez.data.model.response.ResponseGetSearchDto
+import com.keyneez.util.UiState
 import com.keyneez.util.binding.BindingActivity
 import com.keyneez.util.extension.hideKeyboard
 import com.keyneez.util.extension.setOnSingleClickListener
+import com.keyneez.util.extension.showSnackbar
 import com.lab.keyneez.R
 import com.lab.keyneez.databinding.ActivitySearchBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SearchActivity : BindingActivity<ActivitySearchBinding>(R.layout.activity_search) {
     lateinit var searchAdapter: SearchAdapter
+    val data = mutableListOf<ResponseGetSearchDto>()
     private val viewModel by viewModels<SearchViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,12 +27,28 @@ class SearchActivity : BindingActivity<ActivitySearchBinding>(R.layout.activity_
         setupSearchData()
         initHideKeyboard()
         initSearchBackBtnClickListener()
+        observeSearchStateMessage()
     }
 
     private fun setupSearchData() {
         viewModel.searchList.observe(this) {
             searchAdapter.data = it
             searchAdapter.notifyDataSetChanged()
+        }
+    }
+    private fun observeSearchStateMessage() {
+        viewModel.stateMessage.observe(this) {
+            when (it) {
+                is UiState.Success -> setupSearchData()
+                is UiState.Failure -> showSnackbar(
+                    binding.root,
+                    getString(R.string.msg_search_null)
+                )
+                is UiState.Error -> showSnackbar(
+                    binding.root,
+                    getString(R.string.msg_server_error)
+                )
+            }
         }
     }
 
