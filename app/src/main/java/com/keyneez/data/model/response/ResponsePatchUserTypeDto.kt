@@ -45,7 +45,6 @@ data class ResponsePatchUserTypeDto(
         @SerialName("character_desc") val characterDesc: String?,
         @SerialName("test_img") val testImg: String?
     )
-
     @Serializable
     data class Item(
         @SerialName("items_key") val itemsKey: Int?,
