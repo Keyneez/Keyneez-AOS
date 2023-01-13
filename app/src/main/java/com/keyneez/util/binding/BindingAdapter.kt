@@ -128,4 +128,10 @@ object BindingAdapter {
             }
         }
     }
+
+    @JvmStatic
+    @BindingAdapter("replaceNewline")
+    fun TextView.replaceNewline(string: String) {
+        this.text = string.replace(" ", "\u00A0")
+    }
 }
