@@ -122,9 +122,6 @@ class OcrActivity : BindingActivity<ActivityOcrBinding>(R.layout.activity_ocr) {
         return BitmapFactory.decodeByteArray(bytes, 0, bytes.size)
     }
 
-    // Text Recognition
-    // CameraX -> OnImageCapturedListener & ImageAnalysis.Analyzer 활용해서 rotation 계산
-
     private fun runTextRecognition(img: Bitmap) {
         // 이미지 유형 : Bitmap, media.Image, ByteBuffer, byte array, device file
         val image = InputImage.fromBitmap(img, 0)
@@ -166,6 +163,7 @@ class OcrActivity : BindingActivity<ActivityOcrBinding>(R.layout.activity_ocr) {
                         }
                         else -> {
                             if (isSuccess && viewModel.idName.value == "" && word.length == 3) viewModel.setIdName(word)
+                            if (isSuccess && viewModel.idName.value == "" && word.startsWith("명:")) viewModel.setIdName(word.substring(2, 5))
                             if (isSuccess && viewModel.isStudentId.value == true && viewModel.idSubEntry.value == "" && word.endsWith("학교")) viewModel.setIdSchool(word)
                             if (isSuccess && viewModel.isStudentId.value == false && viewModel.idSubEntry.value == "" && word.length == 14 && word.contains('-')) viewModel.setBirthDate(word)
                         }

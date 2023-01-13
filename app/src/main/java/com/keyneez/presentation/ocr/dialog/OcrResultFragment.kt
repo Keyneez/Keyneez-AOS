@@ -14,7 +14,6 @@ import com.lab.keyneez.databinding.BotSheetOcrResultBinding
 
 class OcrResultFragment :
     BindingBottomSheetDialog<BotSheetOcrResultBinding>(R.layout.bot_sheet_ocr_result) {
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.vm = (activity as OcrActivity).viewModel

@@ -38,8 +38,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             putStartDate="@{@string/like_date(data.start)"
-            putEndDate="@{@string/like_date(data.end)"
-            android:text="@{@string/like_date(data.start,data.end)}" />
+            putEndDate="@{@string/like_date(data.end)" />
 
         <TextView
             android:id="@+id/tv_like_title"
