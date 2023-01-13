@@ -31,6 +31,7 @@ class OcrResultViewModel @Inject constructor(
     ) {
         // 학생증인 경우
         if (isStudent) {
+            Timber.d("학생증!")
             viewModelScope.launch {
                 userRepository.postStudentUserCheck(
                     RequestPostStudentUserCheckDto(
@@ -71,6 +72,7 @@ class OcrResultViewModel @Inject constructor(
         }
         // 청소년증인 경우
         else {
+            Timber.d("청소년증!")
             viewModelScope.launch {
                 userRepository.postYouthUserCheck(RequestPostYouthUserCheckDto(name, subEntry, img, isVertical))
                     .onSuccess { response ->

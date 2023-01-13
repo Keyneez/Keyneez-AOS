@@ -64,10 +64,10 @@
 
         <ImageView
             android:id="@+id/iv_test_complete_jelly"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="64dp"
-            android:src="@drawable/img_ocr_complete_jelly_dummy"
+            android:layout_width="311dp"
+            android:layout_height="290dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/img_test_complete_jelly_dummy"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_test_complete_jelly_type" />
@@ -78,7 +78,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="64dp"
+            android:layout_marginTop="18dp"
             android:text="@string/test_complete_my_item"
             android:textColor="@color/gray900"
             app:layout_constraintStart_toStartOf="parent"
