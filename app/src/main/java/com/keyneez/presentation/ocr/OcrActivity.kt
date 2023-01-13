@@ -19,11 +19,13 @@ import com.keyneez.util.extension.setOnSingleClickListener
 import com.keyneez.util.extension.showSnackbar
 import com.lab.keyneez.R
 import com.lab.keyneez.databinding.ActivityOcrBinding
+import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 import java.nio.ByteBuffer
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 
+@AndroidEntryPoint
 class OcrActivity : BindingActivity<ActivityOcrBinding>(R.layout.activity_ocr) {
     val viewModel by viewModels<OcrViewModel>()
 
@@ -165,7 +167,7 @@ class OcrActivity : BindingActivity<ActivityOcrBinding>(R.layout.activity_ocr) {
                             if (isSuccess && viewModel.idName.value == "" && word.length == 3) viewModel.setIdName(
                                 word
                             )
-                            if (isSuccess && viewModel.idName.value == "" && word.startsWith("명:")) viewModel.setIdName(
+                            if (isSuccess && viewModel.idName.value == "" && word.startsWith("명:") && word.length == 5) viewModel.setIdName(
                                 word.substring(2, 5)
                             )
                             if (isSuccess && viewModel.idName.value == "" && word.startsWith(":") && word.length == 4) viewModel.setIdName(
