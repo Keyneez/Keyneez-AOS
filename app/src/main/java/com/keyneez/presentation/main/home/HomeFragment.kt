@@ -29,6 +29,8 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(R.layout.fragment_home
         val viewPager = binding.vpHome
         val tabLayout = binding.tabHome
 
+        binding.vpHome.isUserInputEnabled = false // disable swipe
+
         val homeTabTitles = listOf(
             getString(R.string.home_recommend),
             getString(R.string.home_popular),
