@@ -15,6 +15,16 @@
 | `저장 탭`<br/>`마이 페이지` | `인포 탭`<br/>`랜딩 페이지` | `온라인 인증서 발급 페이지`<br/>`로그인/회원가입 페이지` |
 <br>
 
+## TECH STACK
+- Google ML Kit Text Rocognition
+- CameraX
+- Firebase Storage
+- MVVM
+- Hilt
+- Coroutine
+- Data Binding
+- Coil
+
 ## COMMIT CONVENTION
 - ✨ **[FEAT]** : 새로운 기능 구현
 - ✅ **[MOD]** : 코드 수정 및 내부 파일 수정
@@ -70,3 +80,10 @@
    ┣ 📂binding
    ┣ 📂extension
 ```
+
+## PHOTO
+![KakaoTalk_20230114_002530435_02](https://user-images.githubusercontent.com/70993562/212357079-34cdf0cc-bb36-4379-aa52-74ed65451f44.jpg)
+![KakaoTalk_20230114_002530435_03](https://user-images.githubusercontent.com/70993562/212357103-06af5fab-0bbd-46de-9ffb-a57c837ff83c.jpg)
+![KakaoTalk_20230114_002530435_05](https://user-images.githubusercontent.com/70993562/212357133-dd4656a0-0a7b-4af1-aa84-9d29662639c3.jpg)
+![KakaoTalk_20230114_002530435_08](https://user-images.githubusercontent.com/70993562/212357153-14d8330a-0269-4cad-870a-a1b48b501fc0.jpg)
+<br>
