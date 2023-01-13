@@ -52,5 +52,3 @@ data class ResponsePatchUserTypeDto(
         @SerialName("item_name") val itemName: String?
     )
 }
-
-
