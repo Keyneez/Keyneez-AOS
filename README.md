@@ -1,5 +1,8 @@
 # ❤️ Keyneez-AOS ❤️
+
 ## 키니즈 (Keyneez)
+![키니즈 표지](https://user-images.githubusercontent.com/83579348/212356641-b8f4be5a-c10d-4547-934b-1a7eeec6bf93.png)
+![A2 판넬 1@2x](https://user-images.githubusercontent.com/70744494/212153469-efeab9d1-927c-4937-8778-e27bf262510b.png)
 ```
 청소년들의 편리한 생활을 위한 인증서비스와 풍부한 활동을 위한 다양한 혜택정보를 제공하는 서비스
 ```
@@ -10,6 +13,17 @@
 | :---: | :---: | :---: |
 | <img width="540" src="https://user-images.githubusercontent.com/70993562/210304447-6d74e759-5baf-4d08-866f-57bf10bddc3a.jpg"/> | <img width="540" src="https://user-images.githubusercontent.com/70993562/210304332-6bcf7c78-5612-4821-8447-48f1ba2f045c.jpg"/> | <img width="540" src="https://user-images.githubusercontent.com/70993562/210304413-00952aa3-4faa-46a8-bacf-b94df2cc0499.jpg"/> |
 | `저장 탭`<br/>`마이 페이지` | `인포 탭`<br/>`랜딩 페이지` | `온라인 인증서 발급 페이지`<br/>`로그인/회원가입 페이지` |
+<br>
+
+## TECH STACK
+- Google ML Kit Text Rocognition
+- CameraX
+- Firebase Storage
+- MVVM
+- Hilt
+- Coroutine
+- Data Binding
+- Coil
 <br>
 
 ## COMMIT CONVENTION
@@ -67,3 +81,10 @@
    ┣ 📂binding
    ┣ 📂extension
 ```
+
+## PHOTO
+![KakaoTalk_20230114_002530435_02](https://user-images.githubusercontent.com/70993562/212357079-34cdf0cc-bb36-4379-aa52-74ed65451f44.jpg)
+![KakaoTalk_20230114_002530435_03](https://user-images.githubusercontent.com/70993562/212357103-06af5fab-0bbd-46de-9ffb-a57c837ff83c.jpg)
+![KakaoTalk_20230114_002530435_05](https://user-images.githubusercontent.com/70993562/212357133-dd4656a0-0a7b-4af1-aa84-9d29662639c3.jpg)
+![KakaoTalk_20230114_002530435_08](https://user-images.githubusercontent.com/70993562/212357153-14d8330a-0269-4cad-870a-a1b48b501fc0.jpg)
+<br>

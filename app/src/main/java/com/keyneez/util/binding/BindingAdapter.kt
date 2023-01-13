@@ -137,14 +137,11 @@ object BindingAdapter {
     @BindingAdapter("card")
     fun ImageView.card(string: String?) {
         when (string) {
-            "문화" -> this.setImageDrawable(R.drawable.ic_home_card_mint)
-            "진로" -> this.setImageDrawable(R.drawable.ic_home_card_green)
-            "봉사" -> this.setImageDrawable(R.drawable.ic_home_card_purple)
-            "여행" -> this.setImageDrawable(R.drawable.ic_home_card_pink)
-            "경제" -> this.setImageDrawable(R.drawable.ic_home_card_red)
+            "문화" -> this.setImageResource(R.drawable.ic_home_card_mint)
+            "진로" -> this.setImageResource(R.drawable.ic_home_card_green)
+            "봉사" -> this.setImageResource(R.drawable.ic_home_card_purple)
+            "여행" -> this.setImageResource(R.drawable.ic_home_card_pink)
+            "경제" -> this.setImageResource(R.drawable.ic_home_card_red)
         }
     }
-}
-
-private fun ImageView.setImageDrawable(drawable: Int) {
 }
