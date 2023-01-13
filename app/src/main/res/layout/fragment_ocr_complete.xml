@@ -29,7 +29,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
-            android:text="@string/ocr_complete_description"
+            android:text="김지은님의 ID를 발급했어요!"
+            tools:text="@string/ocr_complete_description"
             android:textColor="@color/gray900"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn_ocr_complete_back" />
@@ -50,7 +51,8 @@
             android:layout_width="208dp"
             android:layout_height="0dp"
             android:layout_marginBottom="-107dp"
-            android:src="@drawable/img_ocr_complete_jelly_dummy"
+            android:src="@drawable/img_id_main_real"
+            tools:src="@drawable/img_ocr_complete_jelly_dummy"
             app:layout_constraintBottom_toTopOf="@id/iv_ocr_complete_card"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toEndOf="parent"
@@ -78,7 +80,7 @@
             app:layout_constraintStart_toStartOf="@id/iv_ocr_complete_card"
             android:layout_marginTop="4dp"
             android:layout_marginStart="23dp"
-            android:text="김민지" />
+            android:text="김지은" />
 
         <ImageButton
             android:id="@+id/btn_ocr_complete_detail"
@@ -102,7 +104,7 @@
             app:layout_constraintStart_toStartOf="@id/iv_ocr_complete_card"
             android:layout_marginTop="40dp"
             android:layout_marginStart="22dp"
-            android:text="2001.01.17"/>
+            android:text="2000.07.07"/>
 
         <TextView
             android:id="@+id/btn_ocr_complete_confirm"
