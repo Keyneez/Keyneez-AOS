@@ -1,5 +1,8 @@
 # ❤️ Keyneez-AOS ❤️
+
 ## 키니즈 (Keyneez)
+![키니즈 표지](https://user-images.githubusercontent.com/83579348/212356641-b8f4be5a-c10d-4547-934b-1a7eeec6bf93.png)
+
 ```
 청소년들의 편리한 생활을 위한 인증서비스와 풍부한 활동을 위한 다양한 혜택정보를 제공하는 서비스
 ```
