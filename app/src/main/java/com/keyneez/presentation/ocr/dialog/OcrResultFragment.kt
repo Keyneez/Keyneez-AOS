@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import com.keyneez.presentation.ocr.OcrActivity
 import com.keyneez.presentation.ocr.dialog.OcrResultViewModel.Companion.CHECK_FAIL_CODE
@@ -53,8 +54,8 @@ class OcrResultFragment :
             val subEntry = avm.idSubEntry.value.toString()
             val img = avm.imgUrl.value.toString()
             val isVertical = avm.isVertical.value ?: false
-
             viewModel.postUserCheck(isStudent, name, subEntry, img, isVertical)
+            Toast.makeText(getActivity(),"성공하셨습니다.",Toast.LENGTH_SHORT ).show()
         }
     }
 
