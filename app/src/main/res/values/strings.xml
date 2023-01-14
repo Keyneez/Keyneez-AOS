@@ -134,7 +134,7 @@
     <string name="id_content">온라인 ID로 더 다양한\n활동을 즐겨보세요</string>
     <string name="id_issue">발급하기</string>
     <string name="id_semi_title">호기심 가득 문화인</string>
-    <string name="id_name">김민지</string>
+    <string name="id_name">김지은</string>
     <string name="id_school">키니즈 고등학교</string>
     <string name="id_birth">2001.01.17</string>
     <string name="id_benefit">혜택안내</string>
@@ -191,7 +191,7 @@
     <string name="ocr_complete_confirm">확인</string>
 
     // setting
-    <string name="setting_name">김민지</string>
+    <string name="setting_name">김지은</string>
     <string name="setting_phone">휴대폰 번호 설정</string>
     <string name="setting_password">비밀번호 설정</string>
     <string name="setting_id">ID 관리</string>

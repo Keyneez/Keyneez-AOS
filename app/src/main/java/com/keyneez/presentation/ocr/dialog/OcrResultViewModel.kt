@@ -43,12 +43,6 @@ class OcrResultViewModel @Inject constructor(
                 )
                     .onSuccess { response ->
                         Timber.tag(successTag).d("response : $response")
-
-                        if (response.data == null) {
-                            _stateMessage.value = UiState.Failure(RESPONSE_NULL_CODE)
-                            return@onSuccess
-                        }
-
                         _stateMessage.value = UiState.Success
                     }
                     .onFailure {
@@ -77,12 +71,6 @@ class OcrResultViewModel @Inject constructor(
                 userRepository.postYouthUserCheck(RequestPostYouthUserCheckDto(name, subEntry, img, isVertical))
                     .onSuccess { response ->
                         Timber.tag(successTag).d("response : $response")
-
-                        if (response.data == null) {
-                            _stateMessage.value = UiState.Failure(RESPONSE_NULL_CODE)
-                            return@onSuccess
-                        }
-
                         _stateMessage.value = UiState.Success
                     }
                     .onFailure {
