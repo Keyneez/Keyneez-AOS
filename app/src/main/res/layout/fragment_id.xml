@@ -117,7 +117,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:src="@drawable/img_id_main_character"
-                android:src="@drawable/img_id_main_real"
+                android:src="@drawable/img_id_main_character"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -153,7 +153,7 @@
                 android:background="@null"
                 android:layout_marginStart="-8dp"
                 android:padding="12dp"
-                android:visibility="@{vm.userData.school == null ? View.GONE : View.VISIBLE}"
+                android:visibility="invisible"
                 android:src="@drawable/ic_id_main_arrow"
                 app:layout_constraintStart_toEndOf="@id/tv_id_main_name"
                 app:layout_constraintTop_toTopOf="@id/tv_id_main_name"

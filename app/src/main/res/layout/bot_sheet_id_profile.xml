@@ -27,7 +27,7 @@
             android:textColor="@color/gray900"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:text="호기심 가득 문화인" />
+            android:text="@{vm.cha}" />
 
         <TextView
             android:id="@+id/tv_id_profile_name"
@@ -39,7 +39,7 @@
             android:textColor="@color/gray900"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_id_profile_semititle"
-            android:text="김지은" />
+            android:text="@{vm.name}" />
 
         <ImageView
             android:id="@+id/iv_id_profile_logo"
@@ -72,7 +72,7 @@
             android:textColor="@color/gray900"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/iv_id_profile_baseline"
-            android:text="늘푸른중학교" />
+            android:text="@{vm.school}" />
 
         <TextView
             android:id="@+id/tv_id_profile_birth"
@@ -82,7 +82,7 @@
             android:layout_marginStart="29dp"
             android:layout_marginTop="5dp"
             android:textColor="@color/gray900"
-            android:text="2000.07.07"
+            android:text="@{vm.birth}"
             putBirth="2000.07.07"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_id_profile_school" />

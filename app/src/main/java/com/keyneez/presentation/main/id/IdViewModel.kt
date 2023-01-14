@@ -24,34 +24,22 @@ class IdViewModel @Inject constructor(
     private val _idUser = MutableLiveData<String>()
     val idUser: MutableLiveData<String>
         get() = _idUser
+    val cha = _idUser.value
 
     private val _idName = MutableLiveData<String>()
     val idName: MutableLiveData<String>
         get() = _idName
+    val name = _idName.value
 
     private val _idSchool = MutableLiveData<String>()
     val idSchool: MutableLiveData<String>
         get() = _idSchool
+    val school = _idName.value
 
     private val _idbirth = MutableLiveData<String>()
     val idbirth: MutableLiveData<String>
         get() = _idbirth
-
-    /** 이름 설정 */
-    fun setIdName(name: String) {
-        _idName.value = name
-    }
-
-    /** 학교 설정 */
-    fun setIdSchool(school: String) {
-        _idSchool.value = school
-    }
-
-    /** 생년월일 설정 */
-    fun setIdBirth(date: String) {
-        // date 형식 : 000000-0000000
-        _idbirth.value = date
-    }
+    val birth = _idbirth.value
 
     init {
         getIdData()

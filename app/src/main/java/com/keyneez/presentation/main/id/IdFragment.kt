@@ -67,15 +67,30 @@ class IdFragment : BindingFragment<FragmentIdBinding>(R.layout.fragment_id) {
     private fun initIdBackGround() {
         when (viewModel.userData.value?.userCharacter?.rem(5)) {
             // 문화인 - 파란색
-            1 -> binding.ivIdMainBackground.setImageResource(R.mipmap.card_bg_mint)
+            1 -> {
+                binding.ivIdMainBackground.setImageResource(R.mipmap.card_bg_mint)
+                binding.ivIdMainCharacter.setImageResource(R.drawable.property_1mint_property_2curious_property_3a1_property_4a2)
+            }
             // 진로탐색러 - 초록색
-            2 -> binding.ivIdMainBackground.setImageResource(R.mipmap.card_bg_green)
+            2 -> {
+                binding.ivIdMainBackground.setImageResource(R.mipmap.card_bg_green)
+                binding.ivIdMainCharacter.setImageResource(R.drawable.property_1green_property_2curious_property_3d1_property_4d2)
+            }
             // 탐험가 - 핑크색
-            3 -> binding.ivIdMainBackground.setImageResource(R.mipmap.card_bg_pink)
+            3 -> {
+                binding.ivIdMainBackground.setImageResource(R.mipmap.card_bg_pink)
+                binding.ivIdMainCharacter.setImageResource(R.drawable.property_1pink_property_2curious_property_3c1_property_4c2)
+            }
             // 경제인 - 빨간색
-            4 -> binding.ivIdMainBackground.setImageResource(R.mipmap.card_bg_red)
+            4 -> {
+                binding.ivIdMainBackground.setImageResource(R.mipmap.card_bg_red)
+                binding.ivIdMainCharacter.setImageResource(R.drawable.property_1red_property_2curious_property_3b1_property_4b2)
+            }
             // 봉사자 - 보라색
-            else -> binding.ivIdMainBackground.setImageResource(R.mipmap.card_bg_purple)
+            else -> {
+                binding.ivIdMainBackground.setImageResource(R.mipmap.card_bg_purple)
+                binding.ivIdMainCharacter.setImageResource(R.drawable.property_1purple_property_2curious_property_3e1_property_4e2)
+            }
         }
     }
 
