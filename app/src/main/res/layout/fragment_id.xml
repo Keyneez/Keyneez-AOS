@@ -106,7 +106,7 @@
                 android:id="@+id/iv_id_main_background"
                 android:layout_width="253dp"
                 android:layout_height="318dp"
-                android:layout_marginTop="101dp"
+                android:layout_marginTop="120dp"
                 android:src="@drawable/img_id_main_background"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -114,9 +114,9 @@
 
             <ImageView
                 android:id="@+id/iv_id_main_character"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:src="@drawable/img_id_main_character"
+                android:layout_width="240dp"
+                android:layout_height="240dp"
+                tools:src="@drawable/property_1mint_property_2curious_property_3a1_property_4a2"
                 android:src="@drawable/img_id_main_character"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

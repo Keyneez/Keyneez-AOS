@@ -30,7 +30,6 @@ class LikeFragment : BindingFragment<FragmentLikeBinding>(R.layout.fragment_like
         initLikeSearchClickListener()
         setupLikeData()
         observeLikeStateMessage()
-        setToastMessage()
     }
 
     private fun initLikeSearchClickListener() {
@@ -65,13 +64,10 @@ class LikeFragment : BindingFragment<FragmentLikeBinding>(R.layout.fragment_like
     private fun setupLikeData() {
         viewModel.likeList.observe(viewLifecycleOwner) {
             likeAdapter.data = it
+            if (it.isEmpty()) {
+                Toast.makeText(context, getString(R.string.like_toast), Toast.LENGTH_SHORT).show()
+            }
             likeAdapter.notifyDataSetChanged()
-        }
-    }
-
-    private fun setToastMessage() {
-        if (likeAdapter.itemCount == 0) {
-            Toast.makeText(context, getString(R.string.like_toast), Toast.LENGTH_SHORT).show()
         }
     }
 
