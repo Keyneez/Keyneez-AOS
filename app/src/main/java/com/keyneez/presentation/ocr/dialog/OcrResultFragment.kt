@@ -55,7 +55,7 @@ class OcrResultFragment :
             val img = avm.imgUrl.value.toString()
             val isVertical = avm.isVertical.value ?: false
             viewModel.postUserCheck(isStudent, name, subEntry, img, isVertical)
-            Toast.makeText(getActivity(),"성공하셨습니다.",Toast.LENGTH_SHORT ).show()
+            Toast.makeText(getActivity(), "성공하셨습니다.", Toast.LENGTH_SHORT).show()
         }
     }
 
