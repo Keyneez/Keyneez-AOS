@@ -64,10 +64,6 @@
 - 기본적으로 ktlint의 문법 준수
 <br>
 
-## 시연 영상
-https://drive.google.com/file/d/1dB0Fh9PADfYUX_6WU70Drmr83e3VjW6n/view?usp=drivesdk
-<br>
-
 ## PACKAGE CONVENTION
 ```
 📦java.com.keyneez 
@@ -85,4 +81,8 @@ https://drive.google.com/file/d/1dB0Fh9PADfYUX_6WU70Drmr83e3VjW6n/view?usp=drive
    ┣ 📂binding
    ┣ 📂extension
 ```
+<br>
 
+## DEOMO VIDEO
+- [▶](https://drive.google.com/file/d/1dB0Fh9PADfYUX_6WU70Drmr83e3VjW6n/view?usp=drivesdk)
+<br>
