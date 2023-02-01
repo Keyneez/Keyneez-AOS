@@ -83,6 +83,6 @@
 ```
 <br>
 
-## DEOMO VIDEO
+## DEMO VIDEO
 - [▶](https://drive.google.com/file/d/1dB0Fh9PADfYUX_6WU70Drmr83e3VjW6n/view?usp=drivesdk)
 <br>
