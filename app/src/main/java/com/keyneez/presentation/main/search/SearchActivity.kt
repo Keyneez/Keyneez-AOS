@@ -1,6 +1,5 @@
 package com.keyneez.presentation.main.search
 
-import android.app.PendingIntent.getActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
@@ -37,7 +36,7 @@ class SearchActivity : BindingActivity<ActivitySearchBinding>(R.layout.activity_
             searchAdapter.data = it
             searchAdapter.notifyDataSetChanged()
             binding.tvSearchCount.setText(it.size.toString())
-            if(it.size.toString()=="0"){
+            if (it.size.toString() == "0") {
                 Toast.makeText(this, "검색결과가 없습니다.", Toast.LENGTH_SHORT).show()
             }
         }
