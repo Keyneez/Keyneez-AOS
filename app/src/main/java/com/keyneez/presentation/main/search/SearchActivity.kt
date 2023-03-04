@@ -1,6 +1,9 @@
 package com.keyneez.presentation.main.search
 
 import android.os.Bundle
+import android.view.KeyEvent
+import android.view.inputmethod.EditorInfo
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
@@ -29,8 +32,28 @@ class SearchActivity : BindingActivity<ActivitySearchBinding>(R.layout.activity_
         initHideKeyboard()
         initSearchBackBtnClickListener()
         observeSearchStateMessage()
+        initSearchBtnClickListener()
     }
 
+    private fun initSearchBtnClickListener() {
+        binding.btnSearchResult.setOnKeyListener { v, keyCode, event ->
+            if ((event.action == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                setupSearchData()
+                true
+            } else {
+                false
+            }
+        }
+        binding.etSearchContent.setOnEditorActionListener(object : TextView.OnEditorActionListener {
+            override fun onEditorAction(v: TextView?, actionId: Int, event: KeyEvent?): Boolean {
+                if(actionId == EditorInfo.IME_ACTION_SEARCH) {
+                    setupSearchData()
+                    return true
+                }
+                return false
+            }
+        })
+    }
     private fun setupSearchData() {
         viewModel.searchList.observe(this) {
             searchAdapter.data = it

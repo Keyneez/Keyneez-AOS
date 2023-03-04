@@ -37,7 +37,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="-12dp"
             android:layout_marginTop="65dp"
-            android:layout_marginEnd="16dp"
             android:inputType="text"
             android:maxLines="1"
             android:imeOptions="actionSearch"
@@ -47,7 +46,7 @@
             android:paddingBottom="14dp"
             android:textColor="@color/gray900"
             android:textColorHint="@color/gray400"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btn_search_result"
             app:layout_constraintStart_toEndOf="@id/btn_search_back"
             app:layout_constraintTop_toTopOf="parent" />
 
