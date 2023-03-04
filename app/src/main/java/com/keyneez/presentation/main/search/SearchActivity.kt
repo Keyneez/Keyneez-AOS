@@ -38,6 +38,7 @@ class SearchActivity : BindingActivity<ActivitySearchBinding>(R.layout.activity_
     private fun initSearchBtnClickListener() {
         binding.btnSearchResult.setOnKeyListener { v, keyCode, event ->
             if ((event.action == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                viewModel.getSearchPostData()
                 setupSearchData()
                 true
             } else {
@@ -46,7 +47,8 @@ class SearchActivity : BindingActivity<ActivitySearchBinding>(R.layout.activity_
         }
         binding.etSearchContent.setOnEditorActionListener(object : TextView.OnEditorActionListener {
             override fun onEditorAction(v: TextView?, actionId: Int, event: KeyEvent?): Boolean {
-                if(actionId == EditorInfo.IME_ACTION_SEARCH) {
+                if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                    viewModel.getSearchPostData()
                     setupSearchData()
                     return true
                 }
