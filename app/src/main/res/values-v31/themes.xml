@@ -31,6 +31,6 @@
     </style>
 
     <style name="Theme.Keyneez.Splash">
-        <item name="android:background">@drawable/bg_splash_screen</item>
+        <item name="android:windowSplashScreenBackground">@drawable/bg_splash_screen</item>
     </style>
 </resources>

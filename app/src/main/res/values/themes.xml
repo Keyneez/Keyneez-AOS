@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
     <style name="Theme.Keyneez" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
@@ -21,12 +21,16 @@
         <!-- Bottom sheet dialog -->
         <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
     </style>
-    <style name="AppBottomSheetDialogTheme"
-        parent="Theme.Design.Light.BottomSheetDialog">
+
+    <style name="AppBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
         <item name="bottomSheetStyle">@style/AppModalStyle</item>
     </style>
-    <style name="AppModalStyle"
-        parent="Widget.Design.BottomSheet.Modal">
+
+    <style name="AppModalStyle" parent="Widget.Design.BottomSheet.Modal">
         <item name="android:background">@drawable/shape_gray050_fill_top20_rect</item>
+    </style>
+
+    <style name="Theme.Keyneez.Splash">
+        <item name="android:background">@drawable/bg_splash_screen</item>
     </style>
 </resources>
