@@ -7,7 +7,6 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
-import com.keyneez.data.model.response.ResponseGetSearchDto
 import com.keyneez.util.UiState
 import com.keyneez.util.binding.BindingActivity
 import com.keyneez.util.extension.hideKeyboard
@@ -20,7 +19,6 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class SearchActivity : BindingActivity<ActivitySearchBinding>(R.layout.activity_search) {
     lateinit var searchAdapter: SearchAdapter
-    val data = mutableListOf<ResponseGetSearchDto>()
     private val viewModel by viewModels<SearchViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,10 +26,10 @@ class SearchActivity : BindingActivity<ActivitySearchBinding>(R.layout.activity_
         binding.vm = viewModel
 
         initLikeAdapter()
-        setupSearchData()
+        setupSearchDataState()
         initHideKeyboard()
         initSearchBackBtnClickListener()
-        observeSearchStateMessage()
+        setupSearchState()
         initSearchBtnClickListener()
     }
 
@@ -39,7 +37,7 @@ class SearchActivity : BindingActivity<ActivitySearchBinding>(R.layout.activity_
         binding.btnSearchResult.setOnKeyListener { v, keyCode, event ->
             if ((event.action == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
                 viewModel.getSearchPostData()
-                setupSearchData()
+                setupSearchDataState()
                 true
             } else {
                 false
@@ -49,27 +47,27 @@ class SearchActivity : BindingActivity<ActivitySearchBinding>(R.layout.activity_
             override fun onEditorAction(v: TextView?, actionId: Int, event: KeyEvent?): Boolean {
                 if (actionId == EditorInfo.IME_ACTION_SEARCH) {
                     viewModel.getSearchPostData()
-                    setupSearchData()
+                    setupSearchDataState()
                     return true
                 }
                 return false
             }
         })
     }
-    private fun setupSearchData() {
+    private fun setupSearchDataState() {
         viewModel.searchList.observe(this) {
             searchAdapter.data = it
             searchAdapter.notifyDataSetChanged()
             binding.tvSearchCount.setText(it.size.toString())
             if (it.size.toString() == "0") {
-                Toast.makeText(this, "검색결과가 없습니다.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, R.string.search_no_result, Toast.LENGTH_SHORT).show()
             }
         }
     }
-    private fun observeSearchStateMessage() {
+    private fun setupSearchState() {
         viewModel.stateMessage.observe(this) {
             when (it) {
-                is UiState.Success -> setupSearchData()
+                is UiState.Success -> setupSearchDataState()
                 is UiState.Failure -> showSnackbar(
                     binding.root,
                     getString(R.string.msg_search_null)

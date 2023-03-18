@@ -24,7 +24,7 @@
             android:layout_marginTop="52dp"
             android:paddingHorizontal="12dp"
             android:paddingVertical="12dp"
-            android:text="@string/like_save"
+            android:text="@string/like_liked"
             android:textColor="@color/gray900"
             app:layout_constraintStart_toStartOf="@id/layout_like"
             app:layout_constraintTop_toTopOf="@id/layout_like" />

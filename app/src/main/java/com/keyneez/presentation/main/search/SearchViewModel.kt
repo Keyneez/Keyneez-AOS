@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.keyneez.data.model.request.RequestPostSaveDto
 import com.keyneez.data.model.response.ResponseGetSearchDto
 import com.keyneez.data.repository.ContentRepository
 import com.keyneez.util.UiState
@@ -24,6 +25,10 @@ class SearchViewModel @Inject constructor(
     private val _stateMessage = MutableLiveData<UiState>()
     val stateMessage: LiveData<UiState>
         get() = _stateMessage
+
+    private val _saveState = MutableLiveData<Boolean>()
+    val saveState: LiveData<Boolean>
+        get() = _saveState
 
     val key = MutableLiveData("")
 
@@ -56,6 +61,23 @@ class SearchViewModel @Inject constructor(
                     }
                 } else _stateMessage.value = UiState.Error
             }
+        }
+    }
+
+    fun postSave(contentId: Int) {
+        viewModelScope.launch {
+            contentRepository.postSave(RequestPostSaveDto(contentId)).onSuccess { response ->
+
+                Timber.d("POST SAVE STATE SUCCESS")
+                Timber.d("response : $response")
+
+                _saveState.value = true
+                _stateMessage.value = UiState.Success
+            }
+                .onFailure {
+                    Timber.d("throwable : $it")
+                    _stateMessage.value = UiState.Error
+                }
         }
     }
 
