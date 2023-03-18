@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.KeyEvent
 import android.view.inputmethod.EditorInfo
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import com.keyneez.util.UiState
@@ -12,6 +11,7 @@ import com.keyneez.util.binding.BindingActivity
 import com.keyneez.util.extension.hideKeyboard
 import com.keyneez.util.extension.setOnSingleClickListener
 import com.keyneez.util.extension.showSnackbar
+import com.keyneez.util.extension.showToast
 import com.lab.keyneez.R
 import com.lab.keyneez.databinding.ActivitySearchBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -47,7 +47,6 @@ class SearchActivity : BindingActivity<ActivitySearchBinding>(R.layout.activity_
             override fun onEditorAction(v: TextView?, actionId: Int, event: KeyEvent?): Boolean {
                 if (actionId == EditorInfo.IME_ACTION_SEARCH) {
                     viewModel.getSearchPostData()
-                    setupSearchDataState()
                     return true
                 }
                 return false
@@ -60,7 +59,7 @@ class SearchActivity : BindingActivity<ActivitySearchBinding>(R.layout.activity_
             searchAdapter.notifyDataSetChanged()
             binding.tvSearchCount.setText(it.size.toString())
             if (it.size.toString() == "0") {
-                Toast.makeText(this, R.string.search_no_result, Toast.LENGTH_SHORT).show()
+                showToast(getString(R.string.search_no_result))
             }
         }
     }
