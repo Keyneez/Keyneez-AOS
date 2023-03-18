@@ -25,7 +25,7 @@ data class ResponseGetContentDeatilDto(
     val start: String?,
     @SerialName("end_at")
     val end: String?,
-    @SerialName("liked")G
+    @SerialName("liked")
     val liked: Boolean,
     @SerialName("category")
     val category: List<String>
