@@ -58,7 +58,7 @@ class SearchActivity : BindingActivity<ActivitySearchBinding>(R.layout.activity_
             searchAdapter.data = it
             searchAdapter.notifyDataSetChanged()
             binding.tvSearchCount.setText(it.size.toString())
-            if (it.size.toString() == "0") {
+            if (it.size == 0) {
                 showToast(getString(R.string.search_no_result))
             }
         }
