@@ -37,7 +37,6 @@ class SearchActivity : BindingActivity<ActivitySearchBinding>(R.layout.activity_
         binding.btnSearchResult.setOnKeyListener { v, keyCode, event ->
             if ((event.action == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
                 viewModel.getSearchPostData()
-                setupSearchDataState()
                 true
             } else {
                 false
