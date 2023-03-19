@@ -24,9 +24,20 @@
             android:layout_marginTop="52dp"
             android:paddingHorizontal="12dp"
             android:paddingVertical="12dp"
-            android:text="@string/like_save"
+            android:text="@string/like_liked"
             android:textColor="@color/gray900"
             app:layout_constraintStart_toStartOf="@id/layout_like"
+            app:layout_constraintTop_toTopOf="@id/layout_like" />
+
+        <ImageButton
+            android:id="@+id/btn_like_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:background="@null"
+            android:padding="12dp"
+            android:src="@drawable/ic_like_edit"
+            app:layout_constraintEnd_toStartOf="@id/btn_like_search"
             app:layout_constraintTop_toTopOf="@id/layout_like" />
 
         <ImageButton
@@ -45,7 +56,7 @@
             android:id="@+id/iv_like_baseline"
             android:layout_width="0dp"
             android:layout_height="3dp"
-            android:layout_marginHorizontal="14dp"
+            android:layout_marginHorizontal="22dp"
             android:layout_marginTop="-6dp"
             android:background="@color/gray900"
             android:paddingHorizontal="12dp"

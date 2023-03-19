@@ -1,14 +1,17 @@
 package com.keyneez.presentation.main.search
 
 import android.os.Bundle
+import android.view.KeyEvent
+import android.view.inputmethod.EditorInfo
+import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
-import com.keyneez.data.model.response.ResponseGetSearchDto
 import com.keyneez.util.UiState
 import com.keyneez.util.binding.BindingActivity
 import com.keyneez.util.extension.hideKeyboard
 import com.keyneez.util.extension.setOnSingleClickListener
 import com.keyneez.util.extension.showSnackbar
+import com.keyneez.util.extension.showToast
 import com.lab.keyneez.R
 import com.lab.keyneez.databinding.ActivitySearchBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -16,7 +19,6 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class SearchActivity : BindingActivity<ActivitySearchBinding>(R.layout.activity_search) {
     lateinit var searchAdapter: SearchAdapter
-    val data = mutableListOf<ResponseGetSearchDto>()
     private val viewModel by viewModels<SearchViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,23 +26,46 @@ class SearchActivity : BindingActivity<ActivitySearchBinding>(R.layout.activity_
         binding.vm = viewModel
 
         initLikeAdapter()
-        setupSearchData()
+        setupSearchDataState()
         initHideKeyboard()
         initSearchBackBtnClickListener()
-        observeSearchStateMessage()
+        setupSearchState()
+        initSearchBtnClickListener()
     }
 
-    private fun setupSearchData() {
+    private fun initSearchBtnClickListener() {
+        binding.btnSearchResult.setOnKeyListener { v, keyCode, event ->
+            if ((event.action == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                viewModel.getSearchPostData()
+                true
+            } else {
+                false
+            }
+        }
+        binding.etSearchContent.setOnEditorActionListener(object : TextView.OnEditorActionListener {
+            override fun onEditorAction(v: TextView?, actionId: Int, event: KeyEvent?): Boolean {
+                if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                    viewModel.getSearchPostData()
+                    return true
+                }
+                return false
+            }
+        })
+    }
+    private fun setupSearchDataState() {
         viewModel.searchList.observe(this) {
             searchAdapter.data = it
             searchAdapter.notifyDataSetChanged()
             binding.tvSearchCount.setText(it.size.toString())
+            if (it.size == 0) {
+                showToast(getString(R.string.search_no_result))
+            }
         }
     }
-    private fun observeSearchStateMessage() {
+    private fun setupSearchState() {
         viewModel.stateMessage.observe(this) {
             when (it) {
-                is UiState.Success -> setupSearchData()
+                is UiState.Success -> setupSearchDataState()
                 is UiState.Failure -> showSnackbar(
                     binding.root,
                     getString(R.string.msg_search_null)

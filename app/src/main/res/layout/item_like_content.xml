@@ -22,10 +22,24 @@
             android:layout_height="0dp"
             setRoundedImage="@{data.background}"
             android:scaleType="centerCrop"
+            android:background="@drawable/img_like_background"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_like_title_new"
+            style="@style/PretendardBold16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_gray200_fill_bot14_rect"
+            android:gravity="center"
+            android:padding="15dp"
+            android:text="@string/like_title"
+            android:textColor="@color/gray800"
+            app:layout_constraintTop_toBottomOf="@id/iv_like_background" />
+
         <ImageView
             android:id="@+id/iv_like_background_transprent"
             android:layout_width="0dp"
@@ -35,6 +49,22 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <!--추후에 키워드 컬러랑 텍스트 추가-->
+        <TextView
+            android:id="@+id/tv_like_keyword"
+            style="@style/PretendardBold10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/shape_mint500_line_rect"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="8dp"
+            android:text="@string/home_keyword"
+            android:textColor="@color/mint500"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
         <TextView
             android:id="@+id/tv_like_date"
