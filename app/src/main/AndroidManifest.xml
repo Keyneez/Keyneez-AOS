@@ -3,9 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
     <!-- Add uses-permissions -->
     <uses-permission android:name="android.permission.INTERNET" />
-
     <uses-feature android:name="android.hardware.camera.any" />
-
     <uses-permission android:name="android.permission.CAMERA" />
 
     <application
@@ -23,35 +21,33 @@
         <activity
             android:name="com.keyneez.presentation.splash.SplashActivity"
             android:exported="true"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Keyneez.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name="com.keyneez.presentation.onboarding.OnboardingActivity"
-            android:exported="true"
-            android:screenOrientation="portrait">
-
-        </activity>
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.keyneez.presentation.login.LoginActivity"
-            android:exported="true"
+            android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name="com.keyneez.presentation.signup.SignupActivity"
-            android:exported="true"
+            android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name="com.keyneez.presentation.main.MainActivity"
-            android:exported="true"
+            android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name="com.keyneez.presentation.main.detail.DetailActivity"
-            android:exported="true"
+            android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name="com.keyneez.presentation.main.search.SearchActivity"
@@ -70,5 +66,4 @@
             android:exported="false"
             android:screenOrientation="portrait" />
     </application>
-
 </manifest>
